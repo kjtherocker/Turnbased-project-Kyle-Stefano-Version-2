@@ -1,0 +1,2 @@
+C:\Users\kj\Desktop\Unity projects\Turnbased project (Kyle & Stefano)\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+C:\Users\kj\Desktop\Unity projects\Turnbased project (Kyle & Stefano)\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
