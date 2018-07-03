@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: ac033deafa298d34bb0a5d5c253cb441
+guid: b04dfadd62d7cff4e8b090aa584e95ad
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: Head
     100002: Left_Arm
-    100004: Left_Leg
+    100004: Left_Arm001
     100006: //RootNode
     100008: Right_Arm
     100010: Right_Leg
     100012: Torso
     400000: Head
     400002: Left_Arm
-    400004: Left_Leg
+    400004: Left_Arm001
     400006: //RootNode
     400008: Right_Arm
     400010: Right_Leg
     400012: Torso
     2100000: HeadMat
     2100002: Left_ArmMat
-    2100004: Left_LegMat
+    2100004: Left_Arm001Mat
     2100006: Right_ArmMat
     2100008: Right_LegMat
     2100010: TorsoMat
     2300000: Head
     2300002: Left_Arm
-    2300004: Left_Leg
+    2300004: Left_Arm001
     2300006: Right_Arm
     2300008: Right_Leg
     2300010: Torso
     3300000: Head
     3300002: Left_Arm
-    3300004: Left_Leg
+    3300004: Left_Arm001
     3300006: Right_Arm
     3300008: Right_Leg
     3300010: Torso
     4300000: Head
     4300002: Left_Arm
-    4300004: Left_Leg
+    4300004: Left_Arm001
     4300006: Right_Arm
     4300008: Right_Leg
     4300010: Torso
