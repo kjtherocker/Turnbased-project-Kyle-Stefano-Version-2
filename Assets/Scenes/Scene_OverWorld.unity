@@ -1228,7 +1228,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &416868553
 Transform:
   m_ObjectHideFlags: 0
@@ -1595,7 +1595,8 @@ MonoBehaviour:
   SpawnEnemyPosition2: {fileID: 744692137}
   SpawnEnemyPosition3: {fileID: 1599447496}
   SpawnEnemyPosition4: {fileID: 270155590}
-  TurnOrder: []
+  TurnOrderAlly: []
+  TurnOrderEnemy: []
 --- !u!1001 &579769789
 Prefab:
   m_ObjectHideFlags: 0
@@ -1705,7 +1706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &709590191
 Transform:
   m_ObjectHideFlags: 0
@@ -2454,6 +2455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf872cdf4b3fa044297411cc23e69aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Skills: []
   charactertype: 0
   elementalStrength: 0
   elementalWeakness: 0
@@ -2731,6 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 186b1dd4922097d4c812c8400c1e4c6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Skills: []
   charactertype: 0
   elementalStrength: 0
   elementalWeakness: 0
@@ -2743,7 +2746,7 @@ MonoBehaviour:
   Dexterity: 0
   Speed: 0
   Name: No Name
-  Model: {fileID: 100006, guid: ac033deafa298d34bb0a5d5c253cb441, type: 3}
+  Model: {fileID: 100006, guid: b04dfadd62d7cff4e8b090aa584e95ad, type: 3}
 --- !u!4 &1204387603
 Transform:
   m_ObjectHideFlags: 0
@@ -2905,6 +2908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd59918d9e6fcca4a90d71c88e9e0db9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Skills: []
   charactertype: 0
   elementalStrength: 0
   elementalWeakness: 0

@@ -33,6 +33,7 @@ public class Script_Creatures : MonoBehaviour {
 
     }
 
+   public Script_Skills[] m_Skills;
 
    public Charactertype charactertype;
    public ElementalStrength elementalStrength;
@@ -57,6 +58,11 @@ public class Script_Creatures : MonoBehaviour {
     {
 		
 	}
+
+    public void DecrementMana(int Decrementby)
+    {
+        CurrentMana -= Decrementby;
+    }
 
     void Death()
     {

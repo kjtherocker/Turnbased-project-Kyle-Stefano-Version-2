@@ -19,6 +19,11 @@ public class Script_MainCharacter : Script_Creatures {
         Dexterity = 50;
         Speed = 50;
         Name = "MainCharacter";
+   
+        m_Skills = new Script_Skills[8];
+        m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
+
+        
 
         charactertype = Charactertype.Ally;
         elementalStrength = ElementalStrength.Null;

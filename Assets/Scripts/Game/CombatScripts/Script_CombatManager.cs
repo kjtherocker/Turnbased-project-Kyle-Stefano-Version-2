@@ -152,8 +152,16 @@ public class Script_CombatManager : MonoBehaviour
     {
         if (m_BattleStates == BattleStates.AllyTurn)
         {
-
+             
             CurrentTurnHolder = TurnOrderAlly[0];
+        }
+
+        if (Input.anyKey)
+        {
+            if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+            {
+                CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[0].GetCostToUse());
+            }
         }
 
 
