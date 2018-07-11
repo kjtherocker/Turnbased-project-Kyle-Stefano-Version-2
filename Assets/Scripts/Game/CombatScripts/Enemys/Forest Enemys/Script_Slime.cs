@@ -18,12 +18,14 @@ public class Script_Slime : Script_Creatures
         Speed = 10;
         Name = "Slime";
 
+        m_Skills = new Script_Skills[3];
+        m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
+
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
+
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Null;
         elementalWeakness = ElementalWeakness.Fire;
     }
-    // Update is called once per frame
-    void Update () {
-		
-	}
+
 }

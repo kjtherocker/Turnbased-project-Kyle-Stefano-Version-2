@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEditor;
 public class Script_MainCharacter : Script_Creatures {
 
 
@@ -12,7 +12,7 @@ public class Script_MainCharacter : Script_Creatures {
     {
         CurrentHealth = 423;
         MaxHealth = 423;
-        CurrentMana = 32;
+        CurrentMana = 43;
         MaxMana = 43;
         Strength = 50;
         Magic = 50;
@@ -23,7 +23,7 @@ public class Script_MainCharacter : Script_Creatures {
         m_Skills = new Script_Skills[8];
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
 
-        
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 
         charactertype = Charactertype.Ally;
         elementalStrength = ElementalStrength.Null;
@@ -32,8 +32,5 @@ public class Script_MainCharacter : Script_Creatures {
     }
 	
 	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
+
 }

@@ -21,8 +21,8 @@ public class Script_Skills : MonoBehaviour {
     public enum SkillType
     {
         Attack,
-        Support,
-        Defense
+        Heal,
+        Buff
 
     }
 
@@ -37,15 +37,29 @@ public class Script_Skills : MonoBehaviour {
     protected SkillType m_SkillType;
     protected SkillRange m_SkillRange;
 
+    protected string SkillName;
+    protected string SkillDescription;
 
     protected int m_CostToUse;
 
-
+    protected int m_Damage;
 
     public int GetCostToUse()
     {
         return m_CostToUse;
     }
+
+    public string GetSkillName()
+    {
+        return SkillName;
+    }
+
+    public string GetSkillDescription()
+    {
+        return SkillDescription;
+    }
+
+
 
     public ElementalType GetElementalType()
     {
@@ -62,9 +76,9 @@ public class Script_Skills : MonoBehaviour {
         return m_SkillRange;
     }
 
-    virtual public void UseSkill()
+    virtual public int UseSkill(int BonusDamage)
     {
-
+        return m_Damage;
     }
 
 

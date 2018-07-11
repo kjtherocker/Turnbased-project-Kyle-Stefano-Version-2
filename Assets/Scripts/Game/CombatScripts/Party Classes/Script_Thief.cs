@@ -22,9 +22,5 @@ public class Script_Thief : Script_Creatures
         elementalStrength = ElementalStrength.Wind;
         elementalWeakness = ElementalWeakness.Fire;
     }
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+
 }

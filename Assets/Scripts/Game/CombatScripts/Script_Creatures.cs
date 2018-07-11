@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class Script_Creatures : MonoBehaviour {
 
@@ -52,11 +53,18 @@ public class Script_Creatures : MonoBehaviour {
 
    public GameObject Model;
 
-	
-	// Update is called once per frame
-	void Update ()
+   bool IsAlive = true;
+
+
+    // Update is called once per frame
+    public void Update ()
     {
-		
+     
+        if (CurrentHealth <= 0)
+        {
+            IsAlive = false;
+            Death();
+        }
 	}
 
     public void DecrementMana(int Decrementby)
@@ -64,8 +72,31 @@ public class Script_Creatures : MonoBehaviour {
         CurrentMana -= Decrementby;
     }
 
+    public void IncrementMana(int Incrementby)
+    {
+        CurrentMana += Incrementby;
+    }
+
+
+    public void DecrementHealth(int Decrementby)
+    {
+        CurrentHealth -= Decrementby ;
+    }
+
+
+    public void IncrementHealth(int Increment)
+    {
+        CurrentHealth += Increment;
+    }
+
+
     void Death()
     {
+        if (charactertype == Charactertype.Enemy)
+        {
+          //  gameObject.SetActive(false);
+         
+        }
 
     }
 

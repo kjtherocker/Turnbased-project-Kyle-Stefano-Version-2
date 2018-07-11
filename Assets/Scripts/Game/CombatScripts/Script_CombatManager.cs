@@ -8,9 +8,7 @@ public class Script_CombatManager : MonoBehaviour
 {
 
     public Script_PartyManager PartyManager;
-
     public Script_EncounterManager EncounterManager;
-
     public Script_GameManager GameManager;
 
 
@@ -25,28 +23,36 @@ public class Script_CombatManager : MonoBehaviour
     public GameObject SpawnEnemyPosition3;
     public GameObject SpawnEnemyPosition4;
 
-    GameObject PlayerModel1;
-    GameObject PlayerModel2;
-    GameObject PlayerModel3;
-    GameObject PlayerModel4;
+    public GameObject PlayerModel1;
+    public GameObject PlayerModel2;
+    public GameObject PlayerModel3;
+    public GameObject PlayerModel4;
 
-    GameObject EnemyModel1;
-    GameObject EnemyModel2;
-    GameObject EnemyModel3;
-    GameObject EnemyModel4;
+    public GameObject EnemyModel1;
+    public GameObject EnemyModel2;
+    public GameObject EnemyModel3;
+    public GameObject EnemyModel4;
 
-    Script_Creatures CurrentTurnHolder;
+    public Script_Creatures CurrentTurnHolder;
 
+    public int AmountofTurns;
+    bool WhichSidesTurnIsIt;
+    int CurrentTurnHolderNumber;
+
+    bool CombatHasStarted;
 
     public List<Script_Creatures> TurnOrderAlly;
     public List<Script_Creatures> TurnOrderEnemy;
+
+    public List<Script_Creatures> CurrentTurnOrderSide;
 
 
     enum BattleStates
     {
         NoTurn,
         EnemyTurn,
-        AllyTurn
+        AllyTurn,
+      
 
     }
 
@@ -54,127 +60,262 @@ public class Script_CombatManager : MonoBehaviour
 
     void Start()
     {
-        CombatStart();
-
+        // CombatStart();
+        CombatHasStarted = false;
 
     }
 
-    void CombatStart()
+    public void CombatStart()
     {
-        m_BattleStates = BattleStates.AllyTurn;
-
-
-        //Setting up the Enemy
-        if (EncounterManager.EnemySlot1 != null)
+        if (CombatHasStarted == false)
         {
-            TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
+            m_BattleStates = BattleStates.AllyTurn;
+            WhichSidesTurnIsIt = false;
+            CurrentTurnHolderNumber = 0;
+            //Setting up the Enemy
+            if (EncounterManager.EnemySlot1 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
 
-            EnemyModel1 = TurnOrderEnemy[0].Model;
-            Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
-        
+                EnemyModel1 = TurnOrderEnemy[0].Model;
+                Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
 
+
+            }
+
+            if (EncounterManager.EnemySlot2 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
+
+                EnemyModel2 = TurnOrderEnemy[0].Model;
+                Instantiate<GameObject>(EnemyModel2, SpawnEnemyPosition2.transform);
+
+
+            }
+
+            if (EncounterManager.EnemySlot3 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
+
+                EnemyModel3 = TurnOrderEnemy[0].Model;
+                Instantiate<GameObject>(EnemyModel3, SpawnEnemyPosition3.transform);
+
+
+            }
+
+            if (EncounterManager.EnemySlot4 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
+
+                EnemyModel4 = TurnOrderEnemy[0].Model;
+                Instantiate<GameObject>(EnemyModel4, SpawnEnemyPosition4.transform);
+
+
+            }
+
+
+            //Setting up the players
+
+            if (PartyManager.PartyMemberSlot1 != null)
+            {
+                TurnOrderAlly.Add(PartyManager.PartyMemberSlot1);
+
+                PlayerModel1 = TurnOrderAlly[0].Model;
+                Instantiate<GameObject>(PlayerModel1, SpawnPosition1.transform);
+                // PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+
+            }
+
+            if (PartyManager.PartyMemberSlot2 != null)
+            {
+                TurnOrderAlly.Add(PartyManager.PartyMemberSlot2);
+
+                PlayerModel2 = TurnOrderAlly[1].Model;
+                Instantiate<GameObject>(PlayerModel2, SpawnPosition2.transform);
+                //PlayerModel2.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+            }
+
+            if (PartyManager.PartyMemberSlot3 != null)
+            {
+                TurnOrderAlly.Add(PartyManager.PartyMemberSlot3);
+
+                PlayerModel3 = TurnOrderAlly[2].Model;
+                Instantiate<GameObject>(PlayerModel3, SpawnPosition3.transform);
+                // PlayerModel3.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+
+            }
+
+            if (PartyManager.PartyMemberSlot4 != null)
+            {
+                TurnOrderAlly.Add(PartyManager.PartyMemberSlot4);
+
+                PlayerModel4 = TurnOrderAlly[3].Model;
+                Instantiate<GameObject>(PlayerModel4, SpawnPosition4.transform);
+                //PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+            }
+
+            AmountofTurns = TurnOrderAlly.Count;
+            CombatHasStarted = true;
         }
-
-        if (EncounterManager.EnemySlot2 != null)
-        {
-            TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
-
-            EnemyModel2 = TurnOrderEnemy[1].Model;
-            Instantiate<GameObject>(EnemyModel2, SpawnEnemyPosition2.transform);
-
-
-        }
-
-        if (EncounterManager.EnemySlot3 != null)
-        {
-            TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
-
-            EnemyModel3 = TurnOrderEnemy[2].Model;
-            Instantiate<GameObject>(EnemyModel3, SpawnEnemyPosition3.transform);
-
-
-        }
-
-        if (EncounterManager.EnemySlot4 != null)
-        {
-            TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
-
-            EnemyModel4 = TurnOrderEnemy[3].Model;
-            Instantiate<GameObject>(EnemyModel4, SpawnEnemyPosition4.transform);
-
-
-        }
-
-
-        //Setting up the players
-
-        if (PartyManager.PartyMemberSlot1 != null)
-        {
-            TurnOrderAlly.Add(PartyManager.PartyMemberSlot1);
-
-            PlayerModel1 = PartyManager.PartyMemberSlot1.Model;
-            Instantiate<GameObject>(PlayerModel1, SpawnPosition1.transform);
-           // PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-
-        }
-
-        if (PartyManager.PartyMemberSlot2 != null)
-        {
-            TurnOrderAlly.Add(PartyManager.PartyMemberSlot2);
-
-            PlayerModel2 = PartyManager.PartyMemberSlot2.Model;
-            Instantiate<GameObject>(PlayerModel2, SpawnPosition2.transform);
-            //PlayerModel2.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
-        }
-
-        if (PartyManager.PartyMemberSlot3 != null)
-        {
-            TurnOrderAlly.Add(PartyManager.PartyMemberSlot3);
-
-            PlayerModel3 = PartyManager.PartyMemberSlot3.Model;
-            Instantiate<GameObject>(PlayerModel3, SpawnPosition3.transform);
-           // PlayerModel3.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
-
-        }
-
-        if (PartyManager.PartyMemberSlot4 != null)
-        {
-            TurnOrderAlly.Add(PartyManager.PartyMemberSlot4);
-
-            PlayerModel4 = PartyManager.PartyMemberSlot4.Model;
-            Instantiate<GameObject>(PlayerModel4, SpawnPosition4.transform);
-            //PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
-        }
-
     }
 
     void Update()
     {
-        if (m_BattleStates == BattleStates.AllyTurn)
+
+        if (GameManager.m_GameStates == Script_GameManager.GameStates.Combat)
         {
-             
-            CurrentTurnHolder = TurnOrderAlly[0];
+            if (CombatHasStarted != true)
+            {
+                CombatStart();
+            }
+        }
+        if (AmountofTurns == 0)
+        {
+            SwitchTurnSides();
+            CurrentTurnHolderNumber = 0;
+            AmountofTurns = CurrentTurnOrderSide.Count;
+        }
+        if (WhichSidesTurnIsIt == false)
+        {
+            m_BattleStates = BattleStates.AllyTurn;
         }
 
-        if (Input.anyKey)
+        if (WhichSidesTurnIsIt == true)
         {
-            if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+            m_BattleStates = BattleStates.EnemyTurn;
+        }
+
+        if (m_BattleStates == BattleStates.EnemyTurn)
+        {
+            CurrentTurnOrderSide = TurnOrderEnemy;
+            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+            EnemyTurn();
+            
+        }
+
+        if (m_BattleStates == BattleStates.AllyTurn)
+        {
+           CurrentTurnOrderSide = TurnOrderAlly;
+           CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+           PlayersTurn();
+        }
+
+        for (int i = 0; i < TurnOrderEnemy.Count; i++)
+        {
+            TurnOrderEnemy[i].Update();
+        }
+
+    }
+
+    public void EnemyTurn()
+    {
+
+
+        if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+        {
+
+
+            if (Input.GetKeyDown("space"))
             {
-                CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[0].GetCostToUse());
+                int DamageToEnemys = CurrentTurnHolder.m_Skills[0].UseSkill(CurrentTurnHolder.Magic);
+
+
+                for (int i = 0; i < TurnOrderAlly.Count; i++)
+                {
+                    TurnOrderAlly[i].DecrementHealth(DamageToEnemys);
+                }
+
+                AmountofTurns--;
+
+                if (AmountofTurns != 0)
+                {
+                    CurrentTurnHolderNumber++;
+
+                }
             }
         }
 
+            if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
+            {
+
+                if (Input.anyKey)
+                {
+                    CurrentTurnHolder.m_Skills[0].UseSkill(CurrentTurnHolder.Strength);
+                    CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[0].GetCostToUse());
+                    AmountofTurns--;
+                }
+
+            }
+     }
+
+
+    public void PlayersTurn()
+    {
+
+        if (CurrentTurnHolder.CurrentMana > CurrentTurnHolder.m_Skills[0].GetCostToUse())
+        {
+
+            if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+            {
+
+
+                if (Input.GetKeyDown("space"))
+                {
+                    int DamageToEnemys = CurrentTurnHolder.m_Skills[0].UseSkill(CurrentTurnHolder.Magic);
+
+
+                    for (int i = 0; i < TurnOrderEnemy.Count; i++)
+                    {
+                        TurnOrderEnemy[i].DecrementHealth(DamageToEnemys);
+                    }
+
+
+
+
+                    CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[0].GetCostToUse());
+
+                    AmountofTurns--;
+
+                    if (AmountofTurns != 0)
+                    {
+                        CurrentTurnHolderNumber++;
+
+                    }
+                }
+            }
+
+            if (CurrentTurnHolder.m_Skills[0].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
+            {
+
+                if (Input.anyKey)
+                {
+                    CurrentTurnHolder.m_Skills[0].UseSkill(CurrentTurnHolder.Strength);
+                    CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[0].GetCostToUse());
+                    AmountofTurns--;
+                }
+
+            }
+        }
+
+    }
+
+
+    public bool SwitchTurnSides()
+    {
+        WhichSidesTurnIsIt =! WhichSidesTurnIsIt;
+
+        return WhichSidesTurnIsIt;
 
     }
 
     public void CombatEnd()
     {
-        PlayerModel1 = null;
-        PlayerModel2 = null;
-        PlayerModel3 = null;
-        PlayerModel4 = null;
+        EnemyModel1 = null;
+        EnemyModel2 = null;
+        EnemyModel3 = null;
+        EnemyModel4 = null;
        
-        GameManager.SwitchToOverworld();
+       // GameManager.SwitchToOverworld();
     }
 
 

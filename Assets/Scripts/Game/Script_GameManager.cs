@@ -5,31 +5,47 @@ using UnityEngine;
 public class Script_GameManager : MonoBehaviour
 {
     public GameObject Overworld_Objects;
-    public GameObject Battle_Objects;
+    public GameObject Combat_Objects;
+
+    public enum GameStates
+    {
+        Overworld,
+        Combat
+
+    }
+
+    public GameStates m_GameStates;
 
 	// Use this for initialization
 	void Start ()
     {
-        Overworld_Objects.SetActive(true);
-        Battle_Objects.SetActive(false);
+        m_GameStates = GameStates.Overworld;
 
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        if (m_GameStates == GameStates.Overworld)
+        {
+            Overworld_Objects.SetActive(true);
+            Combat_Objects.SetActive(false);
+        }
+        if (m_GameStates == GameStates.Combat)
+        {
+            Overworld_Objects.SetActive(false);
+            Combat_Objects.SetActive(true);
+        }
+
+    }
 
     public void SwitchToOverworld()
     {
-        Overworld_Objects.SetActive(true);
-        Battle_Objects.SetActive(false);
+        m_GameStates = GameStates.Overworld;
     }
 
     public void SwitchToBattle()
     {
-        Overworld_Objects.SetActive(false);
-        Battle_Objects.SetActive(true);
+        m_GameStates = GameStates.Combat;
     }
 }

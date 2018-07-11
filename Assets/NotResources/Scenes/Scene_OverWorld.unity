@@ -1595,8 +1595,19 @@ MonoBehaviour:
   SpawnEnemyPosition2: {fileID: 744692137}
   SpawnEnemyPosition3: {fileID: 1599447496}
   SpawnEnemyPosition4: {fileID: 270155590}
+  PlayerModel1: {fileID: 0}
+  PlayerModel2: {fileID: 0}
+  PlayerModel3: {fileID: 0}
+  PlayerModel4: {fileID: 0}
+  EnemyModel1: {fileID: 0}
+  EnemyModel2: {fileID: 0}
+  EnemyModel3: {fileID: 0}
+  EnemyModel4: {fileID: 0}
+  CurrentTurnHolder: {fileID: 0}
+  AmountofTurns: 0
   TurnOrderAlly: []
   TurnOrderEnemy: []
+  CurrentTurnOrderSide: []
 --- !u!1001 &579769789
 Prefab:
   m_ObjectHideFlags: 0
@@ -2290,7 +2301,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Overworld_Objects: {fileID: 416868552}
-  Battle_Objects: {fileID: 709590190}
+  Combat_Objects: {fileID: 709590190}
+  m_GameStates: 0
 --- !u!4 &1015104322
 Transform:
   m_ObjectHideFlags: 0
@@ -2982,7 +2994,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 0a2bd45ea9a52fc4a92e22f32c7c98d4, type: 2}
+  - {fileID: 2100000, guid: 39c5166999e17a4429d617b0956541f2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -3276,7 +3288,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4092319991751360, guid: be4073648f3a8344785d4a1f1b34ed74, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4535197469244886, guid: be4073648f3a8344785d4a1f1b34ed74, type: 2}
       propertyPath: m_LocalRotation.x

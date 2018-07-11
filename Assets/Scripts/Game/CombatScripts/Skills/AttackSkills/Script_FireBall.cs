@@ -11,9 +11,10 @@ public class Script_FireBall : Script_Skills {
         m_ElementalType = ElementalType.Fire;
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
-        m_CostToUse = 25;
-
-
+        m_CostToUse = 10;
+        m_Damage = 10;
+        SkillName = "FireBall";
+        SkillDescription = "FireBall that will hit the whole enemy team";
     }
 	
 	// Update is called once per frame
@@ -22,8 +23,10 @@ public class Script_FireBall : Script_Skills {
 		
 	}
 
-    public override void UseSkill()
+    public override int UseSkill(int BonusDamage)
     {
+        int CulmativeDamage = m_Damage + BonusDamage / 3;
 
+        return CulmativeDamage;
     }
 }
