@@ -122,7 +122,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 PlayerModel1 = TurnOrderAlly[0].Model;
                 Instantiate<GameObject>(PlayerModel1, SpawnPosition1.transform);
-                // PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                 PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
 
             }
 
@@ -132,7 +132,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 PlayerModel2 = TurnOrderAlly[1].Model;
                 Instantiate<GameObject>(PlayerModel2, SpawnPosition2.transform);
-                //PlayerModel2.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                PlayerModel2.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
             }
 
             if (PartyManager.PartyMemberSlot3 != null)
@@ -141,7 +141,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 PlayerModel3 = TurnOrderAlly[2].Model;
                 Instantiate<GameObject>(PlayerModel3, SpawnPosition3.transform);
-                // PlayerModel3.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
 
             }
 
@@ -151,7 +151,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 PlayerModel4 = TurnOrderAlly[3].Model;
                 Instantiate<GameObject>(PlayerModel4, SpawnPosition4.transform);
-                //PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
             }
 
             AmountofTurns = TurnOrderAlly.Count;

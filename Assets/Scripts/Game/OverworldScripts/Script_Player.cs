@@ -75,7 +75,7 @@ public class Script_Player : MonoBehaviour {
             
             if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp != null)
             {
-                transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+                transform.rotation = Quaternion.Euler(0.0f, 100.0f, 0.0f);
                 Player_Movment = true;
                 Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp;
             }
@@ -84,7 +84,7 @@ public class Script_Player : MonoBehaviour {
         {
             if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown != null)
             {
-                transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                transform.rotation = Quaternion.Euler(0.0f, 280.0f, 0.0f);
                 Player_Movment = true;
                 Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown;
             }
@@ -93,7 +93,7 @@ public class Script_Player : MonoBehaviour {
         {
             if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft != null)
             {
-                transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
 
                 Player_Movment = true;
                 Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft;
@@ -103,7 +103,7 @@ public class Script_Player : MonoBehaviour {
         {
             if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight != null)
             {
-                transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+                transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
 
                 Player_Movment = true;
                 Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight;
