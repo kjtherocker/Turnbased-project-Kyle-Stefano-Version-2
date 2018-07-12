@@ -69,6 +69,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_Thief.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Script_CombatCameraController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_CombatManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_Creatures.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_HealthBar.cs" />
