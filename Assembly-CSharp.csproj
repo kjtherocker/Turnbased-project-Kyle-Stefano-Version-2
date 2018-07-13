@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_PartyManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_FireBall.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_IceRain.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\Script_Skills.cs" />
     <Compile Include="Assets\Scripts\Game\ModelScripts\Script_Model.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Node.cs" />

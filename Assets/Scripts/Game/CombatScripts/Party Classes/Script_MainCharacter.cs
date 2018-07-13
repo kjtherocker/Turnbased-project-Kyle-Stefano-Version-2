@@ -12,8 +12,8 @@ public class Script_MainCharacter : Script_Creatures {
     {
         CurrentHealth = 423;
         MaxHealth = 423;
-        CurrentMana = 43;
-        MaxMana = 43;
+        CurrentMana = 100;
+        MaxMana = 200 ;
         Strength = 50;
         Magic = 50;
         Dexterity = 50;

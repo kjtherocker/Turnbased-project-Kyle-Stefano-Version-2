@@ -60,11 +60,11 @@ public class Script_Creatures : MonoBehaviour {
     public void Update ()
     {
      
-        if (CurrentHealth <= 0)
-        {
-            IsAlive = false;
-            Death();
-        }
+        //if (CurrentHealth <= 0)
+        //{
+        //    IsAlive = false;
+        //    Death();
+        //}
 	}
 
     public void DecrementMana(int Decrementby)

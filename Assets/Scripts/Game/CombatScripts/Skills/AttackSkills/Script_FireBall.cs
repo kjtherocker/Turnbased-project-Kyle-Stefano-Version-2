@@ -11,7 +11,7 @@ public class Script_FireBall : Script_Skills {
         m_ElementalType = ElementalType.Fire;
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
-        m_CostToUse = 10;
+        m_CostToUse = 40;
         m_Damage = 10;
         SkillName = "FireBall";
         SkillDescription = "FireBall that will hit the whole enemy team";

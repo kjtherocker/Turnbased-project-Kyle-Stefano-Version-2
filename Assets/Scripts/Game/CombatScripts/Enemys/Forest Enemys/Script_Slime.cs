@@ -8,8 +8,8 @@ public class Script_Slime : Script_Creatures
     // Use this for initialization
     void Start()
     {
-        CurrentHealth = 10;
-        MaxHealth = 10;
+        CurrentHealth = 100;
+        MaxHealth = 100;
         CurrentMana = 10;
         MaxMana = 10;
         Strength = 10;
