@@ -21,7 +21,7 @@ public class Script_Slime : Script_Creatures
         m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/model_Slime", typeof(GameObject));
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Null;

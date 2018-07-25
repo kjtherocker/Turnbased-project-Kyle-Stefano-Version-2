@@ -56,6 +56,6 @@ public class Script_EncounterManager : MonoBehaviour {
         EnemySlot2 = gameObject.AddComponent<Script_Slime>();
         EnemySlot3 = gameObject.AddComponent<Script_Slime>();
         EnemySlot4 = gameObject.AddComponent<Script_Slime>();
-        test++;
+      
     }
 }
