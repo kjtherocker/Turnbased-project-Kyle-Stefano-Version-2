@@ -16,7 +16,10 @@ public class Script_EncounterManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        
+      //  EnemySlot1 = gameObject.AddComponent<Script_Slime>();
+      //  EnemySlot2 = gameObject.AddComponent<Script_Slime>();
+      //  EnemySlot3 = gameObject.AddComponent<Script_Slime>();
+      //  EnemySlot4 = gameObject.AddComponent<Script_Slime>();
 
     }
 	

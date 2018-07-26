@@ -85,64 +85,21 @@ public class Script_CombatManager : MonoBehaviour
     void Start()
     {
         // CombatStart();
-       // CombatHasStarted = false;
-
+        // CombatHasStarted = false;
+        EncounterManager.ForestEncounter1();
     }
 
     public void CombatStart()
     {
         if (CombatHasStarted == false)
         {
+      
 
 
             m_BattleStates = BattleStates.AllyTurn;
             
             WhichSidesTurnIsIt = false;
             CurrentTurnHolderNumber = 0;
-            //Setting up the Enemy
-
-
-           
-            if (EncounterManager.EnemySlot1 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
-
-                EnemyModel1 = TurnOrderEnemy[0].Model;
-                Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
-
-                EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            }
-            
-            if (EncounterManager.EnemySlot2 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
-
-                EnemyModel2 = TurnOrderEnemy[1].Model;
-                Instantiate<GameObject>(EnemyModel2, SpawnEnemyPosition2.transform);
-
-                EnemyModel2.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            }
-
-            if (EncounterManager.EnemySlot3 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
-
-                EnemyModel3 = TurnOrderEnemy[2].Model;
-                Instantiate<GameObject>(EnemyModel3, SpawnEnemyPosition3.transform);
-                EnemyModel3.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-
-            }
-
-            if (EncounterManager.EnemySlot4 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
-
-                EnemyModel4 = TurnOrderEnemy[3].Model;
-                Instantiate<GameObject>(EnemyModel4, SpawnEnemyPosition4.transform);
-
-                EnemyModel4.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-            }
-
 
             //Setting up the players
 
@@ -183,6 +140,52 @@ public class Script_CombatManager : MonoBehaviour
                 Instantiate<GameObject>(PlayerModel4, SpawnPosition4.transform);
                 PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
             }
+
+            //Setting up the Enemy
+
+            
+
+            if (EncounterManager.EnemySlot1 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
+
+                EnemyModel1 = TurnOrderEnemy[0].Model;
+                Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
+
+                EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+
+            if (EncounterManager.EnemySlot2 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
+
+                EnemyModel2 = TurnOrderEnemy[1].Model;
+                Instantiate<GameObject>(EnemyModel2, SpawnEnemyPosition2.transform);
+
+                EnemyModel2.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+
+            if (EncounterManager.EnemySlot3 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
+
+                EnemyModel3 = TurnOrderEnemy[2].Model;
+                Instantiate<GameObject>(EnemyModel3, SpawnEnemyPosition3.transform);
+                EnemyModel3.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+
+            }
+
+            if (EncounterManager.EnemySlot4 != null)
+            {
+                TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
+
+                EnemyModel4 = TurnOrderEnemy[3].Model;
+                Instantiate<GameObject>(EnemyModel4, SpawnEnemyPosition4.transform);
+
+                EnemyModel4.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+            }
+
+
 
             AmountofTurns = TurnOrderAlly.Count;
             CombatHasStarted = true;
@@ -241,8 +244,8 @@ public class Script_CombatManager : MonoBehaviour
         {
             if (CombatHasStarted == false)
             {
-                EncounterManager.ForestEncounter1();
-                   CombatStart();
+                
+                CombatStart();
                 
             }
         }
@@ -444,15 +447,16 @@ public class Script_CombatManager : MonoBehaviour
        // EnemyModel3 = null;
         //EnemyModel4 = null;
 
-        for (int i = 0; i < TurnOrderAlly.Count; i++)
+        for (int i = TurnOrderAlly.Count; i > 0 ; i++)
         {
-            TurnOrderAlly.RemoveAt(i);
+            TurnOrderAlly.RemoveAt(0);
         }
-        TurnOrderAlly = null;
+        //TurnOrderAlly = null;
         CombatHasStarted = false;
         CurrentTurnHolderNumber = 0;
         AmountofTurns = 0;
         EncounterManager.ResetEncounterManager();
+        EncounterManager.ForestEncounter1();
         GameManager.SwitchToOverworld();
 
     }
