@@ -9,8 +9,8 @@ public class Script_Thief : Script_Creatures
     // Use this for initialization
     void Start ()
     {
-        CurrentHealth = 31222;
-        MaxHealth = 122;
+        CurrentHealth = 60;
+        MaxHealth = 60;
         CurrentMana = 100;
         MaxMana = 200;
         Strength = 24;

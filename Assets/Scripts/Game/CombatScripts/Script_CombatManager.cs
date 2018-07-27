@@ -84,9 +84,7 @@ public class Script_CombatManager : MonoBehaviour
 
     void Start()
     {
-        // CombatStart();
-        // CombatHasStarted = false;
-        EncounterManager.ForestEncounter1();
+  
     }
 
     public void CombatStart()
@@ -152,7 +150,7 @@ public class Script_CombatManager : MonoBehaviour
                 EnemyModel1 = TurnOrderEnemy[0].Model;
                 Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
 
-                EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+               // EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 130.0f, 0.0f);
             }
 
             if (EncounterManager.EnemySlot2 != null)
@@ -456,7 +454,6 @@ public class Script_CombatManager : MonoBehaviour
         CurrentTurnHolderNumber = 0;
         AmountofTurns = 0;
         EncounterManager.ResetEncounterManager();
-        EncounterManager.ForestEncounter1();
         GameManager.SwitchToOverworld();
 
     }
