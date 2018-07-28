@@ -10,20 +10,19 @@ public class Script_Player : MonoBehaviour {
     public Script_Node Node_MovingTo;
     public Script_Node Node_PlayerIsOn;
     public Script_GameManager GameManager;
-    public Script_EncounterManager m_EncounterManager;
     public GameObject OverworldModel;
 
     public Script_PartyManager PartyManager;
 
     public float Player_Speed = 40;
     public bool Player_Movment = false;
-    private float Player_Speed_Delta;
+    public float Player_Speed_Delta;
 
     void Start ()
     {
         OverworldModel = PartyManager.PartyMemberSlot1.Model;
         Instantiate<GameObject>(OverworldModel, gameObject.transform);
-
+       
     }
 	
 	// Update is called once per frame
@@ -41,8 +40,6 @@ public class Script_Player : MonoBehaviour {
 
         if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
         {
-
-            m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.ForestEncounter);
             GameManager.SwitchToBattle();
 
             Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);

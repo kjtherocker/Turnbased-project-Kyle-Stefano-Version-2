@@ -11,15 +11,6 @@ public class Script_EncounterManager : MonoBehaviour {
 
    public  int test = 0;
 
-    public enum EncounterTypes
-    {
-        ForestEncounter
-
-
-    }
-
-
-
 
 
     // Use this for initialization
@@ -58,19 +49,6 @@ public class Script_EncounterManager : MonoBehaviour {
             Destroy(skill as Script_Skills);
         }
 
-
-    }
-
-
-
-    public void  SetEncounter(EncounterTypes a_encounter)
-    {
-
-        if (a_encounter == EncounterTypes.ForestEncounter)
-        {
-            ForestEncounter1();
-
-        }
 
     }
 

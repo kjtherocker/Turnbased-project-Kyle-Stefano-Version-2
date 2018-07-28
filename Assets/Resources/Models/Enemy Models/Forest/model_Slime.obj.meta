@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: d58c9c81c0da04f46bf875bec80bc430
+guid: 520fbf96241923044a451b11194d774e
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
     100000: //RootNode
-    100002: Slime
+    100002: slippy_boi
     400000: //RootNode
-    400002: Slime
-    2100000: SlimeMat
-    2300000: Slime
-    3300000: Slime
-    4300000: Slime
+    400002: slippy_boi
+    2100000: slippy_boiMat
+    2300000: slippy_boi
+    3300000: slippy_boi
+    4300000: slippy_boi
   externalObjects: {}
   materials:
     importMaterials: 1
