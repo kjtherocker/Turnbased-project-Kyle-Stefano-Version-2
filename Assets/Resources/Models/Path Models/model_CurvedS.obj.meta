@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Curved_Path_S
     3300000: Curved_Path_S
     4300000: Curved_Path_S
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Curved_Path_SMat
+    second: {fileID: 2100000, guid: 191cf5e856bb7d14085815b72e610e52, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Straight_Path_H
     3300000: Straight_Path_H
     4300000: Straight_Path_H
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Straight_Path_HMat
+    second: {fileID: 2100000, guid: 9f54089af1e41644faaaada3900674c7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
