@@ -169,3 +169,10 @@ C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-pro
 C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\obj\Debug\Assembly-CSharp.dll
 C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\obj\Debug\Assembly-CSharp.pdb
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.postprocessing.Editor.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.postprocessing.Runtime.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.render-pipelines.core.Editor.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.render-pipelines.core.IncludePaths.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.render-pipelines.core.Runtime.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.render-pipelines.lightweight.Editor.dll
+C:\Users\kj\Desktop\Unity projects\Turnbased-project-Kyle-Stefano-\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\com.unity.render-pipelines.lightweight.Runtime.dll

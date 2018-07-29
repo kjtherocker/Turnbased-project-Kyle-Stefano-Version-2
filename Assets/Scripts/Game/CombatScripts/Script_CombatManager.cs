@@ -105,9 +105,9 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.PartyMemberSlot1);
 
-                PlayerModel1 = TurnOrderAlly[0].Model;
-                Instantiate<GameObject>(PlayerModel1, SpawnPosition1.transform);
-                 PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model, SpawnPosition1.transform);
+
+                TurnOrderAlly[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
 
             }
 
@@ -115,18 +115,18 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.PartyMemberSlot2);
 
-                PlayerModel2 = TurnOrderAlly[1].Model;
-                Instantiate<GameObject>(PlayerModel2, SpawnPosition2.transform);
-                PlayerModel2.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model, SpawnPosition2.transform);
+
+                TurnOrderAlly[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
             }
 
             if (PartyManager.PartyMemberSlot3 != null)
             {
                 TurnOrderAlly.Add(PartyManager.PartyMemberSlot3);
 
-                PlayerModel3 = TurnOrderAlly[2].Model;
-                Instantiate<GameObject>(PlayerModel3, SpawnPosition3.transform);
-                PlayerModel1.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model, SpawnPosition3.transform);
+
+                TurnOrderAlly[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
 
             }
 
@@ -134,9 +134,9 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.PartyMemberSlot4);
 
-                PlayerModel4 = TurnOrderAlly[3].Model;
-                Instantiate<GameObject>(PlayerModel4, SpawnPosition4.transform);
-                PlayerModel4.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
+                TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model, SpawnPosition4.transform);
+
+                TurnOrderAlly[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 260.0f, 0.0f);
             }
 
             //Setting up the Enemy
@@ -147,29 +147,30 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
 
-                EnemyModel1 = TurnOrderEnemy[0].Model;
-                Instantiate<GameObject>(EnemyModel1, SpawnEnemyPosition1.transform);
+                TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, SpawnEnemyPosition1.transform);
 
-               // EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 130.0f, 0.0f);
+                //TurnOrderEnemy[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+
+                // EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 130.0f, 0.0f);
             }
 
             if (EncounterManager.EnemySlot2 != null)
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
 
-                EnemyModel2 = TurnOrderEnemy[1].Model;
-                Instantiate<GameObject>(EnemyModel2, SpawnEnemyPosition2.transform);
+                TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model, SpawnEnemyPosition2.transform);
 
-                EnemyModel2.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                TurnOrderEnemy[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
             }
 
             if (EncounterManager.EnemySlot3 != null)
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
 
-                EnemyModel3 = TurnOrderEnemy[2].Model;
-                Instantiate<GameObject>(EnemyModel3, SpawnEnemyPosition3.transform);
-                EnemyModel3.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+               
+                TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model, SpawnEnemyPosition3.transform);
+
+                TurnOrderEnemy[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
 
             }
 
@@ -177,10 +178,9 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
 
-                EnemyModel4 = TurnOrderEnemy[3].Model;
-                Instantiate<GameObject>(EnemyModel4, SpawnEnemyPosition4.transform);
+                TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model, SpawnEnemyPosition4.transform);
 
-                EnemyModel4.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                TurnOrderEnemy[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
             }
 
 
@@ -252,7 +252,7 @@ public class Script_CombatManager : MonoBehaviour
         {
             SwitchTurnSides();
             CurrentTurnHolderNumber = 0;
-            AmountofTurns = CurrentTurnOrderSide.Count;
+            
         }
         if (WhichSidesTurnIsIt == false)
         {
@@ -374,6 +374,7 @@ public class Script_CombatManager : MonoBehaviour
 
                     Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
 
+                    
 
                     for (int i = 0; i < TurnOrderEnemy.Count; i++)
                     {

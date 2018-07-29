@@ -23,7 +23,9 @@ public class Script_Slime : Script_Creatures
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/model_Slime", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Prefab_Slime", typeof(GameObject));
+
+      
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Null;

@@ -52,6 +52,7 @@ public class Script_Creatures : MonoBehaviour {
    public string Name = "No Name";
 
    public GameObject Model;
+   public GameObject ModelInGame;
 
    bool IsAlive = true;
 
@@ -60,11 +61,11 @@ public class Script_Creatures : MonoBehaviour {
     public void Update ()
     {
      
-        //if (CurrentHealth <= 0)
-        //{
-        //    IsAlive = false;
-        //    Death();
-        //}
+        if (CurrentHealth <= 0)
+        {
+            IsAlive = false;
+            Death();
+        }
 	}
 
     public void DecrementMana(int Decrementby)
@@ -92,11 +93,10 @@ public class Script_Creatures : MonoBehaviour {
 
     void Death()
     {
-        if (charactertype == Charactertype.Enemy)
-        {
-          //  gameObject.SetActive(false);
+        
+            ModelInGame.gameObject.SetActive(false);
          
-        }
+        
 
     }
 

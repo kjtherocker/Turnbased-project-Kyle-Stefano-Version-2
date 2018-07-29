@@ -25,6 +25,8 @@ public class Script_MainCharacter : Script_Creatures {
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 
+
+
         charactertype = Charactertype.Ally;
         elementalStrength = ElementalStrength.Null;
         elementalWeakness = ElementalWeakness.Shadow;
