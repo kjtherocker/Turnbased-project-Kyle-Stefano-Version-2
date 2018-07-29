@@ -10,8 +10,8 @@ public class Script_MainCharacter : Script_Creatures {
 	// Use this for initialization
 	void Start ()
     {
-        CurrentHealth = 423;
-        MaxHealth = 423;
+        CurrentHealth = 80;
+        MaxHealth = 80;
         CurrentMana = 100;
         MaxMana = 200 ;
         Strength = 50;
