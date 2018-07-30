@@ -21,12 +21,12 @@ GameObject:
   - component: {fileID: 4882026978123306}
   - component: {fileID: 33435640545374498}
   - component: {fileID: 23681250290626718}
-  - component: {fileID: 65441806378669802}
   - component: {fileID: 114793066591811458}
+  - component: {fileID: 136388423621012548}
   m_Layer: 0
   m_Name: Node_Overworld
   m_TagString: Node
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: 3306451490063965843, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934479895017548}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 105}
+  m_LocalPosition: {x: 5.6627655, y: -9.060486, z: -3.455017}
   m_LocalScale: {x: 0.71009, y: 0.71009, z: 0.71009}
   m_Children: []
   m_Father: {fileID: 0}
@@ -84,19 +84,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934479895017548}
-  m_Mesh: {fileID: 4300000, guid: 4fb803dfc1a99af47bf0a53e692445b9, type: 3}
---- !u!65 &65441806378669802
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1934479895017548}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Mesh: {fileID: 0}
 --- !u!114 &114793066591811458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -116,5 +104,27 @@ MonoBehaviour:
   MaterialEncounterNode: {fileID: 2100000, guid: 8b6ebffd77d48664a83340fe21c745fa,
     type: 2}
   MaterialStoreNode: {fileID: 2100000, guid: 0a2bd45ea9a52fc4a92e22f32c7c98d4, type: 2}
-  Road_Overworld: {fileID: 0}
+  model_CurvedE: {fileID: 100002, guid: c0ff0abf97e1cf847a8c794aa335a96a, type: 3}
+  model_CurvedN: {fileID: 100002, guid: 59532685dd78a3c47ae8a51b85071341, type: 3}
+  model_CurvedS: {fileID: 100002, guid: acec5f2997fc6d64f9023483bf6d0b24, type: 3}
+  model_CurvedW: {fileID: 100002, guid: 6fc9f6d437856a448989d90c4add7bb3, type: 3}
+  model_DeadEndE: {fileID: 100002, guid: ada273a0073fbdd4b940f592a2d433d9, type: 3}
+  model_DeadEndN: {fileID: 100002, guid: ca40196db68cc954cba2612a54e70713, type: 3}
+  model_DeadEndS: {fileID: 100002, guid: a8303af43af22084b99234385848d01a, type: 3}
+  model_DeadEndW: {fileID: 100002, guid: 80e7fb2e439a7194f944eede7ef7022a, type: 3}
+  model_StraightH: {fileID: 100000, guid: 95822b52fcd76c045adee019a611f0df, type: 3}
+  model_StraightV: {fileID: 100000, guid: 65f16ff0b660d564485e8b34d91be513, type: 3}
   Enum_NodeType: 0
+--- !u!136 &136388423621012548
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934479895017548}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 43.176064
+  m_Height: 86.35213
+  m_Direction: 1
+  m_Center: {x: 0.000008058199, y: 0.6290015, z: -1.5084518}

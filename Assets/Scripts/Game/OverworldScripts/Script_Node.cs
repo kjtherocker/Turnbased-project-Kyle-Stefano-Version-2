@@ -15,7 +15,18 @@ public class Script_Node : MonoBehaviour {
     public Material MaterialEncounterNode;
     public Material MaterialStoreNode;
 
-    public GameObject Road_Overworld;
+    public GameObject model_CurvedE;
+    public GameObject model_CurvedN;
+    public GameObject model_CurvedS;
+    public GameObject model_CurvedW;
+    public GameObject model_DeadEndE;
+    public GameObject model_DeadEndN;
+    public GameObject model_DeadEndS;
+    public GameObject model_DeadEndW;
+    public GameObject model_StraightH;
+    public GameObject model_StraightV;
+
+
 
     Renderer m_Renderer;
 
@@ -66,12 +77,29 @@ public class Script_Node : MonoBehaviour {
 
     public void SpawnRoads()
     {
-        if(NodeRight != null)
+        if (NodeUp == null && NodeDown == null && NodeLeft == null)
         {
-          //  Instantiate<GameObject>(Road_Overworld,true);
+            Instantiate<GameObject>(model_DeadEndE, gameObject.transform);
+            RoadsAreSpawned = true;
         }
 
-        RoadsAreSpawned = true;
+        if (NodeUp == null && NodeRight == null && NodeLeft == null)
+        {
+            Instantiate<GameObject>(model_DeadEndS, gameObject.transform);
+            RoadsAreSpawned = true;
+        }
+
+        if (NodeDown == null && NodeRight == null)
+        {
+            Instantiate<GameObject>(model_CurvedE, gameObject.transform);
+            RoadsAreSpawned = true;
+        }
+
+        if (NodeLeft == null && NodeRight == null)
+        {
+            Instantiate<GameObject>(model_StraightV, gameObject.transform);
+            RoadsAreSpawned = true;
+        }
     }
 
     public void SetNodeType(NodeTypes nodetype)
