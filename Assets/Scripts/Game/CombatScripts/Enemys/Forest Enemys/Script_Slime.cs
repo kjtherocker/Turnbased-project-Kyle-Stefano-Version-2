@@ -8,12 +8,12 @@ public class Script_Slime : Script_Creatures
     // Use this for initialization
     void Start()
     {
-        CurrentHealth = 100;
-        MaxHealth = 100;
+        CurrentHealth = 200;
+        MaxHealth = 200;
         CurrentMana = 10;
         MaxMana = 10;
-        Strength = 10;
-        Magic = 10;
+        Strength = 200;
+        Magic = 200;
         Dexterity = 10;
         Speed = 10;
         Name = "Slime";
@@ -28,7 +28,7 @@ public class Script_Slime : Script_Creatures
       
 
         charactertype = Charactertype.Enemy;
-        elementalStrength = ElementalStrength.Null;
+        elementalStrength = ElementalStrength.Water;
         elementalWeakness = ElementalWeakness.Fire;
     }
 

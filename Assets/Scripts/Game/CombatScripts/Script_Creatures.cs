@@ -12,6 +12,8 @@ public class Script_Creatures : MonoBehaviour {
         Enemy
     }
 
+
+
     public enum ElementalStrength
     {
         Null,
@@ -49,6 +51,8 @@ public class Script_Creatures : MonoBehaviour {
    public int Dexterity;
    public int Speed;
 
+   public int BuffandDebuff;
+
    public string Name = "No Name";
 
    public GameObject Model;
@@ -66,6 +70,16 @@ public class Script_Creatures : MonoBehaviour {
             IsAlive = false;
             Death();
         }
+
+        if (BuffandDebuff > 3)
+        {
+            BuffandDebuff = 3;
+        }
+        if (BuffandDebuff < -3)
+        {
+            BuffandDebuff = -3;
+        }
+
 	}
 
     public void DecrementMana(int Decrementby)
@@ -79,8 +93,29 @@ public class Script_Creatures : MonoBehaviour {
     }
 
 
-    public void DecrementHealth(int Decrementby)
+    public void DecrementHealth(int Decrementby , Script_Skills.ElementalType elementalType)
     {
+        string AttackingElement = elementalType.ToString();
+        string ElementalWeakness = elementalWeakness.ToString();
+        string ElementalStrength = elementalStrength.ToString();
+
+        if (AttackingElement.Equals(ElementalWeakness))
+        {
+            int ArgumentReference = Decrementby;
+            float ConvertToFloat = ArgumentReference * 1.5f;
+            int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
+            Decrementby = ConvertToInt;
+        
+        }
+        if (AttackingElement.Equals(ElementalStrength))
+        {
+            int ArgumentReference = Decrementby;
+            float ConvertToFloat = ArgumentReference / 1.5f;
+            int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
+            Decrementby = ConvertToInt;
+        }
+
+
         CurrentHealth -= Decrementby ;
     }
 

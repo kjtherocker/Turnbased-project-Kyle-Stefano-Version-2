@@ -19,7 +19,7 @@ public class Script_PartyManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        PartyMemberSlot1 = gameObject.AddComponent<Script_MainCharacter>();
+        PartyMemberSlot1 = gameObject.AddComponent<Script_Thief>();
         PartyMemberSlot2 = gameObject.AddComponent<Script_Thief>();
         PartyMemberSlot3 = gameObject.AddComponent<Script_MainCharacter>();
         PartyMemberSlot4 = gameObject.AddComponent<Script_MainCharacter>();

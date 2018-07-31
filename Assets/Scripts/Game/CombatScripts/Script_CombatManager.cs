@@ -186,6 +186,9 @@ public class Script_CombatManager : MonoBehaviour
 
 
             AmountofTurns = TurnOrderAlly.Count;
+            m_BattleStates = BattleStates.AllyTurn;
+            Canvas_CommandBoard.SetActive(true);
+            CurrentTurnOrderSide = TurnOrderAlly;
             CombatHasStarted = true;
 
         }
@@ -250,34 +253,43 @@ public class Script_CombatManager : MonoBehaviour
 
         if (AmountofTurns == 0)
         {
-            SwitchTurnSides();
+            // SwitchTurnSides();
+            WhichSidesTurnIsIt = !WhichSidesTurnIsIt;
+
+            if (WhichSidesTurnIsIt == false)
+            {
+                Canvas_CommandBoard.SetActive(true);
+                m_BattleStates = BattleStates.AllyTurn;
+                CurrentTurnOrderSide = TurnOrderAlly;
+            }
+
+            if (WhichSidesTurnIsIt == true)
+            {
+                Canvas_CommandBoard.SetActive(false);
+                m_BattleStates = BattleStates.EnemyTurn;
+                CurrentTurnOrderSide = TurnOrderEnemy;
+            }
+
+
             CurrentTurnHolderNumber = 0;
-            
-        }
-        if (WhichSidesTurnIsIt == false)
-        {
-            Canvas_CommandBoard.SetActive(true);
-            m_BattleStates = BattleStates.AllyTurn;
+            AmountofTurns = CurrentTurnOrderSide.Count;
         }
 
-        if (WhichSidesTurnIsIt == true)
-        {
-            Canvas_CommandBoard.SetActive(false);
-            m_BattleStates = BattleStates.EnemyTurn;
-        }
 
         if (m_BattleStates == BattleStates.EnemyTurn)
         {
-            CurrentTurnOrderSide = TurnOrderEnemy;
+
             CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
             EnemyTurn();
-            
+
         }
+
+
 
         if (m_BattleStates == BattleStates.AllyTurn)
         {
-           CurrentTurnOrderSide = TurnOrderAlly;
-           CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+            
+            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
             Attackisfinished = false;
             //PlayersTurn();
         }
@@ -329,7 +341,7 @@ public class Script_CombatManager : MonoBehaviour
                 for (int i = 0; i < TurnOrderAlly.Count; i++)
                 {
                     TurnOrderAlly[i].IncrementMana(5);
-                    TurnOrderAlly[i].DecrementHealth(DamageToEnemys);
+                    TurnOrderAlly[i].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[0].GetElementalType());
                 }
 
                 AmountofTurns--;
@@ -379,7 +391,7 @@ public class Script_CombatManager : MonoBehaviour
                     for (int i = 0; i < TurnOrderEnemy.Count; i++)
                     {
                         CurrentTurnHolder.IncrementMana(5);
-                        TurnOrderEnemy[i].DecrementHealth(DamageToEnemys);
+                        TurnOrderEnemy[i].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[0].GetElementalType());
                     }
 
 
@@ -448,6 +460,7 @@ public class Script_CombatManager : MonoBehaviour
 
         for (int i = TurnOrderAlly.Count; i > 0 ; i++)
         {
+            Destroy(TurnOrderAlly[0].ModelInGame);
             TurnOrderAlly.RemoveAt(0);
         }
         //TurnOrderAlly = null;

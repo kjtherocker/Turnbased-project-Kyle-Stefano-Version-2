@@ -10,8 +10,8 @@ public class Script_MainCharacter : Script_Creatures {
 	// Use this for initialization
 	void Start ()
     {
-        CurrentHealth = 80;
-        MaxHealth = 80;
+        CurrentHealth = 400;
+        MaxHealth = 400;
         CurrentMana = 100;
         MaxMana = 200 ;
         Strength = 50;
@@ -28,8 +28,8 @@ public class Script_MainCharacter : Script_Creatures {
 
 
         charactertype = Charactertype.Ally;
-        elementalStrength = ElementalStrength.Null;
-        elementalWeakness = ElementalWeakness.Shadow;
+        elementalStrength = ElementalStrength.Fire;
+        elementalWeakness = ElementalWeakness.Null;
 
     }
 	

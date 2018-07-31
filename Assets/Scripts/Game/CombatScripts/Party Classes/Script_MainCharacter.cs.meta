@@ -4,7 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - Model: {fileID: 100006, guid: b04dfadd62d7cff4e8b090aa584e95ad, type: 3}
+  - Model: {fileID: 1499081266868348, guid: d3032451c8bfed143aff7ec9a3512ad7, type: 2}
+  - ModelInGame: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
