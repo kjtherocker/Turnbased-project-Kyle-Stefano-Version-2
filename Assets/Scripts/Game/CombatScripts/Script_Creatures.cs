@@ -58,13 +58,26 @@ public class Script_Creatures : MonoBehaviour {
    public GameObject Model;
    public GameObject ModelInGame;
 
-   bool IsAlive = true;
+    public GameObject WeaknessIndicator;
+    public GameObject StrongIndicator;
+    public GameObject MissIndicator;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
 
+    bool IsAlive = true;
 
+    public void Start()
+    {
+        
+        WeaknessIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Weak", typeof(GameObject)); 
+        StrongIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Strong", typeof(GameObject));
+        MissIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Miss", typeof(GameObject));
+    }
     // Update is called once per frame
     public void Update ()
     {
-     
+        
+        WeaknessIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Weak", typeof(GameObject));
+        StrongIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Strong", typeof(GameObject));
+        MissIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Miss", typeof(GameObject));
         if (CurrentHealth <= 0)
         {
             IsAlive = false;
@@ -95,6 +108,7 @@ public class Script_Creatures : MonoBehaviour {
 
     public void DecrementHealth(int Decrementby , Script_Skills.ElementalType elementalType)
     {
+        Script_FloatingUiElementsController.Initalize();
         string AttackingElement = elementalType.ToString();
         string ElementalWeakness = elementalWeakness.ToString();
         string ElementalStrength = elementalStrength.ToString();
@@ -105,7 +119,10 @@ public class Script_Creatures : MonoBehaviour {
             float ConvertToFloat = ArgumentReference * 1.5f;
             int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
             Decrementby = ConvertToInt;
-        
+
+            //Instantiate<GameObject>(WeaknessIndicator, gameObject.transform); 
+
+
         }
         if (AttackingElement.Equals(ElementalStrength))
         {
@@ -113,8 +130,13 @@ public class Script_Creatures : MonoBehaviour {
             float ConvertToFloat = ArgumentReference / 1.5f;
             int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
             Decrementby = ConvertToInt;
+
+           // Instantiate<GameObject>(StrongIndicator, ModelInGame.gameObject.transform);
         }
 
+        
+
+        Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform);
 
         CurrentHealth -= Decrementby ;
     }
