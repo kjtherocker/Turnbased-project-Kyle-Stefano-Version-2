@@ -65,7 +65,8 @@
     <Compile Include="Assets\Scripts\DialogScripts\Script_Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Script_DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Script_DialogueTrigger.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Script_Slime.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeGreen.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeWhite.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_Thief.cs" />
@@ -76,6 +77,8 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_PartyManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_FireBall.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_IceRain.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\Script_Skills.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElements.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElementsController.cs" />
@@ -88,6 +91,8 @@
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
     <None Include="Assets\Resources\Shaders\Disappear.shader" />
+    <None Include="Assets\Resources\Shaders\Meltingshaderunlit.shader" />
+    <None Include="Assets\Resources\Shaders\MeltingShader.shader" />
     <None Include="Assets\Resources\Shaders\UnlitTransparentShader.shader" />
     <Reference Include="com.unity.render-pipelines.core.Editor">
       <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Editor.dll</HintPath>

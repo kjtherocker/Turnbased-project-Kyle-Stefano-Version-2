@@ -22,7 +22,15 @@ public class Script_Skills : MonoBehaviour {
     {
         Attack,
         Heal,
-        Buff
+        Buff,
+        Debuff,
+
+
+    }
+    public enum DamageType
+    {
+        Strength,
+        Magic
 
     }
 
@@ -36,6 +44,7 @@ public class Script_Skills : MonoBehaviour {
     protected ElementalType m_ElementalType;
     protected SkillType m_SkillType;
     protected SkillRange m_SkillRange;
+    protected DamageType m_Damagetype;
 
     protected string SkillName;
     protected string SkillDescription;
@@ -59,7 +68,10 @@ public class Script_Skills : MonoBehaviour {
         return SkillDescription;
     }
 
-
+    public DamageType GetDamageType()
+    {
+        return m_Damagetype;
+    }
 
     public ElementalType GetElementalType()
     {

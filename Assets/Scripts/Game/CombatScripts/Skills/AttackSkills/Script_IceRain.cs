@@ -12,6 +12,7 @@ public class Script_IceRain : Script_Skills
         m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
+        m_Damagetype = DamageType.Magic;
         m_CostToUse = 40;
         m_Damage = 5;
         SkillName = "IceRain";

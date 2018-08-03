@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 1b177add1b778a942b92659bad2132e9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - m_SelectedParticlesystem: {fileID: 198928062072587340, guid: 689414744b17e204991485e2208189d0,
+      type: 2}
+  - Model: {instanceID: 0}
+  - ModelInGame: {instanceID: 0}
+  - WeaknessIndicator: {instanceID: 0}
+  - StrongIndicator: {instanceID: 0}
+  - MissIndicator: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

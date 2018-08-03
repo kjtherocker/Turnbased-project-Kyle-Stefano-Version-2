@@ -52,8 +52,13 @@ public class Script_Creatures : MonoBehaviour {
    public int Speed;
 
    public int BuffandDebuff;
+   public int BuffandDebuffDamageStrength;
+   public int BuffandDebuffDamageMagic;
+
 
    public string Name = "No Name";
+
+    public ParticleSystem m_SelectedParticlesystem;
 
    public GameObject Model;
    public GameObject ModelInGame;
@@ -67,23 +72,40 @@ public class Script_Creatures : MonoBehaviour {
     public void Start()
     {
         
-        WeaknessIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Weak", typeof(GameObject)); 
-        StrongIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Strong", typeof(GameObject));
-        MissIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Miss", typeof(GameObject));
     }
     // Update is called once per frame
     public void Update ()
     {
         
-        WeaknessIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Weak", typeof(GameObject));
-        StrongIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Strong", typeof(GameObject));
-        MissIndicator = (GameObject)Resources.Load("Prefabs/Battle/Text/Image_Miss", typeof(GameObject));
+
         if (CurrentHealth <= 0)
         {
             IsAlive = false;
             Death();
         }
 
+        DebuffsandBuffs();
+
+
+
+    }
+
+    public void EndTurn()
+    {
+        if (BuffandDebuff > 0)
+        {
+            BuffandDebuff--;
+        }
+        if (BuffandDebuff < 0)
+        {
+            BuffandDebuff++;
+        }
+
+    }
+
+    public void DebuffsandBuffs()
+    {
+        //Cant go further then maxium
         if (BuffandDebuff > 3)
         {
             BuffandDebuff = 3;
@@ -93,7 +115,78 @@ public class Script_Creatures : MonoBehaviour {
             BuffandDebuff = -3;
         }
 
-	}
+      
+
+        //The Buffs
+        if (BuffandDebuff == 1)
+        {
+            BuffandDebuffDamageStrength = Strength / 4;
+            BuffandDebuffDamageMagic = Magic / 4;
+        }
+        if (BuffandDebuff == 2)
+        {
+            BuffandDebuffDamageStrength = Strength / 3;
+            BuffandDebuffDamageMagic = Magic / 3;
+        }
+        if (BuffandDebuff == 3)
+        {
+            BuffandDebuffDamageStrength = Strength / 2;
+            BuffandDebuffDamageMagic = Magic;
+        }
+
+        //NormalState
+        if (BuffandDebuff == 0)
+        {
+            BuffandDebuffDamageStrength = 0;
+            BuffandDebuffDamageMagic = 0;
+        }
+
+        //The Debuffs
+        if (BuffandDebuff == -1)
+        {
+            BuffandDebuffDamageStrength = -Strength / 4;
+            BuffandDebuffDamageMagic = -Magic / 4;
+        }
+        if (BuffandDebuff == -2)
+        {
+            BuffandDebuffDamageStrength = -Strength / 3;
+            BuffandDebuffDamageMagic = -Magic / 3;
+        }
+        if (BuffandDebuff == -3)
+        {
+            BuffandDebuffDamageStrength = -Strength / 2;
+            BuffandDebuffDamageMagic = -Magic / 2;
+        }
+
+    }
+
+    public void AddBuff(int a_buffamount)
+    {
+        BuffandDebuff += a_buffamount;
+    }
+
+    public void AddDeBuff(int a_debuffamount)
+    {
+        BuffandDebuff -= a_debuffamount;
+    }
+
+    public int GetAllStrength()
+    {
+        int TemporaryStrength;
+
+        TemporaryStrength = BuffandDebuffDamageStrength + Strength;
+
+       return TemporaryStrength;
+    }
+
+    public int GetAllMagic()
+    {
+        int TemporaryMagic;
+
+        TemporaryMagic = BuffandDebuffDamageMagic + Magic;
+
+        return TemporaryMagic;
+    }
 
     public void DecrementMana(int Decrementby)
     {
@@ -121,7 +214,7 @@ public class Script_Creatures : MonoBehaviour {
             Decrementby = ConvertToInt;
 
             //Instantiate<GameObject>(WeaknessIndicator, gameObject.transform); 
-
+            Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Weak);
 
         }
         if (AttackingElement.Equals(ElementalStrength))
@@ -130,13 +223,17 @@ public class Script_Creatures : MonoBehaviour {
             float ConvertToFloat = ArgumentReference / 1.5f;
             int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
             Decrementby = ConvertToInt;
-
-           // Instantiate<GameObject>(StrongIndicator, ModelInGame.gameObject.transform);
+            Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Strong);
+            // Instantiate<GameObject>(StrongIndicator, ModelInGame.gameObject.transform);
         }
 
-        
+        m_SelectedParticlesystem = (ParticleSystem)Resources.Load("ParticleSystems/SelectRedicule/ParticlesS_Circle", typeof(ParticleSystem));
 
-        Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform);
+
+        ParticleSystem InstnatiatedSelectionRedicle = Instantiate<ParticleSystem>(m_SelectedParticlesystem, ModelInGame.gameObject.transform);
+        InstnatiatedSelectionRedicle.Play();
+
+        Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
 
         CurrentHealth -= Decrementby ;
     }
@@ -145,17 +242,26 @@ public class Script_Creatures : MonoBehaviour {
     public void IncrementHealth(int Increment)
     {
         CurrentHealth += Increment;
+        Script_FloatingUiElementsController.Initalize();
+        Script_FloatingUiElementsController.CreateFloatingText(Increment.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
     }
 
 
     void Death()
     {
-        
-            ModelInGame.gameObject.SetActive(false);
-         
-        
 
-    }
+        if (charactertype == Charactertype.Enemy)
+        {
+            
+            Destroy(ModelInGame.gameObject);
+        }
+        if (charactertype == Charactertype.Ally)
+        {
+            ModelInGame.gameObject.SetActive(false);
+        }
+
+
+        }
 
 
 
