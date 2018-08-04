@@ -24,6 +24,7 @@ public class Script_Skills : MonoBehaviour {
         Heal,
         Buff,
         Debuff,
+        Extra
 
 
     }

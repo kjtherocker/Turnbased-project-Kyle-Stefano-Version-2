@@ -55,6 +55,7 @@ public class Script_Creatures : MonoBehaviour {
    public int BuffandDebuffDamageStrength;
    public int BuffandDebuffDamageMagic;
 
+    public bool IsSelected;
 
    public string Name = "No Name";
 

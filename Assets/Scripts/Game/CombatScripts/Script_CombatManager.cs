@@ -37,6 +37,8 @@ public class Script_CombatManager : MonoBehaviour
     public Script_Creatures CurrentTurnHolder;
 
     public int AmountofTurns;
+    public int EnemySelection;
+
     bool WhichSidesTurnIsIt;
 
     bool Attackisfinished;
@@ -57,6 +59,7 @@ public class Script_CombatManager : MonoBehaviour
         NoTurn,
         EnemyTurn,
         AllyTurn,
+        AllySelecting,
       
 
     }
@@ -277,7 +280,35 @@ public class Script_CombatManager : MonoBehaviour
             //PlayersTurn();
         }
 
-        for (int i = 0; i < TurnOrderEnemy.Count; i++)
+        if (EnemySelection < 0)
+        {
+            EnemySelection = TurnOrderEnemy.Count - 1;
+        }
+
+        if (EnemySelection > TurnOrderEnemy.Count - 1)
+        {
+            EnemySelection = 0;
+        }
+
+        if (TurnOrderEnemy.Count == 0)
+        {
+            EnemySelection = 0;
+        }
+
+       //     if (m_BattleStates == BattleStates.AllySelecting)
+      //  {
+            if (Input.GetKeyDown("left"))
+            {
+                EnemySelection--;
+            }
+            if (Input.GetKeyDown("right"))
+            {
+                EnemySelection++;
+            }
+
+      //  }
+
+            for (int i = 0; i < TurnOrderEnemy.Count; i++)
         {
             TurnOrderEnemy[i].Update();
         }
@@ -306,7 +337,7 @@ public class Script_CombatManager : MonoBehaviour
        // if(CurentTurnHolderSkillButton[0].OnPointerEnter()  //.AddListener(CurrentTurnHolderSkill1);
         CurentTurnHolderSkillButton[1].onClick.AddListener(CurrentTurnHolderSkill2);
         CurentTurnHolderSkillButton[2].onClick.AddListener(CurrentTurnHolderSkill3);
-        CurentTurnHolderSkillButton[3].onClick.AddListener(CurrentTurnHolderSkill3);
+        CurentTurnHolderSkillButton[3].onClick.AddListener(CurrentTurnHolderSkill4);
 
     }
 
@@ -378,6 +409,69 @@ public class Script_CombatManager : MonoBehaviour
         {
             if (CurrentTurnHolder.CurrentMana > CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse())
             {
+
+
+                if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Extra)
+                {
+                    string SkillName = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
+
+                    if (SkillName.Equals("Pass Turn"))
+                    {
+                        AmountofTurns--;
+                        Attackisfinished = true;
+                        CurrentTurnHolder.EndTurn();
+                        if (AmountofTurns != 0)
+                        {
+                            CurrentTurnHolderNumber++;
+
+                        }
+                        
+                    }
+
+
+                }
+
+                if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Attack)
+                {
+                    //Checking the range the skills has single target or fulltarget
+                    if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
+                    {
+                        int DamageToEnemys = 0;
+
+                        //Checking what damageType the skill will use
+                        if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Strength)
+                        {
+                            DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllStrength());
+                        }
+                        else if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Magic)
+                        {
+                            DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
+                        }
+
+                        //Setting the Notfication to the skillname
+                        Image_Notification.SetActive(true);
+                        Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
+
+                      //  m_BattleStates = BattleStates.AllySelecting;
+                        
+                            CurrentTurnHolder.IncrementMana(5);
+                            TurnOrderEnemy[EnemySelection].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[0].GetElementalType());
+                        
+
+                        CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
+
+                        AmountofTurns--;
+                        Attackisfinished = true;
+                        CurrentTurnHolder.EndTurn();
+                        if (AmountofTurns != 0)
+                        {
+                            CurrentTurnHolderNumber++;
+
+                        }
+
+
+                    }
+                }
 
                 if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Attack)
                 {
@@ -498,7 +592,10 @@ public class Script_CombatManager : MonoBehaviour
                         }
                     }
 
-                    if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
+                    
+
+
+                        if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
                     {
 
                         if (Input.anyKey)
@@ -527,6 +624,11 @@ public class Script_CombatManager : MonoBehaviour
     public void CurrentTurnHolderSkill3()
     {
         CurrentTurnHolderSkills = 2;
+        PlayersTurn();
+    }
+    public void CurrentTurnHolderSkill4()
+    {
+        CurrentTurnHolderSkills = 3;
         PlayersTurn();
     }
 

@@ -75,14 +75,15 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_Creatures.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_PartyManager.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_Attack.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_FireBall.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_IceRain.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_SkillPassTurn.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\Script_Skills.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElements.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElementsController.cs" />
-    <Compile Include="Assets\Scripts\Game\ModelScripts\Script_Model.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Node.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldCamera.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldManager.cs" />
@@ -90,9 +91,14 @@
     <Compile Include="Assets\Scripts\Game\Script_GameManager.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
+    <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <None Include="Assets\Resources\Shaders\Disappear.shader" />
     <None Include="Assets\Resources\Shaders\Meltingshaderunlit.shader" />
-    <None Include="Assets\Resources\Shaders\MeltingShader.shader" />
+    <None Include="Assets\1 - Vertex Displacement\VertexDisplacement - World.shader" />
+    <None Include="Assets\Resources\Shaders\MeltingShaderLit.shader" />
+    <None Include="Assets\2 - Lit Vertex Displacement\Lit Vertex Displacement - Shadows.shader" />
+    <None Include="Assets\2 - Lit Vertex Displacement\Lit Vertex Displacement - Normals.shader" />
+    <None Include="Assets\1 - Vertex Displacement\VertexDisplacement - Object.shader" />
     <None Include="Assets\Resources\Shaders\UnlitTransparentShader.shader" />
     <Reference Include="com.unity.render-pipelines.core.Editor">
       <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Editor.dll</HintPath>

@@ -1,4 +1,6 @@
-﻿Shader "Unlit/Meltingshaderunlit"
+﻿// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
+
+Shader "Unlit/Meltingshaderunlit"
 {
 	Properties
 	{
@@ -38,6 +40,11 @@
 			v2f vert (appdata v)
 			{
 				v2f o;
+				float _Speed = 3;
+				float _Amount = 8;
+				float _Distance = 1.5f;
+
+				v.vertex.x += sin(_Time.y * _Speed + v.vertex.y * _Amount) * _Distance;
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.uv = TRANSFORM_TEX(v.uv, _MainTex);
 				UNITY_TRANSFER_FOG(o,o.vertex);
