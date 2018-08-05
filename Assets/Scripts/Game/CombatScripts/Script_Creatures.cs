@@ -36,8 +36,20 @@ public class Script_Creatures : MonoBehaviour {
 
     }
 
+    public enum CreaturesAilment
+    {
+        None,
+        Poison,
+        Daze,
+        Sleep,
+        Rage,
+
+    }
+
    public Script_Skills[] m_Skills;
 
+
+   public CreaturesAilment m_creaturesAilment;
    public Charactertype charactertype;
    public ElementalStrength elementalStrength;
    public ElementalWeakness elementalWeakness;
@@ -64,11 +76,8 @@ public class Script_Creatures : MonoBehaviour {
    public GameObject Model;
    public GameObject ModelInGame;
 
-    public GameObject WeaknessIndicator;
-    public GameObject StrongIndicator;
-    public GameObject MissIndicator;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+    int AlimentCounter;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 
-    bool IsAlive = true;
 
     public void Start()
     {
@@ -81,18 +90,21 @@ public class Script_Creatures : MonoBehaviour {
 
         if (CurrentHealth <= 0)
         {
-            IsAlive = false;
             Death();
         }
 
         DebuffsandBuffs();
 
-
+        if (AlimentCounter == 0)
+        {
+            m_creaturesAilment = CreaturesAilment.None;
+        }
 
     }
 
     public void EndTurn()
     {
+        CheckAliment();
         if (BuffandDebuff > 0)
         {
             BuffandDebuff--;
@@ -199,9 +211,75 @@ public class Script_Creatures : MonoBehaviour {
         CurrentMana += Incrementby;
     }
 
+    public void InflictAliment(Script_Skills.SkillAilment a_IncomingAliment)
+    {
+       string Incomingaliment = a_IncomingAliment.ToString();
 
+        if (Incomingaliment.Equals(CreaturesAilment.Poison.ToString()))
+        {
+            m_creaturesAilment = CreaturesAilment.Poison;
+            AlimentCounter = 3;
+        }
+        if (Incomingaliment.Equals(CreaturesAilment.Daze.ToString()))
+        {
+            m_creaturesAilment = CreaturesAilment.Daze;
+            AlimentCounter = 3;
+        }
+        if (Incomingaliment.Equals(CreaturesAilment.Rage.ToString()))
+        {
+            m_creaturesAilment = CreaturesAilment.Rage;
+            AlimentCounter = 3;
+        }
+        if (Incomingaliment.Equals(CreaturesAilment.Sleep.ToString()))
+        {
+            m_creaturesAilment = CreaturesAilment.Sleep;
+            AlimentCounter = 3;
+        }
+    }
+
+    public void CheckAliment()
+    {
+        string CurrentAliment = m_creaturesAilment.ToString();
+
+        if (CurrentAliment.Equals(CreaturesAilment.Poison.ToString()))
+        {
+            DecrementHealth( CurrentHealth / MaxHealth * 100);
+            Death();
+            DecrementAliment();
+        }
+        if (CurrentAliment.Equals(CreaturesAilment.Daze.ToString()))
+        {
+
+            DecrementAliment();
+        }
+        if (CurrentAliment.Equals(CreaturesAilment.Rage.ToString()))
+        {
+
+            DecrementAliment();
+        }
+        if (CurrentAliment.Equals(CreaturesAilment.Sleep.ToString()))
+        {
+
+            DecrementAliment();
+        }
+    }
+
+    public void DecrementAliment()
+    {
+        AlimentCounter--;
+    }
+    public void DecrementHealth(int Decremenby)
+    {
+        Script_FloatingUiElementsController.CreateFloatingText(Decremenby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
+        CurrentHealth -= Decremenby;
+    }
     public void DecrementHealth(int Decrementby , Script_Skills.ElementalType elementalType)
     {
+
+        if (m_creaturesAilment == CreaturesAilment.Sleep)
+        {
+            AlimentCounter = 0;
+        }
         Script_FloatingUiElementsController.Initalize();
         string AttackingElement = elementalType.ToString();
         string ElementalWeakness = elementalWeakness.ToString();
@@ -228,11 +306,6 @@ public class Script_Creatures : MonoBehaviour {
             // Instantiate<GameObject>(StrongIndicator, ModelInGame.gameObject.transform);
         }
 
-        m_SelectedParticlesystem = (ParticleSystem)Resources.Load("ParticleSystems/SelectRedicule/ParticlesS_Circle", typeof(ParticleSystem));
-
-
-        ParticleSystem InstnatiatedSelectionRedicle = Instantiate<ParticleSystem>(m_SelectedParticlesystem, ModelInGame.gameObject.transform);
-        InstnatiatedSelectionRedicle.Play();
 
         Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
 
@@ -246,11 +319,22 @@ public class Script_Creatures : MonoBehaviour {
         Script_FloatingUiElementsController.Initalize();
         Script_FloatingUiElementsController.CreateFloatingText(Increment.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
     }
+    
+    virtual public int EnemyAi()
+    {
+        return 0;
+    }
 
-
+    public void Resurrection()
+    {
+        BuffandDebuff = 0;
+        AlimentCounter = 0;
+        ModelInGame.gameObject.SetActive(true);
+    }
     void Death()
     {
-
+        CurrentHealth = 0;
+        AlimentCounter = 0;
         if (charactertype == Charactertype.Enemy)
         {
             
@@ -262,7 +346,7 @@ public class Script_Creatures : MonoBehaviour {
         }
 
 
-        }
+    }
 
 
 

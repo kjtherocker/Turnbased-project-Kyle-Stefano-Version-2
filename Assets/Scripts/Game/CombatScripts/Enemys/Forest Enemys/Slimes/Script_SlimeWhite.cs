@@ -16,10 +16,11 @@ public class Script_SlimeWhite : Script_Creatures
         Magic = 75;
         Dexterity = 10;
         Speed = 10;
-        Name = "Slime";
+        Name = "White Slime";
 
-        m_Skills = new Script_Skills[3];
-        m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
+        m_Skills = new Script_Skills[2];
+        m_Skills[0] = gameObject.AddComponent<Script_LightRay>();
+        m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
@@ -28,7 +29,14 @@ public class Script_SlimeWhite : Script_Creatures
 
 
         charactertype = Charactertype.Enemy;
-        elementalStrength = ElementalStrength.Fire;
-        elementalWeakness = ElementalWeakness.Water;
+        elementalStrength = ElementalStrength.Light;
+        elementalWeakness = ElementalWeakness.Shadow;
+    }
+
+    public override int EnemyAi()
+    {
+        int SkillChosen = Random.Range(0, m_Skills.Length);
+
+        return SkillChosen;
     }
 }

@@ -9,6 +9,7 @@ public class Script_FireBall : Script_Skills {
     {
 
         m_ElementalType = ElementalType.Fire;
+        m_SkillAilment = SkillAilment.Poison;
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;

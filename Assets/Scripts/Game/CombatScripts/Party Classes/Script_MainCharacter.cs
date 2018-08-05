@@ -14,8 +14,8 @@ public class Script_MainCharacter : Script_Creatures {
         MaxHealth = 400;
         CurrentMana = 100;
         MaxMana = 200 ;
-        Strength = 50;
-        Magic = 50;
+        Strength = 500;
+        Magic = 500;
         Dexterity = 50;
         Speed = 50;
         Name = "MainCharacter";
@@ -23,7 +23,8 @@ public class Script_MainCharacter : Script_Creatures {
         m_Skills = new Script_Skills[8];
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
         m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[2] = gameObject.AddComponent<Script_PassTurn>();
+        m_Skills[2] = gameObject.AddComponent<Script_FireBall>();
+        m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 

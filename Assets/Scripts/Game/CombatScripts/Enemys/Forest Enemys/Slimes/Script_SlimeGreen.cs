@@ -18,8 +18,9 @@ public class Script_SlimeGreen : Script_Creatures
         Speed = 10;
         Name = "Slime";
 
-        m_Skills = new Script_Skills[3];
+        m_Skills = new Script_Skills[2];
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
+        m_Skills[1] = gameObject.AddComponent<Script_Attack>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
@@ -30,6 +31,13 @@ public class Script_SlimeGreen : Script_Creatures
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Water;
         elementalWeakness = ElementalWeakness.Fire;
+    }
+
+    public override int EnemyAi()
+    {
+        int SkillChosen = Random.Range(0, m_Skills.Length);
+
+        return SkillChosen;
     }
 
 }

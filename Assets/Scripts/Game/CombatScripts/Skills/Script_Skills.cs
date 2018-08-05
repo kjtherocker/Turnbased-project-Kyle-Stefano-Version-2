@@ -24,7 +24,9 @@ public class Script_Skills : MonoBehaviour {
         Heal,
         Buff,
         Debuff,
-        Extra
+        Extra,
+        Resurrect,
+        Aliment,
 
 
     }
@@ -37,15 +39,25 @@ public class Script_Skills : MonoBehaviour {
 
     public enum SkillRange
     {
+        SelfTargeted,
         SingleTarget,
         FullTarget
     }
+    public enum SkillAilment
+    {
+        None,
+        Poison,
+        Daze,
+        Sleep,
+        Rage,
 
+    }
 
     protected ElementalType m_ElementalType;
     protected SkillType m_SkillType;
     protected SkillRange m_SkillRange;
     protected DamageType m_Damagetype;
+    protected SkillAilment m_SkillAilment;
 
     protected string SkillName;
     protected string SkillDescription;
@@ -77,6 +89,11 @@ public class Script_Skills : MonoBehaviour {
     public ElementalType GetElementalType()
     {
         return m_ElementalType;
+    }
+
+    public SkillAilment GetAlimentType()
+    {
+        return m_SkillAilment;
     }
 
     public SkillType GetSkillType()

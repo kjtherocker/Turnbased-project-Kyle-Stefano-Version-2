@@ -65,7 +65,10 @@
     <Compile Include="Assets\Scripts\DialogScripts\Script_Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Script_DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Script_DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeBlue.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeGreen.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimePurple.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeRed.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeWhite.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />
@@ -75,19 +78,25 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_Creatures.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_HealthBar.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Script_PartyManager.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AilmentSkills\Script_Poison.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AilmentSkills\Script_Rage.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AilmentSkills\Script_Sleep.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_Attack.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_FireBall.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_IceRain.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_LightRay.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_ShadowBlast.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_SkillPassTurn.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ResurrectSkills\Script_PhoenixSpirit.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\Script_Skills.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElements.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Text\Script_FloatingUiElementsController.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Node.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldCamera.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldManager.cs" />
-    <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Player.cs" />
+    <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverWorldPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Script_GameManager.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
@@ -95,47 +104,40 @@
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <None Include="Assets\Resources\Shaders\Disappear.shader" />
     <None Include="Assets\Resources\Shaders\Meltingshaderunlit.shader" />
-    <None Include="Assets\1 - Vertex Displacement\VertexDisplacement - World.shader" />
-    <None Include="Assets\5 - Tessellation\Melt Displacement Tessellation Optimised.shader" />
     <None Include="Assets\Resources\Shaders\MeltingShaderLit.shader" />
-    <None Include="Assets\5 - Tessellation + Pixels\Melt Displacement Tessellation + Pixels.shader" />
-    <None Include="Assets\2 - Lit Vertex Displacement\Lit Vertex Displacement - Shadows.shader" />
-    <None Include="Assets\2 - Lit Vertex Displacement\Lit Vertex Displacement - Normals.shader" />
-    <None Include="Assets\1 - Vertex Displacement\VertexDisplacement - Object.shader" />
-    <None Include="Assets\5 - Tessellation\Melt Displacement Tessellation.shader" />
     <None Include="Assets\Resources\Shaders\UnlitTransparentShader.shader" />
     <Reference Include="com.unity.render-pipelines.core.Editor">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Editor.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.render-pipelines.core.Runtime">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Runtime.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.render-pipelines.lightweight.Runtime">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.lightweight.Runtime.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.lightweight.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.render-pipelines.lightweight.Editor">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.lightweight.Editor.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.lightweight.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.postprocessing.Editor">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.postprocessing.Runtime">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.render-pipelines.core.IncludePaths">
-      <HintPath>C:/Users/Stef/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.IncludePaths.dll</HintPath>
+      <HintPath>C:/Users/kj/Desktop/Unity projects/Turnbased-project-Kyle-Stefano-/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.render-pipelines.core.IncludePaths.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b9/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -333,13 +335,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b9/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Analytics">
-      <HintPath>C:/Users/Stef/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
+      <HintPath>C:/Users/kj/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.analytics@2.0.16/UnityEngine.Analytics.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.Purchasing">
-      <HintPath>C:/Users/Stef/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
+      <HintPath>C:/Users/kj/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.purchasing@2.0.1/UnityEngine.Purchasing.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.StandardEvents">
-      <HintPath>C:/Users/Stef/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/kj/AppData/Local/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.13/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b9/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>

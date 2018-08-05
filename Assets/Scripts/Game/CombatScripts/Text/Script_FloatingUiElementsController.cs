@@ -43,6 +43,7 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
 
     }
 
+
     public static void CreateFloatingText(string text, Transform location, UiElementType a_uiElementtype)
     {
         //Camera Camera = GameObject.Find("");
@@ -81,4 +82,6 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
 
 
     }
+
+ 
 }

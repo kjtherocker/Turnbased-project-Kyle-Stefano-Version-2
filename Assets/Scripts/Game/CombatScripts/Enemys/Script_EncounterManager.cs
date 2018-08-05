@@ -68,8 +68,24 @@ public class Script_EncounterManager : MonoBehaviour {
 
         if (a_encounter == EncounterTypes.ForestEncounter)
         {
-            ForestEncounter1();
+            int EncounterChosen = Random.Range(0, 3);
 
+            if (EncounterChosen == 0 )
+            {
+                ForestEncounter2();
+            }
+            if (EncounterChosen == 1)
+            {
+                ForestEncounter3();
+            }
+            if ( EncounterChosen == 2)
+            {
+                ForestEncounter4();
+            }
+            if (EncounterChosen == 3 )
+            {
+                ForestEncounter1();
+            }
         }
 
     }
@@ -82,5 +98,32 @@ public class Script_EncounterManager : MonoBehaviour {
         EnemySlot3 = gameObject.AddComponent<Script_SlimeGreen>();
         EnemySlot4 = gameObject.AddComponent<Script_SlimeWhite>();
       
+    }
+
+    public void ForestEncounter2()
+    {
+        EnemySlot1 = gameObject.AddComponent<Script_SlimeRed>();
+        EnemySlot2 = gameObject.AddComponent<Script_SlimeRed>();
+        EnemySlot3 = gameObject.AddComponent<Script_SlimeRed>();
+        EnemySlot4 = gameObject.AddComponent<Script_SlimeRed>();
+
+    }
+
+    public void ForestEncounter3()
+    {
+        EnemySlot1 = gameObject.AddComponent<Script_SlimePurple>();
+        EnemySlot2 = gameObject.AddComponent<Script_SlimeWhite>();
+        EnemySlot3 = gameObject.AddComponent<Script_SlimeWhite>();
+        EnemySlot4 = gameObject.AddComponent<Script_SlimePurple>();
+
+    }
+
+    public void ForestEncounter4()
+    {
+        EnemySlot1 = gameObject.AddComponent<Script_SlimeBlue>();
+        EnemySlot2 = gameObject.AddComponent<Script_SlimeRed>();
+        EnemySlot3 = gameObject.AddComponent<Script_SlimeRed>();
+        EnemySlot4 = gameObject.AddComponent<Script_SlimeBlue>();
+
     }
 }

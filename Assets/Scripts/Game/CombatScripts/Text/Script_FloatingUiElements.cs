@@ -20,4 +20,9 @@ public class Script_FloatingUiElements : MonoBehaviour {
         DamageText = animator.GetComponent<Text>();
         DamageText.text = a_text;
     }
+    public void DestroyAll()
+    {
+        Destroy(gameObject);
+    }
+
 }

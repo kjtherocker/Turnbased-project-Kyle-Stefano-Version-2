@@ -28,6 +28,7 @@ public class Script_GameManager : MonoBehaviour
     {
         if (m_GameStates == GameStates.Overworld)
         {
+            
             Overworld_Objects.SetActive(true);
             Combat_Objects.SetActive(false);
         }
