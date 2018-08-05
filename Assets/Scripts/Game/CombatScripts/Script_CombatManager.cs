@@ -319,17 +319,34 @@ public class Script_CombatManager : MonoBehaviour
             {
                 CurentTurnHolderSkillText[0].text = CurrentTurnHolder.m_Skills[0].GetSkillName();
             }
+            else
+            {
+                CurentTurnHolderSkillButton[0].enabled = false;
+            }
             if (CurrentTurnHolder.m_Skills[1] != null)
             {
                 CurentTurnHolderSkillText[1].text = CurrentTurnHolder.m_Skills[1].GetSkillName();
+            }
+            else
+            {
+                CurentTurnHolderSkillButton[1].enabled = false;
             }
             if (CurrentTurnHolder.m_Skills[2] != null)
             {
                 CurentTurnHolderSkillText[2].text = CurrentTurnHolder.m_Skills[2].GetSkillName();
             }
+            else
+            {
+
+                CurentTurnHolderSkillButton[2].enabled = false;
+            }
             if (CurrentTurnHolder.m_Skills[3] != null)
             {
                 CurentTurnHolderSkillText[3].text = CurrentTurnHolder.m_Skills[3].GetSkillName();
+            }
+            else
+            {
+                CurentTurnHolderSkillButton[3].enabled = false;
             }
 
         }
