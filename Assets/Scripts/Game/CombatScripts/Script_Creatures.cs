@@ -76,6 +76,12 @@ public class Script_Creatures : MonoBehaviour {
    public GameObject Model;
    public GameObject ModelInGame;
 
+    public Script_Creatures ObjectToRotateAround;
+
+
+    private Vector3 targetPoint;
+    private Quaternion targetRotation;
+
     int AlimentCounter;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
 
 
@@ -86,7 +92,24 @@ public class Script_Creatures : MonoBehaviour {
     // Update is called once per frame
     public void Update ()
     {
-        
+
+        if (charactertype == Charactertype.Enemy)
+        {
+            if (ObjectToRotateAround != null)
+            {
+
+                
+
+               // targetPoint = new Vector3(ObjectToRotateAround.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.transform.position.z);
+
+                //targetPosition.y = ModelInGame.transform.position.y;
+               // ModelInGame.transform.LookAt(targetPoint);
+
+               // targetPoint = new Vector3(ModelInGame.transform.position.x, ObjectToRotateAround.transform.position.y, ObjectToRotateAround.transform.position.z) - ModelInGame.transform.position;
+               // targetRotation = Quaternion.LookRotation(-targetPoint);
+               // ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+            }
+        }
 
         if (CurrentHealth <= 0)
         {
@@ -181,6 +204,12 @@ public class Script_Creatures : MonoBehaviour {
     public void AddDeBuff(int a_debuffamount)
     {
         BuffandDebuff -= a_debuffamount;
+    }
+
+    public void SetObjectToRotateAround(Script_Creatures gameObject)
+    {
+        ObjectToRotateAround = gameObject;
+
     }
 
     public int GetAllStrength()

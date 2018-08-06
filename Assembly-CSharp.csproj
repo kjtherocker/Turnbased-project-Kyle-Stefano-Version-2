@@ -98,6 +98,7 @@
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldManager.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverWorldPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Script_GameManager.cs" />
+    <Compile Include="Assets\Scripts\Game\Test.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />

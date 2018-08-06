@@ -138,9 +138,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, SpawnEnemyPosition1.transform);
 
-                //TurnOrderEnemy[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
-
-                // EnemyModel1.transform.rotation = Quaternion.Euler(0.0f, 130.0f, 0.0f);
+                
             }
 
             if (EncounterManager.EnemySlot2 != null)
@@ -149,7 +147,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model, SpawnEnemyPosition2.transform);
 
-                TurnOrderEnemy[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                
             }
 
             if (EncounterManager.EnemySlot3 != null)
@@ -159,7 +157,7 @@ public class Script_CombatManager : MonoBehaviour
                
                 TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model, SpawnEnemyPosition3.transform);
 
-                TurnOrderEnemy[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
+                
 
             }
 
@@ -191,7 +189,14 @@ public class Script_CombatManager : MonoBehaviour
 
 
 
-        //CurentTurnHolderSkillText[0].color = new Color(1f, 0.5f, 0.8f);
+        for (int i = 0; i < TurnOrderEnemy.Count; i++)
+        {
+
+            TurnOrderEnemy[i].SetObjectToRotateAround(CurrentTurnHolder);
+
+
+
+        }
 
         //Ending the Current encounter
         if (CombatHasStarted == true)
@@ -438,6 +443,7 @@ public class Script_CombatManager : MonoBehaviour
                             CurrentTurnHolderNumber++;
 
                         }
+                        CurrentTurnHolder.EndTurn();
                     }
                 }
             }
@@ -486,7 +492,7 @@ public class Script_CombatManager : MonoBehaviour
                             CurrentTurnHolderNumber++;
 
                         }
-
+                        CurrentTurnHolder.EndTurn();
                     }
                 }
             }
@@ -527,13 +533,14 @@ public class Script_CombatManager : MonoBehaviour
 
                         AmountofTurns--;
 
-                        CurrentTurnHolder.EndTurn();
+                        
                         RemoveDeadFromList();
                         if (AmountofTurns != 0)
                         {
                             CurrentTurnHolderNumber++;
 
                         }
+                        CurrentTurnHolder.EndTurn();
 
                     }
                 }
@@ -551,6 +558,7 @@ public class Script_CombatManager : MonoBehaviour
                 CurrentTurnHolderNumber++;
 
             }
+
         }
 
     }
@@ -817,7 +825,7 @@ public class Script_CombatManager : MonoBehaviour
                                     Image_Notification.SetActive(true);
                                     Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
 
-                                    CurrentTurnHolder.EndTurn();
+                                    
 
                                     CurrentTurnHolder.IncrementMana(5);
                                     DeadAllys[0].IncrementHealth(200);
@@ -832,11 +840,14 @@ public class Script_CombatManager : MonoBehaviour
                                     RemoveDeadFromList();
                                     Attackisfinished = true;
 
+                                    
+
                                     if (AmountofTurns != 0)
                                     {
                                         CurrentTurnHolderNumber++;
 
                                     }
+                                    CurrentTurnHolder.EndTurn();
                                 }
                             }
 
