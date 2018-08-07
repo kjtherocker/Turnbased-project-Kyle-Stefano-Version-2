@@ -82,41 +82,51 @@ public class Script_Creatures : MonoBehaviour {
     private Vector3 targetPoint;
     private Quaternion targetRotation;
 
-    int AlimentCounter;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+    int AlimentCounter;
 
-
+    bool m_IsAlive;
     public void Start()
     {
         
     }
     // Update is called once per frame
-    public void Update ()
+    public void Update()
     {
 
-        if (charactertype == Charactertype.Enemy)
+        if (ObjectToRotateAround != null)
         {
-            if (ObjectToRotateAround != null)
+            if (gameObject != null)
             {
+                if (charactertype == Charactertype.Enemy)
+                {
 
-                
+                    if (m_IsAlive == true)
+                    {
 
-               // targetPoint = new Vector3(ObjectToRotateAround.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.transform.position.z);
+                        targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
+                        targetPoint.y = ModelInGame.transform.position.y;
+                        ModelInGame.transform.LookAt(targetPoint);
 
-                //targetPosition.y = ModelInGame.transform.position.y;
-               // ModelInGame.transform.LookAt(targetPoint);
 
-               // targetPoint = new Vector3(ModelInGame.transform.position.x, ObjectToRotateAround.transform.position.y, ObjectToRotateAround.transform.position.z) - ModelInGame.transform.position;
-               // targetRotation = Quaternion.LookRotation(-targetPoint);
-               // ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                        ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                    }
+                }
             }
         }
 
+
         if (CurrentHealth <= 0)
         {
+            m_IsAlive = false;
             Death();
         }
+        else
+        if (CurrentHealth >= 0)
+        {
+            m_IsAlive = true;
+        }
 
-        DebuffsandBuffs();
+            DebuffsandBuffs();
 
         if (AlimentCounter == 0)
         {
@@ -352,6 +362,12 @@ public class Script_Creatures : MonoBehaviour {
     virtual public int EnemyAi()
     {
         return 0;
+    }
+
+    public Charactertype GetCharactertype()
+    {
+
+        return charactertype;
     }
 
     public void Resurrection()

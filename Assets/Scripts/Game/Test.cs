@@ -14,8 +14,8 @@ public class Test : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-
-        targetPoint = new Vector3(ObjectToRotateAround.transform.position.x, transform.position.y, ObjectToRotateAround.transform.position.z);
+        //teaasdasd
+        targetPoint = new Vector3(ObjectToRotateAround.transform.position.x, ObjectToRotateAround.transform.position.y, ObjectToRotateAround.transform.position.z);
 
         //targetPosition.y = ModelInGame.transform.position.y;
         transform.LookAt(targetPoint);

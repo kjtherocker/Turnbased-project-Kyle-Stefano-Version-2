@@ -21,7 +21,7 @@ public class Script_Thief : Script_Creatures
 
         m_Skills = new Script_Skills[5];
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
-        m_Skills[1] = gameObject.AddComponent<Script_Poison>();
+        m_Skills[1] = gameObject.AddComponent<Script_Sleep>();
         m_Skills[2] = gameObject.AddComponent<Script_PhoenixSpirit>();
         m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
 

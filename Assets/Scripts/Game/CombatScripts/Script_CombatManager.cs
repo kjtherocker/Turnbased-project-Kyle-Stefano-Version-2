@@ -27,6 +27,7 @@ public class Script_CombatManager : MonoBehaviour
     public GameObject Canvas_CommandBoard;
     public GameObject Image_Notification;
 
+
     //For the skills
     
     public Script_Creatures CurrentTurnHolder;
@@ -44,8 +45,12 @@ public class Script_CombatManager : MonoBehaviour
     bool Attackisfinished;
     bool CombatHasStarted;
 
+    private Vector3 m_Camera_Offset;
+
     Color m_Color_TransparentWhite;
     Color m_Color_White;
+
+    public GameObject m_BattleCamera;
 
     public List<Text> CurentTurnHolderSkillText;
     public List<Button> CurentTurnHolderSkillButton;
@@ -170,8 +175,8 @@ public class Script_CombatManager : MonoBehaviour
                 TurnOrderEnemy[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 90.0f, 0.0f);
             }
 
-
-
+            m_Camera_Offset = new Vector3(80, 40, 0);
+            m_BattleCamera.transform.position = TurnOrderAlly[0].ModelInGame.transform.position + m_Camera_Offset;
             AmountofTurns = TurnOrderAlly.Count;
             m_BattleStates = BattleStates.AllyTurn;
             Canvas_CommandBoard.SetActive(true);
@@ -188,6 +193,14 @@ public class Script_CombatManager : MonoBehaviour
     {
 
 
+        if (CombatHasStarted == true)
+        {
+            if (CurrentTurnHolder.GetCharactertype() == Script_Creatures.Charactertype.Ally)
+            {
+                // m_BattleCamera.transform.position = CurrentTurnHolder.ModelInGame.transform.position + m_Camera_Offset;
+                m_BattleCamera.transform.position = Vector3.Slerp(m_BattleCamera.transform.position, CurrentTurnHolder.ModelInGame.transform.position + m_Camera_Offset, Time.deltaTime * 4.0f);
+            }
+        }
 
         for (int i = 0; i < TurnOrderEnemy.Count; i++)
         {
