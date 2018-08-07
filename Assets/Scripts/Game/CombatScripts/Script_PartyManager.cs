@@ -39,6 +39,43 @@ public class Script_PartyManager : MonoBehaviour {
         {
            // BarSlot1.SetActive(false);
         }
-		
-	}
+
+        if (PartyMemberSlot1.IsCurrentTurnHolder == true)
+        {
+            BarSlot1.transform.localPosition = new Vector3(271, -26, 0.8999996f);
+        }
+        else
+        {
+            BarSlot1.transform.localPosition = new Vector3(303, -26, 0.8999996f);
+        }
+
+        if (PartyMemberSlot2.IsCurrentTurnHolder == true)
+        {
+            BarSlot2.transform.localPosition = new Vector3(271, -1, 0.8999996f);
+        }
+        else
+        {
+            BarSlot2.transform.localPosition = new Vector3(303, -1, 0.8999996f);
+        }
+
+        if (PartyMemberSlot3.IsCurrentTurnHolder == true)
+        {
+            BarSlot3.transform.localPosition = new Vector3(271, 29, 0.8999996f);
+        }
+        else
+        {
+            BarSlot3.transform.localPosition = new Vector3(303, 29, 0.8999996f);
+        }
+
+        if (PartyMemberSlot4.IsCurrentTurnHolder == true)
+        {
+            BarSlot4.transform.localPosition = new Vector3(271, 57, 0.8999996f);
+        }
+        else
+        {
+            BarSlot4.transform.localPosition = new Vector3(303, 57, 0.8999996f);
+        }
+
+
+    }
 }

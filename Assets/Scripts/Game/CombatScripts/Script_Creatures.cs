@@ -67,7 +67,8 @@ public class Script_Creatures : MonoBehaviour {
    public int BuffandDebuffDamageStrength;
    public int BuffandDebuffDamageMagic;
 
-    public bool IsSelected;
+   public bool IsSelected;
+   public bool IsCurrentTurnHolder;
 
    public string Name = "No Name";
 
@@ -80,7 +81,6 @@ public class Script_Creatures : MonoBehaviour {
 
 
     private Vector3 targetPoint;
-    private Quaternion targetRotation;
 
     int AlimentCounter;
 
@@ -92,6 +92,14 @@ public class Script_Creatures : MonoBehaviour {
     // Update is called once per frame
     public void Update()
     {
+        if (ObjectToRotateAround == gameObject)
+        {
+            IsCurrentTurnHolder = true;
+        }
+        else
+        {
+            IsCurrentTurnHolder = false;
+        }
 
         if (ObjectToRotateAround != null)
         {
@@ -102,13 +110,15 @@ public class Script_Creatures : MonoBehaviour {
 
                     if (m_IsAlive == true)
                     {
+                        if (ObjectToRotateAround.GetCharactertype() == Charactertype.Ally)
+                        {
+                            targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
+                            targetPoint.y = ModelInGame.transform.position.y;
+                            ModelInGame.transform.LookAt(targetPoint);
 
-                        targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
-                        targetPoint.y = ModelInGame.transform.position.y;
-                        ModelInGame.transform.LookAt(targetPoint);
 
-
-                        ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                            //ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                        }
                     }
                 }
             }
@@ -282,8 +292,8 @@ public class Script_Creatures : MonoBehaviour {
 
         if (CurrentAliment.Equals(CreaturesAilment.Poison.ToString()))
         {
-            DecrementHealth( CurrentHealth / MaxHealth * 100);
-            Death();
+           // DecrementHealth( CurrentHealth / MaxHealth * 100);
+           // Death();
             DecrementAliment();
         }
         if (CurrentAliment.Equals(CreaturesAilment.Daze.ToString()))
@@ -331,7 +341,7 @@ public class Script_Creatures : MonoBehaviour {
             int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
             Decrementby = ConvertToInt;
 
-            //Instantiate<GameObject>(WeaknessIndicator, gameObject.transform); 
+            
             Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Weak);
 
         }
@@ -342,7 +352,7 @@ public class Script_Creatures : MonoBehaviour {
             int ConvertToInt = Mathf.CeilToInt(ConvertToFloat);
             Decrementby = ConvertToInt;
             Script_FloatingUiElementsController.CreateFloatingText(Decrementby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Strong);
-            // Instantiate<GameObject>(StrongIndicator, ModelInGame.gameObject.transform);
+            
         }
 
 
@@ -376,7 +386,7 @@ public class Script_Creatures : MonoBehaviour {
         AlimentCounter = 0;
         ModelInGame.gameObject.SetActive(true);
     }
-    void Death()
+    public void Death()
     {
         CurrentHealth = 0;
         AlimentCounter = 0;
