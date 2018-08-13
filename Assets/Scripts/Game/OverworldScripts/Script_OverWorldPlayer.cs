@@ -12,57 +12,86 @@ public class Script_OverWorldPlayer : MonoBehaviour {
     public Script_GameManager GameManager;
     public Script_EncounterManager m_EncounterManager;
     public GameObject OverworldModel;
-
+    public GameObject Canvas_PartyMenu;
     public Script_PartyManager PartyManager;
+    public Script_PartyMenu m_PartyMenu;
 
     public float Player_Speed = 40;
     public bool Player_Movment = false;
+    private bool IsPartyMenuOn;
     private float Player_Speed_Delta;
 
     void Start ()
     {
         OverworldModel = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
         Instantiate<GameObject>(OverworldModel, gameObject.transform);
+        IsPartyMenuOn = false;
 
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Player_Speed_Delta = Player_Speed * Time.deltaTime;
-     //   OverworldModel.transform.parent = gameObject.transform;
-
-
-        if (transform.position == Node_MovingTo.transform.position)
+        if (Input.GetKeyDown("escape"))
         {
-            Player_Movment = false;
-            Node_PlayerIsOn = Node_MovingTo;
+            IsPartyMenuOn = !IsPartyMenuOn;
         }
 
-        if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
+        if (IsPartyMenuOn == false)
         {
+            Player_Speed_Delta = Player_Speed * Time.deltaTime;
 
-            m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.ForestEncounter);
-            GameManager.SwitchToBattle();
+            Canvas_PartyMenu.SetActive(false);
 
-            Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
+            if (transform.position == Node_MovingTo.transform.position)
+            {
+                Player_Movment = false;
+                Node_PlayerIsOn = Node_MovingTo;
+            }
 
+            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
+            {
+
+                m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.ForestEncounter);
+                GameManager.SwitchToBattle();
+
+                Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
+
+            }
+
+            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EndNode)
+            {
+
+                m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.BossForestEncounter);
+                GameManager.SwitchToBattle();
+
+                Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
+
+            }
+
+            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.ShopNode)
+            {
+                SceneManager.LoadScene(1);
+            }
+
+
+            if (Player_Movment == true)
+            {
+                OverworldMovement();
+            }
+
+            if (Player_Movment == false)
+            {
+                PlayerMovement();
+            }
         }
-
-        if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.ShopNode)
+        else
         {
-            SceneManager.LoadScene(1);
-        }
-
-
-        if (Player_Movment == true)
-        {
-            OverworldMovement();
-        }
-
-        if (Player_Movment == false)
-        {
-            PlayerMovement();
+            Canvas_PartyMenu.SetActive(true);
+            if (Input.GetKeyDown("space"))
+            {
+                
+            }
         }
     }
 

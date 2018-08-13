@@ -11,6 +11,8 @@ public class Script_HealthBar : MonoBehaviour
     public Image Image_Manahbar;
     public Text Text_ManaRatio;
 
+    public Text Text_Name;
+
     public Script_Creatures Partymember;
 
     public int m_CurrentHealth = 150;
@@ -18,13 +20,13 @@ public class Script_HealthBar : MonoBehaviour
 
     public int m_CurrentMana = 150;
     private int m_MaxMana = 150;
-
+    public bool m_IsSelected;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         UpdateHealthbar();
-
+        m_IsSelected = false;
     }
 
     private void Update()
@@ -36,17 +38,22 @@ public class Script_HealthBar : MonoBehaviour
 
             m_CurrentMana = Partymember.CurrentMana;
             m_MaxMana = Partymember.MaxMana;
+
+            if (Text_Name != null)
+            {
+                Text_Name.text = Partymember.Name;
+            }
         }
         else
         {
-           
+
         }
 
 
         UpdateHealthbar();
     }
     // Update is called once per frame
-    void UpdateHealthbar ()
+    void UpdateHealthbar()
     {
         if (m_CurrentHealth <= 0)
         {
@@ -78,6 +85,15 @@ public class Script_HealthBar : MonoBehaviour
 
     }
 
+    public void SetIsSelected(bool a_isselected)
+    {
+        m_IsSelected = a_isselected;
+    }
+
+    public bool GetIsSelected()
+    {
+        return m_IsSelected;
+    }
     private void TakeDamage(int damage)
     {
         m_CurrentHealth -= damage;
@@ -88,6 +104,19 @@ public class Script_HealthBar : MonoBehaviour
     private void HealDamage(int heal)
     {
         m_CurrentHealth += heal;
+
+    }
+
+    public void SetHealthBarPosition(int a_Minimum, int a_Maximum)
+    {
+        if (m_IsSelected == true)
+        {
+            gameObject.transform.position = new Vector3(a_Maximum, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
+        else
+        {
+            gameObject.transform.position = new Vector3(a_Minimum, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
 
     }
 

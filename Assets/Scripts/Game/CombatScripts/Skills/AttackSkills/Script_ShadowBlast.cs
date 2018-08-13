@@ -13,6 +13,7 @@ public class Script_ShadowBlast : Script_Skills
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;
+        m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/DarkWave/ParticleEffect_DarkWave", typeof(ParticleSystem));
         m_CostToUse = 40;
         m_Damage = 10;
         SkillName = "Shadow Blast";

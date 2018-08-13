@@ -24,7 +24,8 @@ public class Script_Node : MonoBehaviour {
     {
         BasicNode,
         EncounterNode,
-        ShopNode
+        ShopNode,
+        EndNode
     };
 
     public NodeTypes Enum_NodeType;

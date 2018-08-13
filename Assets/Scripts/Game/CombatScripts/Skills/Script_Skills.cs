@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_Skills : MonoBehaviour {
+public class Script_Skills : MonoBehaviour
+{
 
     // Use this for initialization
 
@@ -62,9 +63,16 @@ public class Script_Skills : MonoBehaviour {
     protected string SkillName;
     protected string SkillDescription;
 
+    protected ParticleSystem m_SkillParticleEffect;
+
     protected int m_CostToUse;
 
     protected int m_Damage;
+
+    public ParticleSystem GetSkillParticleEffect()
+    {
+        return m_SkillParticleEffect;
+    }
 
     public int GetCostToUse()
     {

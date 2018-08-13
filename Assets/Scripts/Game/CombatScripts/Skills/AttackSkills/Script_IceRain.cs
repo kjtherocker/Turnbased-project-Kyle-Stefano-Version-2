@@ -15,6 +15,7 @@ public class Script_IceRain : Script_Skills
         m_Damagetype = DamageType.Magic;
         m_CostToUse = 40;
         m_Damage = 5;
+        m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/IceWave/ParticleEffect_IceWave", typeof(ParticleSystem));
         SkillName = "IceRain";
         SkillDescription = "IceRain that will hit the whole enemy team";
     }

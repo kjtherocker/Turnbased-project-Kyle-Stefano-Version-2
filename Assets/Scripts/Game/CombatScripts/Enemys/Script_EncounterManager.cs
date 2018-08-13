@@ -9,11 +9,14 @@ public class Script_EncounterManager : MonoBehaviour {
    public Script_Creatures EnemySlot3;
    public Script_Creatures EnemySlot4;
 
-   public  int test = 0;
+    public Script_Creatures EnemySlotBoss;
+
+    public  int test = 0;
 
     public enum EncounterTypes
     {
-        ForestEncounter
+        ForestEncounter,
+        BossForestEncounter
 
 
     }
@@ -72,31 +75,41 @@ public class Script_EncounterManager : MonoBehaviour {
 
             if (EncounterChosen == 0 )
             {
-                ForestEncounter2();
+                ForestEncounter1();
             }
             if (EncounterChosen == 1)
             {
-                ForestEncounter3();
+                ForestEncounter2();
             }
             if ( EncounterChosen == 2)
             {
-                ForestEncounter4();
+                ForestEncounter3();
             }
             if (EncounterChosen == 3 )
             {
-                ForestEncounter1();
+                ForestEncounter4();
             }
+        }
+        if (a_encounter == EncounterTypes.BossForestEncounter)
+        {
+            ForestEncounterRedeyes();
         }
 
     }
 
+    public void ForestEncounterRedeyes()
+    {
+
+        EnemySlotBoss = gameObject.AddComponent<Script_RedEyes>();
+
+    }
 
     public void ForestEncounter1()
     {
         EnemySlot1 = gameObject.AddComponent<Script_SlimeGreen>();
         EnemySlot2 = gameObject.AddComponent<Script_SlimeGreen>();
         EnemySlot3 = gameObject.AddComponent<Script_SlimeGreen>();
-        EnemySlot4 = gameObject.AddComponent<Script_SlimeWhite>();
+        EnemySlot4 = gameObject.AddComponent<Script_SlimeGreen>();
       
     }
 

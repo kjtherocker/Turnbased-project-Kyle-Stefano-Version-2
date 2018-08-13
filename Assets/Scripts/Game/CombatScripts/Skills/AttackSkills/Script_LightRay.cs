@@ -13,6 +13,7 @@ public class Script_LightRay : Script_Skills
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;
+        m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/LightWave/ParticleEffect_LightWave", typeof(ParticleSystem));
         m_CostToUse = 40;
         m_Damage = 10;
         SkillName = "Light Ray";
