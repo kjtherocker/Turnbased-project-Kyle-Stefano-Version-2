@@ -277,6 +277,16 @@ public class Script_Creatures : MonoBehaviour
         CurrentMana += Incrementby;
     }
 
+    public void SetMana(int Incrementby)
+    {
+        CurrentMana = Incrementby;
+    }
+
+    public void SetHealth(int Incrementby)
+    {
+        CurrentHealth = Incrementby;
+    }
+
     public void InflictAliment(Script_Skills.SkillAilment a_IncomingAliment)
     {
         string Incomingaliment = a_IncomingAliment.ToString();
@@ -339,10 +349,10 @@ public class Script_Creatures : MonoBehaviour
         Script_FloatingUiElementsController.CreateFloatingText(Decremenby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
         CurrentHealth -= Decremenby;
     }
-    public IEnumerator DecrementHealth(int Decrementby, Script_Skills.ElementalType elementalType, float TimeTillHoveringUiElement, float TimeTillDamage)
+    public IEnumerator DecrementHealth(int Decrementby, Script_Skills.ElementalType elementalType,float TimeTillInitalDamage, float TimeTillHoveringUiElement, float TimeTillDamage)
     {
 
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(TimeTillInitalDamage);
         GotDamaged = true;
 
         if (m_creaturesAilment == CreaturesAilment.Sleep)

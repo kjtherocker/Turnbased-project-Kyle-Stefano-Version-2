@@ -20,7 +20,7 @@ public class Script_SlimeRed : Script_Creatures
 
         m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[1] = gameObject.AddComponent<Script_Attack>();
+        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
         m_Skills[2] = gameObject.AddComponent<Script_Invigorate>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"

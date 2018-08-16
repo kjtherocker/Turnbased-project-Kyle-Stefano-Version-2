@@ -22,7 +22,7 @@ public class Script_RedEyes : Script_Creatures
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
         m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_Red_Eyes", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_RedEyes", typeof(GameObject));
 
 
 

@@ -75,9 +75,12 @@ public class Script_HealthBar : MonoBehaviour
             m_CurrentMana = m_MaxMana;
         }
 
-        float ManaRatio = (float)m_CurrentMana / (float)m_MaxMana;
-        Image_Manahbar.rectTransform.localScale = new Vector3(ManaRatio * 0.65765f, 0.188084f, 0.188084f);
-        Text_ManaRatio.text = (m_CurrentMana).ToString();
+        if (Image_Manahbar != null)
+        {
+            float ManaRatio = (float)m_CurrentMana / (float)m_MaxMana;
+            Image_Manahbar.rectTransform.localScale = new Vector3(ManaRatio * 0.65765f, 0.188084f, 0.188084f);
+            Text_ManaRatio.text = (m_CurrentMana).ToString();
+        }
 
         float HealthRatio = (float)m_CurrentHealth / (float)m_MaxHealth;
         Image_Healthbar.rectTransform.localScale = new Vector3(HealthRatio * 0.65765f, 0.188084f, 0.188084f);

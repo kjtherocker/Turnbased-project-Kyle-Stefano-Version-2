@@ -20,7 +20,7 @@ public class Script_SlimeWhite : Script_Creatures
 
         m_Skills = new Script_Skills[2];
         m_Skills[0] = gameObject.AddComponent<Script_LightRay>();
-        m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
+        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 

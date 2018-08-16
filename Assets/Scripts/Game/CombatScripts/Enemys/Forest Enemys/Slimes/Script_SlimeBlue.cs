@@ -20,7 +20,7 @@ public class Script_SlimeBlue : Script_Creatures
 
         m_Skills = new Script_Skills[2];
         m_Skills[0] = gameObject.AddComponent<Script_IceRain>();
-        m_Skills[1] = gameObject.AddComponent<Script_Attack>();
+        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 

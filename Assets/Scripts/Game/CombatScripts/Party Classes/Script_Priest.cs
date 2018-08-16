@@ -19,11 +19,11 @@ public class Script_Priest : Script_Creatures
         Speed = 90;
         Name = "Priest";
 
-        m_Skills = new Script_Skills[5];
+        m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
         m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
         m_Skills[2] = gameObject.AddComponent<Script_LightRay>();
-        m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
+
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 

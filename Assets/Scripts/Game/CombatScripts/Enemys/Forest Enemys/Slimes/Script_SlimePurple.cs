@@ -16,11 +16,11 @@ public class Script_SlimePurple : Script_Creatures
         Magic = 25;
         Dexterity = 10;
         Speed = 10;
-        Name = "PurpleSlime";
+        Name = "Purple Slime";
 
         m_Skills = new Script_Skills[2];
         m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
-        m_Skills[1] = gameObject.AddComponent<Script_Attack>();
+        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 

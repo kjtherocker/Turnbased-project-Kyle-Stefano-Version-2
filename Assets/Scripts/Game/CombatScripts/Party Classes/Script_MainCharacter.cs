@@ -20,11 +20,11 @@ public class Script_MainCharacter : Script_Creatures {
         Speed = 50;
         Name = "MainCharacter";
    
-        m_Skills = new Script_Skills[8];
+        m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
         m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
         m_Skills[2] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
+
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 

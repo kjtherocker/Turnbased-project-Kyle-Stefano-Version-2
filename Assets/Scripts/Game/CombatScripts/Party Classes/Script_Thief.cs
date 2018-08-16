@@ -19,11 +19,11 @@ public class Script_Thief : Script_Creatures
         Speed = 90;
         Name = "Thiefboy";
 
-        m_Skills = new Script_Skills[5];
+        m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
         m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
         m_Skills[2] = gameObject.AddComponent<Script_PhoenixSpirit>();
-        m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
+
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 

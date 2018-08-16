@@ -42,6 +42,14 @@ public class Script_PartyManager : MonoBehaviour
         m_Healthbars[3].Partymember = m_CurrentParty[3];
     }
 
+    public void CombatEnd()
+    {
+        for (int i = 0; i < m_ReservePartymembers.Count; i++)
+        {
+            m_ReservePartymembers[i].SetHealth(m_ReservePartymembers[i].MaxHealth);
+            m_ReservePartymembers[i].SetMana(100);
+        }
+    }
 
     public void ReserveToParty(int CurrentPartyPosition, int CurrentReservePosition)
     {

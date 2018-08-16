@@ -23,7 +23,8 @@ public class Script_Tank : Script_Creatures
         m_Skills[0] = gameObject.AddComponent<Script_Attack>();
         m_Skills[1] = gameObject.AddComponent<Script_ShadowBlast>();
         m_Skills[2] = gameObject.AddComponent<Script_Invigorate>();
-        m_Skills[3] = gameObject.AddComponent<Script_PassTurn>();
+        m_Skills[3] = gameObject.AddComponent<Script_LightRay>();
+        m_Skills[4] = gameObject.AddComponent<Script_IceRain>();
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 
