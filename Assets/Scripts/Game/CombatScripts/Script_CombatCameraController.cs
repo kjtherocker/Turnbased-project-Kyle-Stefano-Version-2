@@ -6,6 +6,7 @@ public class Script_CombatCameraController : MonoBehaviour
 {
     public enum CameraState
     {
+        Nothing,
         Default,
         Spawn,
         AllyHealingSelecting,
@@ -98,7 +99,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
                 if (Vector3.Distance(transform.position, m_EnemyAttackingPoint2.transform.position) < 0.500f)
                 {
-                    m_cameraState = CameraState.Default;
+                    m_cameraState = CameraState.Nothing;
                 }
             }
             else

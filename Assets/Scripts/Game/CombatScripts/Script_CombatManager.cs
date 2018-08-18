@@ -62,7 +62,7 @@ public class Script_CombatManager : MonoBehaviour
     public List<Button> m_BasicMenuButtons;
     public List<Script_ButtonSkillWrapper> m_CurrentSkillMenuButtonsMenu;
     public List<Script_ButtonEnemyWrapper> m_CurrentEnemyMenuButtons;
-    public List<ParticleSystem> m_Skillparticleeffect;
+    
     public List<Script_Creatures> DeadAllys;
     public List<Script_Creatures> TurnOrderAlly;
     public List<Script_Creatures> TurnOrderEnemy;
@@ -278,12 +278,11 @@ public class Script_CombatManager : MonoBehaviour
 
         if (m_BattleStates == BattleStates.EnemyAttacking)
         {
-            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Default)
+            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
             {
-                if (m_Skillparticleeffect.Count == 0)
-                {
+
                     CombatTurnEndCombatManagerEnemy();
-                }
+
             }
         }
 
@@ -322,6 +321,7 @@ public class Script_CombatManager : MonoBehaviour
 
             CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
             EnemyTurn();
+            Attackisfinished = false;
 
         }
 
@@ -336,7 +336,7 @@ public class Script_CombatManager : MonoBehaviour
             if (m_BattleCamera.GetCameraState() != Script_CombatCameraController.CameraState.Spawn)
             {
                 Canvas_CommandBoard.SetActive(true);
-                //m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
+                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
             }
 
         }
@@ -423,28 +423,7 @@ public class Script_CombatManager : MonoBehaviour
             }
         }
 
-        if (m_Skillparticleeffect != null)
-        {
-            if (m_Skillparticleeffect.Count != 0)
-            {
-                if (m_Skillparticleeffect != null)
-                {
-                    for (int i = 0; i < m_Skillparticleeffect.Count; i++)
-                    {
-                        if (m_Skillparticleeffect != null)
-                        {
-                            if (m_Skillparticleeffect[i].IsAlive() == false)
-                            {
-                                if (m_Skillparticleeffect != null)
-                                {
-                                    m_Skillparticleeffect.RemoveAt(i);
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+        
 
         if (TurnOrderEnemy != null)
         {
@@ -472,7 +451,9 @@ public class Script_CombatManager : MonoBehaviour
 
         if (CurrentTurnHolder.m_creaturesAilment != Script_Creatures.CreaturesAilment.Sleep)
         {
-           
+            if (Attackisfinished == false)
+            {
+
                 if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Buff)
                 {
                     //Checking the range the skills has single target or fulltarget
@@ -528,9 +509,9 @@ public class Script_CombatManager : MonoBehaviour
                         m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
                         for (int i = 0; i < TurnOrderAlly.Count; i++)
                         {
-                            m_Skillparticleeffect.Add(Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillParticleEffect()));
+                            ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillParticleEffect());
                             TurnOrderAlly[i].IncrementMana(5);
-                            m_Skillparticleeffect[i].transform.localPosition = TurnOrderAlly[i].ModelInGame.transform.position;
+                            m_Skillparticleeffect.transform.localPosition = TurnOrderAlly[i].ModelInGame.transform.position;
 
                             StartCoroutine(TurnOrderAlly[i].DecrementHealth(DamageToAllys, CurrentTurnHolder.m_Skills[EnemySkillChosen].GetElementalType(), 0.2f, 2.0f, 1.0f));
                         }
@@ -594,21 +575,21 @@ public class Script_CombatManager : MonoBehaviour
 
                     }
                 }
-
             }
-            else
+        }
+        else
+        {
+            AmountofTurns--;
+
+            CurrentTurnHolder.EndTurn();
+
+            if (AmountofTurns != 0)
             {
-                AmountofTurns--;
-
-                CurrentTurnHolder.EndTurn();
-
-                if (AmountofTurns != 0)
-                {
-                    CurrentTurnHolderNumber++;
-
-                }
+                CurrentTurnHolderNumber++;
 
             }
+
+        }
         
     }
 
@@ -705,9 +686,9 @@ public class Script_CombatManager : MonoBehaviour
 
                             for (int i = 0; i < TurnOrderEnemy.Count; i++)
                             {
-                                m_Skillparticleeffect.Add(Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillParticleEffect()));
+                                ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillParticleEffect());
                                 TurnOrderEnemy[i].IncrementMana(5);
-                                m_Skillparticleeffect[i].transform.localPosition = TurnOrderEnemy[i].ModelInGame.transform.position;
+                                m_Skillparticleeffect.transform.localPosition = TurnOrderEnemy[i].ModelInGame.transform.position;
 
                                 StartCoroutine(TurnOrderEnemy[i].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetElementalType(),0.001f, 2.0f, 1.0f));
     
@@ -896,7 +877,7 @@ public class Script_CombatManager : MonoBehaviour
                     for (int i = 0; i < TurnOrderEnemy.Count; i++)
                     {
                         m_CurrentEnemyMenuButtons.Add(Instantiate<Script_ButtonEnemyWrapper>(m_ButtonEnemyReference, gameObject.transform));
-                        m_CurrentEnemyMenuButtons[i].gameObject.transform.position = new Vector3(48-0, 85 + i * 43, 0);
+                        m_CurrentEnemyMenuButtons[i].gameObject.transform.position = new Vector3(480, 85 + i * 45, 0);
                         m_CurrentEnemyMenuButtons[i].SetupButton(TurnOrderEnemy[i], i, this);
                         m_CurrentEnemyMenuButtons[i].gameObject.transform.SetParent(Canvas_CommandBoard.transform, false);
                     }
@@ -1091,22 +1072,24 @@ public class Script_CombatManager : MonoBehaviour
 
     public void CombatTurnEndCombatManagerEnemy()
     {
-
-        for (int i = 0; i < TurnOrderEnemy.Count; i++)
+        if (Attackisfinished == false)
         {
-            TurnOrderEnemy[i].ModelInGame.transform.localPosition = TurnOrderEnemy[i].GetSpawnPosition();
+            for (int i = 0; i < TurnOrderEnemy.Count; i++)
+            {
+                TurnOrderEnemy[i].ModelInGame.transform.localPosition = TurnOrderEnemy[i].GetSpawnPosition();
 
-        }
+            }
 
-        AmountofTurns--;
-        EnemyIsChosen = false;
-        CurrentTurnHolder.EndTurn();
-        Attackisfinished = true;
-        RemoveDeadFromList();
-        if (AmountofTurns != 0)
-        {
-            CurrentTurnHolderNumber++;
-            m_BattleStates = BattleStates.EnemyTurn;
+            AmountofTurns--;
+            EnemyIsChosen = false;
+            CurrentTurnHolder.EndTurn();
+            Attackisfinished = true;
+            RemoveDeadFromList();
+            if (AmountofTurns != 0)
+            {
+                CurrentTurnHolderNumber++;
+                m_BattleStates = BattleStates.EnemyTurn;
+            }
         }
     }
 
