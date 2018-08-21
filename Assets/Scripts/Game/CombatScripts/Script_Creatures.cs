@@ -48,6 +48,7 @@ public class Script_Creatures : MonoBehaviour
     }
 
     public Script_Skills[] m_Skills;
+    public Script_Skills[] m_BloodArts;
 
 
     public CreaturesAilment m_creaturesAilment;
@@ -399,8 +400,9 @@ public class Script_Creatures : MonoBehaviour
     }
 
 
-    public void IncrementHealth(int Increment)
+    public IEnumerator IncrementHealth(int Increment)
     {
+        yield return new WaitForSeconds(0.5f);
         CurrentHealth += Increment;
         Script_FloatingUiElementsController.Initalize();
         Script_FloatingUiElementsController.CreateFloatingText(Increment.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);

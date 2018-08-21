@@ -89,6 +89,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_IceRain.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_LightRay.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_ShadowBlast.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BloodSkills\Script_BloodRelief.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_SkillPassTurn.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
@@ -381,6 +382,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2018.2.0b9/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

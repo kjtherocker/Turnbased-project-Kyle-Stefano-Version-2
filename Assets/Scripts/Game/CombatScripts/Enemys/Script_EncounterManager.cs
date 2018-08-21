@@ -79,15 +79,15 @@ public class Script_EncounterManager : MonoBehaviour {
             }
             if (EncounterChosen == 1)
             {
-                ForestEncounter1();
+                ForestEncounter2();
             }
             if ( EncounterChosen == 2)
             {
-                ForestEncounter1();
+                ForestEncounter3();
             }
             if (EncounterChosen == 3 )
             {
-                ForestEncounter1();
+                ForestEncounter4();
             }
         }
         if (a_encounter == EncounterTypes.BossForestEncounter)

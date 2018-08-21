@@ -25,6 +25,10 @@ public class Script_MainCharacter : Script_Creatures {
         m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
         m_Skills[2] = gameObject.AddComponent<Script_FireBall>();
 
+        m_BloodArts = new Script_Skills[1];
+        m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+
+
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 

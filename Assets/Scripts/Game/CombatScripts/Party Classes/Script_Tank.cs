@@ -26,6 +26,11 @@ public class Script_Tank : Script_Creatures
         m_Skills[3] = gameObject.AddComponent<Script_LightRay>();
         m_Skills[4] = gameObject.AddComponent<Script_IceRain>();
 
+        m_BloodArts = new Script_Skills[1];
+        m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+
+
+
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
 
         charactertype = Charactertype.Ally;

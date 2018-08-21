@@ -16,7 +16,8 @@ public class Script_Skills : MonoBehaviour
         Wind,
         Lighting,
         Shadow,
-        Light
+        Light,
+        Blood
     }
 
     public enum SkillType
@@ -28,6 +29,7 @@ public class Script_Skills : MonoBehaviour
         Extra,
         Resurrect,
         Aliment,
+        Blood
 
 
     }
@@ -119,5 +121,9 @@ public class Script_Skills : MonoBehaviour
         return m_Damage;
     }
 
+    public int GetSkillDamage()
+    {
+        return m_Damage;
+    }
 
 }

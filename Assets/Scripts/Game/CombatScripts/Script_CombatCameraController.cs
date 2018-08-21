@@ -25,12 +25,17 @@ public class Script_CombatCameraController : MonoBehaviour
     public CameraState m_cameraState;
     public Script_Creatures m_CharacterReference;
     public Script_Creatures m_OtherCharacterReference;
+    public List<Script_Creatures> m_AllCharactersReference;
     public GameObject m_AllyHealingSelectingPosition;
     public GameObject m_SpawnPos;
     public GameObject m_EnemyAttackingPoint1;
     public GameObject m_EnemyAttackingPoint2;
+    public GameObject m_AllyHealing1;
+    public GameObject m_AllyHealing2;
+    public GameObject m_AllyHealinglookatpos;
     private Vector3 m_Camera_Offset;
     private Vector3 m_Camera_Offset_EnemyAttack;
+
 
     // Use this for initialization
     void Start()
@@ -39,6 +44,7 @@ public class Script_CombatCameraController : MonoBehaviour
         m_Camera_Offset = new Vector3(80, 45, 0);
         m_Camera_Offset_EnemyAttack = new Vector3(40, 20, 0);
         m_SpawnPos.transform.position = new Vector3(500.4f, 68.9f, 376.5f);
+
         transform.position = m_SpawnPos.transform.position;
     }
 
@@ -55,6 +61,28 @@ public class Script_CombatCameraController : MonoBehaviour
                     transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
                 }
             }
+            if (m_cameraState == CameraState.AllyHealing)
+            {
+                if (m_AllCharactersReference[0].GetCharactertype() == Script_Creatures.Charactertype.Ally)
+                {
+
+                    transform.position = m_AllyHealing1.transform.position;
+                    m_AllyHealing1.transform.position = Vector3.Slerp(m_AllyHealing1.transform.position, m_AllyHealing2.transform.position, Time.deltaTime * 0.5f);
+
+                    transform.LookAt(m_AllyHealinglookatpos.transform.position);
+
+                    if (Vector3.Distance(transform.position, m_AllyHealing2.transform.position) < 40)
+                    {
+                        m_cameraState = CameraState.Nothing;
+                    }
+                }
+                else
+                {
+
+                    m_AllyHealing1.transform.localPosition = new Vector3(1305.7f, 0, 274.7f);
+                }
+            }
+
             if (m_cameraState == CameraState.AllyHealingSelecting)
             {
                 if (m_CharacterReference.GetCharactertype() == Script_Creatures.Charactertype.Ally)
@@ -128,4 +156,11 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         m_OtherCharacterReference = a_Reference;
     }
+    public void SetAllCharacterReferences(List<Script_Creatures> a_AllReference)
+    {
+        m_AllCharactersReference = a_AllReference;
+    }
+
+
+    
 }
