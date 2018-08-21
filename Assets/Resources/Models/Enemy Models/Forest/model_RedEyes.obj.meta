@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ff809540bb28701409ad5e98b8b8ae41
+guid: c22935e67f7847c46abf73e9459148b0
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -11,7 +11,12 @@ ModelImporter:
     2300000: Red_Eyes
     3300000: Red_Eyes
     4300000: Red_Eyes
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_EyesMat
+    second: {fileID: 2100000, guid: 6371838c85def454c9de65554c8a059b, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
