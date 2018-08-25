@@ -112,8 +112,8 @@
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <None Include="Assets\Resources\Shaders\Disappear.shader" />
-    <None Include="Assets\Resources\Shaders\DomainShader.shader" />
     <None Include="Assets\Resources\Shaders\Meltingshaderunlit.shader" />
+    <None Include="Assets\Resources\Shaders\DomainShader.shader" />
     <None Include="Assets\Resources\Shaders\Outlined-Silhouette Only.shader" />
     <None Include="Assets\Resources\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\Resources\Shaders\RedEyesFloorTransistionShader.shader" />
