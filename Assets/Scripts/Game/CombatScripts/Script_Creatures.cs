@@ -402,8 +402,8 @@ public class Script_Creatures : MonoBehaviour
 
     public IEnumerator IncrementHealth(int Increment)
     {
-        yield return new WaitForSeconds(0.5f);
         CurrentHealth += Increment;
+        yield return new WaitForSeconds(0.5f);
         Script_FloatingUiElementsController.Initalize();
         Script_FloatingUiElementsController.CreateFloatingText(Increment.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
     }

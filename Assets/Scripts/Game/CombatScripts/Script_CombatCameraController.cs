@@ -71,7 +71,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
                     transform.LookAt(m_AllyHealinglookatpos.transform.position);
 
-                    if (Vector3.Distance(transform.position, m_AllyHealing2.transform.position) < 40)
+                    if (Vector3.Distance(transform.position, m_AllyHealing2.transform.position) < 80)
                     {
                         m_cameraState = CameraState.Nothing;
                     }

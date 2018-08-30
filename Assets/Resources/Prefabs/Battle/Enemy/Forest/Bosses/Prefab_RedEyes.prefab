@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4639141926085658}
   - component: {fileID: 33292850168668216}
   - component: {fileID: 23557487237081180}
+  - component: {fileID: 95443265786421220}
   m_Layer: 0
   m_Name: Prefab_RedEyes
   m_TagString: Untagged
@@ -65,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349433108723462}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 12.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4077662459166796}
@@ -114,6 +115,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1349433108723462}
   m_Mesh: {fileID: 4300000, guid: c22935e67f7847c46abf73e9459148b0, type: 3}
+--- !u!95 &95443265786421220
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1349433108723462}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 62925fbc1ee6fe44da8f9a5efa8c9e3b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!198 &198797743351556062
 ParticleSystem:
   m_ObjectHideFlags: 1
