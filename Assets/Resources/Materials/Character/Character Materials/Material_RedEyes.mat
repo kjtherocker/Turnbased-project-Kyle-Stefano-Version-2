@@ -70,7 +70,7 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Opacity: 1
-    - _Outline: 1.21
+    - _Outline: 0.5
     - _OutlineExistance: 0
     - _Parallax: 0.02
     - _SliceAmount: 0.5

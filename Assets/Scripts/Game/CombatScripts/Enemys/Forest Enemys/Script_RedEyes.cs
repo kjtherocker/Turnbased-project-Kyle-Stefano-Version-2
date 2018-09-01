@@ -19,8 +19,8 @@ public class Script_RedEyes : Script_Creatures
         Name = "Red Eyes";
 
         m_Skills = new Script_Skills[2];
-        m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
+        m_Skills[0] = gameObject.AddComponent<Script_RedEyesEncroach>();
+        m_Skills[1] = gameObject.AddComponent<Script_RedEyesEncroach>();
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_RedEyes", typeof(GameObject));
 

@@ -91,6 +91,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\AttackSkills\Script_ShadowBlast.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BloodSkills\Script_BloodRelief.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_RedEyesEncroach.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_SkillPassTurn.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ResurrectSkills\Script_PhoenixSpirit.cs" />

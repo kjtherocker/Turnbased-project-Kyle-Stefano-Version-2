@@ -8,6 +8,9 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
     private static Script_FloatingUiElements FloatingWeak;
     private static Script_FloatingUiElements FloatingStrong;
     private static Script_FloatingUiElements FloatingMiss;
+    private static Script_FloatingUiElements FloatingAttackUp;
+    private static Script_FloatingUiElements FloatingDefenseUp;
+    private static Script_FloatingUiElements FloatingSpeedUp;
     private static GameObject canvas;
 
     public enum UiElementType
@@ -15,7 +18,10 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         Text,
         Miss,
         Strong,
-        Weak
+        Weak,
+        Attackup,
+        Defenseup,
+        SpeedUp
     }
 
     public UiElementType uiElementType;
@@ -39,6 +45,18 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         if (!FloatingMiss)
         {
             FloatingMiss = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
+        }
+        if (!FloatingAttackUp)
+        {
+            FloatingAttackUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_AttackUp_Parent", typeof(Script_FloatingUiElements));
+        }
+        if (!FloatingDefenseUp)
+        {
+            FloatingDefenseUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_SpeedUp_Parent", typeof(Script_FloatingUiElements));
+        }
+        if (!FloatingSpeedUp)
+        {
+            FloatingSpeedUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
         }
 
     }
@@ -74,6 +92,30 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         if (a_uiElementtype == UiElementType.Miss)
         {
             Script_FloatingUiElements instance = Instantiate(FloatingMiss);
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
+            instance.transform.SetParent(canvas.transform, false);
+            instance.transform.position = screenPosition;
+
+        }
+        if (a_uiElementtype == UiElementType.Attackup)
+        {
+            Script_FloatingUiElements instance = Instantiate(FloatingAttackUp);
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
+            instance.transform.SetParent(canvas.transform, false);
+            instance.transform.position = screenPosition;
+
+        }
+        if (a_uiElementtype == UiElementType.Defenseup)
+        {
+            Script_FloatingUiElements instance = Instantiate(FloatingDefenseUp);
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
+            instance.transform.SetParent(canvas.transform, false);
+            instance.transform.position = screenPosition;
+
+        }
+        if (a_uiElementtype == UiElementType.SpeedUp)
+        {
+            Script_FloatingUiElements instance = Instantiate(FloatingSpeedUp);
             Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
             instance.transform.SetParent(canvas.transform, false);
             instance.transform.position = screenPosition;

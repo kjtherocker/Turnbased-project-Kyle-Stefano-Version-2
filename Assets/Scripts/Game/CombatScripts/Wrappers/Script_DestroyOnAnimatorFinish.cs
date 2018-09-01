@@ -14,7 +14,7 @@ public class Script_DestroyOnAnimatorFinish : MonoBehaviour {
         Destroy(gameObject, clipInfos[0].clip.length);
 
     }
-
+    
     // Update is called once per frame
     void Update () {
 		

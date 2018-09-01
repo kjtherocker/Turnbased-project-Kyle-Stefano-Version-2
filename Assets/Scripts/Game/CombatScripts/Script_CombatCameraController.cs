@@ -16,6 +16,7 @@ public class Script_CombatCameraController : MonoBehaviour
         AllyAttackSelecting,
         EnemyAttacking,
         EnemyAttackingMelee,
+        EnemyZoomIn,
         AllyBuff,
         EnemyBuff
 
@@ -33,6 +34,7 @@ public class Script_CombatCameraController : MonoBehaviour
     public GameObject m_AllyHealing1;
     public GameObject m_AllyHealing2;
     public GameObject m_AllyHealinglookatpos;
+    public GameObject m_EnemyZoomin;
     private Vector3 m_Camera_Offset;
     private Vector3 m_Camera_Offset_EnemyAttack;
 
@@ -53,6 +55,19 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         if (m_CharacterReference != null)
         {
+            if (m_cameraState == CameraState.EnemyZoomIn)
+            {
+                m_CharacterReference.ModelInGame.gameObject.transform.rotation = Quaternion.Euler(0.0f,90.0f,0.0f);
+                transform.position = m_EnemyZoomin.transform.position;
+                m_EnemyZoomin.transform.position = Vector3.Lerp(transform.position, m_CharacterReference.ModelInGame.transform.position +  new Vector3(0, 20, 0), Time.deltaTime * 0.1f);
+                transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+                if (Vector3.Distance(transform.position, m_CharacterReference.ModelInGame.transform.position + new Vector3(0, 20, 0)) < 15.0f)
+                {
+                    m_cameraState = CameraState.Nothing;
+                }
+
+            }
+
             if (m_cameraState == CameraState.Default)
             {
                 if (m_CharacterReference.GetCharactertype() == Script_Creatures.Charactertype.Ally)
@@ -74,12 +89,13 @@ public class Script_CombatCameraController : MonoBehaviour
                     if (Vector3.Distance(transform.position, m_AllyHealing2.transform.position) < 80)
                     {
                         m_cameraState = CameraState.Nothing;
+                        m_AllyHealing1.transform.localPosition = new Vector3(1305.7f, 0, 274.7f);
                     }
                 }
                 else
                 {
 
-                    m_AllyHealing1.transform.localPosition = new Vector3(1305.7f, 0, 274.7f);
+                    //m_AllyHealing1.transform.localPosition = new Vector3(1305.7f, 0, 274.7f);
                 }
             }
 

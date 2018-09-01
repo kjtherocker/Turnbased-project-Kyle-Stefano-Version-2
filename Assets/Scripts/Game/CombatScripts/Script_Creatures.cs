@@ -234,8 +234,12 @@ public class Script_Creatures : MonoBehaviour
 
     }
 
-    public void AddBuff(int a_buffamount)
+    public IEnumerator AddBuff(int a_buffamount)
     {
+        Script_FloatingUiElementsController.Initalize();
+        yield return new WaitForSeconds(0.5f);
+        Script_FloatingUiElementsController.CreateFloatingText(0.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Attackup);
+
         BuffandDebuff += a_buffamount;
     }
 
