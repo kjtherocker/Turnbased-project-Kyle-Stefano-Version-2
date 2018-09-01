@@ -12,7 +12,27 @@ ModelImporter:
     2300000: //RootNode
     3300000: //RootNode
     4300000: Grass
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Bush Material
+    second: {fileID: 2100000, guid: 8562990f54cc1514080fb2ef614c04c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass Material
+    second: {fileID: 2100000, guid: 191bd1acdc66ddd498c918618956e737, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock Material
+    second: {fileID: 2100000, guid: 7ff222cc40b9f8f4db66dd12663401f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Tree Material
+    second: {fileID: 2100000, guid: e90831bf4275b6c43b4067fb15821dc7, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
