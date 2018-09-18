@@ -12,8 +12,8 @@ public class Script_HolyWater : Script_Skills
         m_SkillType = SkillType.Heal;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;
-        m_Damage = 45;
-        m_CostToUse = 45;
+        m_Damage = 300;
+        m_CostToUse = 60;
         SkillName = "HolyWater";
         SkillDescription = "Heals the whole party a small amount";
     }

@@ -11,12 +11,8 @@ public class Script_Node : MonoBehaviour {
     public Script_Node NodeLeft;
     public Script_Node NodeRight;
 
-    public Material MaterialBasicNode;
-    public Material MaterialEncounterNode;
-    public Material MaterialStoreNode;
-
-
-    Renderer m_Renderer;
+    public GameObject m_EnemyPlaneReference;
+    public GameObject m_SpawnedObject;
 
     bool RoadsAreSpawned;
 
@@ -33,8 +29,6 @@ public class Script_Node : MonoBehaviour {
 
     void Start ()
     {
-        // Enum_NodeType = NodeTypes.BasicNode;
-        m_Renderer = GetComponent<Renderer>();
         RoadsAreSpawned = false;
     }
 	
@@ -43,17 +37,13 @@ public class Script_Node : MonoBehaviour {
     {
         if (Enum_NodeType == NodeTypes.BasicNode)
         {
-          m_Renderer.material = MaterialBasicNode;
+         
 
         }
-        if (Enum_NodeType == NodeTypes.EncounterNode)
-        {
-            m_Renderer.material = MaterialEncounterNode;
-
-        }
+        
         if (Enum_NodeType == NodeTypes.ShopNode)
         {
-            m_Renderer.material = MaterialStoreNode;
+            
 
         }
 
@@ -66,11 +56,26 @@ public class Script_Node : MonoBehaviour {
 
     public void SpawnRoads()
     {
+        if (Enum_NodeType == NodeTypes.EncounterNode)
+        {
+            m_SpawnedObject = Instantiate<GameObject>(m_EnemyPlaneReference,gameObject.transform);
+            RoadsAreSpawned = true;
+        }
+        if (Enum_NodeType == NodeTypes.EndNode)
+        {
+            m_SpawnedObject = Instantiate<GameObject>(m_EnemyPlaneReference, gameObject.transform);
+            RoadsAreSpawned = true;
+        }
 
     }
 
     public void SetNodeType(NodeTypes nodetype)
     {
+        if (m_SpawnedObject != null)
+        {
+            Destroy(m_SpawnedObject);
+        }
+
         Enum_NodeType = nodetype;
     }
 }

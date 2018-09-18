@@ -44,10 +44,13 @@ public class Script_PartyManager : MonoBehaviour
 
     public void CombatEnd()
     {
+
+        m_ReservePartymembers[0].SetHealth(54);
+        m_ReservePartymembers[0].SetMana(100);
         for (int i = 0; i < m_ReservePartymembers.Count; i++)
         {
-            m_ReservePartymembers[i].SetHealth(m_ReservePartymembers[i].MaxHealth);
-            m_ReservePartymembers[i].SetMana(100);
+            m_ReservePartymembers[0].SetHealth(54);
+            m_ReservePartymembers[0].SetMana(100);
         }
     }
 

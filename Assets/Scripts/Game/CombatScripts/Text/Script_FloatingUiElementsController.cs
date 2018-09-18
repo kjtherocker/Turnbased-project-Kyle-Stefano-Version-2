@@ -9,6 +9,7 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
     private static Script_FloatingUiElements FloatingStrong;
     private static Script_FloatingUiElements FloatingMiss;
     private static Script_FloatingUiElements FloatingAttackUp;
+    private static Script_FloatingUiElements FloatingAttackDown;
     private static Script_FloatingUiElements FloatingDefenseUp;
     private static Script_FloatingUiElements FloatingSpeedUp;
     private static GameObject canvas;
@@ -20,6 +21,7 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         Strong,
         Weak,
         Attackup,
+        AttackDown,
         Defenseup,
         SpeedUp
     }
@@ -49,6 +51,11 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         if (!FloatingAttackUp)
         {
             FloatingAttackUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_AttackUp_Parent", typeof(Script_FloatingUiElements));
+        }
+
+        if (!FloatingAttackDown)
+        {
+            FloatingAttackDown = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_AttackDown_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingDefenseUp)
         {
@@ -100,6 +107,14 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
         if (a_uiElementtype == UiElementType.Attackup)
         {
             Script_FloatingUiElements instance = Instantiate(FloatingAttackUp);
+            Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
+            instance.transform.SetParent(canvas.transform, false);
+            instance.transform.position = screenPosition;
+
+        }
+        if (a_uiElementtype == UiElementType.AttackDown)
+        {
+            Script_FloatingUiElements instance = Instantiate(FloatingAttackDown);
             Vector2 screenPosition = Camera.main.WorldToScreenPoint(location.position + Vector3.up);
             instance.transform.SetParent(canvas.transform, false);
             instance.transform.position = screenPosition;

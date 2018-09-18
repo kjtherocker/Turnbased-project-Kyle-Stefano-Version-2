@@ -208,6 +208,8 @@ MonoBehaviour:
   Image_Manahbar: {fileID: 0}
   Text_ManaRatio: {fileID: 0}
   Text_Name: {fileID: 114262284144249490}
+  Text_Buff: {fileID: 0}
+  Image_Portrait: {fileID: 114293914642158030}
   Partymember: {fileID: 0}
   m_CurrentHealth: 150
   m_CurrentMana: 150

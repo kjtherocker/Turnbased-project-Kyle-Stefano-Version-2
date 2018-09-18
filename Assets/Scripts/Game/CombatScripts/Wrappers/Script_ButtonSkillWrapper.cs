@@ -9,6 +9,7 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
     private List<Script_Creatures> m_ListReference;
     public Script_Skills m_ButtonSkill;
     public Script_CombatManager m_CombatManagerRefrence;
+    public Button m_Button;
     public Text m_ButtonText;
     public Text m_CostToUseText;
     int m_SkillNumber;
@@ -49,6 +50,11 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
         m_SkillNumber = a_Skillnumber;
         m_CombatManagerRefrence = a_CombatManager;
         m_ListReference = a_ReferenceList;
+    }
+
+    public void SetAsNotInteractable()
+    {
+        m_Button.interactable = false;
     }
 
     public void HoveringOverButton()

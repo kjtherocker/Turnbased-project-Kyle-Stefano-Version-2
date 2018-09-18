@@ -100,10 +100,9 @@ MonoBehaviour:
   NodeDown: {fileID: 0}
   NodeLeft: {fileID: 0}
   NodeRight: {fileID: 0}
-  MaterialBasicNode: {fileID: 2100000, guid: 4913186c9c4d67843822e71ba7136b45, type: 2}
-  MaterialEncounterNode: {fileID: 2100000, guid: 8b6ebffd77d48664a83340fe21c745fa,
+  m_EnemyPlaneReference: {fileID: 1492905452858538, guid: 9d51acfd8ee91a347ad881661091c35d,
     type: 2}
-  MaterialStoreNode: {fileID: 2100000, guid: 0a2bd45ea9a52fc4a92e22f32c7c98d4, type: 2}
+  m_SpawnedObject: {fileID: 0}
   Enum_NodeType: 1
 --- !u!136 &136388423621012548
 CapsuleCollider:

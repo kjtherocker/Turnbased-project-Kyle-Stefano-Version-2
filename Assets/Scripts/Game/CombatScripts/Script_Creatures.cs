@@ -46,7 +46,16 @@ public class Script_Creatures : MonoBehaviour
         Rage,
 
     }
+    public enum DomainStages
+    {
+        NotActivated,
+        Encroaching,
+        Finished,
+        End
+    }
 
+    public Script_Skills m_Domain;
+    public Script_Skills m_Attack;
     public Script_Skills[] m_Skills;
     public Script_Skills[] m_BloodArts;
 
@@ -55,6 +64,7 @@ public class Script_Creatures : MonoBehaviour
     public Charactertype charactertype;
     public ElementalStrength elementalStrength;
     public ElementalWeakness elementalWeakness;
+    public DomainStages m_DomainStages;
 
     public int CurrentHealth;
     public int MaxHealth;
@@ -65,6 +75,7 @@ public class Script_Creatures : MonoBehaviour
     public int Dexterity;
     public int Speed;
 
+    public int AmountOfTurns;
 
     public int BuffandDebuff;
     public int BuffandDebuffDamageStrength;
@@ -78,6 +89,8 @@ public class Script_Creatures : MonoBehaviour
     public float DecrmentHealthTimer;
 
     public bool GotDamaged;
+
+    public Material m_Texture;
 
     public ParticleSystem m_SelectedParticlesystem;
 
@@ -94,6 +107,11 @@ public class Script_Creatures : MonoBehaviour
     bool m_IsAlive;
 
     // Update is called once per frame
+    public void SetCreature()
+    {
+        m_DomainStages = DomainStages.NotActivated;
+        m_Attack = gameObject.AddComponent<Script_Attack>();
+    }
     public void Update()
     {
         if (ObjectToRotateAround == gameObject)
@@ -103,6 +121,13 @@ public class Script_Creatures : MonoBehaviour
         else
         {
             IsCurrentTurnHolder = false;
+        }
+        if (m_DomainStages == DomainStages.Finished)
+        {
+            AmountOfTurns += 1;
+            Magic += 25;
+            Strength += 25;
+            m_DomainStages = DomainStages.End;
         }
 
         if (ObjectToRotateAround != null)
@@ -122,6 +147,10 @@ public class Script_Creatures : MonoBehaviour
 
 
                             //ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
+                        }
+                        else
+                        {
+                            ModelInGame.transform.rotation = Quaternion.Euler(0, -260, 0);
                         }
                     }
                 }
@@ -143,6 +172,11 @@ public class Script_Creatures : MonoBehaviour
         if (CurrentHealth >= 0)
         {
             m_IsAlive = true;
+        }
+
+        if (CurrentHealth >= MaxHealth)
+        {
+            CurrentHealth = MaxHealth;
         }
 
         DebuffsandBuffs();
@@ -243,8 +277,12 @@ public class Script_Creatures : MonoBehaviour
         BuffandDebuff += a_buffamount;
     }
 
-    public void AddDeBuff(int a_debuffamount)
+    public IEnumerator AddDeBuff(int a_debuffamount)
     {
+        Script_FloatingUiElementsController.Initalize();
+        yield return new WaitForSeconds(0.5f);
+        Script_FloatingUiElementsController.CreateFloatingText(0.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.AttackDown);
+
         BuffandDebuff -= a_debuffamount;
     }
 
@@ -425,14 +463,13 @@ public class Script_Creatures : MonoBehaviour
 
     public void Resurrection()
     {
-        BuffandDebuff = 0;
-        AlimentCounter = 0;
         ModelInGame.gameObject.SetActive(true);
     }
     public void Death()
     {
         CurrentHealth = 0;
         AlimentCounter = 0;
+        BuffandDebuff = 0;
         if (charactertype == Charactertype.Enemy)
         {
             Destroy(ModelInGame.gameObject);

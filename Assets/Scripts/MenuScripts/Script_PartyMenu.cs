@@ -37,7 +37,7 @@ public class Script_PartyMenu : MonoBehaviour
         for (int i = 0; i < 4; i++)
         {
             m_Healthbars.Add(Instantiate<Script_HealthBar>(m_HealthbarReference, gameObject.transform));
-            m_Healthbars[i].gameObject.transform.position = new Vector3(100, 80 + i * 58, 0);
+            m_Healthbars[i].gameObject.transform.localPosition = new Vector3(-200, -80 + i * 80, 0);
             m_Healthbars[i].Partymember = m_PartyManager.m_CurrentParty[i];
         }
 
@@ -163,7 +163,7 @@ public class Script_PartyMenu : MonoBehaviour
             for (int i = 0; i < m_PartyManager.m_ReservePartymembers.Count; i++)
             {
                 m_ReserveHealthBar.Add(Instantiate<Script_HealthBar>(m_HealthbarReference, gameObject.transform));
-                m_ReserveHealthBar[i].gameObject.transform.position = new Vector3(320, 68 + i * 58, 0);
+                m_ReserveHealthBar[i].gameObject.transform.localPosition = new Vector3(290, -80 + i * 80, 0);
                 m_ReserveHealthBar[i].Partymember = m_PartyManager.m_ReservePartymembers[i];
             }
         }

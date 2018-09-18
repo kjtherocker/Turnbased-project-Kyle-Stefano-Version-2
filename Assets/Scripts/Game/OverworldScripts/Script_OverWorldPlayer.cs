@@ -36,7 +36,10 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         {
             IsPartyMenuOn = !IsPartyMenuOn;
         }
-
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            Application.Quit();
+        }
         if (IsPartyMenuOn == false)
         {
             Player_Speed_Delta = Player_Speed * Time.deltaTime;

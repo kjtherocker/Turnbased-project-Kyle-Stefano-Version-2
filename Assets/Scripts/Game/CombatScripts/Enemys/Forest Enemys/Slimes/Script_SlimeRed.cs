@@ -8,15 +8,17 @@ public class Script_SlimeRed : Script_Creatures
     // Use this for initialization
     void Start()
     {
-        CurrentHealth = 300;
+        CurrentHealth = 200;
         MaxHealth = 200;
         CurrentMana = 10;
         MaxMana = 10;
-        Strength = 25;
-        Magic = 75;
+        Strength = 350;
+        Magic = 350;
         Dexterity = 10;
         Speed = 10;
         Name = "Red Slime";
+
+        AmountOfTurns = 1;
 
         m_Skills = new Script_Skills[3];
         m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
@@ -27,7 +29,7 @@ public class Script_SlimeRed : Script_Creatures
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Slime/Prefab_SlimeRed", typeof(GameObject));
 
-
+        m_Texture = (Material)Resources.Load("Materials/Portrait/Material_RedSlime", typeof(Material));
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Fire;

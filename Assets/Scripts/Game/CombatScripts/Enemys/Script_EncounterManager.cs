@@ -71,7 +71,7 @@ public class Script_EncounterManager : MonoBehaviour {
 
         if (a_encounter == EncounterTypes.ForestEncounter)
         {
-            int EncounterChosen = Random.Range(0, 3);
+            int EncounterChosen = Random.Range(0, 5);
 
             if (EncounterChosen == 0 )
             {
@@ -89,6 +89,10 @@ public class Script_EncounterManager : MonoBehaviour {
             {
                 ForestEncounter4();
             }
+            if (EncounterChosen == 4)
+            {
+                ForestEncounter4();
+            }
         }
         if (a_encounter == EncounterTypes.BossForestEncounter)
         {
@@ -99,7 +103,6 @@ public class Script_EncounterManager : MonoBehaviour {
 
     public void ForestEncounterRedeyes()
     {
-
         EnemySlotBoss = gameObject.AddComponent<Script_RedEyes>();
 
     }

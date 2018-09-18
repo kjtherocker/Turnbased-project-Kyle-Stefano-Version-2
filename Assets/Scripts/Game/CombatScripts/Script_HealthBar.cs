@@ -13,6 +13,8 @@ public class Script_HealthBar : MonoBehaviour
 
     public Text Text_Name;
 
+    public Text Text_Buff;
+    public Image Image_Portrait;
     public Script_Creatures Partymember;
 
     public int m_CurrentHealth = 150;
@@ -38,6 +40,22 @@ public class Script_HealthBar : MonoBehaviour
 
             m_CurrentMana = Partymember.CurrentMana;
             m_MaxMana = Partymember.MaxMana;
+
+            Image_Portrait.material = Partymember.m_Texture;
+
+            if (Text_Buff != null)
+            {
+                Text_Buff.text = Partymember.BuffandDebuff.ToString();
+
+                if (Partymember.BuffandDebuff == 0)
+                {
+                    Text_Buff.gameObject.SetActive(false);
+                }
+                else
+                {
+                    Text_Buff.gameObject.SetActive(true);
+                }
+            }
 
             if (Text_Name != null)
             {

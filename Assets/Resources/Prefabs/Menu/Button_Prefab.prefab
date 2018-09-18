@@ -269,6 +269,7 @@ MonoBehaviour:
   m_ButtonTurnHolder: {fileID: 0}
   m_ButtonSkill: {fileID: 0}
   m_CombatManagerRefrence: {fileID: 0}
+  m_Button: {fileID: 114913365035125444}
   m_ButtonText: {fileID: 114237751924020454}
   m_CostToUseText: {fileID: 114226740345621600}
 --- !u!222 &222528507013553714

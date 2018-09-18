@@ -2438,6 +2438,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 224275572232335768, guid: d9145da4293d5f34d8a867de8e05d064,
         type: 2}
       propertyPath: m_LocalPosition.x
@@ -2533,6 +2538,36 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 673709328}
+    - target: {fileID: 114210159704943946, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_Text
+      value: Twilights Call
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1738109748}
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ExitGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 114624731242081434, guid: d9145da4293d5f34d8a867de8e05d064,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9145da4293d5f34d8a867de8e05d064, type: 2}
   m_IsPrefabAsset: 0
@@ -3396,6 +3431,12 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1280389266095402, guid: d9145da4293d5f34d8a867de8e05d064,
     type: 2}
   m_PrefabInternal: {fileID: 1402075809}
+--- !u!114 &1738109748 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114995969607922616, guid: d9145da4293d5f34d8a867de8e05d064,
+    type: 2}
+  m_PrefabInternal: {fileID: 1402075809}
+  m_Script: {fileID: 11500000, guid: 5860358bc59cba049ba1b13951517732, type: 3}
 --- !u!1 &1787310009
 GameObject:
   m_ObjectHideFlags: 0

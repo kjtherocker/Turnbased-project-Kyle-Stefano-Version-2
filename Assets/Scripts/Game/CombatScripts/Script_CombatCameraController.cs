@@ -33,6 +33,8 @@ public class Script_CombatCameraController : MonoBehaviour
     public GameObject m_EnemyAttackingPoint2;
     public GameObject m_AllyHealing1;
     public GameObject m_AllyHealing2;
+    public GameObject m_EnemyBuff1;
+    public GameObject m_EnemyBuff2;
     public GameObject m_AllyHealinglookatpos;
     public GameObject m_EnemyZoomin;
     private Vector3 m_Camera_Offset;
@@ -43,9 +45,9 @@ public class Script_CombatCameraController : MonoBehaviour
     void Start()
     {
         m_cameraState = CameraState.Default;
-        m_Camera_Offset = new Vector3(80, 45, 0);
+        m_Camera_Offset = new Vector3(100, 80, 0);
         m_Camera_Offset_EnemyAttack = new Vector3(40, 20, 0);
-        m_SpawnPos.transform.position = new Vector3(500.4f, 68.9f, 376.5f);
+        m_SpawnPos.transform.position = new Vector3(200, 250, 376.5f);
 
         transform.position = m_SpawnPos.transform.position;
     }
@@ -61,7 +63,7 @@ public class Script_CombatCameraController : MonoBehaviour
                 transform.position = m_EnemyZoomin.transform.position;
                 m_EnemyZoomin.transform.position = Vector3.Lerp(transform.position, m_CharacterReference.ModelInGame.transform.position +  new Vector3(0, 20, 0), Time.deltaTime * 0.1f);
                 transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-                if (Vector3.Distance(transform.position, m_CharacterReference.ModelInGame.transform.position + new Vector3(0, 20, 0)) < 15.0f)
+                if (Vector3.Distance(transform.position, m_CharacterReference.ModelInGame.transform.position + new Vector3(0, 20, 0)) < 80.0f)
                 {
                     m_cameraState = CameraState.Nothing;
                 }
@@ -73,7 +75,7 @@ public class Script_CombatCameraController : MonoBehaviour
                 if (m_CharacterReference.GetCharactertype() == Script_Creatures.Charactertype.Ally)
                 {
                     transform.position = Vector3.Slerp(transform.position, m_CharacterReference.ModelInGame.transform.position + m_Camera_Offset, Time.deltaTime * 4.0f);
-                    transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+                    transform.rotation = Quaternion.Euler(21.0f, -90, 0.0f);
                 }
             }
             if (m_cameraState == CameraState.AllyHealing)
@@ -89,7 +91,7 @@ public class Script_CombatCameraController : MonoBehaviour
                     if (Vector3.Distance(transform.position, m_AllyHealing2.transform.position) < 80)
                     {
                         m_cameraState = CameraState.Nothing;
-                        m_AllyHealing1.transform.localPosition = new Vector3(1305.7f, 0, 274.7f);
+                        m_AllyHealing1.transform.localPosition = new Vector3(1350.0f, 0, 587.0f);
                     }
                 }
                 else
@@ -123,7 +125,7 @@ public class Script_CombatCameraController : MonoBehaviour
             }
             else
             {
-                m_SpawnPos.transform.position = new Vector3(1271.4f, 68.9f, 376.5f);
+                m_SpawnPos.transform.localPosition = new Vector3(1931, 271, 382.8235f);
             }
             if (m_cameraState == CameraState.AllyAttackSelecting)
             {
@@ -150,6 +152,24 @@ public class Script_CombatCameraController : MonoBehaviour
             {
 
                 m_EnemyAttackingPoint1.transform.localPosition = new Vector3(1514, 45, 376.5f);
+            }
+
+            if (m_cameraState == CameraState.EnemyBuff)
+            {
+                transform.position = m_EnemyBuff2.transform.position;
+                m_EnemyBuff2.transform.position = Vector3.Slerp(m_EnemyBuff2.transform.position, m_EnemyBuff1.transform.position, Time.deltaTime * 1);
+
+                transform.rotation = Quaternion.Euler(22.964f, 260, 0.0f);
+
+                if (Vector3.Distance(transform.position, m_EnemyAttackingPoint1.transform.position) < 100)
+                {
+                    m_cameraState = CameraState.Nothing;
+                }
+            }
+            else
+            {
+
+                m_EnemyBuff2.transform.localPosition = new Vector3(1745, 267, 406f);
             }
         }
 

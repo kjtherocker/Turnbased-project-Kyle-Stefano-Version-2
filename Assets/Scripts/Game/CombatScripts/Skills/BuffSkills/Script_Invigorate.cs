@@ -13,8 +13,8 @@ public class Script_Invigorate : Script_Skills
         m_SkillType = SkillType.Buff;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;
-        m_Damage = 2;
-        m_CostToUse = 75;
+        m_Damage = 3;
+        m_CostToUse = 60;
         SkillName = "Invigorate";
         SkillDescription = "A buff that strongly increases damage";
     }

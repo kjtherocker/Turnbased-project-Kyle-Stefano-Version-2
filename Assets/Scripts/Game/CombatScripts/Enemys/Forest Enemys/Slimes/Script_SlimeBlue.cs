@@ -12,8 +12,8 @@ public class Script_SlimeBlue : Script_Creatures
         MaxHealth = 200;
         CurrentMana = 10;
         MaxMana = 10;
-        Strength = 75;
-        Magic = 25;
+        Strength = 350;
+        Magic = 350;
         Dexterity = 10;
         Speed = 10;
         Name = "Blue Slime";
@@ -22,11 +22,11 @@ public class Script_SlimeBlue : Script_Creatures
         m_Skills[0] = gameObject.AddComponent<Script_IceRain>();
         m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
 
-        //"Prefabs/Battle/Enemy/Forest/model_Slime"
+        AmountOfTurns = 1;
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Slime/Prefab_SlimeBlue", typeof(GameObject));
 
-
+        m_Texture = (Material)Resources.Load("Materials/Portrait/Material_BlueSlime", typeof(Material));
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Water;

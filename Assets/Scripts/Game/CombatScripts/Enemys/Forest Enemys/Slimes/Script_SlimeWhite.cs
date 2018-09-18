@@ -12,21 +12,23 @@ public class Script_SlimeWhite : Script_Creatures
         MaxHealth = 200;
         CurrentMana = 10;
         MaxMana = 10;
-        Strength = 25;
-        Magic = 75;
+        Strength = 350;
+        Magic = 350;
         Dexterity = 10;
         Speed = 10;
         Name = "White Slime";
 
+        AmountOfTurns = 1;
+
         m_Skills = new Script_Skills[2];
-        m_Skills[0] = gameObject.AddComponent<Script_LightRay>();
-        m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
+        m_Skills[0] = gameObject.AddComponent<Script_HolyWater>();
+        m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Slime/Prefab_SlimeWhite", typeof(GameObject));
 
-
+        m_Texture = (Material)Resources.Load("Materials/Portrait/Material_WhiteSlime", typeof(Material));
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Light;
