@@ -20,9 +20,9 @@ public class Script_SlimeWhite : Script_Creatures
 
         AmountOfTurns = 1;
 
-        m_Skills = new Script_Skills[2];
-        m_Skills[0] = gameObject.AddComponent<Script_HolyWater>();
-        m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
+       //m_Skills = new Script_Skills[2];
+       //m_Skills[0] = gameObject.AddComponent<Script_HolyWater>();
+       //m_Skills[1] = gameObject.AddComponent<Script_HolyWater>();
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
@@ -37,7 +37,7 @@ public class Script_SlimeWhite : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Length);
+        int SkillChosen = Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

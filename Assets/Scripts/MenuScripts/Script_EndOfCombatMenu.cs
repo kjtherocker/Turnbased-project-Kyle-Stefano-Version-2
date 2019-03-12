@@ -23,6 +23,12 @@ public class Script_EndOfCombatMenu : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        m_Text_DamageTaken = GameObject.Find("Text_AmountDamage").GetComponent<Text>();
+        m_Text_Deaths = GameObject.Find("Text_AmountDeaths").GetComponent<Text>();
+        m_Text_DamageDealt = GameObject.Find("Text_AmountDamageDealt").GetComponent<Text>();
+        m_Text_HealAmount = GameObject.Find("Text_AmountHeal").GetComponent<Text>();
+        m_Text_Grade = GameObject.Find("Text_FinalValue").GetComponent<Text>();
+        m_Canvas = GameObject.Find("Canvas_EndCombatMenu");
         Score = 1000;
         ScoreHasBeenGotten = false;
         m_Canvas.SetActive(false);

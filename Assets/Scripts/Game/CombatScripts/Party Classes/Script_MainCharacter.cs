@@ -22,13 +22,13 @@ public class Script_MainCharacter : Script_Creatures {
 
         AmountOfTurns = 1;
 
-        m_Skills = new Script_Skills[3];
-        m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[1] = gameObject.AddComponent<Script_PhoenixSpirit>();
-        m_Skills[2] = gameObject.AddComponent<Script_IceRain>();
+        //m_BaseSkill = new Script_Skills();
+        //
+        m_Skills.Add(gameObject.AddComponent<Script_Attack>());
+        // m_Skills.Add(m_BaseSkill);
+        // m_Skills.Add(m_BaseSkill);
 
-        m_BloodArts = new Script_Skills[1];
-        m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+        // m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
 
         SetCreature();
 

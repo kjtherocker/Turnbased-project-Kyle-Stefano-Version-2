@@ -44,6 +44,19 @@ public class Script_CombatCameraController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        m_AllyHealingSelectingPosition = GameObject.Find("PlayerPosition1");
+        m_SpawnPos = GameObject.Find("SpawnPos");
+        m_EnemyAttackingPoint1 = GameObject.Find("EnemyAttackPos1");
+        m_EnemyAttackingPoint2 = GameObject.Find("EnemyAttackPos2");
+        m_AllyHealing1 = GameObject.Find("AllyHealingCameraPosition");
+        m_AllyHealing2 = GameObject.Find("AllyHealingCameraPosition2");
+        m_EnemyBuff1 = GameObject.Find("EnemyBuffPos1");
+        m_EnemyBuff2 = GameObject.Find("EnemyBuffPos2");
+        m_AllyHealinglookatpos = GameObject.Find("AllyHealingLookAtPos");
+        m_EnemyZoomin = GameObject.Find("EnemyZoomin");
+
+
+
         m_cameraState = CameraState.Default;
         m_Camera_Offset = new Vector3(100, 80, 0);
         m_Camera_Offset_EnemyAttack = new Vector3(40, 20, 0);

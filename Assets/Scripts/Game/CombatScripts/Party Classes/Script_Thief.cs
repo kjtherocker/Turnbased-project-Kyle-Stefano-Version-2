@@ -21,14 +21,14 @@ public class Script_Thief : Script_Creatures
 
         AmountOfTurns = 1;
 
-        m_Skills = new Script_Skills[4];
-        m_Skills[0] = gameObject.AddComponent<Script_HolyWater>();
-        m_Skills[1] = gameObject.AddComponent<Script_PhoenixSpirit>();
-        m_Skills[2] = gameObject.AddComponent<Script_IceRain>();
-        m_Skills[3] = gameObject.AddComponent<Script_Restrict>();
-
-        m_BloodArts = new Script_Skills[1];
-        m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+       //m_Skills = new Script_Skills[4];
+       //m_Skills[0] = gameObject.AddComponent<Script_HolyWater>();
+       //m_Skills[1] = gameObject.AddComponent<Script_PhoenixSpirit>();
+       //m_Skills[2] = gameObject.AddComponent<Script_IceRain>();
+       //m_Skills[3] = gameObject.AddComponent<Script_Restrict>();
+       //
+       //m_BloodArts = new Script_Skills[1];
+       //m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
 
 
         SetCreature();

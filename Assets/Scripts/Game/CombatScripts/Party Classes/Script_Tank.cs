@@ -21,14 +21,14 @@ public class Script_Tank : Script_Creatures
 
         AmountOfTurns = 1;
 
-        m_Skills = new Script_Skills[4];
-        m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
-        m_Skills[1] = gameObject.AddComponent<Script_Invigorate>();
-        m_Skills[2] = gameObject.AddComponent<Script_LightRay>();
-        m_Skills[3] = gameObject.AddComponent<Script_IceRain>();
-
-        m_BloodArts = new Script_Skills[1];
-        m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+       //m_Skills = new Script_Skills[4];
+       //m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
+       //m_Skills[1] = gameObject.AddComponent<Script_Invigorate>();
+       //m_Skills[2] = gameObject.AddComponent<Script_LightRay>();
+       //m_Skills[3] = gameObject.AddComponent<Script_IceRain>();
+       //
+       //m_BloodArts = new Script_Skills[1];
+       //m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
 
         SetCreature();
 

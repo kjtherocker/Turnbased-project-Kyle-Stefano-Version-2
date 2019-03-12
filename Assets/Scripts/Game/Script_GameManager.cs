@@ -1,11 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-public class Script_GameManager : MonoBehaviour
+using UnityEngine.SceneManagement;
+public class Script_GameManager : Singleton<Script_GameManager>
 {
     public GameObject Overworld_Objects;
     public GameObject Combat_Objects;
+    public Script_PartyManager m_PartyManager;
+    public Script_PartyManager PartyManager { get { return m_PartyManager; } }
+    public Script_EncounterManager m_EncounterManager;
+    public Script_EncounterManager EncounterManager { get { return m_EncounterManager; } }
+    public Script_CombatManager m_CombatManager;
+    public Script_CombatManager CombatManager { get { return m_CombatManager; } }
+    public Script_CombatCameraController m_BattleCamera;
+    public Script_CombatCameraController BattleCamera { get { return m_BattleCamera; } }
+
+
+
+    
 
     public enum GameStates
     {
@@ -20,6 +32,10 @@ public class Script_GameManager : MonoBehaviour
 	void Start ()
     {
         m_GameStates = GameStates.Overworld;
+        m_PartyManager = GameObject.Find("PartyManager").GetComponent<Script_PartyManager>();
+        m_CombatManager = GameObject.Find("CombatManager").GetComponent<Script_CombatManager>();
+        m_EncounterManager = GameObject.Find("EncounterManager").GetComponent<Script_EncounterManager>();
+        m_BattleCamera = GameObject.Find("BattleCamera").GetComponent<Script_CombatCameraController>();
 
     }
 	
@@ -34,6 +50,7 @@ public class Script_GameManager : MonoBehaviour
         }
         if (m_GameStates == GameStates.Combat)
         {
+            m_CombatManager.CombatStart();
             Overworld_Objects.SetActive(false);
             Combat_Objects.SetActive(true);
         }

@@ -56,8 +56,9 @@ public class Script_Creatures : MonoBehaviour
 
     public Script_Skills m_Domain;
     public Script_Skills m_Attack;
-    public Script_Skills[] m_Skills;
-    public Script_Skills[] m_BloodArts;
+    public Script_Skills m_BaseSkill;
+    public List<Script_Skills> m_Skills;
+    public List<Script_Skills> m_BloodArts;
 
 
     public CreaturesAilment m_creaturesAilment;
@@ -109,6 +110,7 @@ public class Script_Creatures : MonoBehaviour
     // Update is called once per frame
     public void SetCreature()
     {
+        
         m_DomainStages = DomainStages.NotActivated;
         m_Attack = gameObject.AddComponent<Script_Attack>();
     }
@@ -141,9 +143,9 @@ public class Script_Creatures : MonoBehaviour
                     {
                         if (ObjectToRotateAround.GetCharactertype() == Charactertype.Ally)
                         {
-                            targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
-                            targetPoint.y = ModelInGame.transform.position.y;
-                            ModelInGame.transform.LookAt(targetPoint);
+                          // targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
+                          // targetPoint.y = ModelInGame.transform.position.y;
+                          // ModelInGame.transform.LookAt(targetPoint);
 
 
                             //ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);

@@ -14,16 +14,6 @@ public class Script_CombatManager : MonoBehaviour
     public Script_GameManager GameManager;
 
 
-    public GameObject SpawnPosition1;
-    public GameObject SpawnPosition2;
-    public GameObject SpawnPosition3;
-    public GameObject SpawnPosition4;
-
-    public GameObject SpawnEnemyPosition1;
-    public GameObject SpawnEnemyPosition2;
-    public GameObject SpawnEnemyPosition3;
-    public GameObject SpawnEnemyPosition4;
-    public GameObject SpawnBossEnemyPosition;
 
     public GameObject Canvas_CommandBoard;
     public GameObject Canvas_SkillMenu;
@@ -63,8 +53,11 @@ public class Script_CombatManager : MonoBehaviour
     public Script_ButtonSkillWrapper m_ButtonReference;
 
     public Script_ButtonEnemyWrapper m_ButtonEnemyReference;
-
     public Script_TurnIndicatorWrapper m_ImageReference;
+
+    public GameObject[] AllySpawnPoint;
+    public GameObject[] EnemySpawnPoint;
+
 
     public List<Text> CurentTurnHolderSkillText;
     public List<Button> m_BasicMenuButtons;
@@ -102,7 +95,39 @@ public class Script_CombatManager : MonoBehaviour
         
         EnemyIsChosen = false;
 
+        GameManager = Script_GameManager.Instance;
+        EncounterManager = Script_GameManager.Instance.EncounterManager;
+        PartyManager = Script_GameManager.Instance.PartyManager;
+        m_BattleCamera = Script_GameManager.Instance.BattleCamera;
 
+        AllySpawnPoint = new GameObject[4];
+        EnemySpawnPoint = new GameObject[5];
+
+        Canvas_CommandBoard = GameObject.Find("Canvas_CommandBoard");
+        Canvas_SkillMenu = GameObject.Find("Canvas_SkillMenu");
+        Canvas_TurnMenu = GameObject.Find("Canvas_TurnIndicator");
+        Canvas_CombatEndMenu = GameObject.Find("EndCombatMenu").GetComponent<Script_EndOfCombatMenu>();
+
+        Image_Notification = GameObject.Find("Image_Notification");
+
+        Text_Notification = GameObject.Find("Text_Notifcation").GetComponent<Text>();
+        Text_SkillDescription = GameObject.Find("Text_SkillDescription").GetComponent<Text>();
+
+        Image_Notification.SetActive(false);
+        Canvas_CommandBoard.SetActive(false);
+        Canvas_SkillMenu.SetActive(false);
+        Canvas_TurnMenu.SetActive(false);
+
+        AllySpawnPoint[0] = GameObject.Find("PlayerPosition1");
+        AllySpawnPoint[1] = GameObject.Find("PlayerPosition2");
+        AllySpawnPoint[2] = GameObject.Find("PlayerPosition3");
+        AllySpawnPoint[3] = GameObject.Find("PlayerPosition4");
+
+        EnemySpawnPoint[0] = GameObject.Find("EnemyPosition1");
+        EnemySpawnPoint[1] = GameObject.Find("EnemyPosition2");
+        EnemySpawnPoint[2] = GameObject.Find("EnemyPosition3");
+        EnemySpawnPoint[3] = GameObject.Find("EnemyPosition4");
+        EnemySpawnPoint[4] = GameObject.Find("EnemyPositionBoss");
     }
 
     public void CombatStart()
@@ -117,8 +142,8 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.m_CurrentParty[0]);
 
-                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model, SpawnPosition1.transform);
-                TurnOrderAlly[0].SetSpawnPosition(SpawnPosition1.transform.position);
+                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model, AllySpawnPoint[0].transform);
+                TurnOrderAlly[0].SetSpawnPosition(AllySpawnPoint[0].transform.position);
                 TurnOrderAlly[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
 
             }
@@ -127,8 +152,8 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.m_CurrentParty[1]);
 
-                TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model, SpawnPosition2.transform);
-                TurnOrderAlly[1].SetSpawnPosition(SpawnPosition2.transform.position);
+                TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model, AllySpawnPoint[1].transform);
+                TurnOrderAlly[1].SetSpawnPosition(AllySpawnPoint[1].transform.position);
 
                 TurnOrderAlly[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
             }
@@ -137,8 +162,8 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderAlly.Add(PartyManager.m_CurrentParty[2]);
 
-                TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model, SpawnPosition3.transform);
-                TurnOrderAlly[2].SetSpawnPosition(SpawnPosition3.transform.position);
+                TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model, AllySpawnPoint[2].transform);
+                TurnOrderAlly[2].SetSpawnPosition(AllySpawnPoint[2].transform.position);
 
                 TurnOrderAlly[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
 
@@ -146,10 +171,11 @@ public class Script_CombatManager : MonoBehaviour
 
             if (PartyManager.m_CurrentParty[3] != null)
             {
+
                 TurnOrderAlly.Add(PartyManager.m_CurrentParty[3]);
 
-                TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model, SpawnPosition4.transform);
-                TurnOrderAlly[3].SetSpawnPosition(SpawnPosition4.transform.position);
+                TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model, AllySpawnPoint[3].transform);
+                TurnOrderAlly[3].SetSpawnPosition(AllySpawnPoint[3].transform.position);
 
                 TurnOrderAlly[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
             }
@@ -162,7 +188,10 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
 
-                TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, SpawnEnemyPosition1.transform);
+                if (TurnOrderEnemy[0].Model != null)
+                {
+                    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, EnemySpawnPoint[0].transform);
+                }
                 TurnOrderEnemy[0].SetSpawnPosition(Vector3.zero);
 
             }
@@ -171,7 +200,10 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
 
-                TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model, SpawnEnemyPosition2.transform);
+                if (TurnOrderEnemy[1].Model != null)
+                {
+                    TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model, EnemySpawnPoint[1].transform);
+                }
                 TurnOrderEnemy[1].SetSpawnPosition(Vector3.zero);
 
             }
@@ -180,8 +212,10 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
 
-
-                TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model, SpawnEnemyPosition3.transform);
+                if (TurnOrderEnemy[2].Model != null)
+                {
+                    TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model, EnemySpawnPoint[2].transform);
+                }
                 TurnOrderEnemy[2].SetSpawnPosition(Vector3.zero);
 
 
@@ -190,8 +224,10 @@ public class Script_CombatManager : MonoBehaviour
             if (EncounterManager.EnemySlot4 != null)
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
-
-                TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model, SpawnEnemyPosition4.transform);
+                if (TurnOrderEnemy[3].Model != null)
+                {
+                    TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model, EnemySpawnPoint[3].transform);
+                }
                 TurnOrderEnemy[3].SetSpawnPosition(Vector3.zero);
 
             }
@@ -200,7 +236,7 @@ public class Script_CombatManager : MonoBehaviour
             {
                 TurnOrderEnemy.Add(EncounterManager.EnemySlotBoss);
 
-                TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, SpawnBossEnemyPosition.transform);
+                TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, EnemySpawnPoint[4].transform);
                 TurnOrderEnemy[0].SetSpawnPosition(Vector3.zero);
                 m_GrassController.SetRedEyesReference(TurnOrderEnemy[0]);
 
@@ -208,7 +244,7 @@ public class Script_CombatManager : MonoBehaviour
             EnemyIsChosen = false;
             CombatHasStarted = true;
             HasStatusAppeared = false;
-
+            Canvas_TurnMenu.SetActive(true);
             AmountofTurns = TurnOrderAlly.Count;
             for (int i = 0; i < AmountofTurns; i++)
             {
@@ -233,6 +269,11 @@ public class Script_CombatManager : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown("a"))
+        {
+            CombatStart();
+        }
+  
 
         if (m_BattleStates == BattleStates.Spawn)
         {
@@ -294,13 +335,7 @@ public class Script_CombatManager : MonoBehaviour
         RemoveDeadFromList();
 
 
-        if (GameManager.m_GameStates == Script_GameManager.GameStates.Combat)
-        {
-            if (CombatHasStarted == false)
-            {
-                CombatStart();
-            }
-        }
+
 
         if (m_BattleStates == BattleStates.EnemyAttacking)
         {
@@ -1214,7 +1249,7 @@ public class Script_CombatManager : MonoBehaviour
                     }
 
                 }
-                for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
+                for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
                 {
                     m_CurrentSkillMenuButtonsMenu[i].SetAsNotInteractable();
                 }
@@ -1249,7 +1284,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = false;
-            for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 115 + i * 31, 0);
@@ -1279,7 +1314,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = true;
-            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Length; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Count; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 85 + i * 31, 0);

@@ -22,12 +22,12 @@ public class Script_RedEyes : Script_Creatures
 
         m_DomainStages = DomainStages.Encroaching;
 
-        m_Skills = new Script_Skills[5];
-        m_Skills[0] = gameObject.AddComponent<Script_IceRain>();
-        m_Skills[1] = gameObject.AddComponent<Script_LightRay>();
-        m_Skills[2] = gameObject.AddComponent<Script_ShadowBlast>();
-        m_Skills[3] = gameObject.AddComponent<Script_FireBall>();
-        m_Skills[4] = gameObject.AddComponent<Script_Invigorate>();
+        //m_Skills = new Script_Skills[5];
+        //m_Skills[0] = gameObject.AddComponent<Script_IceRain>();
+        //m_Skills[1] = gameObject.AddComponent<Script_LightRay>();
+        //m_Skills[2] = gameObject.AddComponent<Script_ShadowBlast>();
+        //m_Skills[3] = gameObject.AddComponent<Script_FireBall>();
+        //m_Skills[4] = gameObject.AddComponent<Script_Invigorate>();
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_RedEyes", typeof(GameObject));
 
@@ -42,7 +42,7 @@ public class Script_RedEyes : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Length);
+        int SkillChosen = Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

@@ -23,6 +23,9 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 
     void Start ()
     {
+        GameManager = Script_GameManager.Instance;
+        m_EncounterManager = Script_GameManager.Instance.m_EncounterManager;
+        PartyManager = Script_GameManager.Instance.m_PartyManager;
         OverworldModel = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
         Instantiate<GameObject>(OverworldModel, gameObject.transform);
         IsPartyMenuOn = false;
@@ -65,7 +68,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
             if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EndNode)
             {
 
-                m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.BossForestEncounter);
+                
                 GameManager.SwitchToBattle();
 
                 Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);

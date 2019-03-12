@@ -28,11 +28,11 @@ public class Script_EncounterManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-      //  EnemySlot1 = gameObject.AddComponent<Script_Slime>();
-      //  EnemySlot2 = gameObject.AddComponent<Script_Slime>();
-      //  EnemySlot3 = gameObject.AddComponent<Script_Slime>();
-      //  EnemySlot4 = gameObject.AddComponent<Script_Slime>();
-
+        //  EnemySlot1 = gameObject.AddComponent<Script_Slime>();
+        //  EnemySlot2 = gameObject.AddComponent<Script_Slime>();
+        //  EnemySlot3 = gameObject.AddComponent<Script_Slime>();
+        //  EnemySlot4 = gameObject.AddComponent<Script_Slime>();
+        //SetEncounter(EncounterTypes.ForestEncounter);
     }
 	
 	// Update is called once per frame
@@ -79,19 +79,19 @@ public class Script_EncounterManager : MonoBehaviour {
             }
             if (EncounterChosen == 1)
             {
-                ForestEncounter2();
+                ForestEncounter1();
             }
             if ( EncounterChosen == 2)
             {
-                ForestEncounter3();
+                ForestEncounter1();
             }
             if (EncounterChosen == 3 )
             {
-                ForestEncounter4();
+                ForestEncounter1();
             }
             if (EncounterChosen == 4)
             {
-                ForestEncounter4();
+                ForestEncounter1();
             }
         }
         if (a_encounter == EncounterTypes.BossForestEncounter)

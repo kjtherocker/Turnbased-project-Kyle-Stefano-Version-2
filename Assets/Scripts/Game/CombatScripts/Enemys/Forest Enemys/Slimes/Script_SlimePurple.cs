@@ -18,9 +18,9 @@ public class Script_SlimePurple : Script_Creatures
         Speed = 10;
         Name = "Purple Slime";
 
-        m_Skills = new Script_Skills[2];
-        m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
-        m_Skills[1] = gameObject.AddComponent<Script_ShadowBlast>();
+       //m_Skills = new Script_Skills[2];
+       //m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
+       //m_Skills[1] = gameObject.AddComponent<Script_ShadowBlast>();
 
         AmountOfTurns = 1;
 
@@ -35,7 +35,7 @@ public class Script_SlimePurple : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Length);
+        int SkillChosen = Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

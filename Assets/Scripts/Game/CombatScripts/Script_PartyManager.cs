@@ -1,4 +1,4 @@
-﻿using System.Collections;
+﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,23 +14,16 @@ public class Script_PartyManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_CurrentParty.Add(gameObject.AddComponent<Script_Thief>());
-        m_CurrentParty.Add(gameObject.AddComponent<Script_Priest>());
-        m_CurrentParty.Add(gameObject.AddComponent<Script_Tank>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
 
-        m_ReservePartymembers.Add(gameObject.AddComponent<Script_Tank>());
-        m_ReservePartymembers.Add(gameObject.AddComponent<Script_Tank>());
-        m_ReservePartymembers.Add(gameObject.AddComponent<Script_Tank>());
-        m_ReservePartymembers.Add(gameObject.AddComponent<Script_Tank>());
-
-        m_Healthbars[0].Partymember = m_CurrentParty[0];
-        m_Healthbars[1].Partymember = m_CurrentParty[1];
-        m_Healthbars[2].Partymember = m_CurrentParty[2];
-        m_Healthbars[3].Partymember = m_CurrentParty[3];
-
-
-
+        m_Healthbars.Add(GameObject.Find("PlayerHealthbar").GetComponent<Script_HealthBar>());
+        m_Healthbars.Add(GameObject.Find("PlayerHealthbar2").GetComponent<Script_HealthBar>());
+        m_Healthbars.Add(GameObject.Find("PlayerHealthbar3").GetComponent<Script_HealthBar>());
+        m_Healthbars.Add(GameObject.Find("PlayerHealthbar4").GetComponent<Script_HealthBar>());
+       
     }
 
     // Update is called once per frame
