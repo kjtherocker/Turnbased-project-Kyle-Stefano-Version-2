@@ -57,8 +57,8 @@ public class Script_Creatures : MonoBehaviour
     public Script_Skills m_Domain;
     public Script_Skills m_Attack;
     public Script_Skills m_BaseSkill;
-    public List<Script_Skills> m_Skills;
-    public List<Script_Skills> m_BloodArts;
+    public Script_Skills[] m_Skills;
+    public Script_Skills[] m_BloodArts;
 
 
     public CreaturesAilment m_creaturesAilment;

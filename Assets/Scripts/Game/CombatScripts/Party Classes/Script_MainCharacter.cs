@@ -24,11 +24,21 @@ public class Script_MainCharacter : Script_Creatures {
 
         //m_BaseSkill = new Script_Skills();
         //
-        m_Skills.Add(gameObject.AddComponent<Script_Attack>());
-        // m_Skills.Add(m_BaseSkill);
-        // m_Skills.Add(m_BaseSkill);
 
-        // m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
+        m_Skills = new Script_Skills[5];
+        m_BloodArts = new Script_Skills[5];
+        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+
+        m_Skills[0] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+        m_Skills[1] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.HolyWater);
+        m_Skills[2] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.PheonixSpirit);
+        m_Skills[3] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain);
+        m_Skills[4] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast);
+
+       
+
+
+        m_BloodArts[0] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief);
 
         SetCreature();
 

@@ -103,15 +103,14 @@ public class Script_CombatManager : MonoBehaviour
         AllySpawnPoint = new GameObject[4];
         EnemySpawnPoint = new GameObject[5];
 
-        Canvas_CommandBoard = GameObject.Find("Canvas_CommandBoard");
         Canvas_SkillMenu = GameObject.Find("Canvas_SkillMenu");
         Canvas_TurnMenu = GameObject.Find("Canvas_TurnIndicator");
-        Canvas_CombatEndMenu = GameObject.Find("EndCombatMenu").GetComponent<Script_EndOfCombatMenu>();
+        //Canvas_CombatEndMenu = GameObject.Find("EndCombatMenu").GetComponent<Script_EndOfCombatMenu>();
 
         Image_Notification = GameObject.Find("Image_Notification");
 
         Text_Notification = GameObject.Find("Text_Notifcation").GetComponent<Text>();
-        Text_SkillDescription = GameObject.Find("Text_SkillDescription").GetComponent<Text>();
+        //Text_SkillDescription = GameObject.Find("Text_SkillDescription").GetComponent<Text>();
 
         Image_Notification.SetActive(false);
         Canvas_CommandBoard.SetActive(false);
@@ -1249,7 +1248,7 @@ public class Script_CombatManager : MonoBehaviour
                     }
 
                 }
-                for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
+                for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
                 {
                     m_CurrentSkillMenuButtonsMenu[i].SetAsNotInteractable();
                 }
@@ -1284,7 +1283,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = false;
-            for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 115 + i * 31, 0);
@@ -1314,7 +1313,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = true;
-            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Count; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Length; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 85 + i * 31, 0);

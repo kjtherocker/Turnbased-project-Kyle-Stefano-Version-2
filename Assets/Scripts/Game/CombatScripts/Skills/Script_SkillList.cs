@@ -25,20 +25,24 @@ public class Script_SkillList : MonoBehaviour
         NumberOfSkills
     }
 
-    public Script_Skills[] m_SkillTypes;
+    public List<Script_Skills> m_SkillTypes;
     public Script_Skills m_Skill;
     // Use this for initialization
-    void Start () {
-		
-	}
+    void Start ()
+    {
+        Script_GameManager.Instance.SkillList = this;
+
+
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 		
 	}
 
-    public  Script_Skills SetSkills( Skills aPortrait, string sourceName = "Global")
+    public Script_Skills SetSkills( Skills aSkills, string sourceName = "Global")
     {
-       return m_SkillTypes[(int)aPortrait];
+       return m_SkillTypes[(int)aSkills];
     }
 }

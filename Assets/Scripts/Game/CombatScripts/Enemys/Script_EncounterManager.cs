@@ -55,11 +55,11 @@ public class Script_EncounterManager : MonoBehaviour {
             Destroy(creatures as Script_Creatures);
         }
 
-        Component[] Skills = GetComponents<Script_Skills>() as Component[];
-        foreach (Component skill in Skills)
-        {
-            Destroy(skill as Script_Skills);
-        }
+        //Component[] Skills = GetComponents<Script_Skills>() as Component[];
+        //foreach (Component skill in Skills)
+        //{
+        //    Destroy(skill as Script_Skills);
+        //}
 
 
     }

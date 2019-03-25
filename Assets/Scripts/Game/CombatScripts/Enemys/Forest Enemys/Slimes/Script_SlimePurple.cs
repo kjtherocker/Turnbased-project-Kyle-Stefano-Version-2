@@ -35,7 +35,7 @@ public class Script_SlimePurple : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Count);
+        int SkillChosen = Random.Range(0, m_Skills.Length);
 
         return SkillChosen;
     }

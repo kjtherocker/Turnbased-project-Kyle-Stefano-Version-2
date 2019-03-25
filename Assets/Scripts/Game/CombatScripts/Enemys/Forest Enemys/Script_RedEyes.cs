@@ -33,7 +33,7 @@ public class Script_RedEyes : Script_Creatures
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_RedEyes", typeof(Material));
 
-        m_Domain = gameObject.AddComponent<Script_RedEyesEncroach>();
+        //m_Domain = gameObject.AddComponent<Script_RedEyesEncroach>();
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Fire;
@@ -42,7 +42,7 @@ public class Script_RedEyes : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Count);
+        int SkillChosen = Random.Range(0, m_Skills.Length);
 
         return SkillChosen;
     }
