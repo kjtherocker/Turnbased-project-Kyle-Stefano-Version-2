@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ed071977e4233a5408a381fd1c93dfa8
+guid: 89f29d372bea5694083aa9c23436bcb0
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -8,9 +8,9 @@ TrueTypeFontImporter:
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Verdana
+  fontName: Arial
   fontNames:
-  - Verdana
+  - Arial
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

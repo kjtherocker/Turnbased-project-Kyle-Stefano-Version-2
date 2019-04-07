@@ -11,6 +11,8 @@ public class Script_Node : MonoBehaviour {
     public Script_Node NodeLeft;
     public Script_Node NodeRight;
 
+    public DialogueTrigger m_DialogueTrigger;
+
     public GameObject m_EnemyPlaneReference;
     public GameObject m_SpawnedObject;
 
@@ -19,6 +21,7 @@ public class Script_Node : MonoBehaviour {
     public enum NodeTypes
     {
         BasicNode,
+        DialogueNode,
         EncounterNode,
         ShopNode,
         EndNode
@@ -35,16 +38,27 @@ public class Script_Node : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Enum_NodeType == NodeTypes.BasicNode)
+        switch (Enum_NodeType)
         {
-         
+            case NodeTypes.BasicNode:
 
-        }
-        
-        if (Enum_NodeType == NodeTypes.ShopNode)
-        {
-            
+                break;
 
+            case NodeTypes.DialogueNode:
+
+                break;
+
+            case NodeTypes.EncounterNode:
+
+                break;
+
+            case NodeTypes.ShopNode:
+
+                break;
+
+            case NodeTypes.EndNode:
+
+                break;
         }
 
         if (RoadsAreSpawned != true)
@@ -77,5 +91,10 @@ public class Script_Node : MonoBehaviour {
         }
 
         Enum_NodeType = nodetype;
+    }
+
+    public void StartDialogue()
+    {
+        m_DialogueTrigger.TriggerDialogue();
     }
 }

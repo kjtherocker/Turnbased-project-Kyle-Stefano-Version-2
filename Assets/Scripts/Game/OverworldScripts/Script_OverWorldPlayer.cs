@@ -71,8 +71,14 @@ public class Script_OverWorldPlayer : MonoBehaviour {
                 
                 GameManager.SwitchToBattle();
 
-                Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
 
+                Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
+            }
+
+            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.DialogueNode)
+            {
+                Node_PlayerIsOn.StartDialogue();
+                Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
             }
 
             if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.ShopNode)
