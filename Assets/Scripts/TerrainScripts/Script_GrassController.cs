@@ -102,11 +102,11 @@ public class Script_GrassController : MonoBehaviour
         {
             //CirclePosition = new Vector3( m_RedeyesReference.transform.localPosition.x,0, m_RedeyesReference.transform.localPosition.y);
 
-            m_DarkRingParticles.Add(Instantiate(m_DarkRingReference, CirclePosition, Quaternion.identity));
-            m_DarkRingParticles.Add(Instantiate(m_DarkAuraReference, CirclePosition, Quaternion.identity));
-            m_DarkRingParticles[1].gameObject.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
-            m_DarkRingParticles.Add(Instantiate(m_DarkParticlesReference, CirclePosition, Quaternion.identity));
-            m_DarkRingParticles[2].gameObject.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
+           //m_DarkRingParticles.Add(Instantiate(m_DarkRingReference, CirclePosition, Quaternion.identity));
+           //m_DarkRingParticles.Add(Instantiate(m_DarkAuraReference, CirclePosition, Quaternion.identity));
+           //m_DarkRingParticles[1].gameObject.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
+           //m_DarkRingParticles.Add(Instantiate(m_DarkParticlesReference, CirclePosition, Quaternion.identity));
+           //m_DarkRingParticles[2].gameObject.transform.rotation = Quaternion.Euler(-90.0f, 0.0f, 0.0f);
             DomainHasSpawned = true;
             softness = 36;
         }
@@ -122,9 +122,9 @@ public class Script_GrassController : MonoBehaviour
     public void EncrochDomain()
     {
         
-        m_DarkRingParticles[0].transform.localScale += new Vector3(13.257f, 13.240f, 10.423f) * Time.deltaTime * 0.185f;
-        m_DarkRingParticles[1].transform.localScale += new Vector3(7.476724f, 8.400129f, 6.613211f) * Time.deltaTime * 0.185f;
-        m_DarkRingParticles[2].transform.localScale += new Vector3(7.476724f, 8.400129f, 6.613211f) * Time.deltaTime * 0.185f;
+       //m_DarkRingParticles[0].transform.localScale += new Vector3(13.257f, 13.240f, 10.423f) * Time.deltaTime * 0.185f;
+       //m_DarkRingParticles[1].transform.localScale += new Vector3(7.476724f, 8.400129f, 6.613211f) * Time.deltaTime * 0.185f;
+       //m_DarkRingParticles[2].transform.localScale += new Vector3(7.476724f, 8.400129f, 6.613211f) * Time.deltaTime * 0.185f;
 
         softness += 60.0f * 0.002f;
     }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class Script_Sleep : Script_Skills
 {
 
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
 
         //m_ElementalType = ElementalType.Water;

@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class Script_HolyWater : Script_Skills
 {
+
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Water;
@@ -26,7 +28,7 @@ public class Script_HolyWater : Script_Skills
 
     public override int UseSkill(int BonusDamage)
     {
-       int temporaryheal =  m_Damage + BonusDamage / 4;
+        int temporaryheal = m_Damage + BonusDamage / 4;
 
         return temporaryheal;
     }

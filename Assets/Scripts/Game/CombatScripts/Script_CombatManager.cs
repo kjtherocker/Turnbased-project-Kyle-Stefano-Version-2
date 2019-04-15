@@ -98,35 +98,25 @@ public class Script_CombatManager : MonoBehaviour
         GameManager = Script_GameManager.Instance;
         EncounterManager = Script_GameManager.Instance.EncounterManager;
         PartyManager = Script_GameManager.Instance.PartyManager;
-        m_BattleCamera = Script_GameManager.Instance.BattleCamera;
+        
 
-        AllySpawnPoint = new GameObject[4];
-        EnemySpawnPoint = new GameObject[5];
-
-        Canvas_SkillMenu = GameObject.Find("Canvas_SkillMenu");
-        Canvas_TurnMenu = GameObject.Find("Canvas_TurnIndicator");
-        //Canvas_CombatEndMenu = GameObject.Find("EndCombatMenu").GetComponent<Script_EndOfCombatMenu>();
-
-        Image_Notification = GameObject.Find("Image_Notification");
-
-        Text_Notification = GameObject.Find("Text_Notifcation").GetComponent<Text>();
-        //Text_SkillDescription = GameObject.Find("Text_SkillDescription").GetComponent<Text>();
+ 
 
         Image_Notification.SetActive(false);
         Canvas_CommandBoard.SetActive(false);
         Canvas_SkillMenu.SetActive(false);
         Canvas_TurnMenu.SetActive(false);
 
-        AllySpawnPoint[0] = GameObject.Find("PlayerPosition1");
-        AllySpawnPoint[1] = GameObject.Find("PlayerPosition2");
-        AllySpawnPoint[2] = GameObject.Find("PlayerPosition3");
-        AllySpawnPoint[3] = GameObject.Find("PlayerPosition4");
+        //AllySpawnPoint[0] = GameObject.Find("PlayerPosition1");
+        //AllySpawnPoint[1] = GameObject.Find("PlayerPosition2");
+        //AllySpawnPoint[2] = GameObject.Find("PlayerPosition3");
+        //AllySpawnPoint[3] = GameObject.Find("PlayerPosition4");
 
-        EnemySpawnPoint[0] = GameObject.Find("EnemyPosition1");
-        EnemySpawnPoint[1] = GameObject.Find("EnemyPosition2");
-        EnemySpawnPoint[2] = GameObject.Find("EnemyPosition3");
-        EnemySpawnPoint[3] = GameObject.Find("EnemyPosition4");
-        EnemySpawnPoint[4] = GameObject.Find("EnemyPositionBoss");
+        //EnemySpawnPoint[0] = GameObject.Find("EnemyPosition1");
+        //EnemySpawnPoint[1] = GameObject.Find("EnemyPosition2");
+        //EnemySpawnPoint[2] = GameObject.Find("EnemyPosition3");
+        //EnemySpawnPoint[3] = GameObject.Find("EnemyPosition4");
+        //EnemySpawnPoint[4] = GameObject.Find("EnemyPositionBoss");
     }
 
     public void CombatStart()
@@ -251,6 +241,7 @@ public class Script_CombatManager : MonoBehaviour
                 m_TurnIdenticator[i].gameObject.transform.localPosition = new Vector3(350 - i * 25, 170, 0);
                 m_TurnIdenticator[i].gameObject.transform.SetParent(Canvas_TurnMenu.transform, false);
             }
+            
             m_BattleStates = BattleStates.AllyTurn;
             m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Spawn);
             CurrentTurnOrderSide = TurnOrderAlly;
@@ -310,6 +301,7 @@ public class Script_CombatManager : MonoBehaviour
 
         if (m_BattleStates == BattleStates.EndOfCombat)
         {
+            Canvas_CombatEndMenu.gameObject.SetActive(true);
             Canvas_CombatEndMenu.TurnScoreOn();
             Canvas_CombatEndMenu.GetScore();
             if (Input.anyKey)
@@ -1248,7 +1240,7 @@ public class Script_CombatManager : MonoBehaviour
                     }
 
                 }
-                for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
+                for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
                 {
                     m_CurrentSkillMenuButtonsMenu[i].SetAsNotInteractable();
                 }
@@ -1283,7 +1275,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = false;
-            for (int i = 0; i < CurrentTurnHolder.m_Skills.Length; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_Skills.Count; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 115 + i * 31, 0);
@@ -1313,7 +1305,7 @@ public class Script_CombatManager : MonoBehaviour
         if (m_CurrentTurnHolderbuttonsHaveSpawned == false)
         {
             WhatTypeOfSkillsUsed = true;
-            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Length; i++)
+            for (int i = 0; i < CurrentTurnHolder.m_BloodArts.Count; i++)
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 85 + i * 31, 0);

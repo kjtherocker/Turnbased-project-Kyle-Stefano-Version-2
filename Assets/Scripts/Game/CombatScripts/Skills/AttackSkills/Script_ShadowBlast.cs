@@ -5,19 +5,21 @@ using UnityEngine;
 public class Script_ShadowBlast : Script_Skills
 {
 
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Shadow;
         m_SkillType = SkillType.Attack;
         m_SkillRange = SkillRange.FullTarget;
         m_Damagetype = DamageType.Magic;
-        m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/DarkWave/ParticleEffect_DarkWave", typeof(ParticleSystem));
+        
         m_CostToUse = 40;
         m_Damage = 10;
         SkillName = "Shadow Blast";
         SkillDescription = "Blast that will hit the whole enemy team";
+        m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/DarkWave/ParticleEffect_DarkWave", typeof(ParticleSystem));
     }
 
     // Update is called once per frame

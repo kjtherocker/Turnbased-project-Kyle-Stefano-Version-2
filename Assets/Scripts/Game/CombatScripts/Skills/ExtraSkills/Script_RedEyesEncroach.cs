@@ -5,8 +5,9 @@ using UnityEngine;
 public class Script_RedEyesEncroach : Script_Skills
 {
 
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Null;
@@ -21,7 +22,8 @@ public class Script_RedEyesEncroach : Script_Skills
     }
 
     // Update is called once per frame
-    void Update () {
-		
-	}
+    void Update()
+    {
+
+    }
 }

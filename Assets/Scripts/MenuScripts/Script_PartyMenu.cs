@@ -11,10 +11,13 @@ public class Script_PartyMenu : MonoBehaviour
 
     public List<Script_HealthBar> m_ReserveHealthBar;
     public List<Script_HealthBar> m_Healthbars;
+    public Script_SkillStatus m_SkillStatus;
     public Script_HealthBar m_HealthbarReference;
     public Script_HealthBar m_HealthbarReferenceReserve;
     public int m_CurrentParty;
     public int m_ReservePosition;
+
+    public int skill;
 
     bool IsReserveHealthBarsSpawned;
 
@@ -40,16 +43,25 @@ public class Script_PartyMenu : MonoBehaviour
             m_Healthbars[i].gameObject.transform.localPosition = new Vector3(-200, -80 + i * 80, 0);
             m_Healthbars[i].Partymember = m_PartyManager.m_CurrentParty[i];
         }
-
+        m_SkillStatus.m_Skill = m_PartyManager.m_CurrentParty[0].m_Skills[skill];
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         m_Healthbars[0].Partymember = m_PartyManager.m_CurrentParty[0];
         m_Healthbars[1].Partymember = m_PartyManager.m_CurrentParty[1];
         m_Healthbars[2].Partymember = m_PartyManager.m_CurrentParty[2];
         m_Healthbars[3].Partymember = m_PartyManager.m_CurrentParty[3];
+
+
+        if (Input.GetKeyDown("w"))
+        {
+            skill++;
+        }
+
+        
 
         if (Input.GetKeyDown("escape"))
         {

@@ -22,25 +22,18 @@ public class Script_MainCharacter : Script_Creatures {
 
         AmountOfTurns = 1;
 
-        //m_BaseSkill = new Script_Skills();
-        //
-
-        m_Skills = new Script_Skills[5];
-        m_BloodArts = new Script_Skills[5];
-        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
-
-        m_Skills[0] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
-        m_Skills[1] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.HolyWater);
-        m_Skills[2] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.PheonixSpirit);
-        m_Skills[3] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain);
-        m_Skills[4] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast);
-
-       
-
-
-        m_BloodArts[0] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief);
 
         SetCreature();
+
+        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.HolyWater));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.PheonixSpirit));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+
+        m_BloodArts.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief));
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
         

@@ -18,15 +18,16 @@ public class Script_SlimeGreen : Script_Creatures
         Speed = 10;
         Name = "Green Slime";
 
-        m_Skills = new Script_Skills[5];
-        m_BloodArts = new Script_Skills[5];
+
+        SetCreature();
+
         m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
 
-        m_Skills[0] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
-        m_Skills[1] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall);
-        m_Skills[2] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall);
-        m_Skills[3] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
-        m_Skills[4] = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
 
         AmountOfTurns = 1;
 
@@ -41,7 +42,7 @@ public class Script_SlimeGreen : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Length);
+        int SkillChosen = Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

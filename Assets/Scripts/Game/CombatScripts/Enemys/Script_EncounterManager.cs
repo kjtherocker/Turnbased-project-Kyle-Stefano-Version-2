@@ -55,12 +55,6 @@ public class Script_EncounterManager : MonoBehaviour {
             Destroy(creatures as Script_Creatures);
         }
 
-        //Component[] Skills = GetComponents<Script_Skills>() as Component[];
-        //foreach (Component skill in Skills)
-        //{
-        //    Destroy(skill as Script_Skills);
-        //}
-
 
     }
 
@@ -79,19 +73,19 @@ public class Script_EncounterManager : MonoBehaviour {
             }
             if (EncounterChosen == 1)
             {
-                ForestEncounter1();
+                ForestEncounter2();
             }
             if ( EncounterChosen == 2)
             {
-                ForestEncounter1();
+                ForestEncounter3();
             }
             if (EncounterChosen == 3 )
             {
-                ForestEncounter1();
+                ForestEncounter4();
             }
             if (EncounterChosen == 4)
             {
-                ForestEncounter1();
+                ForestEncounter4();
             }
         }
         if (a_encounter == EncounterTypes.BossForestEncounter)

@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Script_FireBall : Script_Skills {
+public class Script_FireBall : Script_Skills
+{
 
-	// Use this for initialization
-	void Start ()
+
+
+    // Use this for initialization
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Fire;
@@ -19,12 +22,12 @@ public class Script_FireBall : Script_Skills {
         SkillName = "FireBall";
         SkillDescription = "FireBall that will hit the whole enemy team";
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-		
-	}
+
+    }
 
     public override int UseSkill(int BonusDamage)
     {

@@ -16,6 +16,8 @@ public class Script_OverWorldPlayer : MonoBehaviour {
     public Script_PartyManager PartyManager;
     public Script_PartyMenu m_PartyMenu;
 
+    public Material m_GridMaterial;
+
     public float Player_Speed = 40;
     public bool Player_Movment = false;
     private bool IsPartyMenuOn;
@@ -29,7 +31,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         OverworldModel = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
         Instantiate<GameObject>(OverworldModel, gameObject.transform);
         IsPartyMenuOn = false;
-
+        //CombineMeshes();
     }
 	
 	// Update is called once per frame
@@ -68,7 +70,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
             if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EndNode)
             {
 
-                
+                m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.BossForestEncounter);
                 GameManager.SwitchToBattle();
 
 
@@ -155,4 +157,71 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         }
     }
 
+    public void CreateMesh(int size)
+    {
+        List<Vector3> verts = new List<Vector3>(); // Index used in tri list
+        List<int> tris = new List<int>(); // Every 3 ints represents a triangle
+        List<Vector2> uvs = new List<Vector2>(); // Vertex in 0-1 UV space
+        for (int i = 0; i < size; i++)
+        {
+            for (int j = 0; j < size; j++)
+            {
+                verts.Add(new Vector3(i, 0, j));
+                uvs.Add(new Vector2((float)i / size, (float)j / size));
+                if (i == 0 || j == 0) continue; // First bottom and left skipped
+                tris.Add(size * i + j); //Top right
+                tris.Add(size * i + (j - 1)); //Bottom right
+                tris.Add(size * (i - 1) + (j - 1)); //Bottom left - First triangle
+                tris.Add(size * (i - 1) + (j - 1)); //Bottom left 
+                tris.Add(size * (i - 1) + j); //Top left
+                tris.Add(size * i + j); //Top right - Second triangle
+            }
+        }
+        Mesh mesh = new Mesh();
+        mesh.vertices = verts.ToArray();
+        mesh.uv = uvs.ToArray();
+        mesh.triangles = tris.ToArray();
+        mesh.RecalculateNormals();
+
+        GameObject grid = new GameObject("Grid");
+        meshObjectList.Add(grid);
+        grid.AddComponent<MeshFilter>();
+        grid.AddComponent<MeshRenderer>();
+        grid.GetComponent<MeshFilter>().mesh = mesh;
+        // Load a material named "GridMat" from a folder named "Resources"
+
+        grid.gameObject.transform.position = new Vector3(-78, -9.0f, 31.2f);
+        grid.GetComponent<Renderer>().material = m_GridMaterial;
+    }
+
+
+    public List<GameObject> meshObjectList;
+
+    public void CombineMeshes()
+    {
+
+        // combine meshes
+        CombineInstance[] combine = new CombineInstance[meshObjectList.Count];
+        int i = 0;
+        while (i < meshObjectList.Count)
+        {
+            MeshFilter meshFilter = meshObjectList[i].gameObject.GetComponent<MeshFilter>();
+            combine[i].mesh = meshFilter.sharedMesh;
+            combine[i].transform = meshFilter.transform.localToWorldMatrix;
+            i++;
+        }
+
+        Mesh combinedMesh = new Mesh();
+
+        combinedMesh.CombineMeshes(combine);
+
+        GameObject grid = new GameObject("Grid");
+        grid.AddComponent<MeshFilter>();
+        grid.AddComponent<MeshRenderer>();
+        grid.GetComponent<MeshFilter>().mesh = combinedMesh;
+
+        grid.GetComponent<Renderer>().material = m_GridMaterial;
+    }
+
 }
+

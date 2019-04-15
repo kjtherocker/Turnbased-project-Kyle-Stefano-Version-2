@@ -44,6 +44,8 @@ public class Script_CombatCameraController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        Script_GameManager.Instance.m_BattleCamera = this;
+
         m_AllyHealingSelectingPosition = GameObject.Find("PlayerPosition1");
         m_SpawnPos = GameObject.Find("SpawnPos");
         m_EnemyAttackingPoint1 = GameObject.Find("EnemyAttackPos1");

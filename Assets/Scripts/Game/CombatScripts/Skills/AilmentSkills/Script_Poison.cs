@@ -5,8 +5,9 @@ using UnityEngine;
 public class Script_Poison : Script_Skills
 {
 
-    // Use this for initialization
-    void Start()
+
+        // Use this for initialization
+    public override void Start()
     {
 
         //m_ElementalType = ElementalType.Water;

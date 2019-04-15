@@ -20,10 +20,15 @@ public class Script_SlimeRed : Script_Creatures
 
         AmountOfTurns = 1;
 
-        //m_Skills = new Script_Skills[3];
-        //m_Skills[0] = gameObject.AddComponent<Script_FireBall>();
-        //m_Skills[1] = gameObject.AddComponent<Script_FireBall>();
-        //m_Skills[2] = gameObject.AddComponent<Script_Invigorate>();
+        SetCreature();
+
+        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack));
 
         //"Prefabs/Battle/Enemy/Forest/model_Slime"
 
@@ -38,7 +43,7 @@ public class Script_SlimeRed : Script_Creatures
 
     public override int EnemyAi()
     {
-      int SkillChosen =  Random.Range(0, m_Skills.Length);
+      int SkillChosen =  Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

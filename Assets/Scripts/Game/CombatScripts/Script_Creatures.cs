@@ -57,8 +57,8 @@ public class Script_Creatures : MonoBehaviour
     public Script_Skills m_Domain;
     public Script_Skills m_Attack;
     public Script_Skills m_BaseSkill;
-    public Script_Skills[] m_Skills;
-    public Script_Skills[] m_BloodArts;
+    public List<Script_Skills> m_Skills { get; protected set; }
+    public List<Script_Skills> m_BloodArts { get; protected set; }
 
 
     public CreaturesAilment m_creaturesAilment;
@@ -107,12 +107,15 @@ public class Script_Creatures : MonoBehaviour
 
     bool m_IsAlive;
 
+  
     // Update is called once per frame
     public void SetCreature()
     {
-        
+        m_Skills = new List<Script_Skills>();
+        m_BloodArts = new List<Script_Skills>();
+
         m_DomainStages = DomainStages.NotActivated;
-        m_Attack = gameObject.AddComponent<Script_Attack>();
+        //m_Attack = gameObject.AddComponent<Script_Attack>();
     }
     public void Update()
     {

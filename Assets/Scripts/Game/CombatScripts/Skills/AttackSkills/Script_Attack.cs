@@ -5,7 +5,9 @@ using UnityEngine;
 public class Script_Attack : Script_Skills
 {
 
-    void Start()
+
+
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Null;

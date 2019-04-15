@@ -22,18 +22,22 @@ public class Script_RedEyes : Script_Creatures
 
         m_DomainStages = DomainStages.Encroaching;
 
-        //m_Skills = new Script_Skills[5];
-        //m_Skills[0] = gameObject.AddComponent<Script_IceRain>();
-        //m_Skills[1] = gameObject.AddComponent<Script_LightRay>();
-        //m_Skills[2] = gameObject.AddComponent<Script_ShadowBlast>();
-        //m_Skills[3] = gameObject.AddComponent<Script_FireBall>();
-        //m_Skills[4] = gameObject.AddComponent<Script_Invigorate>();
+        SetCreature();
+
+        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.LightRay));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Invigorate));
+  
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_RedEyes", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_RedEyes", typeof(Material));
 
-        //m_Domain = gameObject.AddComponent<Script_RedEyesEncroach>();
+        m_Domain = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.RedEyesEncroach);
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Fire;
@@ -42,7 +46,7 @@ public class Script_RedEyes : Script_Creatures
 
     public override int EnemyAi()
     {
-        int SkillChosen = Random.Range(0, m_Skills.Length);
+        int SkillChosen = Random.Range(0, m_Skills.Count);
 
         return SkillChosen;
     }

@@ -38,7 +38,7 @@ public class Script_GameManager : Singleton<Script_GameManager>
         m_PartyManager = GameObject.Find("PartyManager").GetComponent<Script_PartyManager>();
         m_CombatManager = GameObject.Find("CombatManager").GetComponent<Script_CombatManager>();
         m_EncounterManager = GameObject.Find("EncounterManager").GetComponent<Script_EncounterManager>();
-        m_BattleCamera = GameObject.Find("BattleCamera").GetComponent<Script_CombatCameraController>();
+        //m_BattleCamera = GameObject.Find("BattleCamera").GetComponent<Script_CombatCameraController>();
 
     }
 	

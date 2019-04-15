@@ -5,8 +5,10 @@ using UnityEngine;
 public class Script_Restrict : Script_Skills
 {
 
+
+
     // Use this for initialization
-    void Start()
+    public override void Start()
     {
 
         m_ElementalType = ElementalType.Shadow;

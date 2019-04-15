@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 [System.Serializable]
-public class Script_Skills : MonoBehaviour
+public class Script_Skills
 {
 
     // Use this for initialization
@@ -74,6 +74,13 @@ public class Script_Skills : MonoBehaviour
 
     protected int m_Damage;
 
+
+    public virtual void Start()
+    {
+        
+    }
+
+  
     public ParticleSystem GetSkillParticleEffect()
     {
         return m_SkillParticleEffect;
