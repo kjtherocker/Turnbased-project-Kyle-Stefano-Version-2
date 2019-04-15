@@ -30,7 +30,8 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         PartyManager = Script_GameManager.Instance.m_PartyManager;
         OverworldModel = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
         Instantiate<GameObject>(OverworldModel, gameObject.transform);
-        IsPartyMenuOn = false;
+        gameObject.transform.position = Node_PlayerIsOn.transform.position;
+       IsPartyMenuOn = false;
         //CombineMeshes();
     }
 	

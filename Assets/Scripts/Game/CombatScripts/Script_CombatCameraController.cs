@@ -60,9 +60,9 @@ public class Script_CombatCameraController : MonoBehaviour
 
 
         m_cameraState = CameraState.Default;
-        m_Camera_Offset = new Vector3(100, 80, 0);
-        m_Camera_Offset_EnemyAttack = new Vector3(40, 20, 0);
-        m_SpawnPos.transform.position = new Vector3(200, 250, 376.5f);
+        m_Camera_Offset = new Vector3(2, 1.5f, 0);
+        m_Camera_Offset_EnemyAttack = new Vector3(2, 1.5f, 0);
+        m_SpawnPos.transform.position = new Vector3(18, 6, -1);
 
         transform.position = m_SpawnPos.transform.position;
     }
