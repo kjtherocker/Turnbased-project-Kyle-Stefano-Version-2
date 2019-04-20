@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33053363109952662}
   - component: {fileID: 23712535837207704}
   - component: {fileID: 65682395504984878}
+  - component: {fileID: 114670074214624276}
   m_Layer: 0
   m_Name: CombatNode
   m_TagString: Untagged
@@ -96,3 +97,21 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114670074214624276
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1239355093901072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53484d9eba926294d911305b27984169, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Heuristic: 0
+  m_IsGoal: 0
+  m_HeuristicCalculated: 0
+  m_PositionInGrid: {x: 0, y: 0}
+  m_Selected: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
+  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
+  m_Renderer: {fileID: 23712535837207704}
