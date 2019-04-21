@@ -24,7 +24,7 @@ public class Script_Grid : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-
+        Script_GameManager.Instance.m_Grid = this;
         m_GridDimensions = new Vector2Int(10, 10);
 
         m_GridPathArray = new Script_CombatNode[m_GridDimensions.x, m_GridDimensions.y];
@@ -32,23 +32,26 @@ public class Script_Grid : MonoBehaviour
         PlayerX = 10;
         PlayerY = 10;
 
-        CreateGrid(m_GridDimensions);
+        
         
 
         //SetGoal(new Vector2Int(9,2));
 
-        m_Movement = 9;
+        m_Movement = 96;
         m_GotPathNodes = false;
         
         //FindPointInGrid(new Vector2Int(1, 1));
         //CalculateHeuristic(new Vector2Int(2, 2));
     }
+
+    public void StartGridCreation()
+    {
+        CreateGrid(m_GridDimensions);
+    }
 	
 	// Update is called once per frame
 	void Update ()
     {
-        Mathf.Clamp(PlayerX, 0, m_GridDimensions.x);
-        Mathf.Clamp(PlayerY, 0, m_GridDimensions.y);
 
         if (PlayerX > m_GridDimensions.x)
         {
@@ -112,6 +115,8 @@ public class Script_Grid : MonoBehaviour
 
     public void SetGoal(Vector2Int grid)
     {
+        m_GridPathToGoal.Clear();
+
         for (int i = 0; i < m_GridDimensions.x + m_GridDimensions.y; i++)
         {
             m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
@@ -121,11 +126,32 @@ public class Script_Grid : MonoBehaviour
         m_GridPathArray[grid.x, grid.y].m_IsGoal = true;
         m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
 
+
+
         CalculateUpHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
 
+    }
+
+    public void SetWalkingHeuristic(Vector2Int grid)
+    {
+        m_GridPathToGoal.Clear();
+        for (int i = 0; i < m_GridDimensions.x + m_GridDimensions.y; i++)
+        {
+            m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
+            m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = false;
+        }
+
+        m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
+
+
+
+        CalculateUpHeuristic(new Vector2Int(grid.x, grid.y));
+        CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
+        CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y));
+        CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
     }
 
     public void CalculateUpHeuristic(Vector2Int grid)
@@ -233,8 +259,8 @@ public class Script_Grid : MonoBehaviour
     public void GetTheLowestH(Vector2Int grid, Script_AiController aiController)
     {
         
-            int TempHeuristic = 100;
-
+        int TempHeuristic = 100;
+        Script_CombatNode TempNode = null;
 
 
             //Checking which heuristic is the lowest
@@ -243,6 +269,7 @@ public class Script_Grid : MonoBehaviour
             if (grid.y + 1 < m_GridDimensions.y)
             {
                 TempHeuristic = m_GridPathArray[grid.x, grid.y + 1].m_Heuristic;
+                TempNode = m_GridPathArray[grid.x, grid.y + 1];
             }
 
 
@@ -251,6 +278,7 @@ public class Script_Grid : MonoBehaviour
                 if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic < TempHeuristic)
                 {
                     TempHeuristic = m_GridPathArray[grid.x, grid.y - 1].m_Heuristic;
+                    TempNode = m_GridPathArray[grid.x, grid.y - 1];
                 }
             }
             if (grid.x + 1 < m_GridDimensions.x)
@@ -258,6 +286,7 @@ public class Script_Grid : MonoBehaviour
                 if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic < TempHeuristic)
                 {
                     TempHeuristic = m_GridPathArray[grid.x + 1, grid.y].m_Heuristic;
+                    TempNode = m_GridPathArray[grid.x + 1, grid.y];
                 }
             }
 
@@ -266,68 +295,43 @@ public class Script_Grid : MonoBehaviour
                 if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic < TempHeuristic)
                 {
                     TempHeuristic = m_GridPathArray[grid.x - 1, grid.y].m_Heuristic;
+                    TempNode = m_GridPathArray[grid.x + 1, grid.y];
                 }
             }
 
 
 
-        //Comparing the Heuristic with the Temp one
-        if (m_GotPathNodes == false)
-        {
-            if (grid.y + 1 < m_GridDimensions.y)
-            {
-                if (m_GridPathArray[grid.x, grid.y + 1].m_Heuristic == TempHeuristic)
-                {
-                    m_GridPathToGoal.Add(m_GridPathArray[grid.x, grid.y + 1]);
-                    m_GotPathNodes = true;
-                }
-            }
-            if (grid.y - 1 > -1)
-            {
-                if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic == TempHeuristic)
-                {
-                    m_GridPathToGoal.Add(m_GridPathArray[grid.x, grid.y - 1]);
-                    m_GotPathNodes = true;
-                }
-            }
-
-            if (grid.x + 1 < m_GridDimensions.x)
-            {
-                if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic == TempHeuristic)
-                {
-                    m_GridPathToGoal.Add(m_GridPathArray[grid.x + 1, grid.y ]);
-                    m_GotPathNodes = true;
-                }
-            }
-
-            if (grid.x - 1 > -1)
-            {
-                if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic == TempHeuristic)
-                {
-                    m_GridPathToGoal.Add(m_GridPathArray[grid.x - 1, grid.y ]);
-                    m_GotPathNodes = true;
-                }
-            }
-        }
         
-            if (m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_IsGoal == true)
+            
+        m_GridPathToGoal.Add(TempNode);
+        m_GotPathNodes = true;
+                
+            
+        
+        
+        if (m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_IsGoal == true)
+        {
+            aiController.m_GridPath = m_GridPathToGoal;
+            StartCoroutine(aiController.GetToGoal(aiController.m_GridPath));
+            return;
+        }
+        else
+        {
+            if (m_Movement >= 1)
             {
-                aiController.m_GridPath = m_GridPathToGoal;
-                StartCoroutine(aiController.GetToGoal(aiController.m_GridPath));
-                return;
+                m_Movement--;
+                m_GotPathNodes = false;
+
+                m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_Renderer.material = m_SelectedMaterial;
+                GetTheLowestH(m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_PositionInGrid, aiController);
+
             }
             else
             {
-                 if (m_Movement >= 1)
-                 {
-                     m_Movement--;
-                     m_GotPathNodes = false;
-
-                     m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_Renderer.material = m_SelectedMaterial;
-                     GetTheLowestH(m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_PositionInGrid, aiController);
-                     
-                 }
+                aiController.m_GridPath = m_GridPathToGoal;
+                StartCoroutine(aiController.GetToGoal(aiController.m_GridPath));
             }
+        }
         
     }
 
@@ -336,6 +340,16 @@ public class Script_Grid : MonoBehaviour
         return m_GridPathToGoal;
     }
 
+    public void SetSelectoringrid(Vector2Int grid)
+    {
+        m_GridPathArray[grid.x, grid.y].m_IsSelector = true;
+    }
 
- 
+    public void DeSelectSelectoringrid(Vector2Int grid)
+    {
+        m_GridPathArray[grid.x, grid.y].m_IsSelector = false;
+    }
+
+
+
 }

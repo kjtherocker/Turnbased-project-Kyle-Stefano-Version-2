@@ -404,6 +404,8 @@ MonoBehaviour:
   m_GridPath: []
   Node_MovingTo: {fileID: 0}
   Node_ObjectIsOn: {fileID: 0}
+  m_Movement: 0
+  m_Jump: 0
 --- !u!1001 &113244836
 Prefab:
   m_ObjectHideFlags: 0
@@ -2584,6 +2586,7 @@ MonoBehaviour:
   PartyManager: {fileID: 227142837}
   EncounterManager: {fileID: 1438422312}
   GameManager: {fileID: 1015104321}
+  m_Grid: {fileID: 1636670279}
   Canvas_CommandBoard: {fileID: 1752392880}
   Canvas_SkillMenu: {fileID: 289745274}
   Canvas_TurnMenu: {fileID: 425346047}
@@ -2602,17 +2605,6 @@ MonoBehaviour:
     type: 2}
   m_ImageReference: {fileID: 114755779419005606, guid: cd5eb0292cc4c7144844c9ec4c1aaeca,
     type: 2}
-  AllySpawnPoint:
-  - {fileID: 323273196}
-  - {fileID: 617680096}
-  - {fileID: 1276052246}
-  - {fileID: 907549608}
-  EnemySpawnPoint:
-  - {fileID: 491240614}
-  - {fileID: 744692137}
-  - {fileID: 1599447496}
-  - {fileID: 270155590}
-  - {fileID: 203966991}
   CurentTurnHolderSkillText: []
   m_BasicMenuButtons:
   - {fileID: 1957251038}
@@ -4383,6 +4375,7 @@ MonoBehaviour:
   m_EncounterManager: {fileID: 1438422312}
   m_CombatManager: {fileID: 566654495}
   m_BattleCamera: {fileID: 0}
+  m_Grid: {fileID: 0}
   m_SkillList: {fileID: 0}
   m_GameStates: 0
 --- !u!4 &1015104322
@@ -4641,13 +4634,13 @@ Transform:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1069505098}
-  m_LocalRotation: {x: 0.1409744, y: -0.6929114, z: 0.1409744, w: 0.6929114}
-  m_LocalPosition: {x: 18.18, y: 6.87, z: -1.25}
+  m_LocalRotation: {x: 0.30590406, y: -0.368543, z: 0.10162701, w: 0.87193507}
+  m_LocalPosition: {x: 10.87, y: 8.4, z: -9.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 709590191}
   m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: -90.00001, z: 0}
+  m_LocalEulerAnglesHint: {x: 37.471, y: -47.007004, z: -3.486}
 --- !u!81 &1069505100
 AudioListener:
   m_ObjectHideFlags: 0
@@ -4686,11 +4679,11 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 6000
-  field of view: 60
+  far clip plane: 600000000
+  field of view: 26.991467
   orthographic: 0
   orthographic size: 5
-  m_Depth: -1
+  m_Depth: -14.03
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -4700,7 +4693,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 1
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -4717,19 +4710,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_cameraState: 0
-  m_CharacterReference: {fileID: 0}
-  m_OtherCharacterReference: {fileID: 0}
-  m_AllCharactersReference: []
-  m_AllyHealingSelectingPosition: {fileID: 0}
-  m_SpawnPos: {fileID: 0}
-  m_EnemyAttackingPoint1: {fileID: 0}
-  m_EnemyAttackingPoint2: {fileID: 0}
-  m_AllyHealing1: {fileID: 0}
-  m_AllyHealing2: {fileID: 0}
-  m_EnemyBuff1: {fileID: 0}
-  m_EnemyBuff2: {fileID: 0}
-  m_AllyHealinglookatpos: {fileID: 0}
-  m_EnemyZoomin: {fileID: 0}
+  m_Grid: {fileID: 1636670279}
+  m_CameraPositionInGrid: {x: 0, y: 0}
 --- !u!1 &1098555993
 GameObject:
   m_ObjectHideFlags: 0
@@ -4950,7 +4932,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1232901628
 Transform:
   m_ObjectHideFlags: 0

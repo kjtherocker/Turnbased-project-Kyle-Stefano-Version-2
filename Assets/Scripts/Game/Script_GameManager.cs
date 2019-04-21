@@ -15,6 +15,9 @@ public class Script_GameManager : Singleton<Script_GameManager>
     public Script_CombatCameraController m_BattleCamera;
     public Script_CombatCameraController BattleCamera { get { return m_BattleCamera; } }
 
+    public Script_Grid m_Grid;
+    public Script_Grid Grid { get { return m_Grid; } }
+
     public Script_SkillList m_SkillList;
     public Script_SkillList SkillList { get { return m_SkillList; } set {  m_SkillList = value; } }
 

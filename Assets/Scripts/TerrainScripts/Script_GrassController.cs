@@ -53,8 +53,6 @@ public class Script_GrassController : MonoBehaviour
             {
                 if (ChantHasSpawwed == false)
                 {
-                    m_CameraReference.SetCameraState(Script_CombatCameraController.CameraState.EnemyZoomIn);
-
                     GameObject ChantInstance = Instantiate<GameObject>(m_ChantReference);
 
                     m_RedeyesReference.m_DomainStages = Script_Creatures.DomainStages.Finished;
@@ -71,7 +69,6 @@ public class Script_GrassController : MonoBehaviour
             }
             if (m_EnroachingIsFinished == false)
             {
-                m_CameraReference.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
                 EncrochDomain();
             }
         }

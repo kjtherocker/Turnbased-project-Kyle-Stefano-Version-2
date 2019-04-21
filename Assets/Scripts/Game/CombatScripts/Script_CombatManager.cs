@@ -13,7 +13,7 @@ public class Script_CombatManager : MonoBehaviour
     public Script_EncounterManager EncounterManager;
     public Script_GameManager GameManager;
 
-
+    public Script_Grid m_Grid;
 
     public GameObject Canvas_CommandBoard;
     public GameObject Canvas_SkillMenu;
@@ -55,9 +55,6 @@ public class Script_CombatManager : MonoBehaviour
     public Script_ButtonEnemyWrapper m_ButtonEnemyReference;
     public Script_TurnIndicatorWrapper m_ImageReference;
 
-    public GameObject[] AllySpawnPoint;
-    public GameObject[] EnemySpawnPoint;
-
 
     public List<Text> CurentTurnHolderSkillText;
     public List<Button> m_BasicMenuButtons;
@@ -98,25 +95,14 @@ public class Script_CombatManager : MonoBehaviour
         GameManager = Script_GameManager.Instance;
         EncounterManager = Script_GameManager.Instance.EncounterManager;
         PartyManager = Script_GameManager.Instance.PartyManager;
-        
 
- 
-
+       // m_Grid = Script_GameManager.Instance.m_Grid;
         Image_Notification.SetActive(false);
         Canvas_CommandBoard.SetActive(false);
         Canvas_SkillMenu.SetActive(false);
         Canvas_TurnMenu.SetActive(false);
 
-        //AllySpawnPoint[0] = GameObject.Find("PlayerPosition1");
-        //AllySpawnPoint[1] = GameObject.Find("PlayerPosition2");
-        //AllySpawnPoint[2] = GameObject.Find("PlayerPosition3");
-        //AllySpawnPoint[3] = GameObject.Find("PlayerPosition4");
 
-        //EnemySpawnPoint[0] = GameObject.Find("EnemyPosition1");
-        //EnemySpawnPoint[1] = GameObject.Find("EnemyPosition2");
-        //EnemySpawnPoint[2] = GameObject.Find("EnemyPosition3");
-        //EnemySpawnPoint[3] = GameObject.Find("EnemyPosition4");
-        //EnemySpawnPoint[4] = GameObject.Find("EnemyPositionBoss");
     }
 
     public void CombatStart()
@@ -126,48 +112,54 @@ public class Script_CombatManager : MonoBehaviour
 
             m_CurrentTurnHolderbuttonsHaveSpawned = false;
             //Setting up the players
+            m_Grid.StartGridCreation();
 
             if (PartyManager.m_CurrentParty[0] != null)
             {
                 TurnOrderAlly.Add(PartyManager.m_CurrentParty[0]);
 
-                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model, AllySpawnPoint[0].transform);
-                TurnOrderAlly[0].SetSpawnPosition(AllySpawnPoint[0].transform.position);
+                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model);
+                TurnOrderAlly[0].SetSpawnPosition(m_Grid.m_GridPathArray[1,2].gameObject.transform.position);
+                TurnOrderAlly[0].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 2].gameObject.transform.position;
                 TurnOrderAlly[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+                TurnOrderAlly[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
 
             }
 
-            if (PartyManager.m_CurrentParty[1] != null)
-            {
-                TurnOrderAlly.Add(PartyManager.m_CurrentParty[1]);
+            //if (PartyManager.m_CurrentParty[1] != null)
+            //{
+            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[1]);
 
-                TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model, AllySpawnPoint[1].transform);
-                TurnOrderAlly[1].SetSpawnPosition(AllySpawnPoint[1].transform.position);
+            //    TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model);
+            //    TurnOrderAlly[1].SetSpawnPosition(m_Grid.m_GridPathArray[1, 3].gameObject.transform.position);
+            //    TurnOrderAlly[1].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 3].gameObject.transform.position;
+            //    TurnOrderAlly[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+            //    TurnOrderAlly[1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
+            //}
 
-                TurnOrderAlly[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-            }
+            //if (PartyManager.m_CurrentParty[2] != null)
+            //{
+            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[2]);
 
-            if (PartyManager.m_CurrentParty[2] != null)
-            {
-                TurnOrderAlly.Add(PartyManager.m_CurrentParty[2]);
+            //    TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model);
+            //    TurnOrderAlly[2].SetSpawnPosition(m_Grid.m_GridPathArray[1, 4].gameObject.transform.position);
+            //    TurnOrderAlly[2].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 4].gameObject.transform.position;
+            //    TurnOrderAlly[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+            //    TurnOrderAlly[2].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
 
-                TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model, AllySpawnPoint[2].transform);
-                TurnOrderAlly[2].SetSpawnPosition(AllySpawnPoint[2].transform.position);
+            //}
 
-                TurnOrderAlly[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+            //if (PartyManager.m_CurrentParty[3] != null)
+            //{
 
-            }
+            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[3]);
 
-            if (PartyManager.m_CurrentParty[3] != null)
-            {
-
-                TurnOrderAlly.Add(PartyManager.m_CurrentParty[3]);
-
-                TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model, AllySpawnPoint[3].transform);
-                TurnOrderAlly[3].SetSpawnPosition(AllySpawnPoint[3].transform.position);
-
-                TurnOrderAlly[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-            }
+            //    TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model);
+            //    TurnOrderAlly[3].SetSpawnPosition(m_Grid.m_GridPathArray[1, 5].gameObject.transform.position);
+            //    TurnOrderAlly[3].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 5].gameObject.transform.position;
+            //    TurnOrderAlly[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+            //    TurnOrderAlly[3].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
+            //}
 
             //Setting up the Enemy
 
@@ -179,57 +171,63 @@ public class Script_CombatManager : MonoBehaviour
 
                 if (TurnOrderEnemy[0].Model != null)
                 {
-                    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, EnemySpawnPoint[0].transform);
+                    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model);
                 }
-                TurnOrderEnemy[0].SetSpawnPosition(Vector3.zero);
-
+                TurnOrderEnemy[0].SetSpawnPosition(m_Grid.m_GridPathArray[7, 2].gameObject.transform.position);
+                TurnOrderEnemy[0].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 2].gameObject.transform.position;
+                TurnOrderEnemy[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
             }
 
-            if (EncounterManager.EnemySlot2 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
+            //if (EncounterManager.EnemySlot2 != null)
+            //{
+            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
 
-                if (TurnOrderEnemy[1].Model != null)
-                {
-                    TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model, EnemySpawnPoint[1].transform);
-                }
-                TurnOrderEnemy[1].SetSpawnPosition(Vector3.zero);
+            //    if (TurnOrderEnemy[1].Model != null)
+            //    {
+            //        TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model);
+            //    }
+            //    TurnOrderEnemy[1].SetSpawnPosition(m_Grid.m_GridPathArray[7, 3].gameObject.transform.position);
+            //    TurnOrderEnemy[1].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 3].gameObject.transform.position;
+            //    TurnOrderEnemy[1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
 
-            }
+            //}
 
-            if (EncounterManager.EnemySlot3 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
+            //if (EncounterManager.EnemySlot3 != null)
+            //{
+            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
 
-                if (TurnOrderEnemy[2].Model != null)
-                {
-                    TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model, EnemySpawnPoint[2].transform);
-                }
-                TurnOrderEnemy[2].SetSpawnPosition(Vector3.zero);
+            //    if (TurnOrderEnemy[2].Model != null)
+            //    {
+            //        TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model);
+            //    }
+            //    TurnOrderEnemy[2].SetSpawnPosition(m_Grid.m_GridPathArray[7, 4].gameObject.transform.position);
+            //    TurnOrderEnemy[2].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 4].gameObject.transform.position;
+            //    TurnOrderEnemy[2].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
+            //}
 
+            //if (EncounterManager.EnemySlot4 != null)
+            //{
+            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
+            //    if (TurnOrderEnemy[3].Model != null)
+            //    {
+            //        TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model);
+            //    }
+            //    TurnOrderEnemy[3].SetSpawnPosition(m_Grid.m_GridPathArray[7, 5].gameObject.transform.position);
+            //    TurnOrderEnemy[3].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 5].gameObject.transform.position;
+            //    TurnOrderEnemy[3].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
+            //}
 
-            }
+            //if (EncounterManager.EnemySlotBoss != null)
+            //{
+            //    TurnOrderEnemy.Add(EncounterManager.EnemySlotBoss);
 
-            if (EncounterManager.EnemySlot4 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
-                if (TurnOrderEnemy[3].Model != null)
-                {
-                    TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model, EnemySpawnPoint[3].transform);
-                }
-                TurnOrderEnemy[3].SetSpawnPosition(Vector3.zero);
+            //    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model);
+            //    TurnOrderEnemy[0].SetSpawnPosition(m_Grid.m_GridPathArray[7, 3].gameObject.transform.position);
+            //    //m_GrassController.SetRedEyesReference(TurnOrderEnemy[0]);
+            //    TurnOrderEnemy[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
 
-            }
+            //}
 
-            if (EncounterManager.EnemySlotBoss != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlotBoss);
-
-                TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model, EnemySpawnPoint[4].transform);
-                TurnOrderEnemy[0].SetSpawnPosition(Vector3.zero);
-                m_GrassController.SetRedEyesReference(TurnOrderEnemy[0]);
-
-            }
             EnemyIsChosen = false;
             CombatHasStarted = true;
             HasStatusAppeared = false;
@@ -243,7 +241,7 @@ public class Script_CombatManager : MonoBehaviour
             }
             
             m_BattleStates = BattleStates.AllyTurn;
-            m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Spawn);
+
             CurrentTurnOrderSide = TurnOrderAlly;
             Canvas_CommandBoard.SetActive(false);
             Canvas_CombatEndMenu.Reset();
@@ -263,20 +261,109 @@ public class Script_CombatManager : MonoBehaviour
         {
             CombatStart();
         }
-  
 
-        if (m_BattleStates == BattleStates.Spawn)
+
+        switch (m_BattleStates)
         {
+            case BattleStates.Spawn:
+                
+                    m_BattleStates = BattleStates.AllyTurn;
 
 
-            if (m_BattleCamera.GetCameraState() != Script_CombatCameraController.CameraState.Spawn)
-            {
-                m_BattleStates = BattleStates.AllyTurn;
+                
+                break;
 
+            case BattleStates.AllyTurn:
+                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+                Attackisfinished = false;
 
-            }
+                    Canvas_CommandBoard.SetActive(true);
+                   // m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
+                
+
+                break;
+
+            case BattleStates.AllySkillSelecting:
+                if (m_AttackButton == false)
+                {
+                    PlayerSelecting();
+                }
+                else
+                {
+
+                }
+                break;
+
+            case BattleStates.AllyAttack:
+                if (m_AttackButton == false)
+                {
+                    if (WhatTypeOfSkillsUsed == false)
+                    {
+                        PlayerTurnSkill();
+                    }
+                    else if (WhatTypeOfSkillsUsed == true)
+                    {
+                        PlayerTurnBloodArt();
+                    }
+                }
+                else
+                {
+                    SinglePersonAttack();
+                }
+           
+                break;
+
+            case BattleStates.EnemyAttacking:
+                if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
+                {
+
+                   // CombatTurnEndCombatManagerEnemy();
+
+                }
+                break;
+
+            case BattleStates.EnemyDomain:
+                if (m_IsDomainEnroaching == true)
+                {
+                    m_GrassController.IsEncoraching();
+                   
+
+                    //m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
+                    ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Domain.GetSkillParticleEffect());
+                    m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
+                    m_IsDomainEnroaching = false;
+                }
+                if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
+                {
+                    m_BattleStates = BattleStates.EndOfTurnSet;
+                    m_TurnIdenticator[0].DestroyThisObject();
+                    m_TurnIdenticator.RemoveAt(0);
+                }
+                break;
+
+            case BattleStates.EnemyTurn:
+                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+                EnemyTurn();
+                Attackisfinished = false;
+
+                break;
+
+            
+
+            case BattleStates.EndOfCombat:
+
+                Canvas_CombatEndMenu.gameObject.SetActive(true);
+                Canvas_CombatEndMenu.TurnScoreOn();
+                Canvas_CombatEndMenu.GetScore();
+                if (Input.anyKey)
+                {
+                    //CombatEnd();
+                }
+                break;
+
         }
 
+    
         if (CombatHasStarted == true)
         {
             if (CurrentTurnHolder != null)
@@ -284,7 +371,7 @@ public class Script_CombatManager : MonoBehaviour
                 if (CurrentTurnHolder.GetCharactertype() == Script_Creatures.Charactertype.Ally)
                 {
 
-                    m_BattleCamera.SetCharacterReference(CurrentTurnHolder);
+                    
 
                 }
             }
@@ -299,18 +386,7 @@ public class Script_CombatManager : MonoBehaviour
 
         }
 
-        if (m_BattleStates == BattleStates.EndOfCombat)
-        {
-            Canvas_CombatEndMenu.gameObject.SetActive(true);
-            Canvas_CombatEndMenu.TurnScoreOn();
-            Canvas_CombatEndMenu.GetScore();
-            if (Input.anyKey)
-            {
-                CombatEnd();
-            }
-        }
-        
-
+       
         //Ending the Current encounter
         if (CombatHasStarted == true)
         {
@@ -325,41 +401,8 @@ public class Script_CombatManager : MonoBehaviour
 
         RemoveDeadFromList();
 
-
-
-
-        if (m_BattleStates == BattleStates.EnemyAttacking)
+        if (AmountofTurns == 0)
         {
-            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
-            {
-
-                    CombatTurnEndCombatManagerEnemy();
-
-            }
-        }
-
-        if (m_BattleStates == BattleStates.EnemyDomain)
-        {
-            if (m_IsDomainEnroaching == true)
-            {
-                m_GrassController.IsEncoraching();
-                m_BattleCamera.SetCharacterReference(CurrentTurnHolder);
-
-                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-                ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Domain.GetSkillParticleEffect());
-                m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
-                m_IsDomainEnroaching = false;
-            } 
-            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
-            {
-                m_BattleStates = BattleStates.EndOfTurnSet;
-                m_TurnIdenticator[0].DestroyThisObject();
-                m_TurnIdenticator.RemoveAt(0);
-            }
-        }
-
-            if (AmountofTurns == 0)
-            {
             if (CombatHasStarted == true)
             {
                 AmountofTurns = 0;
@@ -380,7 +423,7 @@ public class Script_CombatManager : MonoBehaviour
                             }
                             else
                             {
-                                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Nothing);
+                               
                                 m_BattleStates = BattleStates.EndOfTurnSet;
                             }
                         }
@@ -443,14 +486,7 @@ public class Script_CombatManager : MonoBehaviour
                                 m_TurnIdenticator[AmountofTurns].SetGroup(false);
                                 m_TurnIdenticator[AmountofTurns].gameObject.transform.localPosition = new Vector3(350 - AmountofTurns * 25, 170, 0);
                                 m_TurnIdenticator[AmountofTurns].gameObject.transform.SetParent(Canvas_TurnMenu.transform, false);
-                                //if (CurrentTurnOrderSide[AmountofTurns].GetCharactertype() == Script_Creatures.Charactertype.Ally)
-                                //{
-                                //    m_TurnIdenticator[AmountofTurns].SetGroup(true);
-                                //}
-                                //if (CurrentTurnOrderSide[AmountofTurns].GetCharactertype() == Script_Creatures.Charactertype.Enemy)
-                                //{
-                                //    m_TurnIdenticator[AmountofTurns].SetGroup(false);
-                                //}
+                                
                             }
                         }
                     }
@@ -462,69 +498,6 @@ public class Script_CombatManager : MonoBehaviour
         {
             CurrentTurnHolderNumber = 0;
         }
-
-
-        if (m_BattleStates == BattleStates.EnemyTurn)
-        {
-
-            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-            EnemyTurn();
-            Attackisfinished = false;
-
-        }
-
-
-
-        if (m_BattleStates == BattleStates.AllyTurn)
-        {
-
-            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-            Attackisfinished = false;
-
-            if (m_BattleCamera.GetCameraState() != Script_CombatCameraController.CameraState.Spawn)
-            {
-                Canvas_CommandBoard.SetActive(true);
-                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
-            }
-
-        }
-
-        if (m_BattleStates == BattleStates.AllySkillSelecting)
-        {
-            if (m_AttackButton == false)
-            {
-                PlayerSelecting();
-            }
-            else
-            {
-
-            }
-        }
-        if (m_BattleStates == BattleStates.AllyAttack)
-        {
-            if (m_AttackButton == false)
-            {
-                if (WhatTypeOfSkillsUsed == false)
-                {
-                    PlayerTurnSkill();
-                }
-                else if (WhatTypeOfSkillsUsed == true)
-                {
-                    PlayerTurnBloodArt();
-                }
-            }
-            else
-            {
-                SinglePersonAttack();
-            }
-            if (m_BattleCamera.GetCameraState() == Script_CombatCameraController.CameraState.Nothing)
-            {
-                CombatTurnEndCombatManager();
-            }
-
-
-        }
-
 
         for (int i = 0; i < TurnOrderEnemy.Count; i++)
         {
@@ -640,13 +613,7 @@ public class Script_CombatManager : MonoBehaviour
 
                 if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Extra)
                 {
-                    m_GrassController.IsEncoraching();
-                    m_BattleCamera.SetCharacterReference(CurrentTurnHolder);
-               
-                    ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillParticleEffect());
-                    m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
-                    m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-                    m_BattleStates = BattleStates.EnemyAttacking;
+                    
                 }
 
                 if (Input.GetKeyDown(KeyCode.F1))
@@ -659,24 +626,7 @@ public class Script_CombatManager : MonoBehaviour
                     if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                     {
 
-                        int BuffToAllys = CurrentTurnHolder.m_Skills[EnemySkillChosen].UseSkill(CurrentTurnHolder.GetAllMagic());
-
-                        //Setting the Notfication to the skillname
-                        
-
-                        CurrentTurnHolder.EndTurn();
-
-                        for (int i = 0; i < TurnOrderEnemy.Count; i++)
-                        {
-                            CurrentTurnHolder.IncrementMana(5);
-                            StartCoroutine(TurnOrderEnemy[i].AddBuff(BuffToAllys));
-                        }
-
-                        CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[EnemySkillChosen].GetCostToUse());
-
-
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyBuff);
-                        m_BattleStates = BattleStates.EnemyAttacking;
+                       
 
                     }
                 }
@@ -685,39 +635,7 @@ public class Script_CombatManager : MonoBehaviour
                     if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                     {
 
-                        int DamageToAllys = 0;
-
-
-
-                        //Checking what damageType the skill will use
-                        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetDamageType() == Script_Skills.DamageType.Strength)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[EnemySkillChosen].UseSkill(CurrentTurnHolder.GetAllStrength());
-                        }
-                        else if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetDamageType() == Script_Skills.DamageType.Magic)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[EnemySkillChosen].UseSkill(CurrentTurnHolder.GetAllMagic());
-                        }
-
-
-                        // Image_Notification.SetActive(true);
-
-                        Canvas_CombatEndMenu.AddToDamageTaken(DamageToAllys);
-
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-                        for (int i = 0; i < TurnOrderAlly.Count; i++)
-                        {
-                            ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillParticleEffect());
-                            TurnOrderAlly[i].IncrementMana(5);
-                            m_Skillparticleeffect.transform.localPosition = TurnOrderAlly[i].ModelInGame.transform.position;
-
-                            StartCoroutine(TurnOrderAlly[i].DecrementHealth(DamageToAllys, CurrentTurnHolder.m_Skills[EnemySkillChosen].GetElementalType(), 0.2f, 2.0f, 1.0f));
-                        }
-
-
-                        m_BattleStates = BattleStates.EnemyAttacking;
-
-
+                       
 
 
 
@@ -729,38 +647,7 @@ public class Script_CombatManager : MonoBehaviour
                     if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
                     {
 
-                        int DamageToAllys = 0;
-
-                        if (EnemyIsChosen == false)
-                        {
-                            m_EnemyChosen = Random.Range(0, TurnOrderAlly.Count);
-                            EnemyIsChosen = true;
-                        }
                        
-                        //Checking what damageType the skill will use
-                        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetDamageType() == Script_Skills.DamageType.Strength)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[EnemySkillChosen].UseSkill(CurrentTurnHolder.GetAllStrength());
-                        }
-                        else if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetDamageType() == Script_Skills.DamageType.Magic)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[EnemySkillChosen].UseSkill(CurrentTurnHolder.GetAllMagic());
-                        }
-                        m_BattleCamera.SetOtherCharacterReference(TurnOrderAlly[m_EnemyChosen]);
-
-                        
-
-                        Text_Notification.text = CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillName();
-
-                        Canvas_CombatEndMenu.AddToDamageTaken(DamageToAllys);
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-                        TurnOrderAlly[m_EnemyChosen].IncrementMana(5);
-                        StartCoroutine(TurnOrderAlly[m_EnemyChosen].DecrementHealth(DamageToAllys, CurrentTurnHolder.m_Skills[EnemySkillChosen].GetElementalType(), 0.01f, 0.1f, 0.2f));
-
- 
-                        m_BattleStates = BattleStates.EnemyAttacking;
-
-
                     }
                 }
                 if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Heal)
@@ -768,39 +655,7 @@ public class Script_CombatManager : MonoBehaviour
                     //Checking the range the skills has single target or fulltarget
                     if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                     {
-                        int DamageToAllys = 0;
-
-                        //Checking what damageType the skill will use
-                        if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Strength)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllStrength());
-                        }
-                        else if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Magic)
-                        {
-                            DamageToAllys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-                        }
-
-                        m_BattleCamera.SetAllCharacterReferences(TurnOrderEnemy);
-
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyBuff);
-
-                        DamageToAllys -= 200;
-                        //Setting the Notfication to the skillname
-                        Image_Notification.SetActive(true);
-                        Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-
-                        for (int i = 0; i < TurnOrderEnemy.Count; i++)
-                        {
-                            CurrentTurnHolder.IncrementMana(5);
-                            StartCoroutine(TurnOrderEnemy[i].IncrementHealth(DamageToAllys));
-                        }
-
-                        CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-
-                        Attackisfinished = true;
-                        m_BattleStates = BattleStates.EnemyAttacking;
-
-
+                   
                     }
                 }
             }
@@ -839,33 +694,7 @@ public class Script_CombatManager : MonoBehaviour
                         //Checking the range the skills has single target or fulltarget
                         if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
                         {
-                            int DamageToEnemys = 0;
-
-                            //Checking what damageType the skill will use
-                            if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Strength)
-                            {
-                                DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllStrength());
-                            }
-                            else if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Magic)
-                            {
-                                DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-                            }
-
-                            Canvas_CombatEndMenu.AddToDamageDealt(DamageToEnemys);
-                            //Setting the Notfication to the skillname
-                            Image_Notification.SetActive(true);
-                            Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-
-                            //  m_BattleStates = BattleStates.AllySelecting;
-
-                            CurrentTurnHolder.IncrementMana(5);
-                            StartCoroutine(TurnOrderEnemy[m_EnemyChosen].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetElementalType(),0.01f, 0.2f, 0.5f));
-
-
-                            CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                            
-                            Attackisfinished = false;
-                            m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Nothing);
+                         
                         }
                     }
 
@@ -878,36 +707,6 @@ public class Script_CombatManager : MonoBehaviour
                         //Checking the range the skills has single target or fulltarget
                         if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                         {
-                            int DamageToEnemys = 0;
-
-                            //Checking what damageType the skill will use
-                            if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Strength)
-                            {
-                                DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllStrength());
-                            }
-                            else if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Magic)
-                            {
-                                DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-                            }
-                        
-                        //Setting the Notfication to the skillname
-                            Image_Notification.SetActive(true);
-                            Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-                            m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-
-                            for (int i = 0; i < TurnOrderEnemy.Count; i++)
-                            {
-                                ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillParticleEffect());
-                                TurnOrderEnemy[i].IncrementMana(5);
-                                m_Skillparticleeffect.transform.localPosition = TurnOrderEnemy[i].ModelInGame.transform.position;
-
-                                Canvas_CombatEndMenu.AddToDamageDealt(DamageToEnemys);
-                                StartCoroutine(TurnOrderEnemy[i].DecrementHealth(DamageToEnemys, CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetElementalType(),0.001f, 2.0f, 1.0f));
-    
-                            }
-                            Attackisfinished = true;
-                            CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                            
 
                         }
                     }
@@ -916,25 +715,8 @@ public class Script_CombatManager : MonoBehaviour
                     {
                           //Checking the range the skills has single target or fulltarget
                           if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
-                          {
-                              int BuffToAllys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-                          
-                              //Setting the Notfication to the skillname
-                              Image_Notification.SetActive(true);
-                              Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-                          
-                          
-                              for (int i = 0; i < TurnOrderAlly.Count; i++)
-                              {
-                                  CurrentTurnHolder.IncrementMana(5);
-                                  StartCoroutine(TurnOrderAlly[i].AddBuff(BuffToAllys));
-                              }
-                          
-                              m_BattleCamera.SetAllCharacterReferences(TurnOrderAlly);
-                              m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.AllyHealing);
-                              CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                              Attackisfinished = true;
-                          
+                          { 
+
                           }
                     }
 
@@ -943,23 +725,7 @@ public class Script_CombatManager : MonoBehaviour
                     //Checking the range the skills has single target or fulltarget
                     if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                     {
-                        int BuffToAllys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-
-                        //Setting the Notfication to the skillname
-                        Image_Notification.SetActive(true);
-                        Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-
-
-                        for (int i = 0; i < TurnOrderEnemy.Count; i++)
-                        {
-                            CurrentTurnHolder.IncrementMana(5);
-                            StartCoroutine(TurnOrderEnemy[i].AddDeBuff(BuffToAllys));
-                        }
-
-                        m_BattleCamera.SetAllCharacterReferences(TurnOrderAlly);
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyBuff);
-                        CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                        Attackisfinished = true;
+                      
 
                     }
                 }
@@ -969,19 +735,7 @@ public class Script_CombatManager : MonoBehaviour
                         //Checking the range the skills has single target or fulltarget
                         if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
                         {
-
-                            //Setting the Notfication to the skillname
-                            Image_Notification.SetActive(true);
-                            Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-                            CombatTurnEndCombatManager();
-                            for (int i = 0; i < TurnOrderEnemy.Count; i++)
-                            {
-                                CurrentTurnHolder.IncrementMana(5);
-                                TurnOrderEnemy[i].InflictAliment(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetAlimentType());
-                            }
-
-                            CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                            
+                        
 
                         }
                     }
@@ -991,44 +745,10 @@ public class Script_CombatManager : MonoBehaviour
 
                         if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Heal)
                         {
-                            //Checking the range the skills has single target or fulltarget
-                            if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
-                            {
-                                int DamageToEnemys = 0;
-
-                                //Checking what damageType the skill will use
-                                if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Strength)
-                                {
-                                    DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllStrength());
-                                }
-                                else if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetDamageType() == Script_Skills.DamageType.Magic)
-                                {
-                                    DamageToEnemys = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].UseSkill(CurrentTurnHolder.GetAllMagic());
-                                }
-
-                                m_BattleCamera.SetAllCharacterReferences(TurnOrderAlly);
-
-                                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.AllyHealing);
-
-                                Canvas_CombatEndMenu.AddToHealAmount(DamageToEnemys);
-                                
-                                //Setting the Notfication to the skillname
-                                Image_Notification.SetActive(true);
-                                Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-
-                                for (int i = 0; i < TurnOrderAlly.Count; i++)
-                                {
-                                    CurrentTurnHolder.IncrementMana(5);
-                                    StartCoroutine(TurnOrderAlly[i].IncrementHealth(DamageToEnemys));
-                                }
-
-                                CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                                
-                                Attackisfinished = true;
-
-
-
-                            }
+                        //Checking the range the skills has single target or fulltarget
+                        if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+                        {
+                        }
                         }
 
 
@@ -1038,27 +758,6 @@ public class Script_CombatManager : MonoBehaviour
                         //Checking the range the skills has single target or fulltarget
                         if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
                         {
-
-
-                                //Setting the Notfication to the skillname
-                                Image_Notification.SetActive(true);
-                                Text_Notification.text = CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillName();
-
-
-
-                                CurrentTurnHolder.IncrementMana(5);
-                                StartCoroutine(DeadAllys[m_EnemyChosen].IncrementHealth(200));
-                                DeadAllys[m_EnemyChosen].Resurrection();
-                                TurnOrderAlly.Add(DeadAllys[m_EnemyChosen]);
-                                DeadAllys.RemoveAt(m_EnemyChosen);
-
-
-                                CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetCostToUse());
-                                
-                                Attackisfinished = true;
-                                m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Nothing);
-
-
 
                             
                         }
@@ -1085,7 +784,7 @@ public class Script_CombatManager : MonoBehaviour
                     CurrentTurnHolder.IncrementMana(CurrentTurnHolder.MaxMana / CurrentTurnHolder.m_BloodArts[CurrentTurnHolderSkills].GetCostToUse());
                     StartCoroutine(CurrentTurnHolder.DecrementHealth(CurrentTurnHolder.MaxHealth / 4, CurrentTurnHolder.m_BloodArts[CurrentTurnHolderSkills].GetElementalType(), 0.01f, 0.2f, 0.5f));
                     Attackisfinished = true;
-                    m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Nothing);
+                    
                 }
             }
         }
@@ -1155,7 +854,7 @@ public class Script_CombatManager : MonoBehaviour
                             m_CurrentEnemyMenuButtons[i].gameObject.transform.SetParent(Canvas_CommandBoard.transform, false);
 
                         }
-                        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.AllyAttackSelecting);
+                        
 
                     }
                 }
@@ -1322,10 +1021,7 @@ public class Script_CombatManager : MonoBehaviour
         }
 
     }
-    public void CurrentTurnHolderSkill4()
-    {
-        CombatTurnEndCombatManager();
-    }
+   
 
     public void SetTurnHolderSkills( int a_SkillNumber)
     {
@@ -1375,157 +1071,11 @@ public class Script_CombatManager : MonoBehaviour
             CurrentTurnHolder.DecrementMana(CurrentTurnHolder.m_Attack.GetCostToUse());
 
             Attackisfinished = true;
-            m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-        }
-    }
-
-    public void CombatEnd()
-    {
-        RemoveDeadFromList();
-        for (int i = TurnOrderAlly.Count; i > 0; i--)
-        {
-            Destroy(TurnOrderAlly[0].ModelInGame);
-            TurnOrderAlly.RemoveAt(0);
-        }
-        for (int i = TurnOrderEnemy.Count; i > 0; i--)
-        {
-            Destroy(TurnOrderEnemy[0].ModelInGame);
-            TurnOrderEnemy.RemoveAt(0);
-        }
-
-        if (m_CurrentSkillMenuButtonsMenu.Count != 0)
-        {
-            for (int i = m_CurrentSkillMenuButtonsMenu.Count; i > 0; i--)
-            {
-                Destroy(m_CurrentSkillMenuButtonsMenu[0]);
-                m_CurrentSkillMenuButtonsMenu[0].ToDestroy();
-                m_CurrentSkillMenuButtonsMenu.RemoveAt(0);
-            }
-        }
-        if (m_CurrentEnemyMenuButtons.Count != 0)
-        {
-            for (int i = m_CurrentEnemyMenuButtons.Count; i > 0; i--)
-            {
-                Destroy(m_CurrentEnemyMenuButtons[0]);
-                m_CurrentEnemyMenuButtons[0].ToDestroy();
-                m_CurrentEnemyMenuButtons.RemoveAt(0);
-            }
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            m_BasicMenuButtons[i].interactable = true;
-        }
-
-        for (int i = m_TurnIdenticator.Count; i > 0 ; i--)
-        {
-            m_TurnIdenticator[0].DestroyThisObject();
-            m_TurnIdenticator.RemoveAt(0);
-        }
-   
-        
-        Image_Notification.SetActive(false);
-        Canvas_CombatEndMenu.Reset();
-        PartyManager.CombatEnd();
-        HasStatusAppeared = false;
-        CombatHasStarted = false;
-        CurrentTurnHolderNumber = 0;
-        AmountofTurns = 0;
-        EncounterManager.ResetEncounterManager();
-        GameManager.SwitchToOverworld();
-
-    }
-    public void CombatTurnEndCombatManager()
-    {
-        Canvas_CommandBoard.SetActive(true);
-
-        if (m_CurrentSkillMenuButtonsMenu.Count != 0)
-        {
-            for (int i = m_CurrentSkillMenuButtonsMenu.Count; i > 0; i--)
-            {
-                Destroy(m_CurrentSkillMenuButtonsMenu[0]);
-                m_CurrentSkillMenuButtonsMenu[0].ToDestroy();
-                m_CurrentSkillMenuButtonsMenu.RemoveAt(0);
-            }
-        }
-        if (m_CurrentEnemyMenuButtons.Count != 0)
-        {
-            for (int i = m_CurrentEnemyMenuButtons.Count; i > 0; i--)
-            {
-                Destroy(m_CurrentEnemyMenuButtons[0]);
-                m_CurrentEnemyMenuButtons[0].ToDestroy();
-                m_CurrentEnemyMenuButtons.RemoveAt(0);
-            }
-        }
-
-        for (int i = 0; i < 4; i++)
-        {
-            m_BasicMenuButtons[i].interactable = true;
-        }
-        AmountofTurns--;
-
-        if (m_TurnIdenticator.Count != 0)
-        {
-            m_TurnIdenticator[m_TurnIdenticator.Count - 1].DestroyThisObject();
-            m_TurnIdenticator.RemoveAt(m_TurnIdenticator.Count - 1);
             
         }
-        else
-        {
-            m_TurnIdenticator[0].DestroyThisObject();
-            m_TurnIdenticator.RemoveAt(0);
-        }
-        Image_Notification.SetActive(false);
-        HasStatusAppeared = false;
-        Attackisfinished = true;
-        m_AttackButton = false;
-        m_CurrentTurnHolderbuttonsHaveSpawned = false;
-        CurrentTurnHolder.EndTurn();
-        m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
-        m_BattleStates = BattleStates.AllyTurn;
-        RemoveDeadFromList();
-        if (AmountofTurns != 0)
-        {
-                CurrentTurnHolderNumber++;
-        }
     }
 
-    public void CombatTurnEndCombatManagerEnemy()
-    {
-        if (Attackisfinished == false)
-        {
-            for (int i = 0; i < TurnOrderEnemy.Count; i++)
-            {
-                TurnOrderEnemy[i].ModelInGame.transform.localPosition = TurnOrderEnemy[i].GetSpawnPosition();
 
-            }
-            if (m_TurnIdenticator.Count != 0)
-            {
-                m_TurnIdenticator[m_TurnIdenticator.Count - 1].DestroyThisObject();
-                m_TurnIdenticator.RemoveAt(m_TurnIdenticator.Count - 1);
-               
-            }
-            else
-            {
-                m_TurnIdenticator[0].DestroyThisObject();
-                m_TurnIdenticator.RemoveAt(0);
-                
-            }
-            Image_Notification.SetActive(false);
-            AmountofTurns--;
-            EnemyIsChosen = false;
-            CurrentTurnHolder.EndTurn();
-            Attackisfinished = true;
-            RemoveDeadFromList();
-            if (AmountofTurns != 0)
-            {
-               
-                
-                CurrentTurnHolderNumber++;
-                
-                m_BattleStates = BattleStates.EnemyTurn;
-            }
-        }
-    }
+    
 
 }

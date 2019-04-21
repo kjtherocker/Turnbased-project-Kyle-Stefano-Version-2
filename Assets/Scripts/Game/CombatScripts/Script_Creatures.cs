@@ -54,12 +54,14 @@ public class Script_Creatures : MonoBehaviour
         End
     }
 
+
     public Script_Skills m_Domain;
     public Script_Skills m_Attack;
     public Script_Skills m_BaseSkill;
     public List<Script_Skills> m_Skills { get; protected set; }
     public List<Script_Skills> m_BloodArts { get; protected set; }
 
+    public Script_AiController m_CreatureAi;
 
     public CreaturesAilment m_creaturesAilment;
     public Charactertype charactertype;

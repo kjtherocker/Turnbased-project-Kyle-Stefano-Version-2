@@ -36,6 +36,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4086944538661940}
+  - component: {fileID: 114223575177531410}
   m_Layer: 0
   m_Name: Prefab_SlimeGreen
   m_TagString: Untagged
@@ -112,3 +113,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1712673467011468}
   m_Mesh: {fileID: 4300000, guid: d58c9c81c0da04f46bf875bec80bc430, type: 3}
+--- !u!114 &114223575177531410
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961160147743560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66da48592d571a948a3b33550df0735d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Grid: {fileID: 0}
+  m_GridPath: []
+  Node_MovingTo: {fileID: 0}
+  Node_ObjectIsOn: {fileID: 0}
+  m_Movement: 0
+  m_Jump: 0
