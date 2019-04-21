@@ -28,7 +28,7 @@ public class Script_CombatNode : MonoBehaviour
        
         if (m_Heuristic > 1)
         {
-            m_Renderer.material = m_Selected;
+          //  m_Renderer.material = m_Selected;
         }
         
 		
