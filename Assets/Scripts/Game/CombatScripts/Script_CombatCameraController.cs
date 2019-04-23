@@ -26,6 +26,7 @@ public class Script_CombatCameraController : MonoBehaviour
     public CameraState m_cameraState;
 
     public Script_Grid m_Grid;
+    public Script_Creatures m_Creature;
 
     public Vector2Int m_CameraPositionInGrid;
     // Use this for initialization
@@ -52,7 +53,7 @@ public class Script_CombatCameraController : MonoBehaviour
         {
             m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
             m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
-           
+
         }
 
         if (Input.GetKeyDown("down"))
@@ -76,6 +77,25 @@ public class Script_CombatCameraController : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown("space"))
+        {
+            if (m_Creature == null)
+            {
+                if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+                {
+                    m_Creature = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+                    m_Creature.m_CreatureAi.SpawnWalkableTiles();
+                }
+            }
+            else
+            {
+                if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_Walkable == true)
+                {
+                    m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+                    m_Creature = null;
+                }
+            }
+        }
 
     }
 

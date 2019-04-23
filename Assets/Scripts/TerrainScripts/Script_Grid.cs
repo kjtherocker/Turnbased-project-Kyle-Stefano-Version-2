@@ -32,7 +32,7 @@ public class Script_Grid : MonoBehaviour
         PlayerX = 10;
         PlayerY = 10;
 
-        
+
         
 
         //SetGoal(new Vector2Int(9,2));
@@ -106,22 +106,14 @@ public class Script_Grid : MonoBehaviour
 
             }
         }
-    }
-
-    public void FindPointInGrid(Vector2Int grid)
-    {
-        m_GridPathArray[grid.x, grid.y].gameObject.GetComponent<Renderer>().material = m_SelectedMaterial;
+        SetHeuristicToZero();
     }
 
     public void SetGoal(Vector2Int grid)
     {
         m_GridPathToGoal.Clear();
 
-        for (int i = 0; i < m_GridDimensions.x + m_GridDimensions.y; i++)
-        {
-            m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
-            m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = false;
-        }
+        SetHeuristicToZero();
 
         m_GridPathArray[grid.x, grid.y].m_IsGoal = true;
         m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
@@ -132,17 +124,49 @@ public class Script_Grid : MonoBehaviour
         CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
+        
+    }
 
+    public void SetHeuristicToZero()
+    {
+        for (int x = 0; x < m_GridDimensions.x; x++)
+        {
+            for (int y = 0; y < m_GridDimensions.y; y++)
+            {
+                m_GridPathArray[x, y].m_Heuristic = 0;
+                m_GridPathArray[x, y].m_HeuristicCalculated = false;
+                m_GridPathArray[x, y].m_IsGoal = false;
+            }
+        }
+    }
+
+    public void SetWalkableArea()
+    {
+        for (int x = 0; x < m_GridDimensions.x; x++)
+        {
+            for (int y = 0; y < m_GridDimensions.y; y++)
+            {
+                m_GridPathArray[x, y].CreateWalkableArea();
+            }
+        }
+    }
+
+    public void RemoveWalkableArea()
+    {
+        for (int x = 0; x < m_GridDimensions.x; x++)
+        {
+            for (int y = 0; y < m_GridDimensions.y; y++)
+            {
+                m_GridPathArray[x, y].RemoveWalkableArea();
+            }
+        }
     }
 
     public void SetWalkingHeuristic(Vector2Int grid)
     {
+        SetHeuristicToZero();
         m_GridPathToGoal.Clear();
-        for (int i = 0; i < m_GridDimensions.x + m_GridDimensions.y; i++)
-        {
-            m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
-            m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = false;
-        }
+        
 
         m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
 
@@ -152,6 +176,7 @@ public class Script_Grid : MonoBehaviour
         CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
+        
     }
 
     public void CalculateUpHeuristic(Vector2Int grid)
@@ -321,8 +346,6 @@ public class Script_Grid : MonoBehaviour
             {
                 m_Movement--;
                 m_GotPathNodes = false;
-
-                m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_Renderer.material = m_SelectedMaterial;
                 GetTheLowestH(m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_PositionInGrid, aiController);
 
             }

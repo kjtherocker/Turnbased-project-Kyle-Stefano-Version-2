@@ -114,119 +114,13 @@ public class Script_CombatManager : MonoBehaviour
             //Setting up the players
             m_Grid.StartGridCreation();
 
-            if (PartyManager.m_CurrentParty[0] != null)
-            {
-                TurnOrderAlly.Add(PartyManager.m_CurrentParty[0]);
-
-                TurnOrderAlly[0].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[0].Model);
-                TurnOrderAlly[0].SetSpawnPosition(m_Grid.m_GridPathArray[1,2].gameObject.transform.position);
-                TurnOrderAlly[0].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 2].gameObject.transform.position;
-                TurnOrderAlly[0].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-                TurnOrderAlly[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-
-            }
-
-            //if (PartyManager.m_CurrentParty[1] != null)
-            //{
-            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[1]);
-
-            //    TurnOrderAlly[1].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[1].Model);
-            //    TurnOrderAlly[1].SetSpawnPosition(m_Grid.m_GridPathArray[1, 3].gameObject.transform.position);
-            //    TurnOrderAlly[1].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 3].gameObject.transform.position;
-            //    TurnOrderAlly[1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-            //    TurnOrderAlly[1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-            //}
-
-            //if (PartyManager.m_CurrentParty[2] != null)
-            //{
-            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[2]);
-
-            //    TurnOrderAlly[2].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[2].Model);
-            //    TurnOrderAlly[2].SetSpawnPosition(m_Grid.m_GridPathArray[1, 4].gameObject.transform.position);
-            //    TurnOrderAlly[2].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 4].gameObject.transform.position;
-            //    TurnOrderAlly[2].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-            //    TurnOrderAlly[2].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-
-            //}
-
-            //if (PartyManager.m_CurrentParty[3] != null)
-            //{
-
-            //    TurnOrderAlly.Add(PartyManager.m_CurrentParty[3]);
-
-            //    TurnOrderAlly[3].ModelInGame = Instantiate<GameObject>(TurnOrderAlly[3].Model);
-            //    TurnOrderAlly[3].SetSpawnPosition(m_Grid.m_GridPathArray[1, 5].gameObject.transform.position);
-            //    TurnOrderAlly[3].ModelInGame.transform.position = m_Grid.m_GridPathArray[1, 5].gameObject.transform.position;
-            //    TurnOrderAlly[3].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
-            //    TurnOrderAlly[3].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-            //}
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(2, 5), TurnOrderAlly);
 
             //Setting up the Enemy
 
+            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(6, 5), TurnOrderEnemy);
+   
 
-
-            if (EncounterManager.EnemySlot1 != null)
-            {
-                TurnOrderEnemy.Add(EncounterManager.EnemySlot1);
-
-                if (TurnOrderEnemy[0].Model != null)
-                {
-                    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model);
-                }
-                TurnOrderEnemy[0].SetSpawnPosition(m_Grid.m_GridPathArray[7, 2].gameObject.transform.position);
-                TurnOrderEnemy[0].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 2].gameObject.transform.position;
-                TurnOrderEnemy[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-            }
-
-            //if (EncounterManager.EnemySlot2 != null)
-            //{
-            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot2);
-
-            //    if (TurnOrderEnemy[1].Model != null)
-            //    {
-            //        TurnOrderEnemy[1].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[1].Model);
-            //    }
-            //    TurnOrderEnemy[1].SetSpawnPosition(m_Grid.m_GridPathArray[7, 3].gameObject.transform.position);
-            //    TurnOrderEnemy[1].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 3].gameObject.transform.position;
-            //    TurnOrderEnemy[1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-
-            //}
-
-            //if (EncounterManager.EnemySlot3 != null)
-            //{
-            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot3);
-
-            //    if (TurnOrderEnemy[2].Model != null)
-            //    {
-            //        TurnOrderEnemy[2].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[2].Model);
-            //    }
-            //    TurnOrderEnemy[2].SetSpawnPosition(m_Grid.m_GridPathArray[7, 4].gameObject.transform.position);
-            //    TurnOrderEnemy[2].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 4].gameObject.transform.position;
-            //    TurnOrderEnemy[2].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-            //}
-
-            //if (EncounterManager.EnemySlot4 != null)
-            //{
-            //    TurnOrderEnemy.Add(EncounterManager.EnemySlot4);
-            //    if (TurnOrderEnemy[3].Model != null)
-            //    {
-            //        TurnOrderEnemy[3].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[3].Model);
-            //    }
-            //    TurnOrderEnemy[3].SetSpawnPosition(m_Grid.m_GridPathArray[7, 5].gameObject.transform.position);
-            //    TurnOrderEnemy[3].ModelInGame.transform.position = m_Grid.m_GridPathArray[7, 5].gameObject.transform.position;
-            //    TurnOrderEnemy[3].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-            //}
-
-            //if (EncounterManager.EnemySlotBoss != null)
-            //{
-            //    TurnOrderEnemy.Add(EncounterManager.EnemySlotBoss);
-
-            //    TurnOrderEnemy[0].ModelInGame = Instantiate<GameObject>(TurnOrderEnemy[0].Model);
-            //    TurnOrderEnemy[0].SetSpawnPosition(m_Grid.m_GridPathArray[7, 3].gameObject.transform.position);
-            //    //m_GrassController.SetRedEyesReference(TurnOrderEnemy[0]);
-            //    TurnOrderEnemy[0].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
-
-            //}
 
             EnemyIsChosen = false;
             CombatHasStarted = true;
@@ -249,6 +143,29 @@ public class Script_CombatManager : MonoBehaviour
             CurrentTurnHolderNumber = 0;
 
         }
+
+    }
+
+    public void AddCreatureToCombat(Script_Creatures aCreature, Vector2Int aPosition, List<Script_Creatures> aList)
+    {
+        aList.Add(aCreature);
+
+        aList[aList.Count - 1].ModelInGame = Instantiate<GameObject>(aList[aList.Count - 1].Model);
+        aList[aList.Count - 1].SetSpawnPosition(m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position);
+        aList[aList.Count - 1].ModelInGame.transform.position = m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position;
+        aList[aList.Count - 1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+        aList[aList.Count - 1].m_CreatureAi = aList[0].ModelInGame.GetComponent<Script_AiController>();
+        aList[aList.Count - 1].m_CreatureAi.m_Position =
+            m_Grid.m_GridPathArray[aPosition.x, aPosition.y].m_PositionInGrid;
+
+        aList[aList.Count - 1].m_CreatureAi.m_Grid = m_Grid;
+
+        aList[aList.Count - 1].m_CreatureAi.m_Creature = aList[aList.Count - 1];
+
+        m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CreatureOnGridPoint = aList[aList.Count - 1];
+
+
+        aList[aList.Count - 1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);
 
     }
 

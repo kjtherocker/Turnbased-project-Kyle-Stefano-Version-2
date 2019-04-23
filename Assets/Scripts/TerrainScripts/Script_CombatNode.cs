@@ -10,7 +10,11 @@ public class Script_CombatNode : MonoBehaviour
 
     public bool m_IsSelector;
 
+    public bool m_IsWalkable;
+
     public Vector2Int m_PositionInGrid;
+
+    public Script_Creatures m_CreatureOnGridPoint;
 
     public GameObject m_WalkablePlane;
     public GameObject m_SelectorPlane;
@@ -24,9 +28,8 @@ public class Script_CombatNode : MonoBehaviour
 	// Use this for initialization
 	void Start ()
     {
-        //m_HeuristicCalculated = false;
-        m_Heuristic = 430;
         m_Movement = 3;
+        //m_HeuristicCalculated = false;
         m_WalkablePlane.gameObject.SetActive(false);
         m_SelectorPlane.gameObject.SetActive(false);
         m_IsSelector = false;
@@ -35,17 +38,7 @@ public class Script_CombatNode : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        if(m_IsGoal == true)
-        {
-            m_Renderer.material = m_Goal;
-        }
-       
-        if (m_Heuristic <= m_Movement)
-        {
-            m_WalkablePlane.gameObject.SetActive(true);
-            m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
-        }
-
+     
         if (m_IsSelector == true)
         {
             m_SelectorPlane.gameObject.SetActive(true);
@@ -55,4 +48,24 @@ public class Script_CombatNode : MonoBehaviour
             m_SelectorPlane.gameObject.SetActive(false);
         }
 	}
+
+    public void CreateWalkableArea()
+    {
+        if (m_Heuristic <= m_Movement && m_Movement > 0)
+        {
+            m_WalkablePlane.gameObject.SetActive(true);
+            m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
+            m_IsWalkable = true;
+        }
+    }
+
+    public void RemoveWalkableArea()
+    {
+        
+        m_Heuristic = 0;
+        m_WalkablePlane.gameObject.SetActive(false);
+        //m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
+        m_IsWalkable = false;
+        
+    }
 }
