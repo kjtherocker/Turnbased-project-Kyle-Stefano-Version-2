@@ -25,7 +25,7 @@ public class Script_Grid : MonoBehaviour
 	void Start ()
     {
         Script_GameManager.Instance.m_Grid = this;
-        m_GridDimensions = new Vector2Int(10, 10);
+        m_GridDimensions = new Vector2Int(15, 10);
 
         m_GridPathArray = new Script_CombatNode[m_GridDimensions.x, m_GridDimensions.y];
 
@@ -99,8 +99,23 @@ public class Script_Grid : MonoBehaviour
         {
             for (int y = 0; y < grid.y; y++)
             {
+                int RandomNumber = Random.Range(0, 2);
                 m_GridPathArray[x,y] =  Instantiate<Script_CombatNode>(m_PrefabNode.GetComponent<Script_CombatNode>(), transform);
-                m_GridPathArray[x,y].transform.position = new Vector3(1 * x, 0, 1 * y);
+
+                if (RandomNumber == 1)
+                {
+                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 0, 1 * y);
+                }
+
+                if (RandomNumber == 0)
+                {
+                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 2, 1 * y);
+                }
+
+                if (RandomNumber == 1)
+                {
+                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 1, 1 * y);
+                }
                 m_GridPathArray[x,y].m_PositionInGrid = new Vector2Int(x, y);
 
 
@@ -320,7 +335,7 @@ public class Script_Grid : MonoBehaviour
                 if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic < TempHeuristic)
                 {
                     TempHeuristic = m_GridPathArray[grid.x - 1, grid.y].m_Heuristic;
-                    TempNode = m_GridPathArray[grid.x + 1, grid.y];
+                    TempNode = m_GridPathArray[grid.x - 1, grid.y];
                 }
             }
 

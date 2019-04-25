@@ -402,8 +402,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Grid: {fileID: 1636670279}
   m_GridPath: []
+  m_Goal: {x: 0, y: 0}
+  m_Position: {x: 0, y: 0}
   Node_MovingTo: {fileID: 0}
   Node_ObjectIsOn: {fileID: 0}
+  m_Creature: {fileID: 0}
   m_Movement: 0
   m_Jump: 0
 --- !u!1001 &113244836
@@ -4711,6 +4714,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_cameraState: 0
   m_Grid: {fileID: 1636670279}
+  m_Creature: {fileID: 0}
   m_CameraPositionInGrid: {x: 0, y: 0}
 --- !u!1 &1098555993
 GameObject:

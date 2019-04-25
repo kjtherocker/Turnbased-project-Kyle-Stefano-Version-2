@@ -15,6 +15,7 @@ public class Script_AiController : MonoBehaviour
 
     public int m_Movement;
     public int m_Jump;
+    
 
     // Use this for initialization
     void Start ()
