@@ -17,7 +17,7 @@ public class Script_MainCharacter : Script_Creatures {
         Strength = 200;
         Magic = 300;
         Dexterity = 50;
-        Speed = 50;
+        Speed = 4;
         Name = "Knight";
 
         AmountOfTurns = 1;

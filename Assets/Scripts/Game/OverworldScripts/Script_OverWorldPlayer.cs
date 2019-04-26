@@ -50,7 +50,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         {
             Player_Speed_Delta = Player_Speed * Time.deltaTime;
 
-            Canvas_PartyMenu.SetActive(false);
+            //GameManager.UiManager.PopScreen();
 
             if (transform.position == Node_MovingTo.transform.position)
             {
@@ -102,7 +102,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         }
         else
         {
-            Canvas_PartyMenu.SetActive(true);
+            GameManager.UiManager.PushScreen(UiManager.Screen.PartyMenu);
             if (Input.GetKeyDown("space"))
             {
                 

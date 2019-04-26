@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Script_PartyMenu : MonoBehaviour
+public class Script_PartyMenu : UiScreen
 {
 
     public Script_PartyManager m_PartyManager;

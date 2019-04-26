@@ -28,6 +28,8 @@ public class Script_CombatCameraController : MonoBehaviour
     public Script_Grid m_Grid;
     public Script_Creatures m_Creature;
 
+    public Script_HealthBar m_StatusSheet;
+
     public Vector2Int m_CameraPositionInGrid;
     // Use this for initialization
     void Start()
@@ -76,6 +78,17 @@ public class Script_CombatCameraController : MonoBehaviour
             m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
 
         }
+
+        if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+        {
+            m_StatusSheet.gameObject.SetActive(true);
+            m_StatusSheet.Partymember = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+        }
+        else
+        {
+            m_StatusSheet.gameObject.SetActive(false);
+        }
+
 
         if (Input.GetKeyDown("space"))
         {

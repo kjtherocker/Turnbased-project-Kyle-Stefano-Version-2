@@ -2,18 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class Script_HealthBar : MonoBehaviour
 {
     public Image Image_Healthbar;
-    public Text Text_HealthRatio;
+    public TextMeshProUGUI Text_HealthRatio;
 
     public Image Image_Manahbar;
-    public Text Text_ManaRatio;
+    public TextMeshProUGUI Text_ManaRatio;
 
-    public Text Text_Name;
+    public TextMeshProUGUI Text_Strength;
+    public TextMeshProUGUI Text_Magic;
+    public TextMeshProUGUI Text_Dexterity;
+    public TextMeshProUGUI Text_Speed ;
 
-    public Text Text_Buff;
+    public TextMeshProUGUI Text_Name;
+    public TextMeshProUGUI Text_Buff;
     public Image Image_Portrait;
     public Script_Creatures Partymember;
 
@@ -42,6 +47,13 @@ public class Script_HealthBar : MonoBehaviour
             m_MaxMana = Partymember.MaxMana;
 
             Image_Portrait.material = Partymember.m_Texture;
+
+
+            Text_Strength.text = Partymember.Strength.ToString();
+            Text_Magic.text = Partymember.Magic.ToString();
+            Text_Dexterity.text = Partymember.Dexterity.ToString();
+            Text_Speed.text = Partymember.Speed.ToString();
+
 
             if (Text_Buff != null)
             {

@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Script_PartyManager : MonoBehaviour
 {
-
-
-    public List<Script_HealthBar> m_Healthbars;
     public List<Script_Creatures> m_CurrentParty;
     public List<Script_Creatures> m_ReservePartymembers;
 
@@ -18,21 +15,13 @@ public class Script_PartyManager : MonoBehaviour
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
-
-        m_Healthbars.Add(GameObject.Find("PlayerHealthbar").GetComponent<Script_HealthBar>());
-        m_Healthbars.Add(GameObject.Find("PlayerHealthbar2").GetComponent<Script_HealthBar>());
-        m_Healthbars.Add(GameObject.Find("PlayerHealthbar3").GetComponent<Script_HealthBar>());
-        m_Healthbars.Add(GameObject.Find("PlayerHealthbar4").GetComponent<Script_HealthBar>());
-       
     }
 
     // Update is called once per frame
     void Update()
     {
-        m_Healthbars[0].Partymember = m_CurrentParty[0];
-        m_Healthbars[1].Partymember = m_CurrentParty[1];
-        m_Healthbars[2].Partymember = m_CurrentParty[2];
-        m_Healthbars[3].Partymember = m_CurrentParty[3];
+      
+
     }
 
     public void CombatEnd()

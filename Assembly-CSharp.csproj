@@ -111,7 +111,6 @@
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverWorldPlayer.cs" />
     <Compile Include="Assets\Scripts\Game\Script_GameManager.cs" />
     <Compile Include="Assets\Scripts\Global\Constants.cs" />
-    <Compile Include="Assets\Scripts\MenuScripts\Script_EndOfCombatMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_PartyMenu.cs" />
@@ -121,6 +120,10 @@
     <Compile Include="Assets\Scripts\TerrainScripts\Script_DomainSphere.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_GrassController.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_Grid.cs" />
+    <Compile Include="Assets\Scripts\Ui\Script_EndOfCombatMenu.cs" />
+    <Compile Include="Assets\Scripts\Ui\UiManager.cs" />
+    <Compile Include="Assets\Scripts\Ui\UiScreen.cs" />
+    <Compile Include="Assets\Scripts\Ui\UiScreenEndCombatMenu.cs" />
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <Compile Include="Assets\TriPlanar\Scripts\Merge.cs" />

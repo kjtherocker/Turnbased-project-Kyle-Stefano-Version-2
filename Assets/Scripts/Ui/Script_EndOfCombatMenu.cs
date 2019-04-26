@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Script_EndOfCombatMenu : MonoBehaviour {
+public class Script_EndOfCombatMenu : UiScreen {
 
     public Text m_Text_DamageTaken;
     public Text m_Text_Deaths;

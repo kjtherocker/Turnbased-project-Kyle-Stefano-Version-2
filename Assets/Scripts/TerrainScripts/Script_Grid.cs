@@ -109,7 +109,7 @@ public class Script_Grid : MonoBehaviour
 
                 if (RandomNumber == 0)
                 {
-                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 2, 1 * y);
+                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 0.5f, 1 * y);
                 }
 
                 if (RandomNumber == 1)
