@@ -86,7 +86,8 @@ public class Script_CombatCameraController : MonoBehaviour
         }
         else
         {
-            m_StatusSheet.gameObject.SetActive(false);
+            //m_StatusSheet.GetComponent<Animator>().SetTrigger("t_CommandBoardCrossOut");
+            //m_StatusSheet.gameObject.SetActive(false);
         }
 
 
@@ -96,16 +97,19 @@ public class Script_CombatCameraController : MonoBehaviour
             {
                 if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
                 {
-                    m_Creature = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
-                    m_Creature.m_CreatureAi.SpawnWalkableTiles();
+                    Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
+                    //m_Creature = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+                    //m_Creature.m_CreatureAi.SpawnWalkableTiles();
                 }
             }
             else
             {
+                Script_GameManager.Instance.UiManager.PopScreen();
                 if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_Walkable == true)
                 {
-                    m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
-                    m_Creature = null;
+
+                   //m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+                   //m_Creature = null;
                 }
             }
         }

@@ -3807,11 +3807,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -5315,11 +5315,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -11022,7 +11022,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1752392886}
   - {fileID: 0}
   - {fileID: 0}
 --- !u!1001 &1488291226
@@ -12059,11 +12059,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -12633,11 +12633,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -12813,13 +12813,14 @@ GameObject:
   - component: {fileID: 1752392883}
   - component: {fileID: 1752392882}
   - component: {fileID: 1752392885}
+  - component: {fileID: 1752392886}
   m_Layer: 0
   m_Name: Canvas_CommandBoard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1752392881
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12922,6 +12923,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1752392886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1752392880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 800eddcedecb9e4468bd3d427ba03de9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirstSelected: {fileID: 0}
 --- !u!1 &1820737224
 GameObject:
   m_ObjectHideFlags: 0
@@ -13579,19 +13592,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 262c22c8a8e25534b858f4fbc489cd6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Text_DamageTaken: {fileID: 1673921617}
-  m_Text_Deaths: {fileID: 1728581160}
-  m_Text_DamageDealt: {fileID: 1672127792}
-  m_Text_HealAmount: {fileID: 244283677}
-  m_Text_Grade: {fileID: 1961927204}
-  m_Canvas: {fileID: 1174163684}
-  m_DamageTaken: 0
-  m_Deaths: 0
-  m_DamageDealt: 0
-  m_HealAmount: 0
-  m_Grade: 0
-  Score: 0
-  ScoreHasBeenGotten: 0
 --- !u!114 &2001009449 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114793066591811458, guid: bfe72fc637f770e4eb4b3b2841e3c51b,

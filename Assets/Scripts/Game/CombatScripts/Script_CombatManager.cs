@@ -98,7 +98,7 @@ public class Script_CombatManager : MonoBehaviour
 
        // m_Grid = Script_GameManager.Instance.m_Grid;
         Image_Notification.SetActive(false);
-        Canvas_CommandBoard.SetActive(false);
+        //Canvas_CommandBoard.SetActive(false);
         Canvas_SkillMenu.SetActive(false);
         Canvas_TurnMenu.SetActive(false);
 
@@ -139,7 +139,7 @@ public class Script_CombatManager : MonoBehaviour
             m_BattleStates = BattleStates.AllyTurn;
 
             CurrentTurnOrderSide = TurnOrderAlly;
-            Canvas_CommandBoard.SetActive(false);
+            //Canvas_CommandBoard.SetActive(false);
             Canvas_CombatEndMenu.Reset();
             WhichSidesTurnIsIt = false;
             CurrentTurnHolderNumber = 0;
@@ -196,7 +196,7 @@ public class Script_CombatManager : MonoBehaviour
                 CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
                 Attackisfinished = false;
 
-                    Canvas_CommandBoard.SetActive(true);
+                    //Canvas_CommandBoard.SetActive(true);
                    // m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
                 
 
@@ -355,7 +355,7 @@ public class Script_CombatManager : MonoBehaviour
                     if (WhichSidesTurnIsIt == false)
                     {
 
-                        Canvas_CommandBoard.SetActive(true);
+                        //Canvas_CommandBoard.SetActive(true);
 
                         m_BattleStates = BattleStates.AllyTurn;
                         CurrentTurnOrderSide = TurnOrderAlly;
@@ -363,7 +363,7 @@ public class Script_CombatManager : MonoBehaviour
 
                     if (WhichSidesTurnIsIt == true)
                     {
-                        Canvas_CommandBoard.SetActive(false);
+                        //Canvas_CommandBoard.SetActive(false);
                         m_BattleStates = BattleStates.EnemyTurn;
                         CurrentTurnOrderSide = TurnOrderEnemy;
                     }
@@ -604,7 +604,7 @@ public class Script_CombatManager : MonoBehaviour
             //Extra
             if (Attackisfinished == false)
             {
-                Canvas_CommandBoard.gameObject.SetActive(false);
+                //Canvas_CommandBoard.gameObject.SetActive(false);
 
                 //Attack single target
 
@@ -980,7 +980,7 @@ public class Script_CombatManager : MonoBehaviour
             //Setting the Notfication to the skillname
             Image_Notification.SetActive(true);
             Text_Notification.text = CurrentTurnHolder.m_Attack.GetSkillName();
-            Canvas_CommandBoard.gameObject.SetActive(false);
+            //Canvas_CommandBoard.gameObject.SetActive(false);
             //  m_BattleStates = BattleStates.AllySelecting;
 
             CurrentTurnHolder.IncrementMana(5);
