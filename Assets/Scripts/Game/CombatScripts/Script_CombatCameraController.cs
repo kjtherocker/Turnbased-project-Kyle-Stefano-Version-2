@@ -32,18 +32,34 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public Vector2Int m_CameraPositionInGrid;
     // Use this for initialization
+    public bool m_CommandBoardExists;
+    
+
     void Start()
     {
         m_CameraPositionInGrid = new Vector2Int(4, 4);
         Script_GameManager.Instance.m_BattleCamera = this;
 
-        
+        m_CommandBoardExists = false;
 
         //m_Grid = Script_GameManager.Instance.m_Grid;
     }
 
     // Update is called once per frame
     void Update()
+    {
+
+        CameraMovement();
+        PlayerUiSelection();
+
+
+
+    }
+
+
+
+
+    public void CameraMovement()
     {
         m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
         transform.position = new Vector3(
@@ -89,34 +105,55 @@ public class Script_CombatCameraController : MonoBehaviour
             //m_StatusSheet.GetComponent<Animator>().SetTrigger("t_CommandBoardCrossOut");
             //m_StatusSheet.gameObject.SetActive(false);
         }
+    }
 
-
+    public void PlayerUiSelection()
+    {
         if (Input.GetKeyDown("space"))
         {
-            if (m_Creature == null)
+            if (m_CommandBoardExists == true)
             {
-                if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
-                {
-                    Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
-                    //m_Creature = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
-                    //m_Creature.m_CreatureAi.SpawnWalkableTiles();
-                }
-            }
-            else
-            {
-                Script_GameManager.Instance.UiManager.PopScreen();
                 if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_Walkable == true)
                 {
 
-                   //m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
-                   //m_Creature = null;
+                    m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+                    m_Creature = null;
+                    m_CommandBoardExists = false;
                 }
             }
+
+            if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
+            {
+                if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+                {
+
+                    m_Creature =
+                        m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+
+                    Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
+
+
+
+                    UiScreenCommandBoard ScreenTemp =
+                        Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) as UiScreenCommandBoard;
+
+                    ScreenTemp.m_CommandboardCreature = m_Creature;
+                    m_CommandBoardExists = true;
+                }
+            }
+
         }
 
+     
+
+        if (Input.GetKeyDown("a"))
+        {
+            Script_GameManager.Instance.UiManager.PopScreen();
+        }
     }
-
-
 
     
 }
+
+
+

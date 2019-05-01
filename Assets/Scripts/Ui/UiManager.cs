@@ -20,7 +20,7 @@ public class UiManager : MonoBehaviour
 
     public UiScreen[] m_UiScreens;
 
-    private List<KeyValuePair<Screen, UiScreen>> m_ScreenStack = new List<KeyValuePair<Screen, UiScreen>>();
+    public List<KeyValuePair<Screen, UiScreen>> m_ScreenStack = new List<KeyValuePair<Screen, UiScreen>>();
 
     void OnValidate()
     {
@@ -48,6 +48,19 @@ public class UiManager : MonoBehaviour
         return m_ScreenStack[m_ScreenStack.Count - 1].Value;
     }
 
+    public UiScreen GetScreen(Screen aScreen)
+    {
+        for (int i = 0; i < m_ScreenStack.Count; i++)
+        {
+            if (m_ScreenStack[i].Key == aScreen)
+            {
+                return m_ScreenStack[i].Value;
+            }
+        }
+
+        return null;
+    }
+
     public void PushScreen(Screen aScreen)
     {
         UiScreen screenToAdd = m_UiScreens[(int)aScreen];
@@ -68,7 +81,7 @@ public class UiManager : MonoBehaviour
         {
             UiScreen Screen = screenPair.Value;
 
-            Screen.GetComponent<UiScreen>().OnPop();
+            Screen.OnPop();
         }
 
         m_ScreenStack.Clear();

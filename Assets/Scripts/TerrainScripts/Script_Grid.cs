@@ -191,7 +191,8 @@ public class Script_Grid : MonoBehaviour
         CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y));
         CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
-        
+
+        SetWalkableArea();
     }
 
     public void CalculateUpHeuristic(Vector2Int grid)

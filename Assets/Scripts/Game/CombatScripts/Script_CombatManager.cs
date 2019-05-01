@@ -140,7 +140,7 @@ public class Script_CombatManager : MonoBehaviour
 
             CurrentTurnOrderSide = TurnOrderAlly;
             //Canvas_CommandBoard.SetActive(false);
-            Canvas_CombatEndMenu.Reset();
+            //Canvas_CombatEndMenu.Reset();
             WhichSidesTurnIsIt = false;
             CurrentTurnHolderNumber = 0;
 
@@ -153,7 +153,6 @@ public class Script_CombatManager : MonoBehaviour
         aList.Add(aCreature);
 
         aList[aList.Count - 1].ModelInGame = Instantiate<GameObject>(aList[aList.Count - 1].Model);
-        aList[aList.Count - 1].SetSpawnPosition(m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position);
         aList[aList.Count - 1].ModelInGame.transform.position = m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position;
         aList[aList.Count - 1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
         aList[aList.Count - 1].m_CreatureAi = aList[0].ModelInGame.GetComponent<Script_AiController>();

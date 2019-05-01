@@ -102,8 +102,6 @@ public class Script_Creatures : MonoBehaviour
 
     public Script_Creatures ObjectToRotateAround;
 
-    private Vector3 SpawnPoint;
-    private Vector3 targetPoint;
 
     int AlimentCounter;
 
@@ -207,15 +205,6 @@ public class Script_Creatures : MonoBehaviour
             BuffandDebuff++;
         }
 
-    }
-
-    public void SetSpawnPosition(Vector3 a_Spawnpos)
-    {
-        SpawnPoint = a_Spawnpos;
-    }
-    public Vector3 GetSpawnPosition()
-    {
-        return SpawnPoint;
     }
 
     public void DebuffsandBuffs()
