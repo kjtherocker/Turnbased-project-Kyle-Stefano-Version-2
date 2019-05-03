@@ -13,6 +13,7 @@ public class UiManager : MonoBehaviour
         CommandBoard,
         PartyStats,
         Dialogue,
+        SkillBoard,
 
 
         _NumberOfScreens

@@ -99,7 +99,7 @@ public class Script_CombatManager : MonoBehaviour
        // m_Grid = Script_GameManager.Instance.m_Grid;
         Image_Notification.SetActive(false);
         //Canvas_CommandBoard.SetActive(false);
-        Canvas_SkillMenu.SetActive(false);
+
         Canvas_TurnMenu.SetActive(false);
 
 
@@ -519,78 +519,78 @@ public class Script_CombatManager : MonoBehaviour
 
     public void EnemyTurn()
     {
-        RemoveDeadFromList();
-        int EnemySkillChosen = CurrentTurnHolder.EnemyAi();
+        //RemoveDeadFromList();
+        //int EnemySkillChosen = CurrentTurnHolder.EnemyAi();
 
-        if (CurrentTurnHolder.m_creaturesAilment != Script_Creatures.CreaturesAilment.Sleep)
-        {
-            if (Attackisfinished == false)
-            {
-                Image_Notification.SetActive(true);
-                Text_Notification.text = CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillName();
+        //if (CurrentTurnHolder.m_creaturesAilment != Script_Creatures.CreaturesAilment.Sleep)
+        //{
+        //    if (Attackisfinished == false)
+        //    {
+        //        Image_Notification.SetActive(true);
+        //        Text_Notification.text = CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillName();
 
-                if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Extra)
-                {
+        //        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Extra)
+        //        {
                     
-                }
+        //        }
 
-                if (Input.GetKeyDown(KeyCode.F1))
-                {
-                    Application.Quit();
-                }
-                if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Buff)
-                {
-                    //Checking the range the skills has single target or fulltarget
-                    if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
-                    {
-
-                       
-
-                    }
-                }
-                if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Attack)
-                {
-                    if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
-                    {
+        //        if (Input.GetKeyDown(KeyCode.F1))
+        //        {
+        //            Application.Quit();
+        //        }
+        //        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Buff)
+        //        {
+        //            //Checking the range the skills has single target or fulltarget
+        //            if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+        //            {
 
                        
 
-
-
-                    }
-                }
-
-                if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Attack)
-                {
-                    if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
-                    {
+        //            }
+        //        }
+        //        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Attack)
+        //        {
+        //            if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+        //            {
 
                        
-                    }
-                }
-                if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Heal)
-                {
-                    //Checking the range the skills has single target or fulltarget
-                    if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
-                    {
+
+
+
+        //            }
+        //        }
+
+        //        if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillType() == Script_Skills.SkillType.Attack)
+        //        {
+        //            if (CurrentTurnHolder.m_Skills[EnemySkillChosen].GetSkillRange() == Script_Skills.SkillRange.SingleTarget)
+        //            {
+
+                       
+        //            }
+        //        }
+        //        if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillType() == Script_Skills.SkillType.Heal)
+        //        {
+        //            //Checking the range the skills has single target or fulltarget
+        //            if (CurrentTurnHolder.m_Skills[CurrentTurnHolderSkills].GetSkillRange() == Script_Skills.SkillRange.FullTarget)
+        //            {
                    
-                    }
-                }
-            }
-        }
-        else
-        {
-            AmountofTurns--;
+        //            }
+        //        }
+        //    }
+        //}
+        //else
+        //{
+        //    AmountofTurns--;
 
-            CurrentTurnHolder.EndTurn();
+        //    CurrentTurnHolder.EndTurn();
 
-            if (AmountofTurns != 0)
-            {
-                CurrentTurnHolderNumber++;
+        //    if (AmountofTurns != 0)
+        //    {
+        //        CurrentTurnHolderNumber++;
 
-            }
+        //    }
 
-        }
+        //}
         
     }
 
@@ -896,14 +896,7 @@ public class Script_CombatManager : MonoBehaviour
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 115 + i * 31, 0);
-                if (CurrentTurnHolder.m_Skills[i].GetSkillType() == Script_Skills.SkillType.Resurrect)
-                {
-                    m_CurrentSkillMenuButtonsMenu[i].SetupButton(CurrentTurnHolder, CurrentTurnHolder.m_Skills[i], i, this, DeadAllys);
-                }
-                else 
-                {
-                    m_CurrentSkillMenuButtonsMenu[i].SetupButton(CurrentTurnHolder, CurrentTurnHolder.m_Skills[i], i, this, TurnOrderEnemy);
-                }
+
                 
 
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.SetParent(Canvas_CommandBoard.transform, false);
@@ -926,7 +919,7 @@ public class Script_CombatManager : MonoBehaviour
             {
                 m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(-1540, 85 + i * 31, 0);
-                m_CurrentSkillMenuButtonsMenu[i].SetupButton(CurrentTurnHolder, CurrentTurnHolder.m_BloodArts[i], i, this, TurnOrderAlly);
+
                 m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.SetParent(Canvas_CommandBoard.transform, false);
             }
 

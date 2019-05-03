@@ -125,6 +125,7 @@
     <Compile Include="Assets\Scripts\Ui\UiScreen.cs" />
     <Compile Include="Assets\Scripts\Ui\UiScreenCommandBoard.cs" />
     <Compile Include="Assets\Scripts\Ui\UiScreenEndCombatMenu.cs" />
+    <Compile Include="Assets\Scripts\Ui\UiSkillBoard.cs" />
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <Compile Include="Assets\TriPlanar\Scripts\Merge.cs" />

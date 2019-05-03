@@ -32,7 +32,7 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
             m_ButtonText.text = m_ButtonSkill.GetSkillName();
             m_CostToUseText.text = m_ButtonSkill.GetCostToUse().ToString();
 
-            if (m_ButtonTurnHolder.CurrentMana <= m_ButtonSkill.GetCostToUse() || m_ListReference.Count == 0)
+            if (m_ButtonTurnHolder.CurrentMana <= m_ButtonSkill.GetCostToUse())
             {
                 m_ButtonText.color = m_Color_TransparentWhite;
             }
@@ -43,13 +43,13 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
         }
     }
 
-    public void SetupButton(Script_Creatures a_TurnHolder, Script_Skills a_Skill, int a_Skillnumber, Script_CombatManager a_CombatManager, List<Script_Creatures> a_ReferenceList )
+    public void SetupButton(Script_Creatures a_TurnHolder, Script_Skills a_Skill, int a_Skillnumber, Script_CombatManager a_CombatManager)
     {
         m_ButtonTurnHolder = a_TurnHolder;
         m_ButtonSkill = a_Skill;
         m_SkillNumber = a_Skillnumber;
         m_CombatManagerRefrence = a_CombatManager;
-        m_ListReference = a_ReferenceList;
+        
     }
 
     public void SetAsNotInteractable()
@@ -66,8 +66,8 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
     {
         if (m_ButtonTurnHolder.CurrentMana >= m_ButtonSkill.GetCostToUse() || m_ListReference.Count >= 0)
         {
-            m_CombatManagerRefrence.SetBattleStateToSelect();
-            m_CombatManagerRefrence.SetTurnHolderSkills(m_SkillNumber);
+           // m_CombatManagerRefrence.SetBattleStateToSelect();
+           // m_CombatManagerRefrence.SetTurnHolderSkills(m_SkillNumber);
         }
     }
 

@@ -47,7 +47,12 @@ public class UiScreenCommandBoard : UiScreen
 
     public void SpawnSkillBoard()
     {
-        //Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen)
+        Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.SkillBoard);
+
+        UiSkillBoard ScreenTemp =
+            Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.SkillBoard) as UiSkillBoard;
+
+        ScreenTemp.m_SkillBoardCreature = m_CommandboardCreature;
     }
 
 }
