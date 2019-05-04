@@ -16,7 +16,10 @@ public class ShaderPosition: MonoBehaviour {
     {
         if (Test == false)
         {
-            Shader.SetGlobalVector("_Position", transform.position);
+            Shader.SetGlobalVector("_PositionA", transform.position);
+            Shader.SetGlobalVector("_PositionB", transform.position);
+            Shader.SetGlobalVector("_PositionC", transform.position);
+            Shader.SetGlobalVector("PositionD", transform.position);
         }
         else if (Test == true)
         {

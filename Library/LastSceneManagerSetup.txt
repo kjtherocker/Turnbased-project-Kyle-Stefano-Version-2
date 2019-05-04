@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/heatmaps/heatmap.unity
+- path: Assets/NotResources/Scenes/Scene_OverWorld.unity
   isLoaded: 1
   isActive: 1
