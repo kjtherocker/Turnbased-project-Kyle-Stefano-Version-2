@@ -102,20 +102,12 @@ public class Script_Grid : MonoBehaviour
                 int RandomNumber = Random.Range(0, 2);
                 m_GridPathArray[x,y] =  Instantiate<Script_CombatNode>(m_PrefabNode.GetComponent<Script_CombatNode>(), transform);
 
-                if (RandomNumber == 1)
-                {
-                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 0, 1 * y);
-                }
+     
 
-                if (RandomNumber == 0)
-                {
                     m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 0.5f, 1 * y);
-                }
+       
 
-                if (RandomNumber == 1)
-                {
-                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 1, 1 * y);
-                }
+         
                 m_GridPathArray[x,y].m_PositionInGrid = new Vector2Int(x, y);
 
 

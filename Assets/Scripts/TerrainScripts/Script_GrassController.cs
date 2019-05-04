@@ -49,24 +49,6 @@ public class Script_GrassController : MonoBehaviour
 
         if (m_IsEnroaching == true)
         {
-            if (m_EnroachingIsFinished == true)
-            {
-                if (ChantHasSpawwed == false)
-                {
-                    GameObject ChantInstance = Instantiate<GameObject>(m_ChantReference);
-
-                    m_RedeyesReference.m_DomainStages = Script_Creatures.DomainStages.Finished;
-                    ChantHasSpawwed = true;
-                    DomainEnviorment.SetActive(true);
-                    Destroy(ForestEnviorment);
-                    for (int i = m_DarkRingParticles.Count; i > 0; i--)
-                    {
-                        Destroy(m_DarkRingParticles[0]);
-                        m_DarkRingParticles.RemoveAt(0);
-                    }
-                    //Destroy(m_DarkRingInGame);
-                }
-            }
             if (m_EnroachingIsFinished == false)
             {
                 EncrochDomain();
@@ -78,13 +60,6 @@ public class Script_GrassController : MonoBehaviour
             m_IsEnroaching = false;
             m_EnroachDistance += 40;
         }
-
-       
-            if (softness >= 160)
-            {
-                m_EnroachingIsFinished = true;
-               
-            }
         
     }
 

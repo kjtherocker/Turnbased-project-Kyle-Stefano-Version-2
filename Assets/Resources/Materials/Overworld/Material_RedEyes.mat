@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Material_RedEyes
-  m_Shader: {fileID: 4800000, guid: c3084d6b68f3d1f4180c2b5bce7b5c43, type: 3}
+  m_Shader: {fileID: 4800000, guid: f63f21536ebe0fb40b135ec9c4558db9, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -40,10 +40,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 235c0b043bd61c64b81c388f127fbe5e, type: 3}
-        m_Scale: {x: 5, y: 5}
+        m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: 727babd9f1ef0be468453f0751e57c13, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -54,24 +58,37 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 2800000, guid: 560df680e7a459c41a376a09cd3e221b, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _SecTex:
         m_Texture: {fileID: 2800000, guid: f7c90de75de93394d8201e50bffca35d, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _SecondTex:
+        m_Texture: {fileID: 2800000, guid: f7c90de75de93394d8201e50bffca35d, type: 3}
+        m_Scale: {x: 2, y: 2}
+        m_Offset: {x: 0, y: 0}
     m_Floats:
+    - _ALPHA: 0
     - _Ambient: 0.5
     - _BumpScale: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
+    - _DisAmount: 0.01
+    - _DisLineWidth: 0.03
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 1
     - _Mode: 0
+    - _NScale: 0.58
     - _NoiseSize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 2.36
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -79,7 +96,10 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 1, g: 0, b: 0, a: 1}
+    - _Color: {r: 0.0754717, g: 0.0754717, b: 0.0754717, a: 1}
+    - _Color2: {r: 1, g: 0.050980397, b: 0, a: 1}
+    - _DisLineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GLOBALMaskPosition: {r: 6.35, g: -0.051914, b: -4.35, a: 0}
     - _SecColor: {r: 0.20314132, g: 0.9245283, b: 0.17007834, a: 1}

@@ -120,7 +120,6 @@ public class Script_CombatManager : MonoBehaviour
             //Setting up the Enemy
 
             AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(6, 5), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(6, 9), TurnOrderEnemy);
 
 
 

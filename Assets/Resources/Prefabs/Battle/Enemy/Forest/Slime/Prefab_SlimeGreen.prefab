@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4086944538661940}
   - component: {fileID: 114223575177531410}
+  - component: {fileID: 114920308759728584}
   m_Layer: 0
   m_Name: Prefab_SlimeGreen
   m_TagString: Untagged
@@ -126,7 +127,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Grid: {fileID: 0}
   m_GridPath: []
+  m_Goal: {x: 0, y: 0}
+  m_Position: {x: 0, y: 0}
   Node_MovingTo: {fileID: 0}
   Node_ObjectIsOn: {fileID: 0}
+  m_Creature: {fileID: 0}
   m_Movement: 0
   m_Jump: 0
+--- !u!114 &114920308759728584
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1961160147743560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e86f039dfecb41817fa6620437fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

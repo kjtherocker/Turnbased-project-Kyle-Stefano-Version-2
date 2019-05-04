@@ -61,6 +61,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\heatmaps\Heatmap.cs" />
     <Compile Include="Assets\NotResources\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\DialogueManager.cs" />
@@ -129,14 +130,18 @@
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <Compile Include="Assets\TriPlanar\Scripts\Merge.cs" />
+    <Compile Include="Assets\WorldSpaceDissolve\Scripts\ShaderPosition.cs" />
     <None Include="Assets\Resources\Shaders\Disappear.shader" />
     <None Include="Assets\Resources\Shaders\Meltingshaderunlit.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\Resources\Shaders\DomainShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\heatmaps\Heatmap.shader" />
+    <None Include="Assets\WorldSpaceDissolve\Shaders\DoubleTexture.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TriPlanar\Shader\ToonLitTriPlanar.shader" />
     <None Include="Assets\TriPlanar\Shader\ToonLitMerge.shader" />
+    <None Include="Assets\WorldSpaceDissolve\Shaders\Appear.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Resources\Shaders\Outlined-Silhouette Only.shader" />

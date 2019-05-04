@@ -37,6 +37,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4379312346175402}
   - component: {fileID: 114059948052502004}
+  - component: {fileID: 114883992853110370}
   m_Layer: 0
   m_Name: Prefab_SlimeGreen
   m_TagString: Untagged
@@ -133,3 +134,14 @@ MonoBehaviour:
   m_Creature: {fileID: 0}
   m_Movement: 0
   m_Jump: 0
+--- !u!114 &114883992853110370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1935241122871452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 607e86f039dfecb41817fa6620437fb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
