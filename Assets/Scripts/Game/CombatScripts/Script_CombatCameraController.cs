@@ -63,9 +63,9 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
         transform.position = new Vector3(
-            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 5.5f,
-            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 5.9f,
-            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 5.5f);
+            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 13.5f,
+            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 13.9f,
+            m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 13.5f);
 
         if (Input.GetKeyDown("up"))
         {

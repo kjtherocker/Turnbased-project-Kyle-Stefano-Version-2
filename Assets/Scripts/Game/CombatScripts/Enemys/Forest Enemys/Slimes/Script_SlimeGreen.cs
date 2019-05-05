@@ -31,7 +31,7 @@ public class Script_SlimeGreen : Script_Creatures
 
         AmountOfTurns = 1;
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Slime/Prefab_SlimeGreen", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/3D_Doll_sizetest", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_GreenSlime", typeof(Material));
 

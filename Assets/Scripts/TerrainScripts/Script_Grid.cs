@@ -104,7 +104,7 @@ public class Script_Grid : MonoBehaviour
 
      
 
-                    m_GridPathArray[x, y].transform.position = new Vector3(1 * x, 0.5f, 1 * y);
+                    m_GridPathArray[x, y].transform.position = new Vector3(2 * x, 0.5f, 2 * y );
        
 
          
