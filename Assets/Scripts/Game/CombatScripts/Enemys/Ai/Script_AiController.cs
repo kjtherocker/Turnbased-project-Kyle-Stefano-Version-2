@@ -21,6 +21,7 @@ public class Script_AiController : MonoBehaviour
     public int m_Movement;
     public int m_Jump;
 
+    public bool m_MovementHasStarted;
     public bool m_HasAttackedForThisTurn;
     public bool m_HasMovedForThisTurn;
 
@@ -34,6 +35,7 @@ public class Script_AiController : MonoBehaviour
         m_Movement = 4;
         m_Jump = 2;
         m_HasMovedForThisTurn = false;
+        m_MovementHasStarted = false;
         m_InitalPosition = m_Position;
 
         Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
@@ -51,9 +53,12 @@ public class Script_AiController : MonoBehaviour
                     8 * Time.deltaTime);
         }
 
-        if (transform.position == Node_MovingTo.transform.position + CreatureOffset)
+        if (m_MovementHasStarted == true)
         {
-            Node_ObjectIsOn = Node_MovingTo;
+            if (transform.position == Node_MovingTo.transform.position + CreatureOffset)
+            {
+                Node_ObjectIsOn = Node_MovingTo;
+            }
         }
     }
 
@@ -65,6 +70,7 @@ public class Script_AiController : MonoBehaviour
 
     public IEnumerator GetToGoal(List<Script_CombatNode> aListOfNodes)
     {
+        m_MovementHasStarted = true;
         m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
@@ -101,6 +107,7 @@ public class Script_AiController : MonoBehaviour
         //The walk has been finished
         m_HasMovedForThisTurn = true;
 
+        m_MovementHasStarted = false;
         //Changing the position from where the Creature was before
         aListOfNodes[0].m_CreatureOnGridPoint = null;
         aListOfNodes[aListOfNodes.Count - 1].m_CreatureOnGridPoint = m_Creature;

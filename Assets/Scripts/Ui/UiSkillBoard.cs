@@ -23,7 +23,6 @@ public class UiSkillBoard : UiScreen
         if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A"))
         {
             m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
-
         }
        // m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
 

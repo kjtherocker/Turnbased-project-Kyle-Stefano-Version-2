@@ -71,6 +71,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4300171575109456}
   - component: {fileID: 114567097267637126}
+  - component: {fileID: 95242050735066082}
   m_Layer: 0
   m_Name: Knight_Uncorrupted
   m_TagString: Untagged
@@ -290,7 +291,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1226975073120808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.304, y: 1.342, z: -4.67}
+  m_LocalPosition: {x: 2.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4006784601203978}
@@ -917,6 +918,24 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1950565614070470}
   m_Mesh: {fileID: 4300012, guid: c21d4a0a3a7ba244bb18ed752aa63bf1, type: 3}
+--- !u!95 &95242050735066082
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226975073120808}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 41030c7f3405b7545bdd58e786ec60c6, type: 3}
+  m_Controller: {fileID: 9100000, guid: 7da880dff28fb9e4180464fec5dcba41, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114567097267637126
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -935,7 +954,7 @@ MonoBehaviour:
   m_InitalPosition: {x: 0, y: 0}
   Node_MovingTo: {fileID: 0}
   Node_ObjectIsOn: {fileID: 0}
-  m_CreaturesAnimator: {fileID: 0}
+  m_CreaturesAnimator: {fileID: 95242050735066082}
   m_Creature: {fileID: 0}
   CreatureOffset: {x: 0, y: 0, z: 0}
   m_Movement: 0

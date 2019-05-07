@@ -377,9 +377,22 @@ public class Script_Grid : MonoBehaviour
         return m_GridPathToGoal;
     }
 
+    public void SetAttackingTile(Vector2Int grid)
+    {
+        m_GridPathArray[grid.x, grid.y + 1].m_WalkablePlane.gameObject.SetActive(true);
+        m_GridPathArray[grid.x, grid.y - 1 ].m_WalkablePlane.gameObject.SetActive(true);
+        m_GridPathArray[grid.x + 1, grid.y].m_WalkablePlane.gameObject.SetActive(true);
+        m_GridPathArray[grid.x - 1, grid.y].m_WalkablePlane.gameObject.SetActive(true);
+    }
+
     public void SetSelectoringrid(Vector2Int grid)
     {
         m_GridPathArray[grid.x, grid.y].m_IsSelector = true;
+    }
+
+    public void SetAttackingTileInGrid(Vector2Int grid)
+    {
+        m_GridPathArray[grid.x, grid.y].m_AttackingPlane.SetActive(true);
     }
 
     public void DeSelectSelectoringrid(Vector2Int grid)

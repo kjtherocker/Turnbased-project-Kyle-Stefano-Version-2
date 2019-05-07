@@ -45,10 +45,11 @@ public class Script_Skills
 
     public enum SkillRange
     {
-        SelfTargeted,
-        SingleTarget,
-        FullTarget
+        SingleNode,
+        FourInAStraightLine,
+        BrickOf4,
     }
+
     public enum SkillAilment
     {
         None,

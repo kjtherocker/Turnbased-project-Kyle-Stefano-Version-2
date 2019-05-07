@@ -64,11 +64,13 @@ public class UiScreenCommandBoard : UiScreen
             }
             if (m_CommandBoardPointerPosition == 1)
             {
-                SpawnSkillBoard();
+                Script_GameManager.Instance.UiManager.PopScreen();
+                Script_GameManager.Instance.m_Grid.SetAttackingTile(m_CommandboardCreature.m_CreatureAi.m_Position);
+                Script_GameManager.Instance.m_BattleCamera.m_PlayerIsAttacking = true;
             }
             if (m_CommandBoardPointerPosition == 2)
             {
-
+                SpawnSkillBoard();
             }
             if (m_CommandBoardPointerPosition == 3)
             {

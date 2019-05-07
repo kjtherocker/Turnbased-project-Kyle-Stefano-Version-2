@@ -12,7 +12,7 @@ public class Script_Attack : Script_Skills
 
         m_ElementalType = ElementalType.Null;
         m_SkillType = SkillType.Attack;
-        m_SkillRange = SkillRange.SingleTarget;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Strength;
         m_CostToUse = 0;
         m_Damage = 0;

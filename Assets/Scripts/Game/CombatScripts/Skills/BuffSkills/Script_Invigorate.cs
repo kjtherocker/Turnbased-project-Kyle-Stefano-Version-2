@@ -13,7 +13,7 @@ public class Script_Invigorate : Script_Skills
 
         m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Buff;
-        m_SkillRange = SkillRange.FullTarget;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 3;
         m_CostToUse = 60;

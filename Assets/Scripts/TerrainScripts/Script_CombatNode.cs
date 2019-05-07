@@ -17,6 +17,7 @@ public class Script_CombatNode : MonoBehaviour
     public Script_Creatures m_CreatureOnGridPoint;
 
     public GameObject m_WalkablePlane;
+    public GameObject m_AttackingPlane;
     public GameObject m_SelectorPlane;
 
     public Material m_Selector;
@@ -32,6 +33,8 @@ public class Script_CombatNode : MonoBehaviour
         //m_HeuristicCalculated = false;
         m_WalkablePlane.gameObject.SetActive(false);
         m_SelectorPlane.gameObject.SetActive(false);
+        m_AttackingPlane.gameObject.SetActive(false);
+
         m_IsSelector = false;
     }
 	

@@ -13,7 +13,7 @@ public class Script_Rage : Script_Skills
 
         //m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Aliment;
-        m_SkillRange = SkillRange.FullTarget;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillAilment = SkillAilment.Rage;
         m_Damage = 0;

@@ -30,7 +30,7 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
     // Use this for initialization
     public static void Initalize()
     {
-        canvas = GameObject.Find("Canvas_PartyStats");
+        canvas = GameObject.Find("Canvas_TurnIndicator");
 
         if (!FloatingText)
         {

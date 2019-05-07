@@ -13,7 +13,7 @@ public class Script_BloodRelief : Script_Skills
 
         m_ElementalType = ElementalType.Blood;
         m_SkillType = SkillType.Blood;
-        m_SkillRange = SkillRange.SelfTargeted;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/DarkWave/ParticleEffect_DarkWave", typeof(ParticleSystem));
         m_CostToUse = 4;

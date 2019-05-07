@@ -12,7 +12,7 @@ public class Script_ShadowBlast : Script_Skills
 
         m_ElementalType = ElementalType.Shadow;
         m_SkillType = SkillType.Attack;
-        m_SkillRange = SkillRange.FullTarget;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Magic;
         
         m_CostToUse = 40;

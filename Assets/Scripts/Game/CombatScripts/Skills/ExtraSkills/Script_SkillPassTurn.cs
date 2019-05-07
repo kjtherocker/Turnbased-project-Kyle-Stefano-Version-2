@@ -13,7 +13,7 @@ public class Script_PassTurn : Script_Skills
 
         m_ElementalType = ElementalType.Null;
         m_SkillType = SkillType.Extra;
-        m_SkillRange = SkillRange.FullTarget;
+        m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 0;
         m_CostToUse = 0;

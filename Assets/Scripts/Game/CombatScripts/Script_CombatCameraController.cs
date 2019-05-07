@@ -36,6 +36,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public bool m_MovementHasBeenCalculated;
     public bool m_PlayerIsMoving;
+    public bool m_PlayerIsAttacking;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class Script_CombatCameraController : MonoBehaviour
         Script_GameManager.Instance.m_BattleCamera = this;
 
         m_CommandBoardExists = false;
+        m_PlayerIsAttacking = false;
         //m_Grid = Script_GameManager.Instance.m_Grid;
     }
 
@@ -62,22 +64,39 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void CameraMovement()
     {
-        if (m_PlayerIsMoving == false)
+        if (m_PlayerIsAttacking == false)
         {
-            m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
+
+            if (m_PlayerIsMoving == false)
+            {
+                m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
+                transform.position = new Vector3(
+                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 13.5f,
+                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 13.9f,
+                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 13.5f);
+            }
+            else if (m_PlayerIsMoving == true)
+            {
+                transform.position = new Vector3(
+                    m_Creature.ModelInGame.transform.position.x + 13.5f,
+                    m_Creature.ModelInGame.transform.position.y + 13.9f,
+                    m_Creature.ModelInGame.transform.position.z - 13.5f);
+            }
+        }
+        if (m_PlayerIsAttacking == true)
+        {
+            m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
+
             transform.position = new Vector3(
                 m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 13.5f,
                 m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 13.9f,
                 m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 13.5f);
-        }
-        else if (m_PlayerIsMoving == true)
-        {
-            transform.position = new Vector3(
-                m_Creature.ModelInGame.transform.position.x + 13.5f,
-                m_Creature.ModelInGame.transform.position.y + 13.9f,
-                m_Creature.ModelInGame.transform.position.z - 13.5f);
+
+            Script_GameManager.Instance.m_InputManager.SetXboxButton
+            (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
         }
 
+        
 
         if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
         {
@@ -142,6 +161,12 @@ public class Script_CombatCameraController : MonoBehaviour
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
     }
 
+    public void AttackingIndividual()
+    {
+        StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
+            .m_CreatureOnGridPoint.DecrementHealth
+            (50, Script_Skills.ElementalType.Fire, 0.1f,0.7f, 1));
+    }
 
     public void PlayerUiSelection()
     {
@@ -152,7 +177,7 @@ public class Script_CombatCameraController : MonoBehaviour
              (PlayerWalk, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
         }
 
-        if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
+        if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null && m_PlayerIsAttacking == false)
         {
             Script_GameManager.Instance.m_InputManager.SetXboxButton
             (CreateCommandBoard, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
