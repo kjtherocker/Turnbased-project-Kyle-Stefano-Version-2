@@ -44,11 +44,5 @@ public class Script_RedEyes : Script_Creatures
         elementalWeakness = ElementalWeakness.Water;
     }
 
-    public override int EnemyAi()
-    {
-        int SkillChosen = Random.Range(0, m_Skills.Count);
-
-        return SkillChosen;
-    }
 
 }

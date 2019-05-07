@@ -18,20 +18,22 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 
     public Material m_GridMaterial;
 
-    public float Player_Speed = 40;
+    public float Player_Speed = 5;
     public bool Player_Movment = false;
     private bool IsPartyMenuOn;
     private float Player_Speed_Delta;
+
+
+    public GameObject m_OverworldPlayerModel;
 
     void Start ()
     {
         GameManager = Script_GameManager.Instance;
         m_EncounterManager = Script_GameManager.Instance.m_EncounterManager;
         PartyManager = Script_GameManager.Instance.m_PartyManager;
-        OverworldModel = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
-        Instantiate<GameObject>(OverworldModel, gameObject.transform);
+        m_OverworldPlayerModel = Instantiate<GameObject>(OverworldModel, gameObject.transform);
         gameObject.transform.position = Node_PlayerIsOn.transform.position;
-       IsPartyMenuOn = false;
+        IsPartyMenuOn = false;
         //CombineMeshes();
     }
 	
@@ -56,6 +58,7 @@ public class Script_OverWorldPlayer : MonoBehaviour {
             {
                 Player_Movment = false;
                 Node_PlayerIsOn = Node_MovingTo;
+                m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", false);
             }
 
             if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
@@ -92,11 +95,13 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 
             if (Player_Movment == true)
             {
+                m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", true);
                 OverworldMovement();
             }
 
             if (Player_Movment == false)
             {
+                
                 PlayerMovement();
             }
         }
@@ -119,42 +124,72 @@ public class Script_OverWorldPlayer : MonoBehaviour {
     {
         if (Input.GetKey("up"))
         {
-            
-            if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp != null)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
-                Player_Movment = true;
-                Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp;
-            }
+            PlayerUp();
         }
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
         if (Input.GetKey("down"))
         {
-            if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown != null)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
-                Player_Movment = true;
-                Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown;
-            }
+            PlayerDown();
         }
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
         if (Input.GetKey("left"))
         {
-            if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft != null)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 280.0f, 0.0f);
-
-                Player_Movment = true;
-                Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft;
-            }
+            PlayerLeft();
         }
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
         if (Input.GetKey("right"))
         {
-            if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight != null)
-            {
-                transform.rotation = Quaternion.Euler(0.0f, 100.0f, 0.0f);
+            PlayerRight();
+        }
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+    }
 
-                Player_Movment = true;
-                Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight;
-            }
+    public void PlayerUp()
+    {
+        if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp != null)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
+            Player_Movment = true;
+            Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeUp;
+        }
+    }
+
+    public void PlayerDown()
+    {
+        if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown != null)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 180.0f, 0.0f);
+            Player_Movment = true;
+            Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeDown;
+        }
+    }
+
+    public void PlayerLeft()
+    {
+        if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft != null)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 280.0f, 0.0f);
+
+            Player_Movment = true;
+            Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeLeft;
+        }
+    }
+
+    public void PlayerRight()
+    {
+        if (Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight != null)
+        {
+            transform.rotation = Quaternion.Euler(0.0f, 100.0f, 0.0f);
+
+            Player_Movment = true;
+            Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight;
         }
     }
 

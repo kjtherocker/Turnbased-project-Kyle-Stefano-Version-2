@@ -77,18 +77,18 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DisAmount: 1
-    - _DisLineWidth: 0.85
+    - _DisLineWidth: 0.97
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0
     - _Mode: 0
-    - _NScale: 0
+    - _NScale: 1
     - _NoiseSize: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Radius: 0.59
+    - _Radius: 0.72
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -97,14 +97,14 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _Color: {r: 0.19536366, g: 0.6792453, b: 0.15699539, a: 1}
-    - _Color2: {r: 0.7169812, g: 0.065438114, b: 0.030437866, a: 1}
+    - _Color2: {r: 1, g: 0.05142857, b: 0, a: 1}
     - _DisLineColor: {r: 1, g: 1, b: 1, a: 1}
     - _Emission: {r: 1, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _FOVColor: {r: 1, g: 1, b: 1, a: 1}
     - _GLOBALMaskPosition: {r: 6.35, g: -0.051914, b: -4.35, a: 0}
-    - _PositionA: {r: 1.29, g: 1, b: 6.7, a: 0}
-    - _PositionB: {r: 1.15, g: 0.53, b: 2.41, a: 0}
-    - _PositionC: {r: 4.68, g: 0.32, b: 6.63, a: 0}
-    - _PositionD: {r: 4.53, g: 0.13, b: 2.36, a: 0}
+    - _PositionA: {r: 2.84, g: 1, b: 6.7, a: 0}
+    - _PositionB: {r: 2.56, g: 0.53, b: 2.41, a: 0}
+    - _PositionC: {r: 4.53, g: 0.32, b: 6.63, a: 0}
+    - _PositionD: {r: 4.35, g: 0.13, b: 2.36, a: 0}
     - _SecColor: {r: 0.20314132, g: 0.9245283, b: 0.17007834, a: 1}

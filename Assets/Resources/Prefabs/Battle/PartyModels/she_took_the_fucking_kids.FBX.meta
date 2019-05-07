@@ -1,0 +1,247 @@
+fileFormatVersion: 2
+guid: 41030c7f3405b7545bdd58e786ec60c6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: belt
+    100002: boots
+    100004: coat
+    100006: doll
+    100008: hair
+    100010: MarineHead
+    100012: MarineLArmCollarbone
+    100014: MarineLArmDigit01
+    100016: MarineLArmDigit02
+    100018: MarineLArmDigit03
+    100020: MarineLArmDigit11
+    100022: MarineLArmDigit12
+    100024: MarineLArmDigit13
+    100026: MarineLArmDigit21
+    100028: MarineLArmDigit22
+    100030: MarineLArmDigit23
+    100032: MarineLArmDigit31
+    100034: MarineLArmDigit32
+    100036: MarineLArmDigit33
+    100038: MarineLArmDigit41
+    100040: MarineLArmDigit42
+    100042: MarineLArmDigit43
+    100044: MarineLArmForearm1
+    100046: MarineLArmForearm2
+    100048: MarineLArmForearm3
+    100050: MarineLArmPalm
+    100052: MarineLArmUpperarm
+    100054: MarineLLegAnkle
+    100056: MarineLLegCalf
+    100058: MarineLLegPlatform
+    100060: MarineLLegThigh
+    100062: MarineLLegToe
+    100064: MarineNeck1
+    100066: MarineNeck2
+    100068: MarinePelvis
+    100070: MarineRCollarbone
+    100072: MarineRDigit01
+    100074: MarineRDigit02
+    100076: MarineRDigit03
+    100078: MarineRDigit11
+    100080: MarineRDigit12
+    100082: MarineRDigit13
+    100084: MarineRDigit21
+    100086: MarineRDigit22
+    100088: MarineRDigit23
+    100090: MarineRDigit31
+    100092: MarineRDigit32
+    100094: MarineRDigit33
+    100096: MarineRDigit41
+    100098: MarineRDigit42
+    100100: MarineRDigit43
+    100102: MarineRForearm1
+    100104: MarineRForearm2
+    100106: MarineRForearm3
+    100108: MarineRibcage
+    100110: MarineRLegAnkle
+    100112: MarineRLegCalf
+    100114: MarineRLegPlatform
+    100116: MarineRLegThigh
+    100118: MarineRLegToe
+    100120: MarineRPalm
+    100122: MarineRUpperarm
+    100124: MarineSpine1
+    100126: MarineSpine2
+    100128: MarineSpine3
+    100130: pants
+    100132: scarf
+    100134: //RootNode
+    100136: undershirt
+    400000: belt
+    400002: boots
+    400004: coat
+    400006: doll
+    400008: hair
+    400010: MarineHead
+    400012: MarineLArmCollarbone
+    400014: MarineLArmDigit01
+    400016: MarineLArmDigit02
+    400018: MarineLArmDigit03
+    400020: MarineLArmDigit11
+    400022: MarineLArmDigit12
+    400024: MarineLArmDigit13
+    400026: MarineLArmDigit21
+    400028: MarineLArmDigit22
+    400030: MarineLArmDigit23
+    400032: MarineLArmDigit31
+    400034: MarineLArmDigit32
+    400036: MarineLArmDigit33
+    400038: MarineLArmDigit41
+    400040: MarineLArmDigit42
+    400042: MarineLArmDigit43
+    400044: MarineLArmForearm1
+    400046: MarineLArmForearm2
+    400048: MarineLArmForearm3
+    400050: MarineLArmPalm
+    400052: MarineLArmUpperarm
+    400054: MarineLLegAnkle
+    400056: MarineLLegCalf
+    400058: MarineLLegPlatform
+    400060: MarineLLegThigh
+    400062: MarineLLegToe
+    400064: MarineNeck1
+    400066: MarineNeck2
+    400068: MarinePelvis
+    400070: MarineRCollarbone
+    400072: MarineRDigit01
+    400074: MarineRDigit02
+    400076: MarineRDigit03
+    400078: MarineRDigit11
+    400080: MarineRDigit12
+    400082: MarineRDigit13
+    400084: MarineRDigit21
+    400086: MarineRDigit22
+    400088: MarineRDigit23
+    400090: MarineRDigit31
+    400092: MarineRDigit32
+    400094: MarineRDigit33
+    400096: MarineRDigit41
+    400098: MarineRDigit42
+    400100: MarineRDigit43
+    400102: MarineRForearm1
+    400104: MarineRForearm2
+    400106: MarineRForearm3
+    400108: MarineRibcage
+    400110: MarineRLegAnkle
+    400112: MarineRLegCalf
+    400114: MarineRLegPlatform
+    400116: MarineRLegThigh
+    400118: MarineRLegToe
+    400120: MarineRPalm
+    400122: MarineRUpperarm
+    400124: MarineSpine1
+    400126: MarineSpine2
+    400128: MarineSpine3
+    400130: pants
+    400132: scarf
+    400134: //RootNode
+    400136: undershirt
+    2100000: 24 - Default
+    2100002: 10 - Default
+    2300000: hair
+    3300000: hair
+    4300000: doll
+    4300002: hair
+    4300004: coat
+    4300006: belt
+    4300008: pants
+    4300010: boots
+    4300012: undershirt
+    4300014: scarf
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: belt
+    13700002: boots
+    13700004: coat
+    13700006: doll
+    13700008: pants
+    13700010: scarf
+    13700012: undershirt
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

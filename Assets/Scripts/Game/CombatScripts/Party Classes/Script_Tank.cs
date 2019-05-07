@@ -17,7 +17,7 @@ public class Script_Tank : Script_Creatures
         Magic = 250;
         Dexterity = 60;
         Speed = 90;
-        Name = "Tank";
+        Name = "Fide";
 
         AmountOfTurns = 1;
 

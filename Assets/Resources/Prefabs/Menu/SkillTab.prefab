@@ -38,6 +38,7 @@ GameObject:
   - component: {fileID: 224281113373563138}
   - component: {fileID: 222608005363365842}
   - component: {fileID: 114503185828619084}
+  - component: {fileID: 114016413776254652}
   - component: {fileID: 114812558856118358}
   - component: {fileID: 114337678621206452}
   m_Layer: 0
@@ -81,6 +82,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &114016413776254652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1226343161205984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bcb18eb71527ef49a6935c60bf59ba4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ButtonTurnHolder: {fileID: 0}
+  m_SkillBoard: {fileID: 0}
+  m_Button: {fileID: 114812558856118358}
+  m_ButtonText: {fileID: 114181801888520616}
+  m_CostToUseText: {fileID: 114933348378904768}
 --- !u!114 &114181801888520616
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -175,11 +192,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -209,7 +226,7 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 0}
+        - m_Target: {fileID: 114016413776254652}
           m_MethodName: HoveringOverButton
           m_Mode: 1
           m_Arguments:
@@ -316,7 +333,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 114016413776254652}
         m_MethodName: ButtonClick
         m_Mode: 1
         m_Arguments:
@@ -423,11 +440,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:
@@ -477,7 +494,7 @@ RectTransform:
   m_GameObject: {fileID: 1226343161205984}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9240224, y: 2.2304215, z: 1.1041}
+  m_LocalScale: {x: 2.041259, y: 2.041259, z: 2.041259}
   m_Children:
   - {fileID: 224831681231111346}
   m_Father: {fileID: 0}

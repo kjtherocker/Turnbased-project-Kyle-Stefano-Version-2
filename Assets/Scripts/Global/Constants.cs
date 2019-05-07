@@ -11,8 +11,8 @@ namespace Constants
     }
     public static class Constants
     {
-        
 
+        public static float m_HeightOffTheGrid = 0.5f;
         public static bool TurnDialogueOff = false;
     }
 }

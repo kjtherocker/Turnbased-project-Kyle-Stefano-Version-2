@@ -1,21 +1,100 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
+using TMPro;
 public class UiScreenCommandBoard : UiScreen
 {
     public Animator m_CommandBoardAnimator;
     public Script_Creatures m_CommandboardCreature;
+    public Button m_MovementButton;
+    public TextMeshProUGUI m_MovementText;
+    public TextMeshProUGUI m_Attack;
+    public TextMeshProUGUI m_Skill;
+    public int m_CommandBoardPointerPosition;
     
     // Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+        m_CommandBoardPointerPosition = 0;
+
+    }
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	void Update ()
+    {
+        if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B"))
+        {
+            Script_GameManager.Instance.m_UiManager.PopScreen();
+        }
+
+        if (m_CommandBoardPointerPosition == 0)
+        {
+            m_MovementText.color = Color.red;
+            m_Attack.color = Color.white;
+            m_Skill.color = Color.white;
+
+        }
+        if (m_CommandBoardPointerPosition == 1)
+        {
+            m_MovementText.color = Color.white;
+            m_Attack.color = Color.red;
+            m_Skill.color = Color.white;
+        }
+        if (m_CommandBoardPointerPosition == 2)
+        {
+            m_MovementText.color = Color.white;
+            m_Attack.color = Color.white;
+            m_Skill.color = Color.red;
+        }
+        if (m_CommandBoardPointerPosition == 3)
+        {
+
+        }
+        if (m_CommandBoardPointerPosition == 4)
+        {
+
+        }
+
+        if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A"))
+        {
+            if (m_CommandBoardPointerPosition == 0)
+            {
+                PlayerMovement();
+            }
+            if (m_CommandBoardPointerPosition == 1)
+            {
+                SpawnSkillBoard();
+            }
+            if (m_CommandBoardPointerPosition == 2)
+            {
+
+            }
+            if (m_CommandBoardPointerPosition == 3)
+            {
+
+            }
+            if (m_CommandBoardPointerPosition == 4)
+            {
+
+            }
+
+        }
+
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+        if (m_CommandBoardPointerPosition < 0)
+        {
+            m_CommandBoardPointerPosition = 0;
+        }
+        else if (m_CommandBoardPointerPosition > 2)
+        {
+            m_CommandBoardPointerPosition = 2;
+        }
+    }
 
     public override void OnPop()
     {
@@ -27,6 +106,7 @@ public class UiScreenCommandBoard : UiScreen
     public override void OnPush()
     {
         gameObject.SetActive(true);
+        
         m_CommandBoardAnimator.SetTrigger("t_CommandBoardCrossIn");
     }
 
@@ -38,12 +118,30 @@ public class UiScreenCommandBoard : UiScreen
         
     }
 
+    public void SetCreatureReference(Script_Creatures aCreature)
+    {
+        m_CommandboardCreature = aCreature;
+
+        if (m_CommandboardCreature.m_CreatureAi.m_HasMovedForThisTurn == true)
+        {
+            m_MovementButton.interactable = false;
+        }
+        else
+        {
+            m_MovementButton.interactable = true;
+        }
+
+    }
+
     public void PlayerMovement()
     {
-
-        Script_GameManager.Instance.m_Grid.SetWalkingHeuristic(m_CommandboardCreature.m_CreatureAi.m_Position);
-        Script_GameManager.Instance.UiManager.PopScreen();
+        if (m_CommandboardCreature.m_CreatureAi.m_HasMovedForThisTurn == false)
+        {
+            Script_GameManager.Instance.m_Grid.SetWalkingHeuristic(m_CommandboardCreature.m_CreatureAi.m_Position);
+            Script_GameManager.Instance.UiManager.PopScreen();
+        }
     }
+
 
     public void SpawnSkillBoard()
     {
@@ -52,7 +150,16 @@ public class UiScreenCommandBoard : UiScreen
         UiSkillBoard ScreenTemp =
             Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.SkillBoard) as UiSkillBoard;
 
-        ScreenTemp.m_SkillBoardCreature = m_CommandboardCreature;
+        ScreenTemp.SpawnSkills(m_CommandboardCreature);
     }
 
+    public void MoveCommandBoardPositionUp()
+    {
+        m_CommandBoardPointerPosition++;
+    }
+
+    public void MoveCommandBoardPositionDown()
+    {
+        m_CommandBoardPointerPosition--;
+    }
 }

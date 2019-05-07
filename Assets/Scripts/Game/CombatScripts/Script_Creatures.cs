@@ -57,7 +57,6 @@ public class Script_Creatures : MonoBehaviour
 
     public Script_Skills m_Domain;
     public Script_Skills m_Attack;
-    public Script_Skills m_BaseSkill;
     public List<Script_Skills> m_Skills { get; protected set; }
     public List<Script_Skills> m_BloodArts { get; protected set; }
 
@@ -89,13 +88,7 @@ public class Script_Creatures : MonoBehaviour
 
     public string Name = "No Name";
 
-    public float DecrmentHealthTimer;
-
-    public bool GotDamaged;
-
     public Material m_Texture;
-
-    public ParticleSystem m_SelectedParticlesystem;
 
     public GameObject Model;
     public GameObject ModelInGame;
@@ -115,66 +108,18 @@ public class Script_Creatures : MonoBehaviour
         m_BloodArts = new List<Script_Skills>();
 
         m_DomainStages = DomainStages.NotActivated;
+       
         //m_Attack = gameObject.AddComponent<Script_Attack>();
     }
-    public void Update()
+    public virtual void Update()
     {
-        if (ObjectToRotateAround == gameObject)
-        {
-            IsCurrentTurnHolder = true;
-        }
-        else
-        {
-            IsCurrentTurnHolder = false;
-        }
-        if (m_DomainStages == DomainStages.Finished)
-        {
-            AmountOfTurns += 1;
-            Magic += 25;
-            Strength += 25;
-            m_DomainStages = DomainStages.End;
-        }
-
-        if (ObjectToRotateAround != null)
-        {
-            if (gameObject != null)
-            {
-                if (charactertype == Charactertype.Enemy)
-                {
-
-                    if (m_IsAlive == true)
-                    {
-                        if (ObjectToRotateAround.GetCharactertype() == Charactertype.Ally)
-                        {
-                          // targetPoint = new Vector3(ObjectToRotateAround.ModelInGame.transform.position.x, ModelInGame.transform.position.y, ObjectToRotateAround.ModelInGame.transform.position.z);
-                          // targetPoint.y = ModelInGame.transform.position.y;
-                          // ModelInGame.transform.LookAt(targetPoint);
-
-
-                            //ModelInGame.transform.rotation = Quaternion.Slerp(ModelInGame.transform.rotation, targetRotation, Time.deltaTime * 2.0f);
-                        }
-                        else
-                        {
-                            ModelInGame.transform.rotation = Quaternion.Euler(0, -260, 0);
-                        }
-                    }
-                }
-            }
-        }
-
-
-        if (GotDamaged == true)
-        {
-            DecrmentHealthTimer++;
-        }
 
         if (CurrentHealth <= 0)
         {
             m_IsAlive = false;
             Death();
         }
-        else
-        if (CurrentHealth >= 0)
+        else if (CurrentHealth >= 0)
         {
             m_IsAlive = true;
         }
@@ -184,111 +129,23 @@ public class Script_Creatures : MonoBehaviour
             CurrentHealth = MaxHealth;
         }
 
-        DebuffsandBuffs();
 
-        if (AlimentCounter == 0)
-        {
-            m_creaturesAilment = CreaturesAilment.None;
-        }
 
     }
 
-    public void EndTurn()
+    public virtual void EndTurn()
     {
-        CheckAliment();
-        if (BuffandDebuff > 0)
-        {
-            BuffandDebuff--;
-        }
-        if (BuffandDebuff < 0)
-        {
-            BuffandDebuff++;
-        }
+
 
     }
 
-    public void DebuffsandBuffs()
-    {
-        //Cant go further then maxium
-        if (BuffandDebuff > 3)
-        {
-            BuffandDebuff = 3;
-        }
-        if (BuffandDebuff < -3)
-        {
-            BuffandDebuff = -3;
-        }
-
-
-
-        //The Buffs
-        if (BuffandDebuff == 1)
-        {
-            BuffandDebuffDamageStrength = Strength / 4;
-            BuffandDebuffDamageMagic = Magic / 4;
-        }
-        if (BuffandDebuff == 2)
-        {
-            BuffandDebuffDamageStrength = Strength / 3;
-            BuffandDebuffDamageMagic = Magic / 3;
-        }
-        if (BuffandDebuff == 3)
-        {
-            BuffandDebuffDamageStrength = Strength / 2;
-            BuffandDebuffDamageMagic = Magic;
-        }
-
-        //NormalState
-        if (BuffandDebuff == 0)
-        {
-            BuffandDebuffDamageStrength = 0;
-            BuffandDebuffDamageMagic = 0;
-        }
-
-        //The Debuffs
-        if (BuffandDebuff == -1)
-        {
-            BuffandDebuffDamageStrength = -Strength / 4;
-            BuffandDebuffDamageMagic = -Magic / 4;
-        }
-        if (BuffandDebuff == -2)
-        {
-            BuffandDebuffDamageStrength = -Strength / 3;
-            BuffandDebuffDamageMagic = -Magic / 3;
-        }
-        if (BuffandDebuff == -3)
-        {
-            BuffandDebuffDamageStrength = -Strength / 2;
-            BuffandDebuffDamageMagic = -Magic / 2;
-        }
-
-    }
-
-    public IEnumerator AddBuff(int a_buffamount)
-    {
-        Script_FloatingUiElementsController.Initalize();
-        yield return new WaitForSeconds(0.5f);
-        Script_FloatingUiElementsController.CreateFloatingText(0.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Attackup);
-
-        BuffandDebuff += a_buffamount;
-    }
-
-    public IEnumerator AddDeBuff(int a_debuffamount)
-    {
-        Script_FloatingUiElementsController.Initalize();
-        yield return new WaitForSeconds(0.5f);
-        Script_FloatingUiElementsController.CreateFloatingText(0.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.AttackDown);
-
-        BuffandDebuff -= a_debuffamount;
-    }
-
-    public void SetObjectToRotateAround(Script_Creatures gameObject)
+    public virtual void SetObjectToRotateAround(Script_Creatures gameObject)
     {
         ObjectToRotateAround = gameObject;
 
     }
 
-    public int GetAllStrength()
+    public virtual int GetAllStrength()
     {
         int TemporaryStrength;
 
@@ -297,7 +154,7 @@ public class Script_Creatures : MonoBehaviour
         return TemporaryStrength;
     }
 
-    public int GetAllMagic()
+    public virtual int GetAllMagic()
     {
         int TemporaryMagic;
 
@@ -306,93 +163,17 @@ public class Script_Creatures : MonoBehaviour
         return TemporaryMagic;
     }
 
-    public void DecrementMana(int Decrementby)
-    {
-        CurrentMana -= Decrementby;
-    }
 
-    public void IncrementMana(int Incrementby)
-    {
-        CurrentMana += Incrementby;
-    }
 
-    public void SetMana(int Incrementby)
-    {
-        CurrentMana = Incrementby;
-    }
-
-    public void SetHealth(int Incrementby)
-    {
-        CurrentHealth = Incrementby;
-    }
-
-    public void InflictAliment(Script_Skills.SkillAilment a_IncomingAliment)
-    {
-        string Incomingaliment = a_IncomingAliment.ToString();
-
-        if (Incomingaliment.Equals(CreaturesAilment.Poison.ToString()))
-        {
-            m_creaturesAilment = CreaturesAilment.Poison;
-            AlimentCounter = 3;
-        }
-        if (Incomingaliment.Equals(CreaturesAilment.Daze.ToString()))
-        {
-            m_creaturesAilment = CreaturesAilment.Daze;
-            AlimentCounter = 3;
-        }
-        if (Incomingaliment.Equals(CreaturesAilment.Rage.ToString()))
-        {
-            m_creaturesAilment = CreaturesAilment.Rage;
-            AlimentCounter = 3;
-        }
-        if (Incomingaliment.Equals(CreaturesAilment.Sleep.ToString()))
-        {
-            m_creaturesAilment = CreaturesAilment.Sleep;
-            AlimentCounter = 3;
-        }
-    }
-
-    public void CheckAliment()
-    {
-        string CurrentAliment = m_creaturesAilment.ToString();
-
-        if (CurrentAliment.Equals(CreaturesAilment.Poison.ToString()))
-        {
-            DecrementHealth(10);
-            // Death();
-            DecrementAliment();
-        }
-        if (CurrentAliment.Equals(CreaturesAilment.Daze.ToString()))
-        {
-
-            DecrementAliment();
-        }
-        if (CurrentAliment.Equals(CreaturesAilment.Rage.ToString()))
-        {
-
-            DecrementAliment();
-        }
-        if (CurrentAliment.Equals(CreaturesAilment.Sleep.ToString()))
-        {
-
-            DecrementAliment();
-        }
-    }
-
-    public void DecrementAliment()
-    {
-        AlimentCounter--;
-    }
-    public void DecrementHealth(int Decremenby)
+    public virtual void DecrementHealth(int Decremenby)
     {
         Script_FloatingUiElementsController.CreateFloatingText(Decremenby.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
         CurrentHealth -= Decremenby;
     }
-    public IEnumerator DecrementHealth(int Decrementby, Script_Skills.ElementalType elementalType,float TimeTillInitalDamage, float TimeTillHoveringUiElement, float TimeTillDamage)
+    public virtual IEnumerator DecrementHealth(int Decrementby, Script_Skills.ElementalType elementalType,float TimeTillInitalDamage, float TimeTillHoveringUiElement, float TimeTillDamage)
     {
 
         yield return new WaitForSeconds(TimeTillInitalDamage);
-        GotDamaged = true;
 
         if (m_creaturesAilment == CreaturesAilment.Sleep)
         {
@@ -438,7 +219,7 @@ public class Script_Creatures : MonoBehaviour
     }
 
 
-    public IEnumerator IncrementHealth(int Increment)
+    public virtual IEnumerator IncrementHealth(int Increment)
     {
         CurrentHealth += Increment;
         yield return new WaitForSeconds(0.5f);
@@ -446,22 +227,17 @@ public class Script_Creatures : MonoBehaviour
         Script_FloatingUiElementsController.CreateFloatingText(Increment.ToString(), ModelInGame.gameObject.transform, Script_FloatingUiElementsController.UiElementType.Text);
     }
 
-    virtual public int EnemyAi()
-    {
-        return 0;
-    }
-
-    public Charactertype GetCharactertype()
+    public virtual Charactertype GetCharactertype()
     {
 
         return charactertype;
     }
 
-    public void Resurrection()
+    public virtual void Resurrection()
     {
         ModelInGame.gameObject.SetActive(true);
     }
-    public void Death()
+    public virtual void Death()
     {
         CurrentHealth = 0;
         AlimentCounter = 0;

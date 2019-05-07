@@ -31,7 +31,7 @@ public class Script_SlimeGreen : Script_Creatures
 
         AmountOfTurns = 1;
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/3D_Doll_sizetest", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/RedKnights/Knight_Uncorrupted", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_GreenSlime", typeof(Material));
 
@@ -40,11 +40,5 @@ public class Script_SlimeGreen : Script_Creatures
         elementalWeakness = ElementalWeakness.Fire;
     }
 
-    public override int EnemyAi()
-    {
-        int SkillChosen = Random.Range(0, m_Skills.Count);
-
-        return SkillChosen;
-    }
 
 }

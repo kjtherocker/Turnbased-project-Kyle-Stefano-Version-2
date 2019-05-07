@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 33435640545374498}
   - component: {fileID: 114793066591811458}
   - component: {fileID: 136388423621012548}
+  - component: {fileID: 114543575339878102}
   m_Layer: 0
   m_Name: Node_Overworld
   m_TagString: Node
@@ -36,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934479895017548}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -35.1, y: -9.060486, z: 43.399994}
+  m_LocalPosition: {x: 5.6627655, y: -9.060486, z: 0.2}
   m_LocalScale: {x: 0.71009, y: 0.71009, z: 0.71009}
   m_Children: []
   m_Father: {fileID: 0}
@@ -49,6 +50,67 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1934479895017548}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &114543575339878102
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934479895017548}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f292898f79b26964fbb427f4a7a01ee0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Dialogue:
+  - m_GameobjectSpawnPoint: {fileID: 0}
+    m_GameObjectToAppearInCutscene: {fileID: 0}
+    DestroyGameObjectOnEndOfDialogue: 0
+    m_PortraitType: 0
+    m_ChatBoxType: 0
+    m_FontTypes: 0
+    m_Name: Phill
+    m_Sentances: 'Ye born of the scarlet wish, give my soul thy cursed blessing. Crimson
+      pyres shall bathe my form and become         my blade. '
+  - m_GameobjectSpawnPoint: {fileID: 0}
+    m_GameObjectToAppearInCutscene: {fileID: 0}
+    DestroyGameObjectOnEndOfDialogue: 0
+    m_PortraitType: 0
+    m_ChatBoxType: 0
+    m_FontTypes: 0
+    m_Name: Will
+    m_Sentances: 'The world shall be rent asunder, cities pulverized to dust, army''s
+      ripped to shreds. Even destiny itself shall be run through by the soul of unending
+      flame! '
+  - m_GameobjectSpawnPoint: {fileID: 0}
+    m_GameObjectToAppearInCutscene: {fileID: 0}
+    DestroyGameObjectOnEndOfDialogue: 0
+    m_PortraitType: 0
+    m_ChatBoxType: 0
+    m_FontTypes: 0
+    m_Name: Bill
+    m_Sentances: 'I am the spear of barbed death that rebels against fate! May their
+      souls be incinerated by my scarlet wish.  '
+  - m_GameobjectSpawnPoint: {fileID: 0}
+    m_GameObjectToAppearInCutscene: {fileID: 0}
+    DestroyGameObjectOnEndOfDialogue: 0
+    m_PortraitType: 0
+    m_ChatBoxType: 0
+    m_FontTypes: 0
+    m_Name: Bill
+    m_Sentances: "Domain:\nDeliciis Vixerunt Infernalis\r\n[Infernal Revel] "
+  m_DialogueManager: {fileID: 0}
+  DialogueHasHappend: 0
+  SpawnPoint_Start: {fileID: 0}
+  SpawnPoint_End: {fileID: 0}
+  StartObject: {fileID: 0}
+  EndObject: {fileID: 0}
+  EndObjectInGame: {fileID: 0}
+  StartObjectInGame: {fileID: 0}
+  DeleteStartAfterStart: 0
+  DeleteEndOnEnd: 0
+  UseStartObjectFulltime: 0
+  m_TriggerType: 0
+  DialogueIsDone: 0
 --- !u!114 &114793066591811458
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -64,7 +126,7 @@ MonoBehaviour:
   NodeDown: {fileID: 0}
   NodeLeft: {fileID: 0}
   NodeRight: {fileID: 0}
-  m_DialogueTrigger: {fileID: 0}
+  m_DialogueTrigger: {fileID: 114543575339878102}
   m_EnemyPlaneReference: {fileID: 1492905452858538, guid: 9d51acfd8ee91a347ad881661091c35d,
     type: 2}
   m_SpawnedObject: {fileID: 0}

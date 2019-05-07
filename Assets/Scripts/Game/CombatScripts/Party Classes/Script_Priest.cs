@@ -17,7 +17,7 @@ public class Script_Priest : Script_Creatures
         Magic = 300;
         Dexterity = 60;
         Speed = 90;
-        Name = "Priest";
+        Name = "Cavia";
 
         AmountOfTurns = 1;
 

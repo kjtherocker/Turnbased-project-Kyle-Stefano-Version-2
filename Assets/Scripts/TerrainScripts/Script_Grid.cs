@@ -116,6 +116,11 @@ public class Script_Grid : MonoBehaviour
         SetHeuristicToZero();
     }
 
+    public Script_CombatNode GetNode(Vector2Int grid)
+    {
+        return m_GridPathArray[grid.x, grid.y];
+    }
+
     public void SetGoal(Vector2Int grid)
     {
         m_GridPathToGoal.Clear();
@@ -156,6 +161,7 @@ public class Script_Grid : MonoBehaviour
                 m_GridPathArray[x, y].CreateWalkableArea();
             }
         }
+        Script_GameManager.Instance.m_BattleCamera.m_MovementHasBeenCalculated = true;
     }
 
     public void RemoveWalkableArea()

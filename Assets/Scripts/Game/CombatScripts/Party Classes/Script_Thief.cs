@@ -17,7 +17,7 @@ public class Script_Thief : Script_Creatures
         Magic = 200;
         Dexterity = 60;
         Speed = 90;
-        Name = "Thief";
+        Name = "Vella";
 
         AmountOfTurns = 1;
 

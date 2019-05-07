@@ -18,7 +18,7 @@ public class Script_MainCharacter : Script_Creatures {
         Magic = 300;
         Dexterity = 50;
         Speed = 4;
-        Name = "Knight";
+        Name = "Doll";
 
         AmountOfTurns = 1;
 
@@ -35,7 +35,7 @@ public class Script_MainCharacter : Script_Creatures {
 
         m_BloodArts.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief));
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/3D_Doll_sizetest", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Doll", typeof(GameObject));
         
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_Knight", typeof(Material));
 

@@ -1,0 +1,153 @@
+fileFormatVersion: 2
+guid: c21d4a0a3a7ba244bb18ed752aa63bf1
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base char template
+    100002: boots
+    100004: bracers
+    100006: breastplate
+    100008: chainmail
+    100010: Cylinder001
+    100012: gauntlets
+    100014: helm
+    100016: knee guards
+    100018: //RootNode
+    100020: pants
+    100022: pauldron
+    100024: shin guards
+    400000: base char template
+    400002: boots
+    400004: bracers
+    400006: breastplate
+    400008: chainmail
+    400010: Cylinder001
+    400012: gauntlets
+    400014: helm
+    400016: knee guards
+    400018: //RootNode
+    400020: pants
+    400022: pauldron
+    400024: shin guards
+    2100000: 24 - Default
+    2100002: 'Material #31'
+    2100004: 19 - Default
+    2300000: base char template
+    2300002: boots
+    2300004: bracers
+    2300006: breastplate
+    2300008: chainmail
+    2300010: Cylinder001
+    2300012: gauntlets
+    2300014: helm
+    2300016: knee guards
+    2300018: pants
+    2300020: pauldron
+    2300022: shin guards
+    3300000: base char template
+    3300002: boots
+    3300004: bracers
+    3300006: breastplate
+    3300008: chainmail
+    3300010: Cylinder001
+    3300012: gauntlets
+    3300014: helm
+    3300016: knee guards
+    3300018: pants
+    3300020: pauldron
+    3300022: shin guards
+    4300000: base char template
+    4300002: pauldron
+    4300004: pants
+    4300006: knee guards
+    4300008: chainmail
+    4300010: shin guards
+    4300012: boots
+    4300014: gauntlets
+    4300016: helm
+    4300018: breastplate
+    4300020: bracers
+    4300022: Cylinder001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -107,33 +107,6 @@ public class Script_EncounterManager : MonoBehaviour {
         EnemySlot2 = gameObject.AddComponent<Script_SlimeGreen>();
         EnemySlot3 = gameObject.AddComponent<Script_SlimeGreen>();
         EnemySlot4 = gameObject.AddComponent<Script_SlimeGreen>();
-      
-    }
-
-    public void ForestEncounter2()
-    {
-        EnemySlot1 = gameObject.AddComponent<Script_SlimeRed>();
-        EnemySlot2 = gameObject.AddComponent<Script_SlimeRed>();
-        EnemySlot3 = gameObject.AddComponent<Script_SlimeRed>();
-        EnemySlot4 = gameObject.AddComponent<Script_SlimeRed>();
-
-    }
-
-    public void ForestEncounter3()
-    {
-        EnemySlot1 = gameObject.AddComponent<Script_SlimePurple>();
-        EnemySlot2 = gameObject.AddComponent<Script_SlimeWhite>();
-        EnemySlot3 = gameObject.AddComponent<Script_SlimeWhite>();
-        EnemySlot4 = gameObject.AddComponent<Script_SlimePurple>();
-
-    }
-
-    public void ForestEncounter4()
-    {
-        EnemySlot1 = gameObject.AddComponent<Script_SlimeBlue>();
-        EnemySlot2 = gameObject.AddComponent<Script_SlimeRed>();
-        EnemySlot3 = gameObject.AddComponent<Script_SlimeRed>();
-        EnemySlot4 = gameObject.AddComponent<Script_SlimeBlue>();
 
     }
 }

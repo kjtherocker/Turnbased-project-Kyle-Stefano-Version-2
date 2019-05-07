@@ -51,7 +51,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public void CreateWalkableArea()
     {
-        if (m_Heuristic <= m_Movement && m_Movement > 0)
+        if (m_Heuristic <= m_Movement)
         {
             m_WalkablePlane.gameObject.SetActive(true);
             m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;

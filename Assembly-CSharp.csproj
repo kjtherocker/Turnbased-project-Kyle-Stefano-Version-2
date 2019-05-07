@@ -68,11 +68,7 @@
     <Compile Include="Assets\Scripts\DialogScripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Ai\Script_AiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Script_RedEyes.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeBlue.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeGreen.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimePurple.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeRed.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeWhite.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_Priest.cs" />
@@ -116,6 +112,7 @@
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_PartyMenu.cs" />
     <Compile Include="Assets\Scripts\Script_DestroyParticleSystems.cs" />
+    <Compile Include="Assets\Scripts\Script_InputManager.cs" />
     <Compile Include="Assets\Scripts\Services\Singleton.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_CombatNode.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_DomainSphere.cs" />
@@ -131,19 +128,19 @@
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
     <Compile Include="Assets\TriPlanar\Scripts\Merge.cs" />
     <Compile Include="Assets\WorldSpaceDissolve\Scripts\ShaderPosition.cs" />
-    <None Include="Assets\Resources\Shaders\Disappear.shader" />
-    <None Include="Assets\Resources\Shaders\TestSquareCutout.shader" />
+    <None Include="Assets\Shaders\Disappear.shader" />
+    <None Include="Assets\Shaders\TestSquareCutout.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\heatmaps\Heatmap.shader" />
-    <None Include="Assets\Resources\Shaders\DoubleTexture.shader" />
+    <None Include="Assets\Shaders\DoubleTexture.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\TriPlanar\Shader\ToonLitTriPlanar.shader" />
     <None Include="Assets\TriPlanar\Shader\ToonLitMerge.shader" />
     <None Include="Assets\WorldSpaceDissolve\Shaders\Appear.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\Resources\Shaders\Outlined-Silhouette Only.shader" />
+    <None Include="Assets\Shaders\Outlined-Silhouette Only.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
@@ -153,7 +150,7 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\Resources\Shaders\UnlitTransparentShader.shader" />
+    <None Include="Assets\Shaders\UnlitTransparentShader.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
