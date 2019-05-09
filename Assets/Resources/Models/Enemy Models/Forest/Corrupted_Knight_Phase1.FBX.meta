@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: 05a7b92a4085b2444a992ba27ee3989c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base char template001
+    100002: boots001
+    100004: bracers001
+    100006: breastplate001
+    100008: chainmail001
+    100010: //RootNode
+    100012: gauntlets001
+    100014: helm001
+    100016: knee guards001
+    100018: NGon001
+    100020: NGon007
+    100022: NGon009
+    100024: NGon010
+    100026: NGon011
+    100028: pants001
+    100030: pauldron001
+    100032: scarf001
+    100034: shin guards001
+    100036: tabard001
+    400000: base char template001
+    400002: boots001
+    400004: bracers001
+    400006: breastplate001
+    400008: chainmail001
+    400010: //RootNode
+    400012: gauntlets001
+    400014: helm001
+    400016: knee guards001
+    400018: NGon001
+    400020: NGon007
+    400022: NGon009
+    400024: NGon010
+    400026: NGon011
+    400028: pants001
+    400030: pauldron001
+    400032: scarf001
+    400034: shin guards001
+    400036: tabard001
+    2100000: No Name
+    2100002: 'Material #31'
+    2100004: 24 - Default
+    2100006: 19 - Default
+    2300000: base char template001
+    2300002: boots001
+    2300004: bracers001
+    2300006: breastplate001
+    2300008: chainmail001
+    2300010: gauntlets001
+    2300012: helm001
+    2300014: knee guards001
+    2300016: NGon001
+    2300018: NGon007
+    2300020: NGon009
+    2300022: NGon010
+    2300024: NGon011
+    2300026: pants001
+    2300028: pauldron001
+    2300030: scarf001
+    2300032: shin guards001
+    2300034: tabard001
+    3300000: base char template001
+    3300002: boots001
+    3300004: bracers001
+    3300006: breastplate001
+    3300008: chainmail001
+    3300010: gauntlets001
+    3300012: helm001
+    3300014: knee guards001
+    3300016: NGon001
+    3300018: NGon007
+    3300020: NGon009
+    3300022: NGon010
+    3300024: NGon011
+    3300026: pants001
+    3300028: pauldron001
+    3300030: scarf001
+    3300032: shin guards001
+    3300034: tabard001
+    4300000: NGon001
+    4300002: NGon007
+    4300004: NGon009
+    4300006: NGon010
+    4300008: NGon011
+    4300010: shin guards001
+    4300012: boots001
+    4300014: bracers001
+    4300016: breastplate001
+    4300018: chainmail001
+    4300020: scarf001
+    4300022: helm001
+    4300024: knee guards001
+    4300026: pants001
+    4300028: pauldron001
+    4300030: tabard001
+    4300032: base char template001
+    4300034: gauntlets001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

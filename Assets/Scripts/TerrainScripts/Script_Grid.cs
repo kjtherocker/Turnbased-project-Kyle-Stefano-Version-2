@@ -25,7 +25,7 @@ public class Script_Grid : MonoBehaviour
 	void Start ()
     {
         Script_GameManager.Instance.m_Grid = this;
-        m_GridDimensions = new Vector2Int(15, 10);
+        m_GridDimensions = new Vector2Int(20, 15);
 
         m_GridPathArray = new Script_CombatNode[m_GridDimensions.x, m_GridDimensions.y];
 

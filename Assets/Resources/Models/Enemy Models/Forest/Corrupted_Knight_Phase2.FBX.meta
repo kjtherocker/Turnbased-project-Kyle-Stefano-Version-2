@@ -1,0 +1,354 @@
+fileFormatVersion: 2
+guid: c4146e3163e032044bb066736964d18b
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base char template002
+    100002: boots002
+    100004: bracers002
+    100006: breastplate002
+    100008: chainmail002
+    100010: //RootNode
+    100012: gauntlets002
+    100014: helm002
+    100016: knee guards002
+    100018: NGon012
+    100020: NGon013
+    100022: NGon014
+    100024: NGon015
+    100026: NGon016
+    100028: NGon017
+    100030: NGon018
+    100032: NGon019
+    100034: NGon020
+    100036: NGon021
+    100038: NGon022
+    100040: NGon023
+    100042: NGon024
+    100044: NGon025
+    100046: NGon026
+    100048: NGon027
+    100050: NGon028
+    100052: NGon029
+    100054: NGon030
+    100056: NGon031
+    100058: NGon032
+    100060: NGon033
+    100062: NGon034
+    100064: NGon035
+    100066: NGon036
+    100068: NGon037
+    100070: NGon038
+    100072: NGon039
+    100074: NGon040
+    100076: NGon041
+    100078: NGon042
+    100080: NGon043
+    100082: NGon044
+    100084: NGon045
+    100086: NGon046
+    100088: NGon047
+    100090: NGon048
+    100092: NGon049
+    100094: NGon050
+    100096: pants002
+    100098: pauldron002
+    100100: scarf002
+    100102: shin guards002
+    100104: tabard002
+    400000: base char template002
+    400002: boots002
+    400004: bracers002
+    400006: breastplate002
+    400008: chainmail002
+    400010: //RootNode
+    400012: gauntlets002
+    400014: helm002
+    400016: knee guards002
+    400018: NGon012
+    400020: NGon013
+    400022: NGon014
+    400024: NGon015
+    400026: NGon016
+    400028: NGon017
+    400030: NGon018
+    400032: NGon019
+    400034: NGon020
+    400036: NGon021
+    400038: NGon022
+    400040: NGon023
+    400042: NGon024
+    400044: NGon025
+    400046: NGon026
+    400048: NGon027
+    400050: NGon028
+    400052: NGon029
+    400054: NGon030
+    400056: NGon031
+    400058: NGon032
+    400060: NGon033
+    400062: NGon034
+    400064: NGon035
+    400066: NGon036
+    400068: NGon037
+    400070: NGon038
+    400072: NGon039
+    400074: NGon040
+    400076: NGon041
+    400078: NGon042
+    400080: NGon043
+    400082: NGon044
+    400084: NGon045
+    400086: NGon046
+    400088: NGon047
+    400090: NGon048
+    400092: NGon049
+    400094: NGon050
+    400096: pants002
+    400098: pauldron002
+    400100: scarf002
+    400102: shin guards002
+    400104: tabard002
+    2100000: No Name
+    2100002: 24 - Default
+    2100004: 19 - Default
+    2100006: 'Material #31'
+    2300000: base char template002
+    2300002: boots002
+    2300004: bracers002
+    2300006: breastplate002
+    2300008: chainmail002
+    2300010: gauntlets002
+    2300012: helm002
+    2300014: knee guards002
+    2300016: NGon012
+    2300018: NGon013
+    2300020: NGon014
+    2300022: NGon015
+    2300024: NGon016
+    2300026: NGon017
+    2300028: NGon018
+    2300030: NGon019
+    2300032: NGon020
+    2300034: NGon021
+    2300036: NGon022
+    2300038: NGon023
+    2300040: NGon024
+    2300042: NGon025
+    2300044: NGon026
+    2300046: NGon027
+    2300048: NGon028
+    2300050: NGon029
+    2300052: NGon030
+    2300054: NGon031
+    2300056: NGon032
+    2300058: NGon033
+    2300060: NGon034
+    2300062: NGon035
+    2300064: NGon036
+    2300066: NGon037
+    2300068: NGon038
+    2300070: NGon039
+    2300072: NGon040
+    2300074: NGon041
+    2300076: NGon042
+    2300078: NGon043
+    2300080: NGon044
+    2300082: NGon045
+    2300084: NGon046
+    2300086: NGon047
+    2300088: NGon048
+    2300090: NGon049
+    2300092: NGon050
+    2300094: pants002
+    2300096: pauldron002
+    2300098: scarf002
+    2300100: shin guards002
+    2300102: tabard002
+    3300000: base char template002
+    3300002: boots002
+    3300004: bracers002
+    3300006: breastplate002
+    3300008: chainmail002
+    3300010: gauntlets002
+    3300012: helm002
+    3300014: knee guards002
+    3300016: NGon012
+    3300018: NGon013
+    3300020: NGon014
+    3300022: NGon015
+    3300024: NGon016
+    3300026: NGon017
+    3300028: NGon018
+    3300030: NGon019
+    3300032: NGon020
+    3300034: NGon021
+    3300036: NGon022
+    3300038: NGon023
+    3300040: NGon024
+    3300042: NGon025
+    3300044: NGon026
+    3300046: NGon027
+    3300048: NGon028
+    3300050: NGon029
+    3300052: NGon030
+    3300054: NGon031
+    3300056: NGon032
+    3300058: NGon033
+    3300060: NGon034
+    3300062: NGon035
+    3300064: NGon036
+    3300066: NGon037
+    3300068: NGon038
+    3300070: NGon039
+    3300072: NGon040
+    3300074: NGon041
+    3300076: NGon042
+    3300078: NGon043
+    3300080: NGon044
+    3300082: NGon045
+    3300084: NGon046
+    3300086: NGon047
+    3300088: NGon048
+    3300090: NGon049
+    3300092: NGon050
+    3300094: pants002
+    3300096: pauldron002
+    3300098: scarf002
+    3300100: shin guards002
+    3300102: tabard002
+    4300000: NGon038
+    4300002: NGon013
+    4300004: NGon014
+    4300006: NGon015
+    4300008: NGon016
+    4300010: NGon017
+    4300012: NGon018
+    4300014: NGon019
+    4300016: NGon020
+    4300018: NGon021
+    4300020: NGon022
+    4300022: NGon023
+    4300024: NGon024
+    4300026: NGon025
+    4300028: NGon026
+    4300030: NGon027
+    4300032: NGon028
+    4300034: NGon029
+    4300036: NGon030
+    4300038: NGon031
+    4300040: NGon032
+    4300042: NGon033
+    4300044: NGon034
+    4300046: NGon035
+    4300048: NGon036
+    4300050: NGon037
+    4300052: tabard002
+    4300054: NGon039
+    4300056: NGon040
+    4300058: NGon041
+    4300060: NGon042
+    4300062: NGon043
+    4300064: NGon044
+    4300066: NGon045
+    4300068: NGon046
+    4300070: NGon047
+    4300072: NGon048
+    4300074: NGon049
+    4300076: NGon050
+    4300078: base char template002
+    4300080: boots002
+    4300082: bracers002
+    4300084: breastplate002
+    4300086: chainmail002
+    4300088: gauntlets002
+    4300090: helm002
+    4300092: knee guards002
+    4300094: pants002
+    4300096: pauldron002
+    4300098: scarf002
+    4300100: shin guards002
+    4300102: NGon012
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

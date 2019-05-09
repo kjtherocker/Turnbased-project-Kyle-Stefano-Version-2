@@ -172,9 +172,6 @@ public class Script_Creatures : MonoBehaviour
     }
     public virtual IEnumerator DecrementHealth(int Decrementby, Script_Skills.ElementalType elementalType,float TimeTillInitalDamage, float TimeTillHoveringUiElement, float TimeTillDamage)
     {
-
-        yield return new WaitForSeconds(TimeTillInitalDamage);
-
         if (m_creaturesAilment == CreaturesAilment.Sleep)
         {
             AlimentCounter = 0;

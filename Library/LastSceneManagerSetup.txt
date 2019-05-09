@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/NotResources/Scenes/Scene_OverWorld.unity
+- path: Assets/Scenes/Scene_OverWorld.unity
   isLoaded: 1
   isActive: 1

@@ -30,6 +30,8 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public Script_HealthBar m_StatusSheet;
 
+    public Script_CombatNode m_NodeTheCameraIsOn;
+
     public Vector2Int m_CameraPositionInGrid;
     // Use this for initialization
     public bool m_CommandBoardExists;
@@ -46,11 +48,13 @@ public class Script_CombatCameraController : MonoBehaviour
         m_CommandBoardExists = false;
         m_PlayerIsAttacking = false;
         //m_Grid = Script_GameManager.Instance.m_Grid;
+        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
     }
 
     // Update is called once per frame
     void Update()
     {
+        
 
         CameraMovement();
         PlayerUiSelection();
@@ -70,13 +74,15 @@ public class Script_CombatCameraController : MonoBehaviour
             if (m_PlayerIsMoving == false)
             {
                 m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
+                
                 transform.position = new Vector3(
-                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 13.5f,
-                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 13.9f,
-                    m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 13.5f);
+                    m_NodeTheCameraIsOn.transform.position.x + 13.5f,
+                    m_NodeTheCameraIsOn.transform.position.y + 13.9f,
+                    m_NodeTheCameraIsOn.transform.position.z - 13.5f);
             }
             else if (m_PlayerIsMoving == true)
             {
+                m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
                 transform.position = new Vector3(
                     m_Creature.ModelInGame.transform.position.x + 13.5f,
                     m_Creature.ModelInGame.transform.position.y + 13.9f,
@@ -88,9 +94,9 @@ public class Script_CombatCameraController : MonoBehaviour
             m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
 
             transform.position = new Vector3(
-                m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.x + 13.5f,
-                m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.y + 13.9f,
-                m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].transform.position.z - 13.5f);
+                m_NodeTheCameraIsOn.transform.position.x + 13.5f,
+                m_NodeTheCameraIsOn.transform.position.y + 13.9f,
+                m_NodeTheCameraIsOn.transform.position.z - 13.5f);
 
             Script_GameManager.Instance.m_InputManager.SetXboxButton
             (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
@@ -101,7 +107,7 @@ public class Script_CombatCameraController : MonoBehaviour
         if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
         {
             m_StatusSheet.gameObject.SetActive(true);
-            m_StatusSheet.Partymember = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+            m_StatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
         }
         else
         {
@@ -141,31 +147,35 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
+        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
     }
 
     public void MoveDown()
     {
         m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x + 1, m_CameraPositionInGrid.y);
+        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
     }
 
     public void MoveLeft()
     {
         m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y - 1);
+        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
     }
 
     public void MoveRight()
     {
         m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
+        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
     }
 
     public void AttackingIndividual()
     {
         StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
             .m_CreatureOnGridPoint.DecrementHealth
-            (50, Script_Skills.ElementalType.Fire, 0.1f,0.7f, 1));
+            (50, Script_Skills.ElementalType.Fire, 0.1f,0.1f, 1));
     }
 
     public void PlayerUiSelection()
@@ -188,7 +198,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void PlayerWalk()
     {
-        if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_Walkable == true)
+        if (m_NodeTheCameraIsOn.m_Walkable == true)
         {
 
             m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
@@ -200,16 +210,14 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void ReturnPlayerToInitalPosition()
     {
-        if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+        if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
         {
             //Checking to see if he has moved and if he hasnt attacked yet
-            if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].
-                    m_CreatureOnGridPoint.m_CreatureAi.m_HasMovedForThisTurn == true && 
-                m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].
-                    m_CreatureOnGridPoint.m_CreatureAi.m_HasAttackedForThisTurn == false)
+            if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasMovedForThisTurn == true
+                && m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasAttackedForThisTurn == false)
             {
                 //return the player to the original position
-                m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].
+                m_NodeTheCameraIsOn.
                      m_CreatureOnGridPoint.m_CreatureAi.ReturnToInitalPosition();
             }
 
@@ -220,12 +228,12 @@ public class Script_CombatCameraController : MonoBehaviour
     public void CreateCommandBoard()
     {
       
-         if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+         if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
          {
 
              //Get creature on that point on the grid
              m_Creature =
-                 m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint;
+                 m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
 
              //Push Screen
              Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
