@@ -113,6 +113,9 @@
     <Compile Include="Assets\Scripts\DialogScripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Ai\Script_AiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Script_RedEyes.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase1.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase2.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase3.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeGreen.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />

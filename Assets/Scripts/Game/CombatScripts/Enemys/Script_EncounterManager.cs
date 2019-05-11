@@ -104,9 +104,9 @@ public class Script_EncounterManager : MonoBehaviour {
     public void ForestEncounter1()
     {
         EnemySlot1 = gameObject.AddComponent<Script_SlimeGreen>();
-        EnemySlot2 = gameObject.AddComponent<Script_SlimeGreen>();
-        EnemySlot3 = gameObject.AddComponent<Script_SlimeGreen>();
-        EnemySlot4 = gameObject.AddComponent<Script_SlimeGreen>();
+        EnemySlot2 = gameObject.AddComponent<Script_RedKnightPhase1>();
+        EnemySlot3 = gameObject.AddComponent<Script_RedKnightPhase2>();
+        EnemySlot4 = gameObject.AddComponent<Script_RedKnightPhase3>();
 
     }
 }

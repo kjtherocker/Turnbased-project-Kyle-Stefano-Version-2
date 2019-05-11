@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class UiScreen : MonoBehaviour
 {
-    public GameObject FirstSelected;
+    public bool m_InputActive;
 
     // Use this for initialization
     void Start()
@@ -20,11 +20,13 @@ public class UiScreen : MonoBehaviour
 
     public virtual void OnPop()
     {
+        m_InputActive = false;
         gameObject.SetActive(false);
     }
 
     public virtual void OnPush()
     {
+        m_InputActive = true;
         gameObject.SetActive(true);
     }
 }

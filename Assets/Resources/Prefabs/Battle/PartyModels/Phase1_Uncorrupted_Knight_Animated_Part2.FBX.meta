@@ -1,0 +1,281 @@
+fileFormatVersion: 2
+guid: e95a38c1b6607ad4a9c99ca63930bcf6
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base char template005
+    100002: boots005
+    100004: bracers_L001
+    100006: bracers_R001
+    100008: breastplate005
+    100010: chainmail005
+    100012: gauntlet_L001
+    100014: gauntlet_R001
+    100016: helm005
+    100018: knee guards005
+    100020: MarineHead001
+    100022: MarineLArmCollarbone001
+    100024: MarineLArmDigit044
+    100026: MarineLArmDigit045
+    100028: MarineLArmDigit046
+    100030: MarineLArmDigit047
+    100032: MarineLArmDigit048
+    100034: MarineLArmDigit049
+    100036: MarineLArmDigit050
+    100038: MarineLArmDigit051
+    100040: MarineLArmDigit052
+    100042: MarineLArmDigit053
+    100044: MarineLArmDigit054
+    100046: MarineLArmDigit055
+    100048: MarineLArmDigit056
+    100050: MarineLArmDigit057
+    100052: MarineLArmDigit058
+    100054: MarineLArmForearm004
+    100056: MarineLArmForearm005
+    100058: MarineLArmForearm006
+    100060: MarineLArmPalm001
+    100062: MarineLArmUpperarm001
+    100064: MarineLLegAnkle001
+    100066: MarineLLegCalf001
+    100068: MarineLLegPlatform001
+    100070: MarineLLegThigh001
+    100072: MarineLLegToe001
+    100074: MarineNeck003
+    100076: MarineNeck004
+    100078: MarinePelvis001
+    100080: MarineRCollarbone001
+    100082: MarineRDigit044
+    100084: MarineRDigit045
+    100086: MarineRDigit046
+    100088: MarineRDigit047
+    100090: MarineRDigit048
+    100092: MarineRDigit049
+    100094: MarineRDigit050
+    100096: MarineRDigit051
+    100098: MarineRDigit052
+    100100: MarineRDigit053
+    100102: MarineRDigit054
+    100104: MarineRDigit055
+    100106: MarineRDigit056
+    100108: MarineRDigit057
+    100110: MarineRDigit058
+    100112: MarineRForearm004
+    100114: MarineRForearm005
+    100116: MarineRForearm006
+    100118: MarineRibcage001
+    100120: MarineRLegAnkle001
+    100122: MarineRLegCalf001
+    100124: MarineRLegPlatform001
+    100126: MarineRLegThigh001
+    100128: MarineRLegToe001
+    100130: MarineRPalm001
+    100132: MarineRUpperarm001
+    100134: MarineSpine004
+    100136: MarineSpine005
+    100138: MarineSpine006
+    100140: pants005
+    100142: pauldron005
+    100144: //RootNode
+    100146: scarf005
+    100148: shin guards005
+    100150: tabard005
+    400000: base char template005
+    400002: boots005
+    400004: bracers_L001
+    400006: bracers_R001
+    400008: breastplate005
+    400010: chainmail005
+    400012: gauntlet_L001
+    400014: gauntlet_R001
+    400016: helm005
+    400018: knee guards005
+    400020: MarineHead001
+    400022: MarineLArmCollarbone001
+    400024: MarineLArmDigit044
+    400026: MarineLArmDigit045
+    400028: MarineLArmDigit046
+    400030: MarineLArmDigit047
+    400032: MarineLArmDigit048
+    400034: MarineLArmDigit049
+    400036: MarineLArmDigit050
+    400038: MarineLArmDigit051
+    400040: MarineLArmDigit052
+    400042: MarineLArmDigit053
+    400044: MarineLArmDigit054
+    400046: MarineLArmDigit055
+    400048: MarineLArmDigit056
+    400050: MarineLArmDigit057
+    400052: MarineLArmDigit058
+    400054: MarineLArmForearm004
+    400056: MarineLArmForearm005
+    400058: MarineLArmForearm006
+    400060: MarineLArmPalm001
+    400062: MarineLArmUpperarm001
+    400064: MarineLLegAnkle001
+    400066: MarineLLegCalf001
+    400068: MarineLLegPlatform001
+    400070: MarineLLegThigh001
+    400072: MarineLLegToe001
+    400074: MarineNeck003
+    400076: MarineNeck004
+    400078: MarinePelvis001
+    400080: MarineRCollarbone001
+    400082: MarineRDigit044
+    400084: MarineRDigit045
+    400086: MarineRDigit046
+    400088: MarineRDigit047
+    400090: MarineRDigit048
+    400092: MarineRDigit049
+    400094: MarineRDigit050
+    400096: MarineRDigit051
+    400098: MarineRDigit052
+    400100: MarineRDigit053
+    400102: MarineRDigit054
+    400104: MarineRDigit055
+    400106: MarineRDigit056
+    400108: MarineRDigit057
+    400110: MarineRDigit058
+    400112: MarineRForearm004
+    400114: MarineRForearm005
+    400116: MarineRForearm006
+    400118: MarineRibcage001
+    400120: MarineRLegAnkle001
+    400122: MarineRLegCalf001
+    400124: MarineRLegPlatform001
+    400126: MarineRLegThigh001
+    400128: MarineRLegToe001
+    400130: MarineRPalm001
+    400132: MarineRUpperarm001
+    400134: MarineSpine004
+    400136: MarineSpine005
+    400138: MarineSpine006
+    400140: pants005
+    400142: pauldron005
+    400144: //RootNode
+    400146: scarf005
+    400148: shin guards005
+    400150: tabard005
+    2100000: 24 - Default
+    2100002: 'Material #31'
+    2100004: 19 - Default
+    2300000: bracers_L001
+    2300002: bracers_R001
+    2300004: breastplate005
+    2300006: helm005
+    2300008: pauldron005
+    2300010: tabard005
+    3300000: bracers_L001
+    3300002: bracers_R001
+    3300004: breastplate005
+    3300006: helm005
+    3300008: pauldron005
+    3300010: tabard005
+    4300000: base char template005
+    4300002: boots005
+    4300004: chainmail005
+    4300006: gauntlet_L001
+    4300008: gauntlet_R001
+    4300010: knee guards005
+    4300012: pants005
+    4300014: scarf005
+    4300016: shin guards005
+    4300018: bracers_L001
+    4300020: pauldron005
+    4300022: helm005
+    4300024: bracers_R001
+    4300026: breastplate005
+    4300028: tabard005
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: base char template005
+    13700002: boots005
+    13700004: chainmail005
+    13700006: gauntlet_L001
+    13700008: gauntlet_R001
+    13700010: knee guards005
+    13700012: pants005
+    13700014: scarf005
+    13700016: shin guards005
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

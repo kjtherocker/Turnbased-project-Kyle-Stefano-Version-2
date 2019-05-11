@@ -23,10 +23,7 @@ public class UiScreenCommandBoard : UiScreen
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B"))
-        {
-            Script_GameManager.Instance.m_UiManager.PopScreen();
-        }
+       
 
         if (m_CommandBoardPointerPosition == 0)
         {
@@ -56,37 +53,49 @@ public class UiScreenCommandBoard : UiScreen
 
         }
 
-        if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A"))
+        
+
+
+        if (m_InputActive == true)
         {
-            if (m_CommandBoardPointerPosition == 0)
+            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B"))
             {
-                PlayerMovement();
-            }
-            if (m_CommandBoardPointerPosition == 1)
-            {
-                Script_GameManager.Instance.UiManager.PopScreen();
-                Script_GameManager.Instance.m_Grid.SetAttackingTile(m_CommandboardCreature.m_CreatureAi.m_Position);
-                Script_GameManager.Instance.m_BattleCamera.m_PlayerIsAttacking = true;
-            }
-            if (m_CommandBoardPointerPosition == 2)
-            {
-                SpawnSkillBoard();
-            }
-            if (m_CommandBoardPointerPosition == 3)
-            {
-
-            }
-            if (m_CommandBoardPointerPosition == 4)
-            {
-
+                Script_GameManager.Instance.m_UiManager.PopScreen();
             }
 
+            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A"))
+            {
+                if (m_CommandBoardPointerPosition == 0)
+                {
+                    PlayerMovement();
+                }
+                if (m_CommandBoardPointerPosition == 1)
+                {
+                    Script_GameManager.Instance.UiManager.PopScreen();
+                    Script_GameManager.Instance.m_Grid.SetAttackingTile(m_CommandboardCreature.m_CreatureAi.m_Position);
+                    Script_GameManager.Instance.m_BattleCamera.m_PlayerIsAttacking = true;
+                }
+                if (m_CommandBoardPointerPosition == 2)
+                {
+                    SpawnSkillBoard();
+                }
+                if (m_CommandBoardPointerPosition == 3)
+                {
+
+                }
+                if (m_CommandBoardPointerPosition == 4)
+                {
+
+                }
+
+            }
+
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
         }
 
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
 
         if (m_CommandBoardPointerPosition < 0)
         {

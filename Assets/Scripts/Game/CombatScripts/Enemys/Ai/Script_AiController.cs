@@ -76,8 +76,7 @@ public class Script_AiController : MonoBehaviour
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
         for (int i = 0; i < aListOfNodes.Count;)
         {
-            if (Node_MovingTo != aListOfNodes[aListOfNodes.Count - 1])
-            {
+
                 if (Node_MovingTo == Node_ObjectIsOn)
                 {
 
@@ -94,7 +93,7 @@ public class Script_AiController : MonoBehaviour
                     i++;
                     yield return new WaitForSeconds(0.4f);
                 }
-            }
+            
 
         }
 
@@ -112,17 +111,30 @@ public class Script_AiController : MonoBehaviour
         aListOfNodes[0].m_CreatureOnGridPoint = null;
         aListOfNodes[aListOfNodes.Count - 1].m_CreatureOnGridPoint = m_Creature;
         m_Position = aListOfNodes[aListOfNodes.Count - 1].m_PositionInGrid;
+
+        for (int i = aListOfNodes.Count; i < 0; i--)
+        {
+            aListOfNodes.RemoveAt(i);
+        }
+
         Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
     }
 
     public void ReturnToInitalPosition()
     {
-        
-        m_Position = m_InitalPosition;
+        if (m_MovementHasStarted == false)
+        {
 
-        gameObject.transform.position = Script_GameManager.Instance.m_Grid.GetNode(m_Position).transform.position + CreatureOffset;
-        m_HasMovedForThisTurn = false;
 
+            Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CreatureOnGridPoint = null;
+
+            m_Position = m_InitalPosition;
+
+            Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CreatureOnGridPoint = m_Creature;
+            gameObject.transform.position = Script_GameManager.Instance.m_Grid.GetNode(m_Position).transform.position + CreatureOffset;
+
+            m_HasMovedForThisTurn = false;
+        }
 
     }
 

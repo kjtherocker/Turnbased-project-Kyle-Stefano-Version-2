@@ -28,6 +28,8 @@ public class Script_CombatCameraController : MonoBehaviour
     public Script_Grid m_Grid;
     public Script_Creatures m_Creature;
 
+    public Script_Skills m_CreatureAttackingSkill;
+
     public Script_HealthBar m_StatusSheet;
 
     public Script_CombatNode m_NodeTheCameraIsOn;
@@ -70,11 +72,11 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         if (m_PlayerIsAttacking == false)
         {
-
+            
             if (m_PlayerIsMoving == false)
             {
                 m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
-                
+                m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
                 transform.position = new Vector3(
                     m_NodeTheCameraIsOn.transform.position.x + 13.5f,
                     m_NodeTheCameraIsOn.transform.position.y + 13.9f,
@@ -82,7 +84,7 @@ public class Script_CombatCameraController : MonoBehaviour
             }
             else if (m_PlayerIsMoving == true)
             {
-                m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+
                 transform.position = new Vector3(
                     m_Creature.ModelInGame.transform.position.x + 13.5f,
                     m_Creature.ModelInGame.transform.position.y + 13.9f,
@@ -98,13 +100,25 @@ public class Script_CombatCameraController : MonoBehaviour
                 m_NodeTheCameraIsOn.transform.position.y + 13.9f,
                 m_NodeTheCameraIsOn.transform.position.z - 13.5f);
 
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+           (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+
+            //Left and right Axis
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
             Script_GameManager.Instance.m_InputManager.SetXboxButton
             (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
         }
 
         
 
-        if (m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_CreatureOnGridPoint != null)
+        if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
         {
             m_StatusSheet.gameObject.SetActive(true);
             m_StatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
@@ -143,6 +157,12 @@ public class Script_CombatCameraController : MonoBehaviour
         }
     }
 
+    public void SetAttackPhase(Script_Skills aSkill)
+    {
+        m_CreatureAttackingSkill = aSkill;
+        m_PlayerIsAttacking = true;
+    }
+
     public void MoveUp()
     {
         m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
@@ -175,7 +195,9 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
             .m_CreatureOnGridPoint.DecrementHealth
-            (50, Script_Skills.ElementalType.Fire, 0.1f,0.1f, 1));
+            (m_CreatureAttackingSkill.GetSkillDamage(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));
+
+        Script_GameManager.Instance.UiManager.PopAllScreens();
     }
 
     public void PlayerUiSelection()
@@ -202,6 +224,7 @@ public class Script_CombatCameraController : MonoBehaviour
         {
 
             m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+            m_Grid.m_GridPathArray[m_Creature.m_CreatureAi.m_InitalPosition.x, m_Creature.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint = null;
             m_CommandBoardExists = false;
             m_MovementHasBeenCalculated = false;
         }
@@ -214,7 +237,9 @@ public class Script_CombatCameraController : MonoBehaviour
         {
             //Checking to see if he has moved and if he hasnt attacked yet
             if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasMovedForThisTurn == true
-                && m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasAttackedForThisTurn == false)
+                && m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasAttackedForThisTurn == false && 
+                m_Grid.m_GridPathArray[m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_InitalPosition.x,
+                m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint == null)
             {
                 //return the player to the original position
                 m_NodeTheCameraIsOn.

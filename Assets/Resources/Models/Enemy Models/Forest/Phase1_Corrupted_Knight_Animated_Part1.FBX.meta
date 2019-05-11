@@ -1,0 +1,371 @@
+fileFormatVersion: 2
+guid: c8dc5f51497e40d43a1b0eebdb53aad7
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: base char template001
+    100002: boots001
+    100004: bracers_L002
+    100006: bracers_R002
+    100008: breastplate001
+    100010: chainmail001
+    100012: gauntlet_L
+    100014: gauntlet_R
+    100016: helm001
+    100018: knee guards001
+    100020: MarineHead
+    100022: MarineLArmCollarbone
+    100024: MarineLArmDigit01
+    100026: MarineLArmDigit02
+    100028: MarineLArmDigit03
+    100030: MarineLArmDigit11
+    100032: MarineLArmDigit12
+    100034: MarineLArmDigit13
+    100036: MarineLArmDigit21
+    100038: MarineLArmDigit22
+    100040: MarineLArmDigit23
+    100042: MarineLArmDigit31
+    100044: MarineLArmDigit32
+    100046: MarineLArmDigit33
+    100048: MarineLArmDigit41
+    100050: MarineLArmDigit42
+    100052: MarineLArmDigit43
+    100054: MarineLArmForearm1
+    100056: MarineLArmForearm2
+    100058: MarineLArmForearm3
+    100060: MarineLArmPalm
+    100062: MarineLArmUpperarm
+    100064: MarineLLegAnkle
+    100066: MarineLLegCalf
+    100068: MarineLLegPlatform
+    100070: MarineLLegThigh
+    100072: MarineLLegToe
+    100074: MarineNeck1
+    100076: MarineNeck2
+    100078: MarinePelvis
+    100080: MarineRCollarbone
+    100082: MarineRDigit01
+    100084: MarineRDigit02
+    100086: MarineRDigit03
+    100088: MarineRDigit11
+    100090: MarineRDigit12
+    100092: MarineRDigit13
+    100094: MarineRDigit21
+    100096: MarineRDigit22
+    100098: MarineRDigit23
+    100100: MarineRDigit31
+    100102: MarineRDigit32
+    100104: MarineRDigit33
+    100106: MarineRDigit41
+    100108: MarineRDigit42
+    100110: MarineRDigit43
+    100112: MarineRForearm1
+    100114: MarineRForearm2
+    100116: MarineRForearm3
+    100118: MarineRibcage
+    100120: MarineRLegAnkle
+    100122: MarineRLegCalf
+    100124: MarineRLegPlatform
+    100126: MarineRLegThigh
+    100128: MarineRLegToe
+    100130: MarineRPalm
+    100132: MarineRUpperarm
+    100134: MarineSpine1
+    100136: MarineSpine2
+    100138: MarineSpine3
+    100140: NGon001
+    100142: NGon007
+    100144: NGon009
+    100146: NGon010
+    100148: NGon011
+    100150: NGon204
+    100152: pants001
+    100154: pauldron001
+    100156: //RootNode
+    100158: rig
+    100160: scarf001
+    100162: shin guards001
+    100164: tabard001
+    400000: base char template001
+    400002: boots001
+    400004: bracers_L002
+    400006: bracers_R002
+    400008: breastplate001
+    400010: chainmail001
+    400012: gauntlet_L
+    400014: gauntlet_R
+    400016: helm001
+    400018: knee guards001
+    400020: MarineHead
+    400022: MarineLArmCollarbone
+    400024: MarineLArmDigit01
+    400026: MarineLArmDigit02
+    400028: MarineLArmDigit03
+    400030: MarineLArmDigit11
+    400032: MarineLArmDigit12
+    400034: MarineLArmDigit13
+    400036: MarineLArmDigit21
+    400038: MarineLArmDigit22
+    400040: MarineLArmDigit23
+    400042: MarineLArmDigit31
+    400044: MarineLArmDigit32
+    400046: MarineLArmDigit33
+    400048: MarineLArmDigit41
+    400050: MarineLArmDigit42
+    400052: MarineLArmDigit43
+    400054: MarineLArmForearm1
+    400056: MarineLArmForearm2
+    400058: MarineLArmForearm3
+    400060: MarineLArmPalm
+    400062: MarineLArmUpperarm
+    400064: MarineLLegAnkle
+    400066: MarineLLegCalf
+    400068: MarineLLegPlatform
+    400070: MarineLLegThigh
+    400072: MarineLLegToe
+    400074: MarineNeck1
+    400076: MarineNeck2
+    400078: MarinePelvis
+    400080: MarineRCollarbone
+    400082: MarineRDigit01
+    400084: MarineRDigit02
+    400086: MarineRDigit03
+    400088: MarineRDigit11
+    400090: MarineRDigit12
+    400092: MarineRDigit13
+    400094: MarineRDigit21
+    400096: MarineRDigit22
+    400098: MarineRDigit23
+    400100: MarineRDigit31
+    400102: MarineRDigit32
+    400104: MarineRDigit33
+    400106: MarineRDigit41
+    400108: MarineRDigit42
+    400110: MarineRDigit43
+    400112: MarineRForearm1
+    400114: MarineRForearm2
+    400116: MarineRForearm3
+    400118: MarineRibcage
+    400120: MarineRLegAnkle
+    400122: MarineRLegCalf
+    400124: MarineRLegPlatform
+    400126: MarineRLegThigh
+    400128: MarineRLegToe
+    400130: MarineRPalm
+    400132: MarineRUpperarm
+    400134: MarineSpine1
+    400136: MarineSpine2
+    400138: MarineSpine3
+    400140: NGon001
+    400142: NGon007
+    400144: NGon009
+    400146: NGon010
+    400148: NGon011
+    400150: NGon204
+    400152: pants001
+    400154: pauldron001
+    400156: //RootNode
+    400158: rig
+    400160: scarf001
+    400162: shin guards001
+    400164: tabard001
+    2100000: 'Material #31'
+    2100002: 24 - Default
+    2100004: 19 - Default
+    2100006: No Name
+    2300000: bracers_L002
+    2300002: bracers_R002
+    2300004: breastplate001
+    2300006: helm001
+    2300008: NGon001
+    2300010: NGon007
+    2300012: NGon009
+    2300014: NGon010
+    2300016: NGon011
+    2300018: NGon204
+    2300020: pauldron001
+    2300022: tabard001
+    3300000: bracers_L002
+    3300002: bracers_R002
+    3300004: breastplate001
+    3300006: helm001
+    3300008: NGon001
+    3300010: NGon007
+    3300012: NGon009
+    3300014: NGon010
+    3300016: NGon011
+    3300018: NGon204
+    3300020: pauldron001
+    3300022: tabard001
+    4300000: shin guards001
+    4300002: boots001
+    4300004: chainmail001
+    4300006: scarf001
+    4300008: knee guards001
+    4300010: pants001
+    4300012: base char template001
+    4300014: gauntlet_R
+    4300016: gauntlet_L
+    4300018: helm001
+    4300020: NGon001
+    4300022: bracers_R002
+    4300024: NGon204
+    4300026: bracers_L002
+    4300028: pauldron001
+    4300030: breastplate001
+    4300032: tabard001
+    4300034: NGon007
+    4300036: NGon011
+    4300038: NGon010
+    4300040: NGon009
+    7400000: KnightPhase1_Walk
+    7400002: KnightPhase1_Idle
+    9500000: //RootNode
+    13700000: base char template001
+    13700002: boots001
+    13700004: chainmail001
+    13700006: gauntlet_L
+    13700008: gauntlet_R
+    13700010: knee guards001
+    13700012: pants001
+    13700014: scarf001
+    13700016: shin guards001
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: KnightPhase1_Walk
+      takeName: Take 001
+      firstFrame: 60
+      lastFrame: 90
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: KnightPhase1_Idle
+      takeName: Take 001
+      firstFrame: 120
+      lastFrame: 180
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

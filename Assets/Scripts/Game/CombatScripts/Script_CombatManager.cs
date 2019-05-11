@@ -129,6 +129,8 @@ public class Script_CombatManager : MonoBehaviour
 
             AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(6, 5), TurnOrderEnemy);
             AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(6, 8), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(6, 10), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(6, 12), TurnOrderEnemy);
 
 
 
@@ -162,7 +164,7 @@ public class Script_CombatManager : MonoBehaviour
 
         aList[aList.Count - 1].ModelInGame = Instantiate<GameObject>(aList[aList.Count - 1].Model);
         aList[aList.Count - 1].ModelInGame.transform.position = m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position + CreatureOffset;
-        aList[aList.Count - 1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, -90, 0.0f);
+        aList[aList.Count - 1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 180, 0.0f);
         aList[aList.Count - 1].m_CreatureAi = aList[aList.Count - 1].ModelInGame.GetComponent<Script_AiController>();
         aList[aList.Count - 1].m_CreatureAi.m_Position =
             m_Grid.m_GridPathArray[aPosition.x, aPosition.y].m_PositionInGrid;
