@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class Script_CombatNode : MonoBehaviour
 {
+    public enum CombatNodeTypes
+    {
+        Normal,
+        Covered,
+        Wall
+    }
     public int m_Heuristic;
     public bool m_IsGoal;
     public bool m_HeuristicCalculated;
@@ -24,6 +30,8 @@ public class Script_CombatNode : MonoBehaviour
     public Material m_Walkable;
     public Material m_Goal;
     public Renderer m_Renderer;
+
+    public CombatNodeTypes m_CombatsNodeType;
 
     public int m_Movement;
 	// Use this for initialization
@@ -54,7 +62,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public void CreateWalkableArea()
     {
-        if (m_Heuristic <= m_Movement)
+        if (m_Heuristic <= m_Movement && m_Heuristic != 0)
         {
             m_WalkablePlane.gameObject.SetActive(true);
             m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
