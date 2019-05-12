@@ -91,9 +91,9 @@ public class UiScreenCommandBoard : UiScreen
             }
 
             Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
             Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
         }
 
 
@@ -111,6 +111,7 @@ public class UiScreenCommandBoard : UiScreen
     {
         m_CommandBoardAnimator.SetTrigger("t_CommandBoardCrossOut");
         TurnCommandBoardOff();
+        m_CommandBoardPointerPosition = 0;
 
     }
 

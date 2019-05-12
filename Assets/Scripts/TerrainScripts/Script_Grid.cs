@@ -425,6 +425,11 @@ public class Script_Grid : MonoBehaviour
         m_GridPathArray[grid.x, grid.y].m_AttackingPlane.SetActive(true);
     }
 
+    public void DeselectAttackingTileingrid(Vector2Int grid)
+    {
+        m_GridPathArray[grid.x, grid.y].m_AttackingPlane.SetActive(false);
+    }
+
     public void DeSelectSelectoringrid(Vector2Int grid)
     {
         m_GridPathArray[grid.x, grid.y].m_IsSelector = false;

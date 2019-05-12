@@ -35,6 +35,10 @@ public class Script_CombatCameraController : MonoBehaviour
     public Script_CombatNode m_NodeTheCameraIsOn;
 
     public Vector2Int m_CameraPositionInGrid;
+
+
+    public GameObject m_Selector;
+
     // Use this for initialization
     public bool m_CommandBoardExists;
 
@@ -75,12 +79,12 @@ public class Script_CombatCameraController : MonoBehaviour
             
             if (m_PlayerIsMoving == false)
             {
-                m_Grid.SetSelectoringrid(m_CameraPositionInGrid);
+
                 m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-                transform.position = new Vector3(
+                transform.position = Vector3.Lerp(transform.position, new Vector3(
                     m_NodeTheCameraIsOn.transform.position.x + 13.5f,
                     m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                    m_NodeTheCameraIsOn.transform.position.z - 13.5f);
+                    m_NodeTheCameraIsOn.transform.position.z - 13.5f),Time.deltaTime);
             }
             else if (m_PlayerIsMoving == true)
             {
@@ -165,30 +169,44 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void MoveUp()
     {
-        m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
-        m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
+        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
+
+        
+       
+       m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
         m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        m_Selector.gameObject.transform.position =
+            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.3f, m_NodeTheCameraIsOn.transform.position.z);
     }
 
     public void MoveDown()
     {
-        m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
+
+        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x + 1, m_CameraPositionInGrid.y);
         m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        m_Selector.gameObject.transform.position =
+            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.3f, m_NodeTheCameraIsOn.transform.position.z);
     }
 
     public void MoveLeft()
     {
-        m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
+
+        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y - 1);
         m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        m_Selector.gameObject.transform.position =
+            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.3f, m_NodeTheCameraIsOn.transform.position.z);
     }
 
     public void MoveRight()
     {
-        m_Grid.DeSelectSelectoringrid(m_CameraPositionInGrid);
+
+        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
         m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
         m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        m_Selector.gameObject.transform.position =
+            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.3f, m_NodeTheCameraIsOn.transform.position.z);
     }
 
     public void AttackingIndividual()
@@ -197,6 +215,7 @@ public class Script_CombatCameraController : MonoBehaviour
             .m_CreatureOnGridPoint.DecrementHealth
             (m_CreatureAttackingSkill.GetSkillDamage(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));
 
+        m_PlayerIsAttacking = false;
         Script_GameManager.Instance.UiManager.PopAllScreens();
     }
 

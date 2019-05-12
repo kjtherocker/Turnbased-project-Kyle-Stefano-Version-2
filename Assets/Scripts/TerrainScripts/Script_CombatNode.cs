@@ -58,18 +58,7 @@ public class Script_CombatNode : MonoBehaviour
         {
             m_Cube.gameObject.SetActive(false);
         }
-        
-
-
-
-        if (m_IsSelector == true)
-        {
-            m_SelectorPlane.gameObject.SetActive(true);
-        }
-        else if (m_IsSelector == false)
-        {
-            m_SelectorPlane.gameObject.SetActive(false);
-        }
+       
 	}
 
     public void CreateWalkableArea()

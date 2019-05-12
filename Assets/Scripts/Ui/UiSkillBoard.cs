@@ -24,7 +24,7 @@ public class UiSkillBoard : UiScreen
         //{
         //    m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
         //}
-       // m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
+        m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
 
         if (m_SkillBoardPointerPosition < 0)
         {

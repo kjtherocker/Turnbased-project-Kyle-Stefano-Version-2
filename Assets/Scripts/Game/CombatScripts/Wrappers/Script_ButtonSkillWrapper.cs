@@ -19,8 +19,8 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
     // Use this for initialization
     void Start ()
     {
-        m_Color_TransparentWhite = new Color(1, 1, 1, 0.5f);
-        m_Color_White = new Color(1, 1, 1, 1);
+       // m_Color_TransparentWhite = new Color(1, 1, 1, 0.5f);
+       // m_Color_White = new Color(1, 1, 1, 1);
     }
 	
 	// Update is called once per frame
