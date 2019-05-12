@@ -116,6 +116,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase1.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase2.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase3.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase4.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_SlimeGreen.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Script_EncounterManager.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Party Classes\Script_MainCharacter.cs" />
@@ -166,7 +167,9 @@
     <Compile Include="Assets\Scripts\TerrainScripts\Script_DomainSphere.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_GrassController.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_Grid.cs" />
+    <Compile Include="Assets\Scripts\TerrainScripts\Script_GridEditor.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_GridFormations.cs" />
+    <Compile Include="Assets\Scripts\TerrainScripts\WaterController.cs" />
     <Compile Include="Assets\Scripts\Ui\Script_EndOfCombatMenu.cs" />
     <Compile Include="Assets\Scripts\Ui\UiManager.cs" />
     <Compile Include="Assets\Scripts\Ui\UiScreen.cs" />
@@ -197,6 +200,7 @@
     <None Include="Assets\PostProcessing\Resources\Shaders\ACES.cginc" />
     <None Include="Assets\PostProcessing\Resources\Shaders\UberSecondPass.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\Shaders\OdellWaterShader.shader" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Tonemapping.cginc" />
     <None Include="Assets\PostProcessing\Editor Resources\Monitors\HistogramCompute.compute" />
     <None Include="Assets\PostProcessing\Resources\Shaders\Uber.shader" />

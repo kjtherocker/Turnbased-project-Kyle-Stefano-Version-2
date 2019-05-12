@@ -56,6 +56,8 @@ public class Script_CombatManager : MonoBehaviour
     public Script_TurnIndicatorWrapper m_ImageReference;
 
 
+    public Script_GridFormations m_GridFormation;
+
     public Vector3 CreatureOffset;
 
     public List<Text> CurentTurnHolderSkillText;
@@ -114,23 +116,25 @@ public class Script_CombatManager : MonoBehaviour
 
             m_CurrentTurnHolderbuttonsHaveSpawned = false;
             //Setting up the players
-            m_Grid.StartGridCreation();
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(2, 5), TurnOrderAlly);
+            m_Grid.Convert1DArrayto2D(m_GridFormation.m_ListToConvert, m_GridFormation.m_GridDimensions);
+            
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 2), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(2, 7), TurnOrderAlly);
-
-            AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(2, 9), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(1, 1), TurnOrderAlly);
+                                                                               
+            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
+                                                                               
+            AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
 
 
             //Setting up the Enemy
 
-            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(6, 5), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(6, 8), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(6, 10), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(6, 12), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(1, 4), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(1, 5), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(1, 6), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(1, 7), TurnOrderEnemy);
 
 
 
@@ -287,6 +291,8 @@ public class Script_CombatManager : MonoBehaviour
         }
 
     }
+
+
 
     public void SetEnemyChosen(int A_newEnemyIsChosen)
     {

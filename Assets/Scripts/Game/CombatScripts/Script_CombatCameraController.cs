@@ -44,7 +44,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     void Start()
     {
-        m_CameraPositionInGrid = new Vector2Int(4, 4);
+        m_CameraPositionInGrid = new Vector2Int(1, 1);
         Script_GameManager.Instance.m_BattleCamera = this;
 
         m_CommandBoardExists = false;

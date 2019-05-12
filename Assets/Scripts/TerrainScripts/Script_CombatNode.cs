@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Script_CombatNode : MonoBehaviour
 {
     public enum CombatNodeTypes
     {
         Normal,
         Covered,
-        Wall
+        Wall,
+        Empty
     }
     public int m_Heuristic;
     public bool m_IsGoal;
@@ -25,11 +27,13 @@ public class Script_CombatNode : MonoBehaviour
     public GameObject m_WalkablePlane;
     public GameObject m_AttackingPlane;
     public GameObject m_SelectorPlane;
+    public GameObject m_Cube;
 
     public Material m_Selector;
     public Material m_Walkable;
     public Material m_Goal;
     public Renderer m_Renderer;
+
 
     public CombatNodeTypes m_CombatsNodeType;
 
@@ -45,11 +49,19 @@ public class Script_CombatNode : MonoBehaviour
 
         m_IsSelector = false;
     }
-	
-	// Update is called once per frame
-	void Update ()
+
+    // Update is called once per frame
+    void Update()
     {
-     
+
+        if (m_CombatsNodeType == CombatNodeTypes.Empty)
+        {
+            m_Cube.gameObject.SetActive(false);
+        }
+        
+
+
+
         if (m_IsSelector == true)
         {
             m_SelectorPlane.gameObject.SetActive(true);

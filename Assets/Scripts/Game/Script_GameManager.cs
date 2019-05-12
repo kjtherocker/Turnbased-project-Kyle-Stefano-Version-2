@@ -20,7 +20,6 @@ public class Script_GameManager : Singleton<Script_GameManager>
     public Script_InputManager m_InputManager;
     public Script_InputManager InputManager { get { return m_InputManager; } }
 
-
     public Script_Grid m_Grid;
     public Script_Grid Grid { get { return m_Grid; } }
 
