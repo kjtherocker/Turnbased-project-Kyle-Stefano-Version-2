@@ -11,6 +11,7 @@ public class Script_Grid : MonoBehaviour
 
     public GameObject m_PrefabNode;
     public Script_CombatNode[,] m_GridPathArray;
+    public Script_CombatNode[] m_Test;
     public Material m_SelectedMaterial;
 
     public int PlayerX;
@@ -50,43 +51,16 @@ public class Script_Grid : MonoBehaviour
 	void Update ()
     {
 
-        if (PlayerX > m_GridDimensions.x)
-        {
-            PlayerX = m_GridDimensions.x;
-        }
-        else if (PlayerX < 0)
-        {
-            PlayerX = 0;
-        }
 
-        if (PlayerY > m_GridDimensions.y)
-        {
-            PlayerY = m_GridDimensions.y;
-        }
-        else if (PlayerY < 0)
-        {
-            PlayerY = 0;
-        }
 
-        //FindPointInGrid(PlayerX, PlayerY);
 
-        if (Input.GetKeyDown("up"))
+        for (int x = 0; x < m_GridDimensions.x; x++)
         {
-            PlayerY++;
+            for (int y = 0; y < m_GridDimensions.y; y++)
+            {
+                m_GridPathArray[x, y].CreateWalkableArea();
+            }
         }
-        if (Input.GetKeyDown("down"))
-        {
-            PlayerY--;
-        }
-        if (Input.GetKeyDown("left"))
-        {
-            PlayerX++;
-        }
-        if (Input.GetKeyDown("right"))
-        {
-            PlayerX--;
-        }
-
 
     }
 
@@ -260,39 +234,62 @@ public class Script_Grid : MonoBehaviour
     {
         if (grid.y + 1 < m_GridDimensions.y )
         {
-            if (m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false)
+            if (m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false &&
+                m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
             {
                 // Calculating the Heuristic based on the last grid
 
                 if (PreviousNodeWasCovered == true)
                 {
-                    m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                        m_GridPathArray[grid.x, grid.y + 2].m_Heuristic + 1;
+                    if (m_GridPathArray[grid.x + 1, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+                    {
 
-                    m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                        m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
+                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
+                            m_GridPathArray[grid.x + 1, grid.y + 1].m_Heuristic + 1;
 
-                    m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                        m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
+                    }
+                    else if (m_GridPathArray[grid.x - 1, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+                    {
+                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
+                            m_GridPathArray[grid.x - 1, grid.y + 1].m_Heuristic + 1;
+                    }
+                    else if (m_GridPathArray[grid.x , grid.y + 2].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+                    {
+                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
+                           m_GridPathArray[grid.x, grid.y + 2].m_Heuristic + 1;
+                    }
+
+                        //Setting this node to Calculated
+                        m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
+
+                    //Now Calculate heuristic of those around you
+                    CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, false);
                 }
                 else if (PreviousNodeWasCovered == false)
                 {
                     m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
                         m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
-                }  
 
+                    //Setting this node to Calculated
+                    m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
 
+                    //Now Calculate heuristic of those around you
+                    CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, false);
 
+                }
 
+            }
+            else if (m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false &&
+                m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
+            {
+
+                m_GridPathArray[grid.x, grid.y + 1].m_Heuristic = 0;
 
                 //Setting this node to Calculated
                 m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
 
-
-
                 //Now Calculate heuristic of those around you
-                CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, PreviousNodeWasCovered);
-
+                CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, true);
 
             }
 

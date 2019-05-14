@@ -63,7 +63,10 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 
             if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
             {
-
+                if (Node_PlayerIsOn.m_GridFormation != null)
+                {
+                    Script_GameManager.Instance.CombatManager.m_GridFormation = Node_PlayerIsOn.m_GridFormation;
+                }
                 m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.ForestEncounter);
                 GameManager.SwitchToBattle();
 
@@ -126,29 +129,56 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         {
             PlayerUp();
         }
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (PlayerUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+        
 
         if (Input.GetKey("down"))
         {
             PlayerDown();
         }
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (PlayerDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+       
 
         if (Input.GetKey("left"))
         {
             PlayerLeft();
         }
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (PlayerLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+        
 
         if (Input.GetKey("right"))
         {
             PlayerRight();
         }
-        Script_GameManager.Instance.m_InputManager.SetXboxAxis
+
+        if (Constants.Constants.m_XboxController == true)
+        {
+
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
             (PlayerRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+           (PlayerDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            (PlayerLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
+        }
+        if (Constants.Constants.m_PlaystationController == true)
+        {
+            Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+            (PlayerUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+            Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+            (PlayerRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
+            Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+           (PlayerDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+            Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+            (PlayerLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+        }
+
     }
 
     public void PlayerUp()

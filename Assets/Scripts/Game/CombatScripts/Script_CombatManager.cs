@@ -55,10 +55,11 @@ public class Script_CombatManager : MonoBehaviour
     public Script_ButtonEnemyWrapper m_ButtonEnemyReference;
     public Script_TurnIndicatorWrapper m_ImageReference;
 
-
     public Script_GridFormations m_GridFormation;
 
     public Vector3 CreatureOffset;
+
+    public GameObject m_GridformationTest;
 
     public List<Text> CurentTurnHolderSkillText;
     public List<Button> m_BasicMenuButtons;
@@ -117,24 +118,28 @@ public class Script_CombatManager : MonoBehaviour
             m_CurrentTurnHolderbuttonsHaveSpawned = false;
             //Setting up the players
 
-            m_Grid.Convert1DArrayto2D(m_GridFormation.m_ListToConvert, m_GridFormation.m_GridDimensions);
+            m_GridformationTest = Instantiate<GameObject>(m_GridFormation.gameObject);
+
+
+            m_Grid.Convert1DArrayto2D(m_GridformationTest.GetComponent<Script_GridFormations>().m_ListToConvert, 
+                m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
             AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(1, 1), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
                                                                                
-            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
-                                                                               
-            AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
+            //                                                                   
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
 
 
             //Setting up the Enemy
 
-            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(1, 4), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(1, 5), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(1, 6), TurnOrderEnemy);
-            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(1, 7), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(8, 9), TurnOrderEnemy);
+           //AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(8, 8), TurnOrderEnemy);
+           //AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(8, 7), TurnOrderEnemy);
+           //AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(8, 6), TurnOrderEnemy);
 
 
 
@@ -146,7 +151,7 @@ public class Script_CombatManager : MonoBehaviour
             for (int i = 0; i < AmountofTurns; i++)
             {
                 m_TurnIdenticator.Add(Instantiate<Script_TurnIndicatorWrapper>(m_ImageReference));
-                m_TurnIdenticator[i].gameObject.transform.localPosition = new Vector3(350 - i * 25, 170, 0);
+                m_TurnIdenticator[i].gameObject.transform.localPosition = new Vector3( -365 + i * 10, 100, 0);
                 m_TurnIdenticator[i].gameObject.transform.SetParent(Canvas_TurnMenu.transform, false);
             }
             

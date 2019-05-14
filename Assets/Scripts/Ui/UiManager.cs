@@ -66,7 +66,7 @@ public class UiManager : MonoBehaviour
     {
         if (m_ScreenStack.Count != 0)
         {
-            m_ScreenStack[m_ScreenStack.Count - 1].Value.m_InputActive = false;
+            m_ScreenStack[m_ScreenStack.Count - 1].Value.m_InputActive = true;
         }
 
         UiScreen screenToAdd = m_UiScreens[(int)aScreen];
@@ -78,9 +78,10 @@ public class UiManager : MonoBehaviour
 
     public void PopScreen()
     {
+        m_ScreenStack[m_ScreenStack.Count - 1].Value.m_InputActive = false;
         m_ScreenStack[m_ScreenStack.Count - 1].Value.OnPop();
         m_ScreenStack.RemoveAt(m_ScreenStack.Count - 1);
-        m_ScreenStack[m_ScreenStack.Count - 1].Value.m_InputActive = true;
+       
     }
 
     public void PopInvisivble()

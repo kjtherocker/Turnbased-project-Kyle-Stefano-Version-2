@@ -58,12 +58,12 @@ public class UiScreenCommandBoard : UiScreen
 
         if (m_InputActive == true)
         {
-            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B"))
+            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B") || Input.GetButtonDown("Ps4_Circle"))
             {
                 Script_GameManager.Instance.m_UiManager.PopScreen();
             }
 
-            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A"))
+            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A") || Input.GetButtonDown("Ps4_Cross"))
             {
                 if (m_CommandBoardPointerPosition == 0)
                 {
@@ -90,10 +90,20 @@ public class UiScreenCommandBoard : UiScreen
 
             }
 
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            if (Constants.Constants.m_XboxController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
                 (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                    (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            }
+            if (Constants.Constants.m_PlaystationController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                (MoveCommandBoardPositionUp, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveCommandBoardPositionDown, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            }
         }
 
 
@@ -109,9 +119,9 @@ public class UiScreenCommandBoard : UiScreen
 
     public override void OnPop()
     {
-        m_CommandBoardAnimator.SetTrigger("t_CommandBoardCrossOut");
+        //m_CommandBoardAnimator.SetTrigger("t_CommandBoardCrossOut");
         TurnCommandBoardOff();
-        m_CommandBoardPointerPosition = 0;
+        
 
     }
 
@@ -125,9 +135,9 @@ public class UiScreenCommandBoard : UiScreen
     public void TurnCommandBoardOff()
     {
         gameObject.SetActive(false);
-        
+        m_CommandBoardPointerPosition = 0;
 
-        
+
     }
 
     public void SetCreatureReference(Script_Creatures aCreature)

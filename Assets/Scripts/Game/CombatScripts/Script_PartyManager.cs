@@ -12,7 +12,7 @@ public class Script_PartyManager : MonoBehaviour
     void Start()
     {
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
-        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_Tank>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
     }

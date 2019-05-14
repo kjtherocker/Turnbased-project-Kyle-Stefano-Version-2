@@ -6,6 +6,8 @@ public class Script_Tank : Script_Creatures
 {
 
 
+
+
     // Use this for initialization
     void Start()
     {
@@ -13,32 +15,36 @@ public class Script_Tank : Script_Creatures
         MaxHealth = 700;
         CurrentMana = 100;
         MaxMana = 200;
-        Strength = 300;
-        Magic = 250;
-        Dexterity = 60;
-        Speed = 90;
+        Strength = 200;
+        Magic = 300;
+        Dexterity = 50;
+        Speed = 4;
         Name = "Fide";
 
         AmountOfTurns = 1;
 
-       //m_Skills = new Script_Skills[4];
-       //m_Skills[0] = gameObject.AddComponent<Script_ShadowBlast>();
-       //m_Skills[1] = gameObject.AddComponent<Script_Invigorate>();
-       //m_Skills[2] = gameObject.AddComponent<Script_LightRay>();
-       //m_Skills[3] = gameObject.AddComponent<Script_IceRain>();
-       //
-       //m_BloodArts = new Script_Skills[1];
-       //m_BloodArts[0] = gameObject.AddComponent<Script_BloodRelief>();
 
         SetCreature();
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
+        m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
+
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.HolyWater));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.PheonixSpirit));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain));
+        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
+
+        m_BloodArts.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief));
+
+        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Fide/fide", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_Knight", typeof(Material));
 
-        charactertype = Charactertype.Ally;
-        elementalStrength = ElementalStrength.Shadow;
-        elementalWeakness = ElementalWeakness.Light;
-    }
 
+
+        charactertype = Charactertype.Ally;
+        elementalStrength = ElementalStrength.Fire;
+        elementalWeakness = ElementalWeakness.Null;
+
+    }
 }

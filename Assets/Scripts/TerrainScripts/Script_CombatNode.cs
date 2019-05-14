@@ -26,7 +26,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public GameObject m_WalkablePlane;
     public GameObject m_AttackingPlane;
-    public GameObject m_SelectorPlane;
+
     public GameObject m_Cube;
 
     public Material m_Selector;
@@ -44,9 +44,8 @@ public class Script_CombatNode : MonoBehaviour
         m_Movement = 3;
         //m_HeuristicCalculated = false;
         m_WalkablePlane.gameObject.SetActive(false);
-        m_SelectorPlane.gameObject.SetActive(false);
         m_AttackingPlane.gameObject.SetActive(false);
-
+        m_Cube.gameObject.SetActive(true);
         m_IsSelector = false;
     }
 
@@ -57,6 +56,10 @@ public class Script_CombatNode : MonoBehaviour
         if (m_CombatsNodeType == CombatNodeTypes.Empty)
         {
             m_Cube.gameObject.SetActive(false);
+        }
+        if (m_IsWalkable == true)
+        {
+            m_WalkablePlane.gameObject.SetActive(true);
         }
        
 	}

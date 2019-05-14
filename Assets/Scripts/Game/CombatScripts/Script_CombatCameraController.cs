@@ -48,8 +48,12 @@ public class Script_CombatCameraController : MonoBehaviour
 
     void Start()
     {
-        m_CameraPositionInGrid = new Vector2Int(1, 1);
+        m_CameraPositionInGrid = new Vector2Int(17, 12);
         Script_GameManager.Instance.m_BattleCamera = this;
+
+        m_Selector.gameObject.transform.position =
+            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.3f, m_NodeTheCameraIsOn.transform.position.z);
+
 
         m_CommandBoardExists = false;
         m_PlayerIsAttacking = false;
@@ -104,20 +108,43 @@ public class Script_CombatCameraController : MonoBehaviour
                 m_NodeTheCameraIsOn.transform.position.y + 13.9f,
                 m_NodeTheCameraIsOn.transform.position.z - 13.5f);
 
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-           (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+            if (Constants.Constants.m_XboxController == true)
+                {
+                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                   (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                        (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
 
 
-            //Left and right Axis
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                    //Left and right Axis
+                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                        (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                        (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
 
-            Script_GameManager.Instance.m_InputManager.SetXboxButton
-            (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+                    Script_GameManager.Instance.m_InputManager.SetXboxButton
+                    (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+                }
+
+            if (Constants.Constants.m_PlaystationController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                   (MoveUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+
+                //Left and right Axis
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
+                Script_GameManager.Instance.m_InputManager.SetPlaystationButton
+                (AttackingIndividual, "Ps4_Cross", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+
+            }
         }
 
         
@@ -129,31 +156,53 @@ public class Script_CombatCameraController : MonoBehaviour
         }
         else
         {
-            //m_StatusSheet.GetComponent<Animator>().SetTrigger("t_CommandBoardCrossOut");
-            //m_StatusSheet.gameObject.SetActive(false);
+            m_StatusSheet.gameObject.SetActive(false);
         }
 
         if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
         {
             //Up and down Axis
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            if (Constants.Constants.m_XboxController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
             (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                    (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
 
 
-            //Left and right Axis
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                //Left and right Axis
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                    (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                    (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
 
+                if (Input.GetButtonDown("Xbox_B"))
+                {
+                    ReturnPlayerToInitalPosition();
+                }
+            }
+            if (Constants.Constants.m_PlaystationController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                (MoveUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+
+                //Left and right Axis
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                    (MoveLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+
+                if (Input.GetButtonDown("Ps4_Circle"))
+                {
+                    ReturnPlayerToInitalPosition();
+                }
+            }
         }
 
-        if (Input.GetButtonDown("Xbox_B"))
-        {
-            ReturnPlayerToInitalPosition();
-        }
+       
 
         if (Input.GetKeyDown("up"))
         {
@@ -224,16 +273,36 @@ public class Script_CombatCameraController : MonoBehaviour
 
         if (m_MovementHasBeenCalculated == true)
         {
-            Script_GameManager.Instance.m_InputManager.SetXboxButton
-             (PlayerWalk, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+            if (Constants.Constants.m_XboxController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetXboxButton
+                (PlayerWalk, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+            }
+            if (Constants.Constants.m_PlaystationController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetXboxButton
+                (PlayerWalk, "Ps4_Cross", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+            }
         }
 
+  
         if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null && m_PlayerIsAttacking == false)
         {
-            Script_GameManager.Instance.m_InputManager.SetXboxButton
+            if (Constants.Constants.m_XboxController == true)
+            {
+                Script_GameManager.Instance.m_InputManager.SetXboxButton
             (CreateCommandBoard, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
-        }   
+            }
+            if (Constants.Constants.m_PlaystationController == true)
+            {
+                if (Input.GetButtonDown("Ps4_Cross"))
+                {
+                    CreateCommandBoard();
+                }
 
+            }
+        }
+        
         
     }
 

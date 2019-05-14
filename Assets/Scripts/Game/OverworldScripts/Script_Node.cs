@@ -16,6 +16,8 @@ public class Script_Node : MonoBehaviour {
     public GameObject m_EnemyPlaneReference;
     public GameObject m_SpawnedObject;
 
+    public Script_GridFormations m_GridFormation;
+
     bool RoadsAreSpawned;
 
     public enum NodeTypes

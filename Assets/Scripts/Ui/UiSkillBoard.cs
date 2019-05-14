@@ -38,17 +38,21 @@ public class UiSkillBoard : UiScreen
 
         if (m_InputActive == true)
         {
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-            Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
 
-            Script_GameManager.Instance.m_InputManager.SetXboxButton
-                (SetSkill, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
-
-            if (Input.GetButton("Xbox_B"))
+            if (Constants.Constants.m_XboxController == true)
             {
-                Script_GameManager.Instance.UiManager.PopScreen();
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                (MoveCommandBoardPositionUp, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                Script_GameManager.Instance.m_InputManager.SetXboxAxis
+                    (MoveCommandBoardPositionDown, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+                Script_GameManager.Instance.m_InputManager.SetXboxButton
+                    (SetSkill, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+
+                if (Input.GetButton("Xbox_B"))
+                {
+                    Script_GameManager.Instance.UiManager.PopScreen();
+                }
             }
         }
     }
