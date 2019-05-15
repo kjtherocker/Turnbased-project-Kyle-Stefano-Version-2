@@ -5,13 +5,14 @@ using UnityEngine;
 public class Script_Grid : MonoBehaviour
 {
 
-    Vector2Int m_GridDimensions;
+    public Vector2Int m_GridDimensions;
 
     public List<Script_CombatNode> m_GridPathToGoal;
 
     public GameObject m_PrefabNode;
     public Script_CombatNode[,] m_GridPathArray;
     public Script_CombatNode[] m_Test;
+    public List<Script_CombatNode> m_OpenNodeList;
     public Material m_SelectedMaterial;
 
     public int PlayerX;
@@ -117,10 +118,10 @@ public class Script_Grid : MonoBehaviour
 
 
 
-        CalculateUpHeuristic(new Vector2Int(grid.x, grid.y));
-        CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
-        CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y),false);
-        CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
+        //CalculateUpHeuristic(new Vector2Int(grid.x, grid.y));
+        //CalculateDownHeuristic(new Vector2Int(grid.x, grid.y),false);
+        //CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y),false);
+        //CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
         
     }
 
@@ -170,162 +171,37 @@ public class Script_Grid : MonoBehaviour
 
 
 
-        CalculateUpHeuristic(new Vector2Int(grid.x, grid.y));
-        CalculateDownHeuristic(new Vector2Int(grid.x, grid.y));
-        CalculateLeftHeuristic(new Vector2Int(grid.x, grid.y),false);
-        CalculateRightHeuristic(new Vector2Int(grid.x, grid.y));
+        m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
+
+
+
+        StartCoroutine(m_GridPathArray[grid.x, grid.y].AddNeighboursToOpenList());
+
 
         SetWalkableArea();
     }
 
-    public void CalculateUpHeuristic(Vector2Int grid)
+    public void AddNewOpenNode(Script_CombatNode aCombatnode)
     {
-        if (grid.x + 1 < m_GridDimensions.x)
+        m_OpenNodeList.Add(aCombatnode);
+    }
+
+    public void LoopOpenNodes(List<Script_CombatNode> aList)
+    {
+        for (int i = 0; i <= aList.Count - 1; i++)
         {
-            if (m_GridPathArray[grid.x + 1, grid.y].m_HeuristicCalculated == false )
-            {
-                // Calculating the Heuristic based on the last grid
-                m_GridPathArray[grid.x + 1, grid.y].m_Heuristic =
-                    m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
-
-
-                
-                //Setting this node to Calculated
-                m_GridPathArray[grid.x + 1, grid.y].m_HeuristicCalculated = true;
-
-
-                //Now Calculate heuristic of those around you
-                CalculateUpHeuristic(m_GridPathArray[grid.x + 1, grid.y].m_PositionInGrid);
-                CalculateLeftHeuristic(m_GridPathArray[grid.x + 1, grid.y].m_PositionInGrid,false);
-                CalculateRightHeuristic(m_GridPathArray[grid.x + 1, grid.y].m_PositionInGrid);
-
-            }
+            aList[i].AddNeighboursToOpenList();
         }
     }
 
-    public void CalculateDownHeuristic(Vector2Int grid)
-    {
-        if (grid.x - 1 > -1)
-        {
-           if( m_GridPathArray[grid.x - 1, grid.y].m_HeuristicCalculated == false )
-            {
-                // Calculating the Heuristic based on the last grid
-                m_GridPathArray[grid.x - 1, grid.y].m_Heuristic =
-                    m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
+   
 
-
-                
-                //Setting this node to Calculated
-                m_GridPathArray[grid.x - 1, grid.y].m_HeuristicCalculated = true;
-
-
-                //Now Calculate heuristic of those around you
-                CalculateDownHeuristic(m_GridPathArray[grid.x - 1, grid.y].m_PositionInGrid);
-
-                CalculateLeftHeuristic(m_GridPathArray[grid.x - 1, grid.y].m_PositionInGrid,false);
-
-                CalculateRightHeuristic(m_GridPathArray[grid.x - 1, grid.y].m_PositionInGrid);
-
-            }
-        }
-    }
-
-    public void CalculateLeftHeuristic(Vector2Int grid, bool PreviousNodeWasCovered)
-    {
-        if (grid.y + 1 < m_GridDimensions.y )
-        {
-            if (m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false &&
-                m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-            {
-                // Calculating the Heuristic based on the last grid
-
-                if (PreviousNodeWasCovered == true)
-                {
-                    if (m_GridPathArray[grid.x + 1, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                    {
-
-                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                            m_GridPathArray[grid.x + 1, grid.y + 1].m_Heuristic + 1;
-
-                    }
-                    else if (m_GridPathArray[grid.x - 1, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                    {
-                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                            m_GridPathArray[grid.x - 1, grid.y + 1].m_Heuristic + 1;
-                    }
-                    else if (m_GridPathArray[grid.x , grid.y + 2].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                    {
-                        m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                           m_GridPathArray[grid.x, grid.y + 2].m_Heuristic + 1;
-                    }
-
-                        //Setting this node to Calculated
-                        m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
-
-                    //Now Calculate heuristic of those around you
-                    CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, false);
-                }
-                else if (PreviousNodeWasCovered == false)
-                {
-                    m_GridPathArray[grid.x, grid.y + 1].m_Heuristic =
-                        m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
-
-                    //Setting this node to Calculated
-                    m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
-
-                    //Now Calculate heuristic of those around you
-                    CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, false);
-
-                }
-
-            }
-            else if (m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false &&
-                m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
-            {
-
-                m_GridPathArray[grid.x, grid.y + 1].m_Heuristic = 0;
-
-                //Setting this node to Calculated
-                m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated = true;
-
-                //Now Calculate heuristic of those around you
-                CalculateLeftHeuristic(m_GridPathArray[grid.x, grid.y + 1].m_PositionInGrid, true);
-
-            }
-
-        }
-    }
-
-    public void CalculateRightHeuristic(Vector2Int grid)
-    {
-        if (grid.y - 1 > -1 )
-        {
-            if (m_GridPathArray[grid.x, grid.y - 1].m_HeuristicCalculated == false )
-            {
-                // Calculating the Heuristic based on the last grid
-                m_GridPathArray[grid.x, grid.y - 1].m_Heuristic =
-                    m_GridPathArray[grid.x, grid.y].m_Heuristic + 1;
-
-
-              
-
-
-                //Setting this node to Calculated
-                m_GridPathArray[grid.x, grid.y - 1].m_HeuristicCalculated = true;
-
-
-
-                //Now Calculate heuristic of those around you
-                CalculateRightHeuristic(m_GridPathArray[grid.x, grid.y - 1].m_PositionInGrid);
-
-            }
-        }
-    }
+  
 
     public void GetTheLowestH(Vector2Int grid, Script_AiController aiController)
     {
         
-        int TempHeuristic = 100;
+        float TempHeuristic = 100;
         Script_CombatNode TempNode = null;
 
 

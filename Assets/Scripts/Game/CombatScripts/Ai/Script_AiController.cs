@@ -5,6 +5,7 @@ using UnityEngine;
 public class Script_AiController : MonoBehaviour
 {
     public Script_Grid m_Grid;
+    public Script_CombatNode[,] m_GridPathArray;
     public List<Script_CombatNode> m_GridPath;
     public Vector2Int m_Goal;
     public Vector2Int m_Position;
@@ -32,7 +33,7 @@ public class Script_AiController : MonoBehaviour
         //m_Goal = new Vector2Int(9, 2);
         //m_Position = new Vector2Int(4, 4);
         CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
-        m_Movement = 4;
+        m_Movement = 10;
         m_Jump = 2;
         m_HasMovedForThisTurn = false;
         m_MovementHasStarted = false;
@@ -40,7 +41,15 @@ public class Script_AiController : MonoBehaviour
 
         Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
         Node_MovingTo = Node_ObjectIsOn;
+
+
         m_Grid = Script_GameManager.Instance.m_Grid;
+
+        m_GridPathArray = m_Grid.m_GridPathArray;
+
+
+
+
     }
 
     // Update is called once per frame
@@ -148,5 +157,10 @@ public class Script_AiController : MonoBehaviour
         m_Grid.SetWalkableArea();
     }
 
-  
+
+    
+
+
+
+
 }
