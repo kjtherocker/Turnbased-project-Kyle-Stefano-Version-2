@@ -311,7 +311,7 @@ public class Script_CombatCameraController : MonoBehaviour
         if (m_NodeTheCameraIsOn.m_Walkable == true)
         {
 
-            m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+            StartCoroutine(m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid));
             m_Grid.m_GridPathArray[m_Creature.m_CreatureAi.m_InitalPosition.x, m_Creature.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint = null;
             m_CommandBoardExists = false;
             m_MovementHasBeenCalculated = false;

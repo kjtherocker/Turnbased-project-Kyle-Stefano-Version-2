@@ -72,16 +72,17 @@ public class Script_AiController : MonoBehaviour
         }
     }
 
-    public virtual void SetGoalPosition(Vector2Int m_Goal)
+    public virtual IEnumerator SetGoalPosition(Vector2Int m_Goal)
     {
         m_Grid.SetGoal(m_Goal);
+        yield return new WaitForSeconds(10f);
         m_Grid.GetTheLowestH(m_Position, this);
     }
 
     public virtual IEnumerator GetToGoal(List<Script_CombatNode> aListOfNodes)
     {
         m_MovementHasStarted = true;
-        m_Grid.RemoveWalkableArea();
+        //m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
         for (int i = 0; i < aListOfNodes.Count;)
@@ -147,20 +148,4 @@ public class Script_AiController : MonoBehaviour
         }
 
     }
-
-
-    public virtual void SpawnWalkableTiles()
-    {
-        m_Grid.m_Movement = m_Movement;
-        m_Grid.SetWalkingHeuristic(m_Position);
-
-        m_Grid.SetWalkableArea();
-    }
-
-
-    
-
-
-
-
 }

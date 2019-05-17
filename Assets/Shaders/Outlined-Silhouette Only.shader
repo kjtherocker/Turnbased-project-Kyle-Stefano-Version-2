@@ -5,8 +5,9 @@
 Shader "Custom/Outline" {
 	Properties{
 	_MainTex("MainTex", 2D) = "" {}
-	_Outline("_Outline", Range(0,5)) = 0
-	_OutlineColor("Color", Color) = (1, 1, 1, 1)
+	_Outline("_Outline", Range(0,5)) = 0.01
+	_OutlineColor("Color", Color) = (0, 0, 0, 0)
+    _Color("Color", Color) = (1, 1, 1, 1)
 	_Glossiness("Smoothness", Range(0,1)) = 0.5
 	_SliceGuide("Slice Guide (RGB)", 2D) = "white" {}
 	_SliceAmount("Slice Amount", Range(0.0, 1.0)) = 0.5
@@ -31,6 +32,7 @@ Shader "Custom/Outline" {
 
 	float _Outline;
 	float4 _OutlineColor;
+
 	float _OutlineExistance;
 	
 
@@ -71,19 +73,22 @@ Shader "Custom/Outline" {
 	half _Glossiness;
 	half _Metallic;
 	half _Opacity;
+	float4 _Color;
+
+
 	UNITY_INSTANCING_BUFFER_START(Props)
 		// put more per-instance properties here
 	UNITY_INSTANCING_BUFFER_END(Props)
 
 		void surf(Input IN, inout SurfaceOutputStandard o) {
 		// Albedo comes from a texture tinted by color
-		fixed4 c = tex2D(_MainTex, IN.uv_MainTex);
+		float4 c = tex2D(_MainTex, IN.uv_MainTex) ;
 		//o.Albedo = c.rgb;
 		// Metallic and smoothness come from slider variables
 		o.Metallic = _Metallic;
 		o.Smoothness = _Glossiness;
 		clip(tex2D(_SliceGuide, IN.uv_SliceGuide).rgb - _SliceAmount);
-		o.Albedo = tex2D(_MainTex, IN.uv_MainTex).rgb;
+		o.Albedo =  _Color;
 	}
 	ENDCG
 	}
