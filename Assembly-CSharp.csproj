@@ -110,6 +110,9 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_ButtonSkillWrapper.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_DestroyOnAnimatorFinish.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_TurnIndicatorWrapper.cs" />
+    <Compile Include="Assets\Scripts\Game\MapEditor\Script_GridEditor.cs" />
+    <Compile Include="Assets\Scripts\Game\MapEditor\Script_GridFormations.cs" />
+    <Compile Include="Assets\Scripts\Game\MapEditor\Script_PropList.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Node.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldCamera.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverWorldPlayer.cs" />
@@ -125,8 +128,6 @@
     <Compile Include="Assets\Scripts\TerrainScripts\Script_DomainSphere.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_GrassController.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_Grid.cs" />
-    <Compile Include="Assets\Scripts\TerrainScripts\Script_GridEditor.cs" />
-    <Compile Include="Assets\Scripts\TerrainScripts\Script_GridFormations.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\WaterController.cs" />
     <Compile Include="Assets\Scripts\Ui\Script_EndOfCombatMenu.cs" />
     <Compile Include="Assets\Scripts\Ui\UiManager.cs" />
@@ -171,9 +172,6 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Editor">
-      <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
@@ -188,9 +186,6 @@
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-weaver.Editor">
-      <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.multiplayer-weaver.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
@@ -212,9 +207,6 @@
     </Reference>
     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.multiplayer-hlapi.Runtime">
-      <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/com.unity.multiplayer-hlapi.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.2f1/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

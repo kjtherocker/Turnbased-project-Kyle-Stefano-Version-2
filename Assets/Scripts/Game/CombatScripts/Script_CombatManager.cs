@@ -125,9 +125,9 @@ public class Script_CombatManager : MonoBehaviour
                 m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
-
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
+            //
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
                                                                                
             //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
             //                                                                   
@@ -194,106 +194,106 @@ public class Script_CombatManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown("a"))
-        {
-            CombatStart();
-        }
+    //    if (Input.GetKeyDown("a"))
+    //    {
+    //        CombatStart();
+    //    }
 
 
-        switch (m_BattleStates)
-        {
-            case BattleStates.Spawn:
+    //    switch (m_BattleStates)
+    //    {
+    //        case BattleStates.Spawn:
                 
-                    m_BattleStates = BattleStates.AllyTurn;
+    //                m_BattleStates = BattleStates.AllyTurn;
 
 
                 
-                break;
+    //            break;
 
-            case BattleStates.AllyTurn:
-                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-                Attackisfinished = false;
+    //        case BattleStates.AllyTurn:
+    //            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+    //            Attackisfinished = false;
 
-                    //Canvas_CommandBoard.SetActive(true);
-                   // m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
+    //                //Canvas_CommandBoard.SetActive(true);
+    //               // m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
                 
 
-                break;
+    //            break;
 
-            case BattleStates.AllySkillSelecting:
-                if (m_AttackButton == false)
-                {
-                    PlayerSelecting();
-                }
-                else
-                {
+    //        case BattleStates.AllySkillSelecting:
+    //            if (m_AttackButton == false)
+    //            {
+    //                PlayerSelecting();
+    //            }
+    //            else
+    //            {
 
-                }
-                break;
+    //            }
+    //            break;
 
-            case BattleStates.AllyAttack:
-                if (m_AttackButton == false)
-                {
-                    if (WhatTypeOfSkillsUsed == false)
-                    {
-                        PlayerTurnSkill();
-                    }
-                    else if (WhatTypeOfSkillsUsed == true)
-                    {
-                        PlayerTurnBloodArt();
-                    }
-                }
-                else
-                {
+    //        case BattleStates.AllyAttack:
+    //            if (m_AttackButton == false)
+    //            {
+    //                if (WhatTypeOfSkillsUsed == false)
+    //                {
+    //                    PlayerTurnSkill();
+    //                }
+    //                else if (WhatTypeOfSkillsUsed == true)
+    //                {
+    //                    PlayerTurnBloodArt();
+    //                }
+    //            }
+    //            else
+    //            {
 
-                }
+    //            }
            
-                break;
+    //            break;
 
-            case BattleStates.EnemyAttacking:
-                if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
-                {
+    //        case BattleStates.EnemyAttacking:
+    //            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
+    //            {
 
-                   // CombatTurnEndCombatManagerEnemy();
+    //               // CombatTurnEndCombatManagerEnemy();
 
-                }
-                break;
+    //            }
+    //            break;
 
-            case BattleStates.EnemyDomain:
-                if (m_IsDomainEnroaching == true)
-                {
-                    m_GrassController.IsEncoraching();
+    //        case BattleStates.EnemyDomain:
+    //            if (m_IsDomainEnroaching == true)
+    //            {
+    //                m_GrassController.IsEncoraching();
                    
 
-                    //m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-                    ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Domain.GetSkillParticleEffect());
-                    m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
-                    m_IsDomainEnroaching = false;
-                }
+    //                //m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
+    //                ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Domain.GetSkillParticleEffect());
+    //                m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
+    //                m_IsDomainEnroaching = false;
+    //            }
               
-                break;
+    //            break;
 
-            case BattleStates.EnemyTurn:
-                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-                EnemyTurn();
-                Attackisfinished = false;
+    //        case BattleStates.EnemyTurn:
+    //            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+    //            EnemyTurn();
+    //            Attackisfinished = false;
 
-                break;
+    //            break;
 
             
 
-            case BattleStates.EndOfCombat:
+    //        case BattleStates.EndOfCombat:
 
-                Canvas_CombatEndMenu.gameObject.SetActive(true);
-                Canvas_CombatEndMenu.TurnScoreOn();
-                Canvas_CombatEndMenu.GetScore();
-                if (Input.anyKey)
-                {
-                    //CombatEnd();
-                }
-                break;
+    //            Canvas_CombatEndMenu.gameObject.SetActive(true);
+    //            Canvas_CombatEndMenu.TurnScoreOn();
+    //            Canvas_CombatEndMenu.GetScore();
+    //            if (Input.anyKey)
+    //            {
+    //                //CombatEnd();
+    //            }
+    //            break;
 
-        }
+    //    }
 
     }
 

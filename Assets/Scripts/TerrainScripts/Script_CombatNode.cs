@@ -29,13 +29,17 @@ public class Script_CombatNode : MonoBehaviour
 
     public GameObject m_WalkablePlane;
     public GameObject m_AttackingPlane;
-
     public GameObject m_Cube;
+
+    public GameObject m_Prop;
+
+
 
     public Material m_Selector;
     public Material m_Walkable;
     public Material m_Goal;
     public Renderer m_Renderer;
+
 
 
 
@@ -45,6 +49,8 @@ public class Script_CombatNode : MonoBehaviour
 
     public CombatNodeTypes m_CombatsNodeType;
 
+    public Script_PropList.Props m_PropOnNode;
+    Script_PropList.Props m_PropOnNodeTemp;
     public int m_Movement;
     // Use this for initialization
     void Start()
@@ -60,6 +66,7 @@ public class Script_CombatNode : MonoBehaviour
         m_Grid = Script_GameManager.Instance.m_Grid;
 
         m_GridPathArray = m_Grid.m_GridPathArray;
+        m_PropOnNodeTemp = m_PropOnNode;
     }
 
     // Update is called once per frame
@@ -75,6 +82,26 @@ public class Script_CombatNode : MonoBehaviour
             m_WalkablePlane.gameObject.SetActive(true);
         }
 
+        if (m_CreatureOnGridPoint == null || m_Prop == null)
+        {
+            //SpawnProp();
+        }
+
+        if (m_PropOnNodeTemp != m_PropOnNode)
+        {
+            DestroyProp();
+            SpawnProp();
+        }
+
+
+        if (m_PropOnNode == Script_PropList.Props.None)
+        {
+            if (m_Prop != null)
+            {
+                DestroyProp();
+            }
+        }
+
         if (m_NodeYouCameFrom != null)
         {
             if (m_NodeYouCameFrom.m_OpenListHasFinished == true && m_OpenListHasFinished == false)
@@ -85,6 +112,30 @@ public class Script_CombatNode : MonoBehaviour
 
 
     }
+
+    public void DestroyProp()
+    {
+       
+        DestroyImmediate(m_Prop);
+
+    }
+
+    public void SpawnProp()
+    {
+        m_PropOnNodeTemp = m_PropOnNode;
+        m_Prop = Instantiate(Script_GameManager.Instance.m_PropList.ReturnPropData(m_PropOnNode), this.gameObject.transform);
+        Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
+        m_Prop.gameObject.transform.position = gameObject.transform.position + CreatureOffset;
+
+        Script_Creatures CreatureTemp = m_Prop.GetComponent<Script_Creatures>();
+        if (CreatureTemp != null)
+        {
+            m_CreatureOnGridPoint = CreatureTemp;
+        }
+
+       
+    }
+
 
     public void CreateWalkableArea()
     {
