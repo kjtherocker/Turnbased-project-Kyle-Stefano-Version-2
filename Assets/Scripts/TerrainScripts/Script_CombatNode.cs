@@ -72,7 +72,7 @@ public class Script_CombatNode : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+    #if (UNITY_EDITOR)
         if (m_CombatsNodeType == CombatNodeTypes.Empty)
         {
             m_Cube.gameObject.SetActive(false);
@@ -101,6 +101,7 @@ public class Script_CombatNode : MonoBehaviour
                 DestroyProp();
             }
         }
+    #endif
 
         if (m_NodeYouCameFrom != null)
         {
@@ -117,7 +118,7 @@ public class Script_CombatNode : MonoBehaviour
     {
        
         DestroyImmediate(m_Prop);
-
+        m_CombatsNodeType = CombatNodeTypes.Normal;
     }
 
     public void SpawnProp()
@@ -132,8 +133,8 @@ public class Script_CombatNode : MonoBehaviour
         {
             m_CreatureOnGridPoint = CreatureTemp;
         }
+        m_CombatsNodeType = CombatNodeTypes.Wall;
 
-       
     }
 
 
@@ -149,10 +150,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public void RemoveWalkableArea()
     {
-
-        //m_Heuristic = 0;
         m_WalkablePlane.gameObject.SetActive(false);
-        //m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
         m_IsWalkable = false;
 
     }
@@ -209,7 +207,7 @@ public class Script_CombatNode : MonoBehaviour
     }
 
 
-    public void AddNeighboursToOpenListGoal()
+    public void AddNeighboursToOpenListGoal(bool IsGoal)
     {
 
         // create an array of the four neighbour tiles
@@ -235,6 +233,10 @@ public class Script_CombatNode : MonoBehaviour
                 m_OpenList.Add(NodeToAdd);
 
             }
+        }
+        if (IsGoal == true)
+        {
+            m_Grid.SetWalkableArea();
         }
 
         LoopthroughOpenList();

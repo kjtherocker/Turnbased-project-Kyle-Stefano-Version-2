@@ -12,7 +12,7 @@ namespace Constants
     public static class Constants
     {
 
-        public static float m_HeightOffTheGrid = 0.5f;
+        public static float m_HeightOffTheGrid = 1.0f;
         public static bool TurnDialogueOff = false;
         public static bool m_XboxController = false;
         public static bool m_PlaystationController = true;

@@ -125,9 +125,9 @@ public class Script_CombatManager : MonoBehaviour
                 m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
             //
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
                                                                                
             //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
             //                                                                   
