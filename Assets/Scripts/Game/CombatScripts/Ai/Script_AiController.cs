@@ -76,7 +76,8 @@ public class Script_AiController : MonoBehaviour
     {
         m_Grid.SetGoal(m_Goal);
         m_Grid.RemoveWalkableArea();
-        yield return new WaitForSeconds(0.9f);
+        m_Grid.m_Movement = m_Movement;
+        yield return new WaitForSeconds(0.2f);
         m_Grid.GetTheLowestH(m_Position, this);
     }
 
@@ -121,7 +122,11 @@ public class Script_AiController : MonoBehaviour
         m_MovementHasStarted = false;
         //Changing the position from where the Creature was before
         aListOfNodes[0].m_CreatureOnGridPoint = null;
+        aListOfNodes[0].m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
+
+
         aListOfNodes[aListOfNodes.Count - 1].m_CreatureOnGridPoint = m_Creature;
+        aListOfNodes[aListOfNodes.Count - 1].m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
         m_Position = aListOfNodes[aListOfNodes.Count - 1].m_PositionInGrid;
 
         for (int i = aListOfNodes.Count; i < 0; i--)

@@ -30,6 +30,17 @@ public class Script_PropList : MonoBehaviour
         MiddleBridge,
         EndBridge,
 
+        //Ruin Walls
+
+        Corner_Ruin_Wall,
+        Modular_Wall_End,
+        Modular_Wall_Mid1,
+        Modular_Wall_Mid2,
+        Modular_Wall_Mid3,
+        Modular_Wall_Mid4,
+        Modular_Wall_Mid5,
+        Modular_Wall_Start,
+        Singular_Ruin_Wall,
 
 
 

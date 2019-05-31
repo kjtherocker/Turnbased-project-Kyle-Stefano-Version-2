@@ -33,7 +33,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public GameObject m_Prop;
 
-
+    public Script_PropList m_PropList;
 
     public Material m_Selector;
     public Material m_Walkable;
@@ -112,6 +112,7 @@ public class Script_CombatNode : MonoBehaviour
         }
 
 
+
     }
 
     public void DestroyProp()
@@ -124,7 +125,7 @@ public class Script_CombatNode : MonoBehaviour
     public void SpawnProp()
     {
         m_PropOnNodeTemp = m_PropOnNode;
-        m_Prop = Instantiate(Script_GameManager.Instance.m_PropList.ReturnPropData(m_PropOnNode), this.gameObject.transform);
+        m_Prop = Instantiate(m_PropList.ReturnPropData(m_PropOnNode), this.gameObject.transform);
         Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
         m_Prop.gameObject.transform.position = gameObject.transform.position + CreatureOffset;
 

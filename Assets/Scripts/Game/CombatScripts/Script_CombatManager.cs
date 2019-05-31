@@ -183,6 +183,7 @@ public class Script_CombatManager : MonoBehaviour
         aList[aList.Count - 1].m_CreatureAi.m_Creature = aList[aList.Count - 1];
 
         m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CreatureOnGridPoint = aList[aList.Count - 1];
+        m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
 
 
         //aList[aList.Count - 1].ModelInGame.transform.localScale = new Vector3(0.02448244f, 0.02448244f, 0.02448244f);

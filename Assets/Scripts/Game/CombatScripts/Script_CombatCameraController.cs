@@ -308,7 +308,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void PlayerWalk()
     {
-        if (m_NodeTheCameraIsOn.m_Walkable == true)
+        if (m_NodeTheCameraIsOn.m_Walkable == true && m_NodeTheCameraIsOn.m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
         {
 
             StartCoroutine(m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid));

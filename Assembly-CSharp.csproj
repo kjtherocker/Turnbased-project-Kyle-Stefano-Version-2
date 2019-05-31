@@ -146,12 +146,14 @@
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\heatmaps\Heatmap.shader" />
+    <None Include="Assets\ParticlesFire\Shader\ParticlesFireFX.shader" />
     <None Include="Assets\Shaders\DoubleTexture.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Shaders\OdellWaterShader.shader" />
     <None Include="Assets\ToonIce\Shaders\ToonIce.shader" />
     <None Include="Assets\TriPlanar\Shader\ToonLitTriPlanar.shader" />
     <None Include="Assets\TriPlanar\Shader\ToonLitMerge.shader" />
+    <None Include="Assets\Shaders\CutoutRotationsShader.shader" />
     <None Include="Assets\WorldSpaceDissolve\Shaders\Appear.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
