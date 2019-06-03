@@ -33,7 +33,7 @@ public class Script_AiController : MonoBehaviour
         //m_Goal = new Vector2Int(9, 2);
         //m_Position = new Vector2Int(4, 4);
         CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
-        m_Movement = 10;
+        m_Movement = 4;
         m_Jump = 2;
         m_HasMovedForThisTurn = false;
         m_MovementHasStarted = false;

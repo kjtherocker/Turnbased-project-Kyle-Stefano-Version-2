@@ -169,12 +169,15 @@ public class Script_CombatNode : MonoBehaviour
 
         // if the node is already closed, return -1 (an invalid tile index)
         if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated == true)
+        {
             return null;
-
+        }
         // if the node can't be walked on, return -1 (an invalid tile index)
         if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
+        {
+            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
             return null;
-
+        }
         // return a valid tile index
         return nodeIndex;
     }
