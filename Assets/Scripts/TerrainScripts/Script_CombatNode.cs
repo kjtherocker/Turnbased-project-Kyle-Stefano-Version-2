@@ -64,6 +64,7 @@ public class Script_CombatNode : MonoBehaviour
         m_OpenListHasFinished = false;
 
         m_Grid = Script_GameManager.Instance.m_Grid;
+        m_PropList = Script_GameManager.Instance.m_PropList;
 
         m_GridPathArray = m_Grid.m_GridPathArray;
         m_PropOnNodeTemp = m_PropOnNode;
@@ -183,8 +184,8 @@ public class Script_CombatNode : MonoBehaviour
 
         // create an array of the four neighbour tiles
         Script_CombatNode[] nodestoads = new Script_CombatNode[4];
-        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
-        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
+        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
+        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
         nodestoads[2] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x + 1, m_PositionInGrid.y));
         nodestoads[3] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x - 1, m_PositionInGrid.y));
 
@@ -197,7 +198,7 @@ public class Script_CombatNode : MonoBehaviour
             // check if the node to add has a valid node index
             if (NodeToAdd != null)
             {
-
+                
                 NodeToAdd.m_Heuristic = m_Heuristic + 1;
                 NodeToAdd.m_HeuristicCalculated = true;
                 NodeToAdd.m_NodeYouCameFrom = this;
@@ -205,6 +206,7 @@ public class Script_CombatNode : MonoBehaviour
 
             }
         }
+
     }
 
 
@@ -213,10 +215,11 @@ public class Script_CombatNode : MonoBehaviour
 
         // create an array of the four neighbour tiles
         Script_CombatNode[] nodestoads = new Script_CombatNode[4];
-        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
-        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
-        nodestoads[2] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x + 1, m_PositionInGrid.y));
-        nodestoads[3] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x - 1, m_PositionInGrid.y));
+        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x + 1, m_PositionInGrid.y));
+        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x - 1, m_PositionInGrid.y));
+        nodestoads[2] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
+        nodestoads[3] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
+        
 
         // loop through the array
         for (int i = 0; i < 4; i++)
@@ -254,6 +257,7 @@ public class Script_CombatNode : MonoBehaviour
             m_OpenList.RemoveAt(i);
         }
         m_OpenListHasFinished = true;
+       
     }
 
 }

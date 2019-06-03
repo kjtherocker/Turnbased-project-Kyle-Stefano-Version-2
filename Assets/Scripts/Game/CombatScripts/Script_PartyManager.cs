@@ -13,8 +13,8 @@ public class Script_PartyManager : MonoBehaviour
     {
         m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
         m_CurrentParty.Add(gameObject.AddComponent<Script_Tank>());
-        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
-        m_CurrentParty.Add(gameObject.AddComponent<Script_MainCharacter>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_Priest>());
+        m_CurrentParty.Add(gameObject.AddComponent<Script_Thief>());
     }
 
     // Update is called once per frame

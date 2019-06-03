@@ -20,6 +20,8 @@ public class Script_Grid : MonoBehaviour
 
     public int m_Movement;
 
+    public bool m_WalkingHasStarted;
+
     public bool m_GotPathNodes;
 
 
@@ -32,7 +34,7 @@ public class Script_Grid : MonoBehaviour
         PlayerY = 10;
 
 
-        
+        m_WalkingHasStarted = false;
 
         //SetGoal(new Vector2Int(9,2));
 
@@ -51,8 +53,34 @@ public class Script_Grid : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        if (m_WalkingHasStarted == true)
+        {
+            if (IsAllNodesHeuristicCalculated())
+            {
+                SetWalkableArea();
+                m_WalkingHasStarted = false;
+            }
+        }
 
     }
+
+    private bool IsAllNodesHeuristicCalculated()
+    {
+        for (int x = 0; x < m_GridDimensions.x; x++)
+        {
+            for (int y = 0; y < m_GridDimensions.y; y++)
+            {
+                if (m_GridPathArray[x, y].m_HeuristicCalculated == false)
+                {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+
 
     public void Convert1DArrayto2D(List<Script_CombatNode> aNodeGroup, Vector2Int grid)
     {
@@ -64,7 +92,9 @@ public class Script_Grid : MonoBehaviour
         {
 
            m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y] = aNodeGroup[i];
-            
+           
+
+
         }
     }
 
@@ -138,6 +168,7 @@ public class Script_Grid : MonoBehaviour
                 m_GridPathArray[x, y].CreateWalkableArea();
             }
         }
+      
         Script_GameManager.Instance.m_BattleCamera.m_MovementHasBeenCalculated = true;
     }
 
@@ -167,10 +198,7 @@ public class Script_Grid : MonoBehaviour
 
 
         m_GridPathArray[grid.x, grid.y].AddNeighboursToOpenListGoal(true);
-
-
-
-        SetWalkableArea();
+        m_WalkingHasStarted = true;
     }
 
 

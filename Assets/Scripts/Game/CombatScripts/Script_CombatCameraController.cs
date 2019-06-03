@@ -308,7 +308,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void PlayerWalk()
     {
-        if (m_NodeTheCameraIsOn.m_Walkable == true && m_NodeTheCameraIsOn.m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+        if (m_NodeTheCameraIsOn.m_IsWalkable == true && m_NodeTheCameraIsOn.m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
         {
 
             StartCoroutine(m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid));
@@ -340,26 +340,28 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void CreateCommandBoard()
     {
-      
-         if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
-         {
 
-             //Get creature on that point on the grid
-             m_Creature =
-                 m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
+        if (m_MovementHasBeenCalculated == false)
+        {
+            if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
+            {
 
-             //Push Screen
-             Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
+                //Get creature on that point on the grid
+                m_Creature =
+                    m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
 
-             //Get Screen
-             UiScreenCommandBoard ScreenTemp =
-                 Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) as UiScreenCommandBoard;
+                //Push Screen
+                Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.CommandBoard);
 
-             //Set Screen Variables
-             ScreenTemp.SetCreatureReference(m_Creature);
-             m_CommandBoardExists = true;
-         }
-        
+                //Get Screen
+                UiScreenCommandBoard ScreenTemp =
+                    Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) as UiScreenCommandBoard;
+
+                //Set Screen Variables
+                ScreenTemp.SetCreatureReference(m_Creature);
+                m_CommandBoardExists = true;
+            }
+        }
     }
     
 }

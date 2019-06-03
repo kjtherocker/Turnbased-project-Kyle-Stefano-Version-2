@@ -31,7 +31,7 @@ public class Script_RedKnightPhase2 : Script_Creatures
 
         AmountOfTurns = 1;
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/RedKnights/Knight_Phase2", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Objects/Battle/Enemy/Forest/RedKnights/Knight_Phase2", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_GreenSlime", typeof(Material));
 

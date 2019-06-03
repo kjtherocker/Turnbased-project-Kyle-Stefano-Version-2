@@ -33,7 +33,7 @@ public class Script_Thief : Script_Creatures
 
         SetCreature();
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Objects/Battle/PartyModels/Vella/Prefab/3D_Vella", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_Knight", typeof(Material));
 

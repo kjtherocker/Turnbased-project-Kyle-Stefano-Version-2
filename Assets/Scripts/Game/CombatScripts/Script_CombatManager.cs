@@ -129,9 +129,9 @@ public class Script_CombatManager : MonoBehaviour
             //
             AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
                                                                                
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
-            //                                                                   
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
+           AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
+                                                                              
+           AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
 
 
             //Setting up the Enemy

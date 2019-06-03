@@ -30,7 +30,7 @@ public class Script_Priest : Script_Creatures
 
         SetCreature();
 
-        Model = (GameObject)Resources.Load("Prefabs/Battle/PartyModels/Main_Character", typeof(GameObject));
+        Model = (GameObject)Resources.Load("Objects/Battle/PartyModels/Cavia/Prefab/Cavia", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_Knight", typeof(Material));
 

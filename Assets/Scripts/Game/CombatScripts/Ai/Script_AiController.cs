@@ -87,6 +87,8 @@ public class Script_AiController : MonoBehaviour
         m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
+        Node_ObjectIsOn.m_CreatureOnGridPoint = null;
+        Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
         for (int i = 0; i < aListOfNodes.Count;)
         {
 
@@ -121,20 +123,24 @@ public class Script_AiController : MonoBehaviour
 
         m_MovementHasStarted = false;
         //Changing the position from where the Creature was before
-        aListOfNodes[0].m_CreatureOnGridPoint = null;
-        aListOfNodes[0].m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
+      
 
-
-        aListOfNodes[aListOfNodes.Count - 1].m_CreatureOnGridPoint = m_Creature;
-        aListOfNodes[aListOfNodes.Count - 1].m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
         m_Position = aListOfNodes[aListOfNodes.Count - 1].m_PositionInGrid;
+
+        //Setting the node you are on to the new one
+        Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
+
+        Node_ObjectIsOn.m_CreatureOnGridPoint = m_Creature;
+        Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
+        
+
 
         for (int i = aListOfNodes.Count; i < 0; i--)
         {
             aListOfNodes.RemoveAt(i);
         }
 
-        Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
+        
     }
 
     public virtual void ReturnToInitalPosition()
@@ -144,6 +150,7 @@ public class Script_AiController : MonoBehaviour
 
 
             Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CreatureOnGridPoint = null;
+            Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
 
             m_Position = m_InitalPosition;
 
