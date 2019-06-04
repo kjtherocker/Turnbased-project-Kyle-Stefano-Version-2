@@ -21,5 +21,13 @@ public class Script_GridEditor : Editor
         {
             myScript.DeleteGrid();
         }
+        if (GUILayout.Button("Start Editor"))
+        {
+            myScript.StartCameraEditor();
+        }
+        if (GUILayout.Button("Stop Editor"))
+        {
+            myScript.StopCameraEditor();
+        }
     }
 }

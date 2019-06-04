@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[ExecuteInEditMode]
 public class Script_InputManager : MonoBehaviour
 {
     public bool m_DPadY;

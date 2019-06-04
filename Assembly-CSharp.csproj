@@ -109,6 +109,8 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_ButtonSkillWrapper.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_DestroyOnAnimatorFinish.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Wrappers\Script_TurnIndicatorWrapper.cs" />
+    <Compile Include="Assets\Scripts\Game\MapEditor\Script_CameraEditor.cs" />
+    <Compile Include="Assets\Scripts\Game\MapEditor\Script_EditorCamera.cs" />
     <Compile Include="Assets\Scripts\Game\MapEditor\Script_GridEditor.cs" />
     <Compile Include="Assets\Scripts\Game\MapEditor\Script_GridFormations.cs" />
     <Compile Include="Assets\Scripts\Game\MapEditor\Script_PropList.cs" />
@@ -140,6 +142,7 @@
     <None Include="Assets\Shaders\TestSquareCutout.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\Shaders\TestCellShading.shader" />
     <None Include="Assets\Shaders\DoubleTexture.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Shaders\OdellWaterShader.shader" />

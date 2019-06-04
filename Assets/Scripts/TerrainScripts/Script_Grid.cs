@@ -70,7 +70,8 @@ public class Script_Grid : MonoBehaviour
         {
             for (int y = 0; y < m_GridDimensions.y; y++)
             {
-                if (m_GridPathArray[x, y].m_HeuristicCalculated == false)
+                if (m_GridPathArray[x, y].m_HeuristicCalculated == false && 
+                    m_GridPathArray[x,y].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
                 {
                     return false;
                 }
@@ -219,8 +220,14 @@ public class Script_Grid : MonoBehaviour
             {
                 if (m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
                 {
-                    TempHeuristic = m_GridPathArray[grid.x, grid.y + 1].m_Heuristic;
-                    TempNode = m_GridPathArray[grid.x, grid.y + 1];
+                    if (m_GridPathArray[grid.x, grid.y + 1].m_Heuristic == 0 && m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false)
+                    {
+                    }
+                    else
+                    {
+                        TempHeuristic = m_GridPathArray[grid.x, grid.y + 1].m_Heuristic;
+                        TempNode = m_GridPathArray[grid.x, grid.y + 1];
+                    }
                 }
             }
 
@@ -231,8 +238,15 @@ public class Script_Grid : MonoBehaviour
                 {
                     if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic < TempHeuristic)
                     {
-                        TempHeuristic = m_GridPathArray[grid.x, grid.y - 1].m_Heuristic;
-                        TempNode = m_GridPathArray[grid.x, grid.y - 1];
+                        if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic == 0 && m_GridPathArray[grid.x, grid.y - 1].m_HeuristicCalculated == false)
+                        {
+                        
+                        }
+                        else
+                        {
+                            TempHeuristic = m_GridPathArray[grid.x, grid.y - 1].m_Heuristic;
+                            TempNode = m_GridPathArray[grid.x, grid.y - 1];
+                        }
                     }
                 }
             }
@@ -240,10 +254,17 @@ public class Script_Grid : MonoBehaviour
             {
                  if (m_GridPathArray[grid.x + 1, grid.y].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
                  {
-                     if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic < TempHeuristic)
+                     if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic < TempHeuristic && m_GridPathArray[grid.x + 1, grid.y].m_Heuristic != -1)
                      {
-                         TempHeuristic = m_GridPathArray[grid.x + 1, grid.y].m_Heuristic;
-                         TempNode = m_GridPathArray[grid.x + 1, grid.y];
+                           if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic == 0 && m_GridPathArray[grid.x +1, grid.y ].m_HeuristicCalculated == false)
+                           {
+                           
+                           }
+                           else
+                           {
+                               TempHeuristic = m_GridPathArray[grid.x + 1, grid.y].m_Heuristic;
+                               TempNode = m_GridPathArray[grid.x + 1, grid.y];
+                           }
                      }
                  }
             }
@@ -252,10 +273,17 @@ public class Script_Grid : MonoBehaviour
             {
                  if (m_GridPathArray[grid.x - 1, grid.y ].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
                  {
-                     if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic < TempHeuristic)
+                     if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic < TempHeuristic && m_GridPathArray[grid.x - 1, grid.y ].m_Heuristic != -1)
                      {
-                         TempHeuristic = m_GridPathArray[grid.x - 1, grid.y].m_Heuristic;
-                         TempNode = m_GridPathArray[grid.x - 1, grid.y];
+                           if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic == 0 && m_GridPathArray[grid.x - 1, grid.y].m_HeuristicCalculated == false)
+                           {
+                           
+                           }
+                           else
+                           {
+                               TempHeuristic = m_GridPathArray[grid.x - 1, grid.y].m_Heuristic;
+                               TempNode = m_GridPathArray[grid.x - 1, grid.y];
+                           }
                      }
                  }
             }

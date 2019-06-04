@@ -77,7 +77,7 @@ public class Script_AiController : MonoBehaviour
         m_Grid.SetGoal(m_Goal);
         m_Grid.RemoveWalkableArea();
         m_Grid.m_Movement = m_Movement;
-        yield return new WaitForSeconds(0.2f);
+        yield return new WaitForSeconds(0.3f);
         m_Grid.GetTheLowestH(m_Position, this);
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Script_CombatCameraController : MonoBehaviour
 {
@@ -36,6 +37,11 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public Vector2Int m_CameraPositionInGrid;
 
+    public TextMeshProUGUI m_NodePositionText;
+    public TextMeshProUGUI m_NodeType;
+    public TextMeshProUGUI m_NodeProp;
+    public TextMeshProUGUI m_NodeHeuristic;
+
 
     public GameObject m_Selector;
 
@@ -64,7 +70,15 @@ public class Script_CombatCameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+        if (m_NodeTheCameraIsOn != null)
+        {
+            m_NodePositionText.text = "Postion " + m_NodeTheCameraIsOn.m_PositionInGrid.ToString();
+            m_NodeType.text = "Type " + m_NodeTheCameraIsOn.m_CombatsNodeType.ToString();
+            m_NodeProp.text = "Prop " + m_NodeTheCameraIsOn.m_PropOnNode.ToString();
+            m_NodeHeuristic.text = "Heuristic " + m_NodeTheCameraIsOn.m_Heuristic.ToString();
+        }
+
 
         CameraMovement();
         PlayerUiSelection();

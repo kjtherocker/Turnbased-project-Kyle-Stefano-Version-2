@@ -14,6 +14,11 @@ public class Script_GameManager : Singleton<Script_GameManager>
     public Script_CombatManager CombatManager { get { return m_CombatManager; } }
     public Script_CombatCameraController m_BattleCamera;
     public Script_CombatCameraController BattleCamera { get { return m_BattleCamera; } }
+
+    public Script_EditorCamera m_EditorCamera;
+    public Script_EditorCamera EditorCamera { get { return m_EditorCamera; } }
+
+
     public UiManager m_UiManager;
     public UiManager UiManager { get { return m_UiManager; } }
 
@@ -59,8 +64,8 @@ public class Script_GameManager : Singleton<Script_GameManager>
         if (m_GameStates == GameStates.Overworld)
         {
             
-            Overworld_Objects.SetActive(true);
-            Combat_Objects.SetActive(false);
+           Overworld_Objects.SetActive(true);
+           Combat_Objects.SetActive(false);
         }
         if (m_GameStates == GameStates.Combat)
         {

@@ -125,18 +125,18 @@ public class Script_CombatManager : MonoBehaviour
                 m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 0), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 1), TurnOrderAlly);
             //
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(17, 12), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
                                                                                
-           AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(1, 2), TurnOrderAlly);
+           AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
                                                                               
-           AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(1, 3), TurnOrderAlly);
+           AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
 
 
             //Setting up the Enemy
 
-            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(8, 9), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(4, 10), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(8, 8), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(8, 7), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(8, 6), TurnOrderEnemy);
@@ -146,14 +146,14 @@ public class Script_CombatManager : MonoBehaviour
             EnemyIsChosen = false;
             CombatHasStarted = true;
             HasStatusAppeared = false;
-            Canvas_TurnMenu.SetActive(true);
-            AmountofTurns = TurnOrderAlly.Count;
-            for (int i = 0; i < AmountofTurns; i++)
-            {
-                m_TurnIdenticator.Add(Instantiate<Script_TurnIndicatorWrapper>(m_ImageReference));
-                m_TurnIdenticator[i].gameObject.transform.localPosition = new Vector3( -365 + i * 10, 100, 0);
-                m_TurnIdenticator[i].gameObject.transform.SetParent(Canvas_TurnMenu.transform, false);
-            }
+            //Canvas_TurnMenu.SetActive(true);
+            //AmountofTurns = TurnOrderAlly.Count;
+            //for (int i = 0; i < AmountofTurns; i++)
+            //{
+            //    m_TurnIdenticator.Add(Instantiate<Script_TurnIndicatorWrapper>(m_ImageReference));
+            //    m_TurnIdenticator[i].gameObject.transform.localPosition = new Vector3( -365 + i * 10, 100, 0);
+            //    m_TurnIdenticator[i].gameObject.transform.SetParent(Canvas_TurnMenu.transform, false);
+            //}
             
             m_BattleStates = BattleStates.AllyTurn;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
+[System.Serializable]
 public class Script_CombatNode : MonoBehaviour
 {
     public enum CombatNodeTypes
@@ -52,6 +53,8 @@ public class Script_CombatNode : MonoBehaviour
     public Script_PropList.Props m_PropOnNode;
     Script_PropList.Props m_PropOnNodeTemp;
     public int m_Movement;
+
+    public int m_NodeRotation;
     // Use this for initialization
     void Start()
     {
@@ -66,6 +69,18 @@ public class Script_CombatNode : MonoBehaviour
         m_Grid = Script_GameManager.Instance.m_Grid;
         m_PropList = Script_GameManager.Instance.m_PropList;
 
+        m_GridPathArray = m_Grid.m_GridPathArray;
+        m_PropOnNodeTemp = m_PropOnNode;
+
+
+    }
+
+    private void OnEnable()
+    {
+
+        m_Grid = Script_GameManager.Instance.m_Grid;
+        
+        m_PropList = Script_GameManager.Instance.m_PropList;
         m_GridPathArray = m_Grid.m_GridPathArray;
         m_PropOnNodeTemp = m_PropOnNode;
     }
@@ -112,6 +127,37 @@ public class Script_CombatNode : MonoBehaviour
             }
         }
 
+
+
+        if (m_NodeRotation <= 0)
+        {
+            m_NodeRotation = 4;
+        }
+        if (m_NodeRotation > 4)
+        {
+            m_NodeRotation = 1;
+        }
+
+
+        if (m_Prop != null)
+        {
+            if (m_NodeRotation == 1)
+            {
+                m_Prop.transform.rotation = Quaternion.Euler(new Vector3(0, 90, 0));
+            }
+            if (m_NodeRotation == 2)
+            {
+                m_Prop.transform.rotation = Quaternion.Euler(new Vector3(0, 180, 0));
+            }
+            if (m_NodeRotation == 3)
+            {
+                m_Prop.transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));
+            }
+            if (m_NodeRotation == 4)
+            {
+                m_Prop.transform.rotation = Quaternion.Euler(new Vector3(0, 360, 0));
+            }
+        }
 
 
     }
@@ -176,6 +222,7 @@ public class Script_CombatNode : MonoBehaviour
         if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
         {
             m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
+            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_Heuristic = -1;
             return null;
         }
         // return a valid tile index

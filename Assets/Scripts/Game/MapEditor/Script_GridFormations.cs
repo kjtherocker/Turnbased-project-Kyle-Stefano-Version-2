@@ -5,8 +5,7 @@ using UnityEditor;
 using System;
 
 [ExecuteInEditMode]
-[Serializable]
-
+[System.Serializable]
 public class Script_GridFormations : MonoBehaviour
 {
 
@@ -76,6 +75,23 @@ public class Script_GridFormations : MonoBehaviour
         }
 
     }
+
+    public void StartCameraEditor()
+    {
+        Script_GameManager.Instance.m_EditorCamera.Convert1DArrayto2D(m_ListToConvert,m_GridDimensions);
+        Script_GameManager.Instance.m_EditorCamera.m_NodeTheCameraIsOn = Script_GameManager.Instance.m_EditorCamera.m_GridPathArray[1, 1];
+        Script_GameManager.Instance.m_EditorCamera.m_EditingHasStarted = true;
+
+    }
+
+    public void StopCameraEditor()
+    {
+        Script_GameManager.Instance.m_EditorCamera.m_EditingHasStarted = false;
+        Script_GameManager.Instance.m_EditorCamera.m_GridPathArray = null;
+        Script_GameManager.Instance.m_EditorCamera.m_NodeTheCameraIsOn = null;
+
+    }
+
 
 }
 
