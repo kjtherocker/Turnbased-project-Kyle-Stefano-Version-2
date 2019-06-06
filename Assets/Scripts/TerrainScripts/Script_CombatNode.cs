@@ -29,6 +29,7 @@ public class Script_CombatNode : MonoBehaviour
     public Script_Creatures m_CreatureOnGridPoint;
 
     public GameObject m_WalkablePlane;
+    public GameObject m_CurrentWalkablePlaneBeingUsed;
     public GameObject m_AttackingPlane;
     public GameObject m_Cube;
 
@@ -42,7 +43,7 @@ public class Script_CombatNode : MonoBehaviour
     public Renderer m_Renderer;
 
 
-
+    public GameObject m_InitalNode;
 
     public Script_Grid m_Grid;
     public Script_CombatNode[,] m_GridPathArray;
@@ -52,6 +53,14 @@ public class Script_CombatNode : MonoBehaviour
 
     public Script_PropList.Props m_PropOnNode;
     Script_PropList.Props m_PropOnNodeTemp;
+
+    public Script_PropList.NodeReplacements m_NodeReplacementOnNode;
+    Script_PropList.NodeReplacements m_NodeReplacementTemp;
+
+
+    Script_NodeReplacement m_NodeReplacement;
+
+
     public int m_Movement;
 
     public int m_NodeRotation;
@@ -60,7 +69,14 @@ public class Script_CombatNode : MonoBehaviour
     {
         m_Movement = 4;
         //m_HeuristicCalculated = false;
-        m_WalkablePlane.gameObject.SetActive(false);
+
+
+        if (m_NodeReplacement == null)
+        {
+            m_CurrentWalkablePlaneBeingUsed = m_WalkablePlane;
+        }
+
+        m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(false);
         m_AttackingPlane.gameObject.SetActive(false);
         m_Cube.gameObject.SetActive(true);
         m_IsSelector = false;
@@ -95,7 +111,7 @@ public class Script_CombatNode : MonoBehaviour
         }
         if (m_IsWalkable == true)
         {
-            m_WalkablePlane.gameObject.SetActive(true);
+            m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
         }
 
         if (m_CreatureOnGridPoint == null || m_Prop == null)
@@ -117,8 +133,24 @@ public class Script_CombatNode : MonoBehaviour
                 DestroyProp();
             }
         }
-    #endif
 
+        if (m_NodeReplacementTemp != m_NodeReplacementOnNode)
+        {
+            DestroyNodeReplacement();
+            SpawnNodeReplacement();
+        }
+
+
+        if (m_NodeReplacementOnNode == Script_PropList.NodeReplacements.None)
+        {
+            if (m_NodeReplacement != null)
+            {
+                DestroyNodeReplacement();
+            }
+        }
+
+#endif
+         
         if (m_NodeYouCameFrom != null)
         {
             if (m_NodeYouCameFrom.m_OpenListHasFinished == true && m_OpenListHasFinished == false)
@@ -162,11 +194,18 @@ public class Script_CombatNode : MonoBehaviour
 
     }
 
+    public void DestroyNodeReplacement()
+    {
+        DestroyImmediate(m_NodeReplacement);
+        m_CurrentWalkablePlaneBeingUsed = m_WalkablePlane;
+    }
+
     public void DestroyProp()
     {
        
         DestroyImmediate(m_Prop);
         m_CombatsNodeType = CombatNodeTypes.Normal;
+        
     }
 
     public void SpawnProp()
@@ -185,13 +224,28 @@ public class Script_CombatNode : MonoBehaviour
 
     }
 
+    public void SpawnNodeReplacement()
+    {
+        
+        if (m_NodeReplacementOnNode != Script_PropList.NodeReplacements.None)
+        {
+            m_NodeReplacementTemp = m_NodeReplacementOnNode;
+            m_NodeReplacement = Instantiate(m_PropList.NodeReplacementData(m_NodeReplacementOnNode), this.gameObject.transform);
+            Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
+            m_NodeReplacement.gameObject.transform.position = gameObject.transform.position + CreatureOffset;
+
+            m_CurrentWalkablePlaneBeingUsed = m_NodeReplacement.m_Walkable; 
+
+        }
+    }
+
 
     public void CreateWalkableArea()
     {
         if (m_Heuristic <= m_Movement && m_Heuristic != 0 && m_Heuristic != -1)
         {
-            m_WalkablePlane.gameObject.SetActive(true);
-            m_WalkablePlane.GetComponent<Renderer>().material = m_Walkable;
+            m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
+            m_CurrentWalkablePlaneBeingUsed.GetComponent<Renderer>().material = m_Walkable;
             m_IsWalkable = true;
         }
     }

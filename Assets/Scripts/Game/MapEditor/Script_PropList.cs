@@ -48,9 +48,25 @@ public class Script_PropList : MonoBehaviour
         NumberOfProps
     }
 
+    public enum NodeReplacements
+    {
+        None,
+
+        BridgeStart,
+        BridgeMiddle,
+        BridgeEnd,
+
+        Stairs,
+        
+
+        //End
+        NumberOfProps
+    }
+
 
 
     public List<GameObject> m_PropSet;
+    public List<Script_NodeReplacement> m_NodeReplacements;
     // Start is called before the first frame update
     void Start()
     {
@@ -66,5 +82,10 @@ public class Script_PropList : MonoBehaviour
     public GameObject ReturnPropData(Props aProp, string sourceName = "Global")
     {
         return m_PropSet[(int)aProp];
+    }
+
+    public Script_NodeReplacement NodeReplacementData(NodeReplacements aProp, string sourceName = "Global")
+    {
+        return m_NodeReplacements[(int)aProp];
     }
 }

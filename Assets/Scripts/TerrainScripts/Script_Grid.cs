@@ -329,10 +329,10 @@ public class Script_Grid : MonoBehaviour
 
     public void SetAttackingTile(Vector2Int grid)
     {
-        m_GridPathArray[grid.x, grid.y + 1].m_WalkablePlane.gameObject.SetActive(true);
-        m_GridPathArray[grid.x, grid.y - 1 ].m_WalkablePlane.gameObject.SetActive(true);
-        m_GridPathArray[grid.x + 1, grid.y].m_WalkablePlane.gameObject.SetActive(true);
-        m_GridPathArray[grid.x - 1, grid.y].m_WalkablePlane.gameObject.SetActive(true);
+        m_GridPathArray[grid.x, grid.y + 1].m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
+        m_GridPathArray[grid.x, grid.y - 1 ].m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
+        m_GridPathArray[grid.x + 1, grid.y].m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
+        m_GridPathArray[grid.x - 1, grid.y].m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
     }
 
     public void SetSelectoringrid(Vector2Int grid)

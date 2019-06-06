@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\DialogScripts\DialogueTrigger.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\EnemyAi\Script_EnemyAiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\Script_AiController.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Chant\ChantController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Script_RedEyes.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase1.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase2.cs" />
@@ -117,6 +118,7 @@
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_Node.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverworldCamera.cs" />
     <Compile Include="Assets\Scripts\Game\OverworldScripts\Script_OverWorldPlayer.cs" />
+    <Compile Include="Assets\Scripts\Game\Props\Script_NodeReplacement.cs" />
     <Compile Include="Assets\Scripts\Game\Script_GameManager.cs" />
     <Compile Include="Assets\Scripts\Global\Constants.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
@@ -144,6 +146,7 @@
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\Shaders\TestCellShading.shader" />
     <None Include="Assets\Shaders\DoubleTexture.shader" />
+    <None Include="Assets\Shaders\DontBackwardsCull.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Shaders\OdellWaterShader.shader" />
     <None Include="Assets\Shaders\CutoutRotationsShader.shader" />
