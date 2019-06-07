@@ -126,7 +126,7 @@ public class Script_AiController : MonoBehaviour
         m_CreaturesAnimator.SetBool("b_IsWalking", false);
 
         //The walk has been finished
-        //m_HasMovedForThisTurn = true;
+        m_HasMovedForThisTurn = true;
 
         m_MovementHasStarted = false;
         //Changing the position from where the Creature was before

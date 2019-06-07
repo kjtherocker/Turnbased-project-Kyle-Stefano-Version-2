@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEditor;
+using TMPro;
 
 
 public class Script_CombatManager : MonoBehaviour
@@ -60,6 +61,10 @@ public class Script_CombatManager : MonoBehaviour
     public Vector3 CreatureOffset;
 
     public GameObject m_GridformationTest;
+
+
+    public TextMeshProUGUI m_TurnSwitchText;
+
 
     public List<Text> CurentTurnHolderSkillText;
     public List<Button> m_BasicMenuButtons;
@@ -121,13 +126,13 @@ public class Script_CombatManager : MonoBehaviour
                 m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-          //  AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 1), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 1), TurnOrderAlly);
             //
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
-                                                                               
-          // AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
-          //                                                                    
-          // AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
+            //                                                                   
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
+            //                                                                   
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
 
 
             //Setting up the Enemy
@@ -204,12 +209,17 @@ public class Script_CombatManager : MonoBehaviour
                break;
 
            case BattleStates.AllyTurn:
-                
+                //isPlayersDoneMoving();
+                if (Input.GetButtonDown("Ps4_Triangle"))
+                {
+                    StartCoroutine(AllyTurn());
+                }
 
-               break;
+
+                break;
 
             case BattleStates.EnemyTurn:
-                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
+                
 
 
 
@@ -230,8 +240,27 @@ public class Script_CombatManager : MonoBehaviour
 
        }
 
+        
+
     }
 
+
+
+
+    private bool isPlayersDoneMoving()
+    {
+        for (int i = 0; i < 1; i++)
+        {
+            if (TurnOrderAlly[i].m_CreatureAi.m_HasMovedForThisTurn == true)
+            { 
+                return false;
+            }
+            
+        }
+
+        StartCoroutine(AllyTurn());
+        return true;
+    }
 
 
     public void SetEnemyChosen(int A_newEnemyIsChosen)
@@ -277,10 +306,41 @@ public class Script_CombatManager : MonoBehaviour
         }
     }
 
-    public void EnemyTurn()
+    public IEnumerator EnemyTurn()
     {
+        CurrentTurnOrderSide = TurnOrderEnemy;
 
-        
+        m_TurnSwitchText.gameObject.SetActive(true);
+        m_TurnSwitchText.text = "ENEMY TURN";
+
+
+        foreach (Script_Creatures creature in CurrentTurnOrderSide)
+        {
+            creature.m_CreatureAi.m_HasMovedForThisTurn = false;
+            creature.m_CreatureAi.m_HasAttackedForThisTurn = false;
+        }
+
+        yield return new WaitForSeconds(2f);
+        m_TurnSwitchText.gameObject.SetActive(false);
+
+    }
+
+    public IEnumerator AllyTurn()
+    {
+        CurrentTurnOrderSide = TurnOrderAlly;
+
+        m_TurnSwitchText.gameObject.SetActive(true);
+        m_TurnSwitchText.text = "PLAYER TURN";
+
+
+        foreach(Script_Creatures creature in CurrentTurnOrderSide)
+        {
+            creature.m_CreatureAi.m_HasMovedForThisTurn = false;
+            creature.m_CreatureAi.m_HasAttackedForThisTurn = false;
+        }
+
+        yield return new WaitForSeconds(2f);
+        m_TurnSwitchText.gameObject.SetActive(false);
     }
 
 
