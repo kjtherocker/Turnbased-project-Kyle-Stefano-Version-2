@@ -45,6 +45,9 @@ public class Script_CombatNode : MonoBehaviour
 
     public GameObject m_InitalNode;
 
+    public Vector3 m_NodesInitalVector3Coordinates;
+
+
     public Script_Grid m_Grid;
     public Script_CombatNode[,] m_GridPathArray;
     public List<Script_CombatNode> m_OpenList;
@@ -58,12 +61,19 @@ public class Script_CombatNode : MonoBehaviour
     Script_PropList.NodeReplacements m_NodeReplacementTemp;
 
 
-    Script_NodeReplacement m_NodeReplacement;
+    public float m_NodeHeightOffset;
+
+
+    public Script_NodeReplacement m_NodeReplacement;
 
 
     public int m_Movement;
 
     public int m_NodeRotation;
+    public int m_NodeHeight;
+
+
+
     // Use this for initialization
     void Start()
     {
@@ -88,16 +98,15 @@ public class Script_CombatNode : MonoBehaviour
         m_GridPathArray = m_Grid.m_GridPathArray;
         m_PropOnNodeTemp = m_PropOnNode;
 
-
+        m_NodesInitalVector3Coordinates = gameObject.transform.position;
     }
 
     private void OnEnable()
     {
 
-        m_Grid = Script_GameManager.Instance.m_Grid;
+       // m_Grid = Script_GameManager.Instance.m_Grid;
         
-        m_PropList = Script_GameManager.Instance.m_PropList;
-        m_GridPathArray = m_Grid.m_GridPathArray;
+        
         m_PropOnNodeTemp = m_PropOnNode;
     }
 
@@ -136,7 +145,10 @@ public class Script_CombatNode : MonoBehaviour
 
         if (m_NodeReplacementTemp != m_NodeReplacementOnNode)
         {
-            DestroyNodeReplacement();
+            if (m_NodeReplacement != null)
+            {
+                DestroyNodeReplacement();
+            }
             SpawnNodeReplacement();
         }
 
@@ -192,11 +204,42 @@ public class Script_CombatNode : MonoBehaviour
         }
 
 
+        if (m_NodeReplacement != null)
+        {
+            if (m_NodeRotation == 1)
+            {
+                m_NodeReplacement.transform.rotation = Quaternion.Euler(new Vector3(m_NodeReplacement.transform.rotation.x, 90, m_NodeReplacement.transform.rotation.y));
+            }
+            if (m_NodeRotation == 2)
+            {
+                m_NodeReplacement.transform.rotation = Quaternion.Euler(new Vector3(m_NodeReplacement.transform.rotation.x, 180, m_NodeReplacement.transform.rotation.y));
+            }
+            if (m_NodeRotation == 3)
+            {
+                m_NodeReplacement.transform.rotation = Quaternion.Euler(new Vector3(m_NodeReplacement.transform.rotation.x, 270, m_NodeReplacement.transform.rotation.y));
+            }
+            if (m_NodeRotation == 4)
+            {
+                m_NodeReplacement.transform.rotation = Quaternion.Euler(new Vector3(m_NodeReplacement.transform.rotation.x, 360, m_NodeReplacement.transform.rotation.y));
+            }
+        }
+
+        if (m_NodeHeight == 0)
+        {
+            gameObject.transform.position = m_NodesInitalVector3Coordinates;
+        }
+
+        if (m_NodeHeight == 1)
+        {
+           // gameObject.transform.position = gameObject.transform.position + new Vector3(0, 2, 0);
+        }
+
+
     }
 
     public void DestroyNodeReplacement()
     {
-        DestroyImmediate(m_NodeReplacement);
+        DestroyImmediate(m_NodeReplacement.gameObject);
         m_CurrentWalkablePlaneBeingUsed = m_WalkablePlane;
     }
 
@@ -232,8 +275,8 @@ public class Script_CombatNode : MonoBehaviour
             m_NodeReplacementTemp = m_NodeReplacementOnNode;
             m_NodeReplacement = Instantiate(m_PropList.NodeReplacementData(m_NodeReplacementOnNode), this.gameObject.transform);
             Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
-            m_NodeReplacement.gameObject.transform.position = gameObject.transform.position + CreatureOffset;
-
+            m_NodeReplacement.gameObject.transform.position =  gameObject.transform.position + m_NodeReplacement.m_NodeSpawnOffSet + CreatureOffset;
+            m_NodeHeightOffset = m_NodeReplacement.m_NodeHeightOffset;
             m_CurrentWalkablePlaneBeingUsed = m_NodeReplacement.m_Walkable; 
 
         }
@@ -252,7 +295,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public void RemoveWalkableArea()
     {
-        m_WalkablePlane.gameObject.SetActive(false);
+        m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(false);
         m_IsWalkable = false;
 
     }
@@ -265,6 +308,8 @@ public class Script_CombatNode : MonoBehaviour
             aGrid.y < 0 || aGrid.y >= m_Grid.m_GridDimensions.y)
             return null;
 
+        m_GridPathArray = m_Grid.m_GridPathArray;
+
         Script_CombatNode nodeIndex = m_GridPathArray[aGrid.x, aGrid.y];
 
         // if the node is already closed, return -1 (an invalid tile index)
@@ -274,6 +319,14 @@ public class Script_CombatNode : MonoBehaviour
         }
         // if the node can't be walked on, return -1 (an invalid tile index)
         if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
+        {
+            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
+            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_Heuristic = -1;
+            return null;
+        }
+
+
+        if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_NodeHeight > 0)
         {
             m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
             m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_Heuristic = -1;

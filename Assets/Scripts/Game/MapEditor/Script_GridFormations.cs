@@ -31,7 +31,7 @@ public class Script_GridFormations : MonoBehaviour
 
     void Start()
     {
-
+        m_Grid = Script_GameManager.Instance.m_Grid;
     }
     
     public void CreateGrid(Vector2Int grid)
@@ -55,7 +55,7 @@ public class Script_GridFormations : MonoBehaviour
 
                 m_GridPathArray[x, y].m_PositionInGrid = new Vector2Int(x, y);
 
-
+                m_GridPathArray[x, y].m_Grid = m_Grid;
             }
         }
         m_Movement = 1;

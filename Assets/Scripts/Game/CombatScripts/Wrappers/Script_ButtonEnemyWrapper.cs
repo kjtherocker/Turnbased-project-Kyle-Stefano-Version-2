@@ -39,7 +39,7 @@ public class Script_ButtonEnemyWrapper : MonoBehaviour
     {
 
         m_CombatManagerRefrence.SetEnemyChosen(m_EnemyNumber);
-        m_CombatManagerRefrence.SetBattleStateToAllyAttack();
+
 
 
     }

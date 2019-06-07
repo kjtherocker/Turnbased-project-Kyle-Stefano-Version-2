@@ -4427,7 +4427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4408156159739732}
   - component: {fileID: 95253225521854306}
-  - component: {fileID: 114949798023015784}
+  - component: {fileID: 8643452869015835288}
   m_Layer: 0
   m_Name: Knight_Phase4
   m_TagString: Untagged
@@ -4479,7 +4479,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &114949798023015784
+--- !u!114 &8643452869015835288
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4488,7 +4488,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1429863347659550}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 66da48592d571a948a3b33550df0735d, type: 3}
+  m_Script: {fileID: 11500000, guid: 593627f36d3255b4294a61b0d3391400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Grid: {fileID: 0}
@@ -4506,6 +4506,7 @@ MonoBehaviour:
   m_MovementHasStarted: 0
   m_HasAttackedForThisTurn: 0
   m_HasMovedForThisTurn: 0
+  m_Target: {fileID: 0}
 --- !u!1 &1431839537924776
 GameObject:
   m_ObjectHideFlags: 0

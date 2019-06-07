@@ -70,6 +70,7 @@ public class Script_AiController : MonoBehaviour
                 Node_ObjectIsOn = Node_MovingTo;
             }
         }
+
     }
 
     public virtual IEnumerator SetGoalPosition(Vector2Int m_Goal)
@@ -97,6 +98,9 @@ public class Script_AiController : MonoBehaviour
 
                     Node_MovingTo = aListOfNodes[i];
 
+                   
+
+
                     Vector3 relativePos = aListOfNodes[i].gameObject.transform.position - transform.position + CreatureOffset;
 
 
@@ -104,7 +108,10 @@ public class Script_AiController : MonoBehaviour
 
                     Script_GameManager.Instance.m_BattleCamera.m_CameraPositionInGrid = m_Position;
 
+
                     transform.rotation = Quaternion.LookRotation(relativePos, Vector3.up);
+
+                    CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Node_MovingTo.m_NodeHeightOffset, 0);
                     i++;
                     yield return new WaitForSeconds(0.4f);
                 }
@@ -153,6 +160,8 @@ public class Script_AiController : MonoBehaviour
             Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
 
             m_Position = m_InitalPosition;
+
+            CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_NodeHeightOffset, 0);
 
             Script_GameManager.Instance.m_Grid.GetNode(m_Position).m_CreatureOnGridPoint = m_Creature;
             gameObject.transform.position = Script_GameManager.Instance.m_Grid.GetNode(m_Position).transform.position + CreatureOffset;

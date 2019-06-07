@@ -5,6 +5,9 @@ using UnityEngine;
 public class Script_EnemyAiController : Script_AiController
 {
     // Start is called before the first frame update
+
+    public Script_AiController m_Target;
+
     public override void Start()
     {
         base.Start();
@@ -14,5 +17,17 @@ public class Script_EnemyAiController : Script_AiController
     public override void Update()
     {
         base.Update();
+
+        
+       
+        
     }
+
+
+    public void EnemyWalkToTarget()
+    {
+        m_Target = Script_GameManager.Instance.PartyManager.m_CurrentParty[1].m_CreatureAi;
+        StartCoroutine(SetGoalPosition(m_Target.m_Position));
+    }
+
 }

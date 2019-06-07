@@ -79,12 +79,8 @@ public class Script_CombatManager : MonoBehaviour
         NoTurn,
         Spawn,
         EnemyTurn,
-        EnemyAttacking,
-        EnemyDomain,
         AllyTurn,
-        AllySkillSelecting,
-        AllyAttack,
-        EndOfTurnSet,
+    
         EndOfCombat
 
 
@@ -125,13 +121,13 @@ public class Script_CombatManager : MonoBehaviour
                 m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 1), TurnOrderAlly);
+          //  AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(1, 1), TurnOrderAlly);
             //
             AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
                                                                                
-           AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
-                                                                              
-           AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
+          // AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
+          //                                                                    
+          // AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
 
 
             //Setting up the Enemy
@@ -195,106 +191,44 @@ public class Script_CombatManager : MonoBehaviour
 
     void Update()
     {
-    //    if (Input.GetKeyDown("a"))
-    //    {
-    //        CombatStart();
-    //    }
 
 
-    //    switch (m_BattleStates)
-    //    {
-    //        case BattleStates.Spawn:
-                
-    //                m_BattleStates = BattleStates.AllyTurn;
+       switch (m_BattleStates)
+       {
+           case BattleStates.Spawn:
+             
+                   m_BattleStates = BattleStates.AllyTurn;
 
 
-                
-    //            break;
+             
+               break;
 
-    //        case BattleStates.AllyTurn:
-    //            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-    //            Attackisfinished = false;
-
-    //                //Canvas_CommandBoard.SetActive(true);
-    //               // m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.Default);
+           case BattleStates.AllyTurn:
                 
 
-    //            break;
+               break;
 
-    //        case BattleStates.AllySkillSelecting:
-    //            if (m_AttackButton == false)
-    //            {
-    //                PlayerSelecting();
-    //            }
-    //            else
-    //            {
+            case BattleStates.EnemyTurn:
+                CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
 
-    //            }
-    //            break;
 
-    //        case BattleStates.AllyAttack:
-    //            if (m_AttackButton == false)
-    //            {
-    //                if (WhatTypeOfSkillsUsed == false)
-    //                {
-    //                    PlayerTurnSkill();
-    //                }
-    //                else if (WhatTypeOfSkillsUsed == true)
-    //                {
-    //                    PlayerTurnBloodArt();
-    //                }
-    //            }
-    //            else
-    //            {
 
-    //            }
-           
-    //            break;
+                break;
 
-    //        case BattleStates.EnemyAttacking:
-    //            if (m_BattleCamera.m_cameraState == Script_CombatCameraController.CameraState.Nothing)
-    //            {
 
-    //               // CombatTurnEndCombatManagerEnemy();
 
-    //            }
-    //            break;
+            case BattleStates.EndOfCombat:
 
-    //        case BattleStates.EnemyDomain:
-    //            if (m_IsDomainEnroaching == true)
-    //            {
-    //                m_GrassController.IsEncoraching();
-                   
+               Canvas_CombatEndMenu.gameObject.SetActive(true);
+               Canvas_CombatEndMenu.TurnScoreOn();
+               Canvas_CombatEndMenu.GetScore();
+               if (Input.anyKey)
+               {
+                   //CombatEnd();
+               }
+               break;
 
-    //                //m_BattleCamera.SetCameraState(Script_CombatCameraController.CameraState.EnemyAttacking);
-    //                ParticleSystem m_Skillparticleeffect = Instantiate<ParticleSystem>(CurrentTurnHolder.m_Domain.GetSkillParticleEffect());
-    //                m_Skillparticleeffect.transform.localPosition = CurrentTurnHolder.ModelInGame.transform.position;
-    //                m_IsDomainEnroaching = false;
-    //            }
-              
-    //            break;
-
-    //        case BattleStates.EnemyTurn:
-    //            CurrentTurnHolder = CurrentTurnOrderSide[CurrentTurnHolderNumber];
-    //            EnemyTurn();
-    //            Attackisfinished = false;
-
-    //            break;
-
-            
-
-    //        case BattleStates.EndOfCombat:
-
-    //            Canvas_CombatEndMenu.gameObject.SetActive(true);
-    //            Canvas_CombatEndMenu.TurnScoreOn();
-    //            Canvas_CombatEndMenu.GetScore();
-    //            if (Input.anyKey)
-    //            {
-    //                //CombatEnd();
-    //            }
-    //            break;
-
-    //    }
+       }
 
     }
 
@@ -304,15 +238,7 @@ public class Script_CombatManager : MonoBehaviour
     {
         m_EnemyChosen = A_newEnemyIsChosen;
     }
-    public void SetBattleStateToSelect()
-    {
-        m_BattleStates = BattleStates.AllySkillSelecting;
-    }
 
-    public void SetBattleStateToAllyAttack()
-    {
-        m_BattleStates = BattleStates.AllyAttack;
-    }
 
     void RemoveDeadFromList()
     {

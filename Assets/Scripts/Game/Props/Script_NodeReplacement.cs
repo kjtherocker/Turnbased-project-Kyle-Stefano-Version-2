@@ -5,6 +5,8 @@ using UnityEngine;
 public class Script_NodeReplacement : MonoBehaviour
 {
     public GameObject m_Walkable;
+    public Vector3 m_NodeSpawnOffSet;
+    public float m_NodeHeightOffset;
     void Start()
     {
         
