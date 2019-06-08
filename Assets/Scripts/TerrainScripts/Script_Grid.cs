@@ -93,7 +93,9 @@ public class Script_Grid : MonoBehaviour
         {
 
            m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y] = aNodeGroup[i];
-           
+            m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y].m_Grid = this;
+
+
 
 
         }
@@ -124,7 +126,15 @@ public class Script_Grid : MonoBehaviour
 
     public Script_CombatNode GetNode(Vector2Int grid)
     {
-        return m_GridPathArray[grid.x, grid.y];
+        if (m_GridPathArray != null)
+        {
+            return m_GridPathArray[grid.x, grid.y];
+        }
+        else
+        {
+            return null;
+        }
+        
     }
 
     public void SetGoal(Vector2Int grid)

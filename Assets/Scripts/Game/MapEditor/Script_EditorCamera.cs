@@ -21,14 +21,21 @@ public class Script_EditorCamera : MonoBehaviour
 
     public bool m_EditingHasStarted;
 
+    public GameObject m_ThingToforceEditorTopdate;
+
+
+    public int m_Test;
+
     public Script_PropList.Props m_EditorProp;
     public Script_CombatNode.CombatNodeTypes m_EditorNode;
+    public Script_PropList.NodeReplacements m_NodeReplacements;
+
     #if (UNITY_EDITOR)
         
     // Start is called before the first frame update
     void Start()
     {
-        m_GridFormation.StartCameraEditor();
+
         m_CameraPositionInGrid = new Vector2Int(1, 1);
 
     }
@@ -131,12 +138,26 @@ public class Script_EditorCamera : MonoBehaviour
 
     public void SwitchProp()
     {
+        m_ThingToforceEditorTopdate.gameObject.transform.position = new Vector3(0, m_Test++, 0);
         m_NodeTheCameraIsOn.m_PropOnNode = m_EditorProp;
     }
 
     public void SwitchNodeType()
     {
+        m_ThingToforceEditorTopdate.gameObject.transform.position = new Vector3(0, m_Test++, 0); 
         m_NodeTheCameraIsOn.m_CombatsNodeType = m_EditorNode;
+    }
+
+    public void ChangeNodeRotation(int aRotation)
+    {
+
+        m_NodeTheCameraIsOn.m_NodeRotation = aRotation;
+    }
+
+
+    public void SwitchNodeReplacement()
+    {
+        m_NodeTheCameraIsOn.m_NodeReplacementOnNode = m_NodeReplacements;
     }
 
     //m_Prop.transform.rotation = Quaternion.Euler(new Vector3(0, 270, 0));

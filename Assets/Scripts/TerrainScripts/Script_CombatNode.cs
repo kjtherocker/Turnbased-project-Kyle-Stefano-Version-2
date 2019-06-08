@@ -92,10 +92,13 @@ public class Script_CombatNode : MonoBehaviour
         m_IsSelector = false;
         m_OpenListHasFinished = false;
 
-        m_Grid = Script_GameManager.Instance.m_Grid;
+        if (m_Grid != null)
+        {
+            m_Grid = Script_GameManager.Instance.m_Grid;
+            m_GridPathArray = m_Grid.m_GridPathArray;
+        }
         m_PropList = Script_GameManager.Instance.m_PropList;
 
-        m_GridPathArray = m_Grid.m_GridPathArray;
         m_PropOnNodeTemp = m_PropOnNode;
 
         m_NodesInitalVector3Coordinates = gameObject.transform.position;
@@ -277,7 +280,12 @@ public class Script_CombatNode : MonoBehaviour
             Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
             m_NodeReplacement.gameObject.transform.position =  gameObject.transform.position + m_NodeReplacement.m_NodeSpawnOffSet + CreatureOffset;
             m_NodeHeightOffset = m_NodeReplacement.m_NodeHeightOffset;
-            m_CurrentWalkablePlaneBeingUsed = m_NodeReplacement.m_Walkable; 
+            m_CurrentWalkablePlaneBeingUsed = m_NodeReplacement.m_Walkable;
+
+            if (m_NodeReplacement.m_NodeReplacementType == Script_NodeReplacement.NodeReplacementType.RemoveInitalNode)
+            {
+                m_InitalNode.gameObject.SetActive(false);
+            }
 
         }
     }

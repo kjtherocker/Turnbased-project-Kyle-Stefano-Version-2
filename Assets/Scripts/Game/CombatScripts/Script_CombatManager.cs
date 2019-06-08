@@ -16,60 +16,24 @@ public class Script_CombatManager : MonoBehaviour
 
     public Script_Grid m_Grid;
 
-    public GameObject Canvas_CommandBoard;
-    public GameObject Canvas_SkillMenu;
-    public GameObject Canvas_TurnMenu;
-    public Script_EndOfCombatMenu Canvas_CombatEndMenu;
-    public GameObject Image_Notification;
-
-
     //For the skills
 
     public Script_Creatures CurrentTurnHolder;
 
-    public Text Text_Notification;
-    public Text Text_SkillDescription;
-
-    public int AmountofTurns;
-    public int EnemySelection;
-    int m_EnemyChosen;
-
-    int CurrentTurnHolderNumber;
-    int CurrentTurnHolderSkills;
-
-    // True is BloodArt false is Normal SKills
-    bool WhatTypeOfSkillsUsed;
-    bool HasStatusAppeared;
     bool WhichSidesTurnIsIt;
-    bool Attackisfinished;
     bool CombatHasStarted;
-    bool EnemyIsChosen;
-    bool m_CurrentTurnHolderbuttonsHaveSpawned;
-    bool m_AttackButton;
-
-    bool m_IsDomainEnroaching;
 
     public Script_CombatCameraController m_BattleCamera;
-    public Script_GrassController m_GrassController;
-    public Script_ButtonSkillWrapper m_ButtonReference;
 
-    public Script_ButtonEnemyWrapper m_ButtonEnemyReference;
-    public Script_TurnIndicatorWrapper m_ImageReference;
 
     public Script_GridFormations m_GridFormation;
 
     public Vector3 CreatureOffset;
 
-    public GameObject m_GridformationTest;
+    public GameObject m_Gridformation;
 
 
     public TextMeshProUGUI m_TurnSwitchText;
-
-
-    public List<Text> CurentTurnHolderSkillText;
-    public List<Button> m_BasicMenuButtons;
-    public List<Script_ButtonSkillWrapper> m_CurrentSkillMenuButtonsMenu;
-    public List<Script_ButtonEnemyWrapper> m_CurrentEnemyMenuButtons;
 
     public List<Script_TurnIndicatorWrapper> m_TurnIdenticator;
 
@@ -96,17 +60,13 @@ public class Script_CombatManager : MonoBehaviour
     void Start()
     {
         CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
-        EnemyIsChosen = false;
+
 
         GameManager = Script_GameManager.Instance;
         EncounterManager = Script_GameManager.Instance.EncounterManager;
         PartyManager = Script_GameManager.Instance.PartyManager;
 
-       // m_Grid = Script_GameManager.Instance.m_Grid;
-        Image_Notification.SetActive(false);
-        //Canvas_CommandBoard.SetActive(false);
 
-        Canvas_TurnMenu.SetActive(false);
 
 
     }
@@ -116,17 +76,17 @@ public class Script_CombatManager : MonoBehaviour
         if (CombatHasStarted == false)
         {
 
-            m_CurrentTurnHolderbuttonsHaveSpawned = false;
+
             //Setting up the players
 
-            m_GridformationTest = Instantiate<GameObject>(m_GridFormation.gameObject);
+            m_Gridformation = Instantiate<GameObject>(m_GridFormation.gameObject);
 
 
-            m_Grid.Convert1DArrayto2D(m_GridformationTest.GetComponent<Script_GridFormations>().m_ListToConvert, 
-                m_GridformationTest.GetComponent<Script_GridFormations>().m_GridDimensions);
+            m_Grid.Convert1DArrayto2D(m_Gridformation.GetComponent<Script_GridFormations>().m_ListToConvert,
+                m_Gridformation.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 1), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
             //
             //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
             //                                                                   
@@ -137,17 +97,17 @@ public class Script_CombatManager : MonoBehaviour
 
             //Setting up the Enemy
 
-            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(4, 10), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(3, 11), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(8, 8), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(8, 7), TurnOrderEnemy);
            //AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(8, 6), TurnOrderEnemy);
 
 
 
-            EnemyIsChosen = false;
+    
             CombatHasStarted = true;
-            HasStatusAppeared = false;
-            //Canvas_TurnMenu.SetActive(true);
+
+
             //AmountofTurns = TurnOrderAlly.Count;
             //for (int i = 0; i < AmountofTurns; i++)
             //{
@@ -162,7 +122,7 @@ public class Script_CombatManager : MonoBehaviour
             //Canvas_CommandBoard.SetActive(false);
             //Canvas_CombatEndMenu.Reset();
             WhichSidesTurnIsIt = false;
-            CurrentTurnHolderNumber = 0;
+
 
         }
 
@@ -212,15 +172,18 @@ public class Script_CombatManager : MonoBehaviour
                 //isPlayersDoneMoving();
                 if (Input.GetButtonDown("Ps4_Triangle"))
                 {
-                    StartCoroutine(AllyTurn());
+                    StartCoroutine(EnemyTurn());
                 }
 
 
                 break;
 
             case BattleStates.EnemyTurn:
-                
 
+                if (Input.GetButtonDown("Ps4_Triangle"))
+                {
+                    StartCoroutine(AllyTurn());
+                }
 
 
                 break;
@@ -229,15 +192,11 @@ public class Script_CombatManager : MonoBehaviour
 
             case BattleStates.EndOfCombat:
 
-               Canvas_CombatEndMenu.gameObject.SetActive(true);
-               Canvas_CombatEndMenu.TurnScoreOn();
-               Canvas_CombatEndMenu.GetScore();
                if (Input.anyKey)
                {
                    //CombatEnd();
                }
                break;
-
        }
 
         
@@ -262,13 +221,6 @@ public class Script_CombatManager : MonoBehaviour
         return true;
     }
 
-
-    public void SetEnemyChosen(int A_newEnemyIsChosen)
-    {
-        m_EnemyChosen = A_newEnemyIsChosen;
-    }
-
-
     void RemoveDeadFromList()
     {
         if (TurnOrderAlly != null)
@@ -277,7 +229,6 @@ public class Script_CombatManager : MonoBehaviour
             {
                 if (TurnOrderAlly[i].CurrentHealth <= 0)
                 {
-                    Canvas_CombatEndMenu.AddToDeaths(1);
                     DeadAllys.Add(TurnOrderAlly[i]);
                     TurnOrderAlly.RemoveAt(i);
                 }
@@ -300,28 +251,30 @@ public class Script_CombatManager : MonoBehaviour
             }
         }
 
-        if (AmountofTurns <= 0)
-        {
-            AmountofTurns = 0;
-        }
     }
 
     public IEnumerator EnemyTurn()
     {
         CurrentTurnOrderSide = TurnOrderEnemy;
 
+        m_BattleStates = BattleStates.EnemyTurn;
+
         m_TurnSwitchText.gameObject.SetActive(true);
         m_TurnSwitchText.text = "ENEMY TURN";
+        m_TurnSwitchText.color = Color.red;
 
+        yield return new WaitForSeconds(2f);
+        m_TurnSwitchText.gameObject.SetActive(false);
 
         foreach (Script_Creatures creature in CurrentTurnOrderSide)
         {
             creature.m_CreatureAi.m_HasMovedForThisTurn = false;
             creature.m_CreatureAi.m_HasAttackedForThisTurn = false;
-        }
 
-        yield return new WaitForSeconds(2f);
-        m_TurnSwitchText.gameObject.SetActive(false);
+            Script_EnemyAiController EnemyTemp = creature.m_CreatureAi as Script_EnemyAiController;
+
+            EnemyTemp.EnemyWalkToTarget();
+        }
 
     }
 
@@ -329,11 +282,14 @@ public class Script_CombatManager : MonoBehaviour
     {
         CurrentTurnOrderSide = TurnOrderAlly;
 
+        m_BattleStates = BattleStates.AllyTurn;
+
         m_TurnSwitchText.gameObject.SetActive(true);
         m_TurnSwitchText.text = "PLAYER TURN";
+        m_TurnSwitchText.color = Color.blue;
 
 
-        foreach(Script_Creatures creature in CurrentTurnOrderSide)
+        foreach (Script_Creatures creature in CurrentTurnOrderSide)
         {
             creature.m_CreatureAi.m_HasMovedForThisTurn = false;
             creature.m_CreatureAi.m_HasAttackedForThisTurn = false;

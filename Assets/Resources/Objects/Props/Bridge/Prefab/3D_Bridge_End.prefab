@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3932351238134904476
 Transform:
   m_ObjectHideFlags: 0
@@ -151,9 +151,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 8290782892783832528, guid: df232f124e90641478e9cbe300d43603, type: 3}
-  - {fileID: -2704302366960171809, guid: df232f124e90641478e9cbe300d43603, type: 3}
-  - {fileID: 239378781582670930, guid: df232f124e90641478e9cbe300d43603, type: 3}
+  - {fileID: 2100000, guid: c5cfa56b05f6a4840a572ffd3a91c8b8, type: 2}
+  - {fileID: 2100000, guid: c7cdb04af0eb6c84da4778f8b86ccacb, type: 2}
+  - {fileID: 2100000, guid: 260a44d18e01cd64e83a68c257debd2b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Walkable: {fileID: 850531926670071252}
   m_NodeSpawnOffSet: {x: 0, y: 0, z: 0}
   m_NodeHeightOffset: 0
+  m_NodeReplacementType: 1

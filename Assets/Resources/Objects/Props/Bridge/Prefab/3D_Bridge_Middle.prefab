@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &3358059226896843063
 Transform:
   m_ObjectHideFlags: 0
@@ -188,3 +188,4 @@ MonoBehaviour:
   m_Walkable: {fileID: 6650946151066660265}
   m_NodeSpawnOffSet: {x: 0, y: 0, z: 0}
   m_NodeHeightOffset: -1
+  m_NodeReplacementType: 1

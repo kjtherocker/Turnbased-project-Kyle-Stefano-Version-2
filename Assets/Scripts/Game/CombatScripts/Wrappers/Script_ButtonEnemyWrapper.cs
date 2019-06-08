@@ -37,11 +37,6 @@ public class Script_ButtonEnemyWrapper : MonoBehaviour
 
     public void ButtonClick()
     {
-
-        m_CombatManagerRefrence.SetEnemyChosen(m_EnemyNumber);
-
-
-
     }
 
     public void ToDestroy()

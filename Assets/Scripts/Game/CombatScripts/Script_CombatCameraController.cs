@@ -32,6 +32,10 @@ public class Script_CombatCameraController : MonoBehaviour
     public Script_Skills m_CreatureAttackingSkill;
 
     public Script_HealthBar m_StatusSheet;
+    public GameObject m_PartyStatus;
+
+    public Script_HealthBar m_EnemyStatusSheet;
+    public GameObject m_EnemyStatus;
 
     public Script_CombatNode m_NodeTheCameraIsOn;
 
@@ -54,17 +58,20 @@ public class Script_CombatCameraController : MonoBehaviour
 
     void Start()
     {
-        m_CameraPositionInGrid = new Vector2Int(17, 12);
+        m_CameraPositionInGrid = new Vector2Int(3, 2);
         Script_GameManager.Instance.m_BattleCamera = this;
 
-        m_Selector.gameObject.transform.position =
-            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
-
+        if (m_NodeTheCameraIsOn != null)
+        {
+            m_Selector.gameObject.transform.position =
+                new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
+            m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        }
 
         m_CommandBoardExists = false;
         m_PlayerIsAttacking = false;
         //m_Grid = Script_GameManager.Instance.m_Grid;
-        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        
     }
 
     // Update is called once per frame
@@ -97,12 +104,15 @@ public class Script_CombatCameraController : MonoBehaviour
             
             if (m_PlayerIsMoving == false)
             {
+                if (m_Grid.m_GridPathArray != null)
+                {
+                    m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
 
-                m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-                transform.position = Vector3.Lerp(transform.position, new Vector3(
-                    m_NodeTheCameraIsOn.transform.position.x + 13.5f,
-                    m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                    m_NodeTheCameraIsOn.transform.position.z - 13.5f),Time.deltaTime);
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(
+                        m_NodeTheCameraIsOn.transform.position.x + 13.5f,
+                        m_NodeTheCameraIsOn.transform.position.y + 13.9f,
+                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime);
+                }
             }
             else if (m_PlayerIsMoving == true)
             {
@@ -161,16 +171,32 @@ public class Script_CombatCameraController : MonoBehaviour
             }
         }
 
-        
 
-        if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
+        if (m_NodeTheCameraIsOn != null)
         {
-            m_StatusSheet.gameObject.SetActive(true);
-            m_StatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
-        }
-        else
-        {
-            m_StatusSheet.gameObject.SetActive(false);
+            if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
+            {
+                if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.charactertype == Script_Creatures.Charactertype.Ally)
+                {
+                    m_StatusSheet.gameObject.SetActive(true);
+                    m_PartyStatus.gameObject.SetActive(true);
+                    m_StatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
+                }
+                else if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.charactertype == Script_Creatures.Charactertype.Enemy)
+                {
+                    m_EnemyStatus.gameObject.SetActive(true);
+                    m_EnemyStatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
+                }
+
+            }
+            else
+            {
+             
+                m_PartyStatus.gameObject.SetActive(false);
+                m_StatusSheet.gameObject.SetActive(false);
+                m_EnemyStatus.gameObject.SetActive(false);
+
+            }
         }
 
         if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
