@@ -300,6 +300,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void AttackingIndividual()
     {
+        m_Creature.m_CreatureAi.m_CreaturesAnimator.SetTrigger("t_IsAttack");
         StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
             .m_CreatureOnGridPoint.DecrementHealth
             (m_CreatureAttackingSkill.GetSkillDamage(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));

@@ -34,36 +34,36 @@ public class Script_FloatingUiElementsController : MonoBehaviour {
 
         if (!FloatingText)
         {
-            FloatingText = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Text_DamageParent", typeof(Script_FloatingUiElements));
+            FloatingText = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Text_DamageParent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingWeak)
         {
-            FloatingWeak = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Weak_Parent", typeof(Script_FloatingUiElements));
+            FloatingWeak = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_Weak_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingStrong)
         {
-            FloatingStrong = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Strong_Parent", typeof(Script_FloatingUiElements));
+            FloatingStrong = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_Strong_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingMiss)
         {
-            FloatingMiss = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
+            FloatingMiss = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingAttackUp)
         {
-            FloatingAttackUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_AttackUp_Parent", typeof(Script_FloatingUiElements));
+            FloatingAttackUp = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_AttackUp_Parent", typeof(Script_FloatingUiElements));
         }
 
         if (!FloatingAttackDown)
         {
-            FloatingAttackDown = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_AttackDown_Parent", typeof(Script_FloatingUiElements));
+            FloatingAttackDown = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_AttackDown_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingDefenseUp)
         {
-            FloatingDefenseUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_SpeedUp_Parent", typeof(Script_FloatingUiElements));
+            FloatingDefenseUp = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_SpeedUp_Parent", typeof(Script_FloatingUiElements));
         }
         if (!FloatingSpeedUp)
         {
-            FloatingSpeedUp = (Script_FloatingUiElements)Resources.Load("Prefabs/Battle/Text/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
+            FloatingSpeedUp = (Script_FloatingUiElements)Resources.Load("Objects/Battle/Indicators/Prefab/Prefab_Image_Miss_Parent", typeof(Script_FloatingUiElements));
         }
 
     }

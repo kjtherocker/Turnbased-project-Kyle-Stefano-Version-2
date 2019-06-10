@@ -32,6 +32,7 @@ public class Script_GridFormations : MonoBehaviour
     void Start()
     {
         m_Grid = Script_GameManager.Instance.m_Grid;
+        m_EditorCamera = Script_GameManager.Instance.m_EditorCamera;
     }
     
     public void CreateGrid(Vector2Int grid)

@@ -94,10 +94,9 @@ public class Script_CombatNode : MonoBehaviour
 
         if (m_Grid != null)
         {
-            m_Grid = Script_GameManager.Instance.m_Grid;
             m_GridPathArray = m_Grid.m_GridPathArray;
         }
-        m_PropList = Script_GameManager.Instance.m_PropList;
+       // m_PropList = Script_GameManager.Instance.m_PropList;
 
         m_PropOnNodeTemp = m_PropOnNode;
 
@@ -258,7 +257,7 @@ public class Script_CombatNode : MonoBehaviour
     {
         m_PropOnNodeTemp = m_PropOnNode;
         m_Prop = Instantiate(m_PropList.ReturnPropData(m_PropOnNode), this.gameObject.transform);
-        Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
+        Vector3 CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
         m_Prop.gameObject.transform.position = gameObject.transform.position + CreatureOffset;
 
         Script_Creatures CreatureTemp = m_Prop.GetComponent<Script_Creatures>();
@@ -277,7 +276,7 @@ public class Script_CombatNode : MonoBehaviour
         {
             m_NodeReplacementTemp = m_NodeReplacementOnNode;
             m_NodeReplacement = Instantiate(m_PropList.NodeReplacementData(m_NodeReplacementOnNode), this.gameObject.transform);
-            Vector3 CreatureOffset = new Vector3(0, 1.0f, 0);
+            Vector3 CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
             m_NodeReplacement.gameObject.transform.position =  gameObject.transform.position + m_NodeReplacement.m_NodeSpawnOffSet + CreatureOffset;
             m_NodeHeightOffset = m_NodeReplacement.m_NodeHeightOffset;
             m_CurrentWalkablePlaneBeingUsed = m_NodeReplacement.m_Walkable;

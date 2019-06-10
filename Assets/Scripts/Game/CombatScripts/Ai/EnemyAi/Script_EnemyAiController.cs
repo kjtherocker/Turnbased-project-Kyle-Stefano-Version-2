@@ -12,7 +12,7 @@ public class Script_EnemyAiController : Script_AiController
 
     public override void Start()
     {
-        m_EnemyRange = 3;
+        m_EnemyRange = 1;
         base.Start();
     }
 
@@ -41,36 +41,37 @@ public class Script_EnemyAiController : Script_AiController
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
         Node_ObjectIsOn.m_CreatureOnGridPoint = null;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
+        Node_MovingTo = aListOfNodes[aListOfNodes.Count - 1];
         for (int i = 0; i < aListOfNodes.Count;)
         {
 
-            if (Node_MovingTo == Node_ObjectIsOn)
+            if (Node_MovingTo == Node_ObjectIsOn )
             {
 
-                Node_MovingTo = aListOfNodes[i];
-
-                if (Node_MovingTo.m_Heuristic == m_EnemyRange)
+                if (Node_ObjectIsOn.m_Heuristic <= m_EnemyRange)
                 {
                     break;
                 }
+                else
+                {
+                    Node_MovingTo = aListOfNodes[i];
+
+                    Vector3 relativePos = aListOfNodes[i].gameObject.transform.position - transform.position + CreatureOffset;
 
 
-                Vector3 relativePos = aListOfNodes[i].gameObject.transform.position - transform.position + CreatureOffset;
+                    m_Position = Node_MovingTo.m_PositionInGrid;
+
+                    Script_GameManager.Instance.m_BattleCamera.m_CameraPositionInGrid = m_Position;
 
 
-                m_Position = Node_MovingTo.m_PositionInGrid;
+                    transform.rotation = Quaternion.LookRotation(relativePos, Vector3.up);
 
-                Script_GameManager.Instance.m_BattleCamera.m_CameraPositionInGrid = m_Position;
-
-
-                transform.rotation = Quaternion.LookRotation(relativePos, Vector3.up);
-
-                CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Node_MovingTo.m_NodeHeightOffset, 0);
-                i++;
+                    CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Node_MovingTo.m_NodeHeightOffset, 0);
+                    i++;
+                }
                 yield return new WaitForSeconds(0.4f);
+                
             }
-
-
         }
 
         //Camera no longer following the player;

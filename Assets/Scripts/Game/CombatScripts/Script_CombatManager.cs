@@ -86,7 +86,7 @@ public class Script_CombatManager : MonoBehaviour
                 m_Gridformation.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 8), TurnOrderAlly);
             //
             //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
             //                                                                   
@@ -170,7 +170,7 @@ public class Script_CombatManager : MonoBehaviour
 
            case BattleStates.AllyTurn:
                 //isPlayersDoneMoving();
-                if (Input.GetButtonDown("Ps4_Triangle"))
+                if (Input.GetButtonDown("Ps4_Triangle") )
                 {
                     StartCoroutine(EnemyTurn());
                 }
@@ -180,7 +180,7 @@ public class Script_CombatManager : MonoBehaviour
 
             case BattleStates.EnemyTurn:
 
-                if (Input.GetButtonDown("Ps4_Triangle"))
+                if (Input.GetButtonDown("Ps4_Triangle") )
                 {
                     StartCoroutine(AllyTurn());
                 }

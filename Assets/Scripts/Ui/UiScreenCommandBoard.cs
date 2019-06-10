@@ -58,12 +58,12 @@ public class UiScreenCommandBoard : UiScreen
 
         if (m_InputActive == true)
         {
-            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_B") || Input.GetButtonDown("Ps4_Circle"))
+            if (Input.GetKeyDown("a") || Input.GetButtonDown("Ps4_Circle"))
             {
                 Script_GameManager.Instance.m_UiManager.PopScreen();
             }
 
-            if (Input.GetKeyDown("a") || Input.GetButtonDown("Xbox_A") || Input.GetButtonDown("Ps4_Cross"))
+            if (Input.GetKeyDown("a")  || Input.GetButtonDown("Ps4_Cross"))
             {
                 if (m_CommandBoardPointerPosition == 0)
                 {
@@ -72,8 +72,7 @@ public class UiScreenCommandBoard : UiScreen
                 if (m_CommandBoardPointerPosition == 1)
                 {
                     Script_GameManager.Instance.UiManager.PopScreen();
-                    Script_GameManager.Instance.m_Grid.SetAttackingTile(m_CommandboardCreature.m_CreatureAi.m_Position);
-                    Script_GameManager.Instance.m_BattleCamera.m_PlayerIsAttacking = true;
+                    Script_GameManager.Instance.BattleCamera.SetAttackPhase(m_CommandboardCreature.m_Attack);
                 }
                 if (m_CommandBoardPointerPosition == 2)
                 {

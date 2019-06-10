@@ -15,9 +15,10 @@ public class Script_Attack : Script_Skills
         m_SkillRange = SkillRange.SingleNode;
         m_Damagetype = DamageType.Strength;
         m_CostToUse = 0;
-        m_Damage = 0;
+        m_Damage = 75;
         SkillName = "Attack";
         SkillDescription = "Attack a single enemy";
+        m_AnimationName = "t_IsAttack";
     }
 
     // Update is called once per frame

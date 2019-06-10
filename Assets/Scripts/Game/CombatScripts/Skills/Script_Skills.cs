@@ -75,6 +75,7 @@ public class Script_Skills
 
     protected int m_Damage;
 
+    public string m_AnimationName;
 
     public virtual void Start()
     {
