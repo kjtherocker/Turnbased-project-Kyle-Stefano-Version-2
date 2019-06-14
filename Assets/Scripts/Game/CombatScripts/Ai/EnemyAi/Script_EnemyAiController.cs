@@ -8,6 +8,7 @@ public class Script_EnemyAiController : Script_AiController
 
     public Script_AiController m_Target;
     public bool m_AiFinished;
+    public bool m_EndMovement;
     public int m_EnemyRange;
 
     public override void Start()
@@ -19,11 +20,29 @@ public class Script_EnemyAiController : Script_AiController
     // Update is called once per frame
     public override void Update()
     {
-        base.Update();
+        // base.Update();
+        if (Node_ObjectIsOn != Node_MovingTo)
+        {
+            transform.position = Vector3.MoveTowards
+                    (transform.position, Node_MovingTo.gameObject.transform.position + CreatureOffset,
+                    10 * Time.deltaTime);
+        }
 
-        
-       
-        
+        if (m_MovementHasStarted == true)
+        {
+            if (transform.position == Node_MovingTo.transform.position + CreatureOffset)
+            {
+                Node_ObjectIsOn = Node_MovingTo;
+
+                if (Node_ObjectIsOn.m_Heuristic <= m_EnemyRange)
+                {
+                    m_EndMovement = true;
+                }
+            }
+        }
+
+
+
     }
 
 
@@ -39,20 +58,16 @@ public class Script_EnemyAiController : Script_AiController
         m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
         Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
+        Script_GameManager.Instance.m_BattleCamera.m_Creature = m_Creature;
         Node_ObjectIsOn.m_CreatureOnGridPoint = null;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
-        Node_MovingTo = aListOfNodes[aListOfNodes.Count - 1];
+       
         for (int i = 0; i < aListOfNodes.Count;)
         {
 
-            if (Node_MovingTo == Node_ObjectIsOn )
+            if (m_EndMovement == false)
             {
-
-                if (Node_ObjectIsOn.m_Heuristic <= m_EnemyRange)
-                {
-                    break;
-                }
-                else
+                if (Node_MovingTo == Node_ObjectIsOn)
                 {
                     Node_MovingTo = aListOfNodes[i];
 
@@ -68,9 +83,14 @@ public class Script_EnemyAiController : Script_AiController
 
                     CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Node_MovingTo.m_NodeHeightOffset, 0);
                     i++;
+
+                    yield return new WaitForSeconds(0.4f);
                 }
-                yield return new WaitForSeconds(0.4f);
                 
+            }
+            else
+            {
+                break;
             }
         }
 
@@ -90,17 +110,19 @@ public class Script_EnemyAiController : Script_AiController
         m_Position = aListOfNodes[aListOfNodes.Count - 1].m_PositionInGrid;
 
         //Setting the node you are on to the new one
-        Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
+       // Node_ObjectIsOn = Script_GameManager.Instance.m_Grid.GetNode(m_Position);
 
         Node_ObjectIsOn.m_CreatureOnGridPoint = m_Creature;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
 
+        m_EndMovement = false;
         m_AiFinished = true;
 
         for (int i = aListOfNodes.Count; i < 0; i--)
         {
             aListOfNodes.RemoveAt(i);
         }
+        aListOfNodes.Clear();
 
 
     }

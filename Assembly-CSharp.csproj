@@ -159,6 +159,7 @@
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\Shaders\NewSurfaceShader 1.shader" />
     <None Include="Assets\Shaders\NewSurfaceShader.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
