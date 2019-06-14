@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\DialogScripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\DialogueTrigger.cs" />
+    <Compile Include="Assets\Scripts\FPSDisplay.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\EnemyAi\Script_EnemyAiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\Script_AiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Chant\ChantController.cs" />
