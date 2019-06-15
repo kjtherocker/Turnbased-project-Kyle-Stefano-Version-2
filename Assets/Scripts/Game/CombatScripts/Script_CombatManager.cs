@@ -23,8 +23,10 @@ public class Script_CombatManager : MonoBehaviour
     bool WhichSidesTurnIsIt;
     bool CombatHasStarted;
 
-    public Script_CombatCameraController m_BattleCamera;
+    int m_EnemyAiCurrentlyInList;
 
+
+    public Script_CombatCameraController m_BattleCamera;
 
     public Script_GridFormations m_GridFormation;
 
@@ -87,20 +89,20 @@ public class Script_CombatManager : MonoBehaviour
             
 
             AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 8), TurnOrderAlly);
-            //
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
-            //                                                                   
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
-            //                                                                   
-            //AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
+            
+           // AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(2, 1), TurnOrderAlly);
+           //                                                                    
+           // AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(5, 1), TurnOrderAlly);
+           //                                                                    
+           // AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(6, 1), TurnOrderAlly);
 
 
             //Setting up the Enemy
 
             AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(3, 11), TurnOrderEnemy);
-            //AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(8, 8), TurnOrderEnemy);
-            //AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(8, 7), TurnOrderEnemy);
-            //AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(8, 6), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(8, 8), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(8, 7), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(8, 6), TurnOrderEnemy);
 
 
 
@@ -270,13 +272,35 @@ public class Script_CombatManager : MonoBehaviour
         {
             creature.m_CreatureAi.m_HasMovedForThisTurn = false;
             creature.m_CreatureAi.m_HasAttackedForThisTurn = false;
-
             Script_EnemyAiController EnemyTemp = creature.m_CreatureAi as Script_EnemyAiController;
 
-            EnemyTemp.EnemyWalkToTarget();
+            EnemyTemp.m_AiFinished = false;
+
+            
         }
 
+       m_EnemyAiCurrentlyInList = 0;
+       EnemyMovement();
+
     }
+
+    public void EnemyMovement()
+    {
+
+        if (m_EnemyAiCurrentlyInList == TurnOrderEnemy.Count )
+        {
+            StartCoroutine(AllyTurn());
+            return ;
+        }
+
+        Script_EnemyAiController EnemyTemp = TurnOrderEnemy[m_EnemyAiCurrentlyInList].m_CreatureAi as Script_EnemyAiController;
+        EnemyTemp.EnemyWalkToTarget();
+
+        m_EnemyAiCurrentlyInList++;
+        
+
+    }
+
 
     public IEnumerator AllyTurn()
     {

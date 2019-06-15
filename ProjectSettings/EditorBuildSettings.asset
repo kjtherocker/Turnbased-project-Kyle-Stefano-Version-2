@@ -11,16 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_MainMenu.unity
     guid: b8edc62fb9d343e4fa247c0ef421bfac
-  - enabled: 1
-    path: Assets/Scenes/Scene_TownMenu.unity
-    guid: b30d60be0b55e0d4fa52a82349d6e00d
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
     path: Assets/Scenes/Scene_OverWorld.unity
     guid: 8653b9d80bf23ff4eb0d3ab2383eaadd
-  - enabled: 1
-    path: Assets/Scenes/Scene_Battle.unity
-    guid: 2c077678195001c44abc1fb684895428
-  - enabled: 1
-    path: Assets/Scenes/Scene_Test.unity
-    guid: 7c11aa9a922d84a4daf4470885a65541
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

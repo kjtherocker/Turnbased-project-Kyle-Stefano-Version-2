@@ -11,9 +11,11 @@ public class Script_EnemyAiController : Script_AiController
     public bool m_EndMovement;
     public int m_EnemyRange;
 
+
     public override void Start()
     {
         m_EnemyRange = 1;
+
         base.Start();
     }
 
@@ -25,7 +27,7 @@ public class Script_EnemyAiController : Script_AiController
         {
             transform.position = Vector3.MoveTowards
                     (transform.position, Node_MovingTo.gameObject.transform.position + CreatureOffset,
-                    10 * Time.deltaTime);
+                    8 * Time.deltaTime);
         }
 
         if (m_MovementHasStarted == true)
@@ -48,8 +50,10 @@ public class Script_EnemyAiController : Script_AiController
 
     public void EnemyWalkToTarget()
     {
+
         m_Target = Script_GameManager.Instance.PartyManager.m_CurrentParty[0].m_CreatureAi;
         StartCoroutine(SetGoalPosition(m_Target.m_Position));
+        
     }
 
     public override IEnumerator GetToGoal(List<Script_CombatNode> aListOfNodes)
@@ -84,7 +88,7 @@ public class Script_EnemyAiController : Script_AiController
                     CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid + Node_MovingTo.m_NodeHeightOffset, 0);
                     i++;
 
-                    yield return new WaitForSeconds(0.4f);
+                    yield return new WaitForSeconds(0.5f);
                 }
                 
             }
@@ -117,6 +121,8 @@ public class Script_EnemyAiController : Script_AiController
 
         m_EndMovement = false;
         m_AiFinished = true;
+
+        Script_GameManager.Instance.CombatManager.EnemyMovement();
 
         for (int i = aListOfNodes.Count; i < 0; i--)
         {

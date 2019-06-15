@@ -163,7 +163,7 @@ public class Script_CombatNode : MonoBehaviour
             }
         }
 
-#endif
+
          
         if (m_NodeYouCameFrom != null)
         {
@@ -236,6 +236,7 @@ public class Script_CombatNode : MonoBehaviour
            // gameObject.transform.position = gameObject.transform.position + new Vector3(0, 2, 0);
         }
 
+#endif
 
     }
 

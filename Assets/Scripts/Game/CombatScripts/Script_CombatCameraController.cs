@@ -111,26 +111,26 @@ public class Script_CombatCameraController : MonoBehaviour
                     transform.position = Vector3.Lerp(transform.position, new Vector3(
                         m_NodeTheCameraIsOn.transform.position.x + 13.5f,
                         m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime);
+                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime* 2);
                 }
             }
             else if (m_PlayerIsMoving == true)
             {
 
-                transform.position = new Vector3(
+                transform.position = Vector3.Lerp(transform.position, new Vector3(
                     m_Creature.ModelInGame.transform.position.x + 13.5f,
                     m_Creature.ModelInGame.transform.position.y + 13.9f,
-                    m_Creature.ModelInGame.transform.position.z - 13.5f);
+                    m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 3);
             }
         }
         if (m_PlayerIsAttacking == true)
         {
             m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
 
-            transform.position = new Vector3(
-                m_NodeTheCameraIsOn.transform.position.x + 13.5f,
-                m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                m_NodeTheCameraIsOn.transform.position.z - 13.5f);
+            transform.position = Vector3.Lerp(transform.position, new Vector3(
+                        m_NodeTheCameraIsOn.transform.position.x + 13.5f,
+                        m_NodeTheCameraIsOn.transform.position.y + 13.9f,
+                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime);
 
 
             if (Constants.Constants.m_XboxController == true)
@@ -303,7 +303,7 @@ public class Script_CombatCameraController : MonoBehaviour
         m_Creature.m_CreatureAi.m_CreaturesAnimator.SetTrigger("t_IsAttack");
         StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
             .m_CreatureOnGridPoint.DecrementHealth
-            (m_CreatureAttackingSkill.GetSkillDamage(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));
+            (m_CreatureAttackingSkill.GetSkillDamage() + m_Creature.GetAllStrength(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));
 
         m_PlayerIsAttacking = false;
         Script_GameManager.Instance.UiManager.PopAllScreens();
