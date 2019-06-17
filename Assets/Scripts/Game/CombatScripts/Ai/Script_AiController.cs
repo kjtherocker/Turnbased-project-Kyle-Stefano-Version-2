@@ -87,7 +87,7 @@ public class Script_AiController : MonoBehaviour
         m_MovementHasStarted = true;
         m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
-        Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
+        Script_GameManager.Instance.m_BattleCamera.m_cameraState = Script_CombatCameraController.CameraState.PlayerMovement;
         Node_ObjectIsOn.m_CreatureOnGridPoint = null;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
         for (int i = 0; i < aListOfNodes.Count;)
@@ -120,7 +120,7 @@ public class Script_AiController : MonoBehaviour
         }
 
         //Camera no longer following the player;
-        Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = false;
+        Script_GameManager.Instance.m_BattleCamera.m_cameraState = Script_CombatCameraController.CameraState.Normal;
 
         //Setting the Walk Animation
         m_CreaturesAnimator.SetBool("b_IsWalking", false);

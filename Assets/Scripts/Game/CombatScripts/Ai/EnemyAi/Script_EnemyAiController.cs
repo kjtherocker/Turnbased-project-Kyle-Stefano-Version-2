@@ -61,7 +61,7 @@ public class Script_EnemyAiController : Script_AiController
         m_MovementHasStarted = true;
         m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
-        Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = true;
+        Script_GameManager.Instance.m_BattleCamera.m_cameraState = Script_CombatCameraController.CameraState.EnemyMovement;
         Script_GameManager.Instance.m_BattleCamera.m_Creature = m_Creature;
         Node_ObjectIsOn.m_CreatureOnGridPoint = null;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Normal;
@@ -99,7 +99,7 @@ public class Script_EnemyAiController : Script_AiController
         }
 
         //Camera no longer following the player;
-        Script_GameManager.Instance.m_BattleCamera.m_PlayerIsMoving = false;
+        Script_GameManager.Instance.m_BattleCamera.m_cameraState = Script_CombatCameraController.CameraState.Normal;
 
         //Setting the Walk Animation
         m_CreaturesAnimator.SetBool("b_IsWalking", false);

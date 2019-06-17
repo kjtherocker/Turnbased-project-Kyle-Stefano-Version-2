@@ -8,18 +8,11 @@ public class Script_CombatCameraController : MonoBehaviour
     public enum CameraState
     {
         Nothing,
-        Default,
-        Spawn,
-        AllyHealingSelecting,
-        AllyHealing,
-        EnemyHealing,
-        AllyAttacking,
-        AllyAttackSelecting,
-        EnemyAttacking,
-        EnemyAttackingMelee,
-        EnemyZoomIn,
-        AllyBuff,
-        EnemyBuff
+        Normal,
+        PlayerMovement,
+        PlayerAttack,
+        EnemyMovement,
+        EnemyAttack
 
 
     }
@@ -71,7 +64,8 @@ public class Script_CombatCameraController : MonoBehaviour
         m_CommandBoardExists = false;
         m_PlayerIsAttacking = false;
         //m_Grid = Script_GameManager.Instance.m_Grid;
-        
+
+        m_cameraState = CameraState.Normal;
     }
 
     // Update is called once per frame
@@ -99,78 +93,95 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void CameraMovement()
     {
-        if (m_PlayerIsAttacking == false)
+
+
+
+        switch (m_cameraState)
         {
-            
-            if (m_PlayerIsMoving == false)
-            {
+            case CameraState.Nothing:
+
+
+                break;
+
+            case CameraState.Normal:
                 if (m_Grid.m_GridPathArray != null)
                 {
                     m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
 
                     transform.position = Vector3.Lerp(transform.position, new Vector3(
-                        m_NodeTheCameraIsOn.transform.position.x + 13.5f,
-                        m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime* 2);
+                        m_NodeTheCameraIsOn.transform.position.x + 18.5f,
+                        m_NodeTheCameraIsOn.transform.position.y + 18.9f,
+                        m_NodeTheCameraIsOn.transform.position.z - 18.5f), Time.deltaTime * 2);
                 }
-            }
-            else if (m_PlayerIsMoving == true)
-            {
+
+                if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
+                {
+                    DPadGridControls();
+                }
+
+                PlayerUiSelection();
+
+                break;
+
+            case CameraState.PlayerMovement:
+                //isPlayersDoneMoving();
+                if (m_Grid.m_GridPathArray != null)
+                {
+                    m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(
+                        m_Creature.ModelInGame.transform.position.x + 13.5f,
+                        m_Creature.ModelInGame.transform.position.y + 13.9f,
+                        m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 2);
+                }
+
+
+                break;
+
+            case CameraState.PlayerAttack:
+
+                m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
+                m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid + new Vector2Int(1,0));
 
                 transform.position = Vector3.Lerp(transform.position, new Vector3(
-                    m_Creature.ModelInGame.transform.position.x + 13.5f,
-                    m_Creature.ModelInGame.transform.position.y + 13.9f,
-                    m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 3);
-            }
-        }
-        if (m_PlayerIsAttacking == true)
-        {
-            m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
-
-            transform.position = Vector3.Lerp(transform.position, new Vector3(
                         m_NodeTheCameraIsOn.transform.position.x + 13.5f,
                         m_NodeTheCameraIsOn.transform.position.y + 13.9f,
-                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime);
+                        m_NodeTheCameraIsOn.transform.position.z - 13.5f), Time.deltaTime * 2);
 
+                DPadGridControls();
 
-            if (Constants.Constants.m_XboxController == true)
+                if (Input.GetButtonDown("Ps4_Cross"))
                 {
-                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                   (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                        (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
-
-                    //Left and right Axis
-                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                        (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-                    Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                        (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-
-                    Script_GameManager.Instance.m_InputManager.SetXboxButton
-                    (AttackingIndividual, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+                    AttackingIndividual();
                 }
 
-            if (Constants.Constants.m_PlaystationController == true)
-            {
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                   (MoveUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+
+                break;
 
 
-                //Left and right Axis
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
 
-                Script_GameManager.Instance.m_InputManager.SetPlaystationButton
-                (AttackingIndividual, "Ps4_Cross", ref Script_GameManager.Instance.m_InputManager.m_AButton);
+            case CameraState.EnemyMovement:
+                if (m_Grid.m_GridPathArray != null)
+                {
+                    m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
 
-            }
+                    transform.position = Vector3.Lerp(transform.position, new Vector3(
+                        m_Creature.ModelInGame.transform.position.x + 13.5f,
+                        m_Creature.ModelInGame.transform.position.y + 13.9f,
+                        m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 2);
+                }
+
+                break;
+
+            case CameraState.EnemyAttack:
+
+
+                break;
         }
 
+
+      
+      
 
         if (m_NodeTheCameraIsOn != null)
         {
@@ -199,8 +210,15 @@ public class Script_CombatCameraController : MonoBehaviour
             }
         }
 
-        if (Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.CommandBoard) == null)
-        {
+
+       
+
+        
+    }
+
+    public void DPadGridControls()
+    {
+
             //Up and down Axis
             if (Constants.Constants.m_XboxController == true)
             {
@@ -240,20 +258,14 @@ public class Script_CombatCameraController : MonoBehaviour
                     ReturnPlayerToInitalPosition();
                 }
             }
-        }
-
-       
-
-        if (Input.GetKeyDown("up"))
-        {
-            MoveUp();
-        }
+        
     }
+
 
     public void SetAttackPhase(Script_Skills aSkill)
     {
         m_CreatureAttackingSkill = aSkill;
-        m_PlayerIsAttacking = true;
+        m_cameraState = CameraState.PlayerAttack;
     }
 
     public void MoveUp()
@@ -364,11 +376,10 @@ public class Script_CombatCameraController : MonoBehaviour
     {
         if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint != null)
         {
+            Script_AiController TempAiController = m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi;
             //Checking to see if he has moved and if he hasnt attacked yet
-            if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasMovedForThisTurn == true
-                && m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_HasAttackedForThisTurn == false && 
-                m_Grid.m_GridPathArray[m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_InitalPosition.x,
-                m_NodeTheCameraIsOn.m_CreatureOnGridPoint.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint == null)
+            if (TempAiController.m_HasMovedForThisTurn == true && TempAiController.m_HasAttackedForThisTurn == false
+                && m_Grid.m_GridPathArray[TempAiController.m_InitalPosition.x, TempAiController.m_InitalPosition.y].m_CreatureOnGridPoint == null)
             {
                 //return the player to the original position
                 m_NodeTheCameraIsOn.
