@@ -29,7 +29,7 @@ public class Script_NodeFormations : MonoBehaviour
         TempNodeFormationList.Add(new Vector2Int(0, -1));
         TempNodeFormationList.Add(new Vector2Int(1, 0));
         TempNodeFormationList.Add(new Vector2Int(-1, 0));
-
+        TempNodeFormationList.Add(new Vector2Int(4, 0));
 
 
         return TempNodeFormationList;

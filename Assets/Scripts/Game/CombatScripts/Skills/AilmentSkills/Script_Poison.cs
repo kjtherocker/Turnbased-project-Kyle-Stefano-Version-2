@@ -12,7 +12,7 @@ public class Script_Poison : Script_Skills
 
         //m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Aliment;
-        m_SkillRange = SkillRange.SingleNode;
+        m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillAilment = SkillAilment.Poison;
         m_Damage = 0;

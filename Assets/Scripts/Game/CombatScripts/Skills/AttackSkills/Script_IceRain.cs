@@ -13,7 +13,7 @@ public class Script_IceRain : Script_Skills
 
         m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Attack;
-        m_SkillRange = SkillRange.SingleNode;
+        m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_CostToUse = 40;
         m_Damage = 5;

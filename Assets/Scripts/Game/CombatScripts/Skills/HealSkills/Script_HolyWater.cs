@@ -12,7 +12,7 @@ public class Script_HolyWater : Script_Skills
 
         m_ElementalType = ElementalType.Water;
         m_SkillType = SkillType.Heal;
-        m_SkillRange = SkillRange.SingleNode;
+        m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 300;
         m_CostToUse = 60;

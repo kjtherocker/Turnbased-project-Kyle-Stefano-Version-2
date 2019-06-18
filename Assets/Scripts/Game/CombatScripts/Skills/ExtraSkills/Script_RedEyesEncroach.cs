@@ -12,7 +12,7 @@ public class Script_RedEyesEncroach : Script_Skills
 
         m_ElementalType = ElementalType.Null;
         m_SkillType = SkillType.Extra;
-        m_SkillRange = SkillRange.SingleNode;
+        m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/FireWave/ParticleEffect_FireWave", typeof(ParticleSystem));
         m_Damage = 0;

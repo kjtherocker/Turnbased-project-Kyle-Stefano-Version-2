@@ -43,7 +43,7 @@ public class Script_Skills
 
     }
 
-    public enum SkillRange
+    public enum SkillFormation
     {
         SingleNode,
         FourInAStraightLine,
@@ -62,7 +62,7 @@ public class Script_Skills
 
     protected ElementalType m_ElementalType;
     protected SkillType m_SkillType;
-    protected SkillRange m_SkillRange;
+    protected SkillFormation m_SkillFormation;
     protected DamageType m_Damagetype;
     protected SkillAilment m_SkillAilment;
 
@@ -123,9 +123,9 @@ public class Script_Skills
         return m_SkillType;
     }
 
-    public SkillRange GetSkillRange()
+    public SkillFormation GetSkillRange()
     {
-        return m_SkillRange;
+        return m_SkillFormation;
     }
 
     virtual public int UseSkill(int BonusDamage)

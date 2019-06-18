@@ -14,7 +14,7 @@ public class Script_FireBall : Script_Skills
         m_ElementalType = ElementalType.Fire;
         m_SkillAilment = SkillAilment.Poison;
         m_SkillType = SkillType.Attack;
-        m_SkillRange = SkillRange.SingleNode;
+        m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/FireWave/ParticleEffect_FireWave", typeof(ParticleSystem));
         m_CostToUse = 40;

@@ -24,7 +24,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
-        m_Texture: {fileID: 2800000, guid: 03d7a1ee98f421e46b41d0381207f2a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9badb90ac1e55664299d5c327c7045d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailMask:
@@ -32,7 +32,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailNormalMap:
-        m_Texture: {fileID: 2800000, guid: 03d7a1ee98f421e46b41d0381207f2a7, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7a80e6d60ddb8149972a2738209eeb0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
@@ -40,7 +40,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: fbbfc6053a3fc0144a44f3aa2ae55ea2, type: 3}
+        m_Texture: {fileID: 2800000, guid: d7a80e6d60ddb8149972a2738209eeb0, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -68,16 +68,18 @@ Material:
     - _BladeWidth: 0.1
     - _BladeWidthRandom: 0
     - _BumpScale: 1
-    - _Cutoff: 1
-    - _DetailNormalMapScale: 2.13
+    - _Cutoff: 0.187
+    - _DetailNormalMapScale: -0.12
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
-    - _Metallic: 0
+    - _Metallic: 0.124
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _RimAmount: 0.448
+    - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 0
     - _SrcBlend: 1
@@ -87,8 +89,11 @@ Material:
     - _WindStrength: 1
     - _ZWrite: 1
     m_Colors:
+    - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - _BottomColor: {r: 0.084905654, g: 0.33962262, b: 0.08561582, a: 1}
-    - _Color: {r: 0.5801887, g: 1, b: 0.5801887, a: 1}
+    - _Color: {r: 0.6636738, g: 1, b: 0.5801887, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - _TopColor: {r: 0.08599452, g: 0.9245283, b: 0, a: 1}
     - _WindFrequency: {r: 0.05, g: 0.05, b: 0, a: 0}

@@ -95,9 +95,9 @@ public class Script_CombatCameraController : MonoBehaviour
 
 
         CameraMovement();
-        PlayerUiSelection();
 
 
+        
 
     }
 
@@ -300,12 +300,20 @@ public class Script_CombatCameraController : MonoBehaviour
     public void MoveCamera(CameraMovementDirections cameraMovementDirections )
     {
 
+        Vector2Int TempInitalCameraPostion = m_CameraPositionInGrid;
+
         if (m_SpellAttackFormations != null)
         {
             for (int i = 0; i < m_SpellAttackFormations.Count; i++)
             {
-                m_Grid.DeselectAttackingTileingrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
-                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y));
+                Vector2Int TempSpellPosition = new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y);
+
+                if (CheckingGridDimensionBoundrys(TempSpellPosition))
+                    {
+                        m_Grid.DeselectAttackingTileingrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                        m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y));
+                    }
             }
         }
 
@@ -333,8 +341,16 @@ public class Script_CombatCameraController : MonoBehaviour
 
 
 
+        if (CheckingGridDimensionBoundrys(m_CameraPositionInGrid))
+        {
+            m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        }
+        else
+        {
+            m_CameraPositionInGrid = TempInitalCameraPostion;
+            m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+        }
 
-        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
         m_Selector.gameObject.transform.position =
             new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
 
@@ -342,9 +358,29 @@ public class Script_CombatCameraController : MonoBehaviour
         {
             for (int i = 0; i < m_SpellAttackFormations.Count; i++)
             {
-                m_Grid.SetAttackingTileInGrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                Vector2Int TempSpellPosition = new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y);
+
+                if (CheckingGridDimensionBoundrys(TempSpellPosition))
+                {
+                    m_Grid.SetAttackingTileInGrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
                     m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y));
+                }
             }
+        }
+    }
+
+
+    public bool CheckingGridDimensionBoundrys(Vector2Int aPositionInGrid)
+    {
+        if (aPositionInGrid.x < m_Grid.m_GridDimensions.x && aPositionInGrid.x >= 0 &&
+            aPositionInGrid.y < m_Grid.m_GridDimensions.y && aPositionInGrid.y >= 0)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 
@@ -357,10 +393,14 @@ public class Script_CombatCameraController : MonoBehaviour
             {
                 Vector2Int TempSpellNodePosition = new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
                     m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y);
-                if (m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint != null)
+
+                if (CheckingGridDimensionBoundrys(TempSpellNodePosition))
                 {
-                    StartCoroutine(m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint.DecrementHealth
-                       (m_CreatureAttackingSkill.GetSkillDamage() + m_Creature.GetAllStrength(), m_CreatureAttackingSkill.GetElementalType(), 0.1f, 0.1f, 1));
+                    if (m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint != null)
+                    {
+                        StartCoroutine(m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint.DecrementHealth
+                           (m_CreatureAttackingSkill.GetSkillDamage() + m_Creature.GetAllStrength(), m_CreatureAttackingSkill.GetElementalType(), 0.1f, 0.1f, 1));
+                    }
                 }
             }
         }
