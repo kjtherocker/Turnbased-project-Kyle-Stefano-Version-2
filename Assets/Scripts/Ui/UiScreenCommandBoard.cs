@@ -91,17 +91,23 @@ public class UiScreenCommandBoard : UiScreen
 
             if (Constants.Constants.m_XboxController == true)
             {
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+             //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+             //   (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+             //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+             //       (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
             }
             if (Constants.Constants.m_PlaystationController == true)
             {
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                (MoveCommandBoardPositionUp, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveCommandBoardPositionDown, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+                if(Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                ( "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.True)
+                {
+                    MoveCommandBoardPositionUp();
+                }
+                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                ("Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.False)
+                {
+                    MoveCommandBoardPositionDown();
+                }
             }
         }
 

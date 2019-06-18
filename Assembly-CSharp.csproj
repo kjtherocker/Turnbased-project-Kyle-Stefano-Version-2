@@ -131,6 +131,7 @@
     <Compile Include="Assets\Scripts\TerrainScripts\Script_DomainSphere.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_GrassController.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\Script_Grid.cs" />
+    <Compile Include="Assets\Scripts\TerrainScripts\Script_NodeFormations.cs" />
     <Compile Include="Assets\Scripts\TerrainScripts\WaterController.cs" />
     <Compile Include="Assets\Scripts\Ui\Script_EndOfCombatMenu.cs" />
     <Compile Include="Assets\Scripts\Ui\UiManager.cs" />

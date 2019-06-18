@@ -17,6 +17,14 @@ public class Script_CombatCameraController : MonoBehaviour
 
     }
 
+    public enum CameraMovementDirections
+    {
+        Up,
+        Down,
+        Left,
+        Right
+    }
+
     public CameraState m_cameraState;
 
     public Script_Grid m_Grid;
@@ -42,6 +50,11 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public GameObject m_Selector;
 
+
+    public List<Vector2Int> m_SpellAttackFormations;
+
+
+
     // Use this for initialization
     public bool m_CommandBoardExists;
 
@@ -51,7 +64,7 @@ public class Script_CombatCameraController : MonoBehaviour
 
     void Start()
     {
-        m_CameraPositionInGrid = new Vector2Int(3, 2);
+        m_CameraPositionInGrid = new Vector2Int(5, 5);
         Script_GameManager.Instance.m_BattleCamera = this;
 
         if (m_NodeTheCameraIsOn != null)
@@ -139,9 +152,9 @@ public class Script_CombatCameraController : MonoBehaviour
                 break;
 
             case CameraState.PlayerAttack:
-
-                m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
-                m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid + new Vector2Int(1,0));
+               //
+               // m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid);
+               // m_Grid.SetAttackingTileInGrid(m_CameraPositionInGrid + new Vector2Int(1,0));
 
                 transform.position = Vector3.Lerp(transform.position, new Vector3(
                         m_NodeTheCameraIsOn.transform.position.x + 13.5f,
@@ -222,38 +235,53 @@ public class Script_CombatCameraController : MonoBehaviour
             //Up and down Axis
             if (Constants.Constants.m_XboxController == true)
             {
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-            (MoveUp, "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
-
-                //Left and right Axis
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-
-                if (Input.GetButtonDown("Xbox_B"))
-                {
-                    ReturnPlayerToInitalPosition();
-                }
+            //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            //   (MoveCamera(CameraMovementDirections.Up), "Xbox_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            //       (MoveDown, "Xbox_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+            //
+            //
+            //   //Left and right Axis
+            //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            //       (MoveRight, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+            //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
+            //       (MoveLeft, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+            //
+            //   if (Input.GetButtonDown("Xbox_B"))
+            //   {
+            //       ReturnPlayerToInitalPosition();
+            //   }
             }
             if (Constants.Constants.m_PlaystationController == true)
             {
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                (MoveUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
 
 
-                //Left and right Axis
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-                Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                    (MoveLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
+                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                  ("Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.True)
+                {
+                    MoveCamera(CameraMovementDirections.Up);
+                }
 
-                if (Input.GetButtonDown("Ps4_Circle"))
+
+                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                   ("Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.False)
+                {
+                    MoveCamera(CameraMovementDirections.Down);
+                }
+
+                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                  ("Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX) == Script_InputManager.InputManagerStates.True)
+                {
+                    MoveCamera(CameraMovementDirections.Right);
+                }
+                
+                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
+                   ("Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX) == Script_InputManager.InputManagerStates.False)
+                {
+                    MoveCamera(CameraMovementDirections.Left);
+                }
+
+            if (Input.GetButtonDown("Ps4_Circle"))
                 {
                     ReturnPlayerToInitalPosition();
                 }
@@ -265,58 +293,77 @@ public class Script_CombatCameraController : MonoBehaviour
     public void SetAttackPhase(Script_Skills aSkill)
     {
         m_CreatureAttackingSkill = aSkill;
+        m_SpellAttackFormations = Script_GameManager.Instance.m_NodeFormation.NodeFormation();
         m_cameraState = CameraState.PlayerAttack;
     }
 
-    public void MoveUp()
+    public void MoveCamera(CameraMovementDirections cameraMovementDirections )
     {
-        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
 
-        
-       
-       m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
+        if (m_SpellAttackFormations != null)
+        {
+            for (int i = 0; i < m_SpellAttackFormations.Count; i++)
+            {
+                m_Grid.DeselectAttackingTileingrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y));
+            }
+        }
+
+        if (cameraMovementDirections == CameraMovementDirections.Up)
+        {
+            m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x - 1, m_CameraPositionInGrid.y);
+        }
+
+        if (cameraMovementDirections == CameraMovementDirections.Down)
+        {
+            m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x + 1, m_CameraPositionInGrid.y);
+        }
+
+
+        if (cameraMovementDirections == CameraMovementDirections.Left)
+        {
+            m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y - 1);
+        }
+
+
+        if (cameraMovementDirections == CameraMovementDirections.Right)
+        {
+            m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
+        }
+
+
+
+
         m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
         m_Selector.gameObject.transform.position =
             new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
-    }
 
-    public void MoveDown()
-    {
-
-        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
-        m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x + 1, m_CameraPositionInGrid.y);
-        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-        m_Selector.gameObject.transform.position =
-            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
-    }
-
-    public void MoveLeft()
-    {
-
-        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
-        m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y - 1);
-        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-        m_Selector.gameObject.transform.position =
-            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
-    }
-
-    public void MoveRight()
-    {
-
-        m_Grid.DeselectAttackingTileingrid(m_CameraPositionInGrid);
-        m_CameraPositionInGrid = new Vector2Int(m_CameraPositionInGrid.x, m_CameraPositionInGrid.y + 1);
-        m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-        m_Selector.gameObject.transform.position =
-            new Vector3(m_NodeTheCameraIsOn.transform.position.x, m_NodeTheCameraIsOn.transform.position.y + Constants.Constants.m_HeightOffTheGrid + 0.8f, m_NodeTheCameraIsOn.transform.position.z);
+        if (m_SpellAttackFormations != null)
+        {
+            for (int i = 0; i < m_SpellAttackFormations.Count; i++)
+            {
+                m_Grid.SetAttackingTileInGrid(new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y));
+            }
+        }
     }
 
     public void AttackingIndividual()
     {
         m_Creature.m_CreatureAi.m_CreaturesAnimator.SetTrigger("t_IsAttack");
-        StartCoroutine(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y]
-            .m_CreatureOnGridPoint.DecrementHealth
-            (m_CreatureAttackingSkill.GetSkillDamage() + m_Creature.GetAllStrength(), m_CreatureAttackingSkill.GetElementalType(), 0.1f,0.1f, 1));
-
+        if (m_SpellAttackFormations != null)
+        {
+            for (int i = 0; i < m_SpellAttackFormations.Count; i++)
+            {
+                Vector2Int TempSpellNodePosition = new Vector2Int(m_CameraPositionInGrid.x + m_SpellAttackFormations[i].x,
+                    m_CameraPositionInGrid.y + m_SpellAttackFormations[i].y);
+                if (m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint != null)
+                {
+                    StartCoroutine(m_Grid.m_GridPathArray[TempSpellNodePosition.x, TempSpellNodePosition.y].m_CreatureOnGridPoint.DecrementHealth
+                       (m_CreatureAttackingSkill.GetSkillDamage() + m_Creature.GetAllStrength(), m_CreatureAttackingSkill.GetElementalType(), 0.1f, 0.1f, 1));
+                }
+            }
+        }
         m_PlayerIsAttacking = false;
         Script_GameManager.Instance.UiManager.PopAllScreens();
     }

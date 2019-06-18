@@ -168,13 +168,13 @@ public class Script_OverWorldPlayer : MonoBehaviour {
         {
             Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
             (PlayerUp, "Ps4_DPadY", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
+        
             Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
             (PlayerRight, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
-
+        
             Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
            (PlayerDown, "Ps4_DPadY", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
+        
             Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
             (PlayerLeft, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadX);
         }

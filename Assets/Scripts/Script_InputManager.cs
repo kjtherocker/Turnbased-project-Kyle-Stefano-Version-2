@@ -6,6 +6,14 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class Script_InputManager : MonoBehaviour
 {
+    public enum InputManagerStates
+    {
+        True,
+        False,
+        Nothing
+
+    }
+
     public bool m_DPadY;
     public bool m_DPadX;
 
@@ -18,17 +26,17 @@ public class Script_InputManager : MonoBehaviour
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
-		
-	}
+
+    }
 
     // Update is called once per frame
     void Update()
     {
     }
 
-    public void SetXboxAxis(Method aMethod, string aNameOfAxis, bool aPositiveOrNegative,ref bool aReferenceToInput)
+    public void SetXboxAxis(Method aMethod, string aNameOfAxis, bool aPositiveOrNegative, ref bool aReferenceToInput)
     {
         m_Method = aMethod;
 
@@ -61,13 +69,13 @@ public class Script_InputManager : MonoBehaviour
             }
         }
 
-        
+
     }
 
 
-    public void SetPlaystationAxis(Method aMethod, string aNameOfAxis, bool aPositiveOrNegative, ref bool aReferenceToInput)
+    public InputManagerStates SetPlaystationAxis(string aNameOfAxis, bool aPositiveOrNegative, ref bool aReferenceToInput)
     {
-        m_Method = aMethod;
+        //  m_Method = aMethod;
 
         if (Input.GetAxis(aNameOfAxis) == 0)
         {
@@ -80,8 +88,8 @@ public class Script_InputManager : MonoBehaviour
             {
                 if (aReferenceToInput == false)
                 {
-                    m_Method();
                     aReferenceToInput = true;
+                    return InputManagerStates.True;
                 }
             }
         }
@@ -92,13 +100,14 @@ public class Script_InputManager : MonoBehaviour
             {
                 if (aReferenceToInput == false)
                 {
-                    m_Method();
+
                     aReferenceToInput = true;
+                    return InputManagerStates.False;
                 }
             }
         }
 
-
+        return InputManagerStates.Nothing;
     }
 
     public void SetPlaystationButton(Method aMethod, string aNameOfButton, ref bool aReferenceToInput)
@@ -137,5 +146,41 @@ public class Script_InputManager : MonoBehaviour
         {
             aReferenceToInput = false;
         }
+    }
+
+    public void SetPlaystationAxis(Method aMethod, string aNameOfAxis, bool aPositiveOrNegative, ref bool aReferenceToInput)
+    {
+        m_Method = aMethod;
+
+        if (Input.GetAxis(aNameOfAxis) == 0)
+        {
+            aReferenceToInput = false;
+        }
+
+        if (aPositiveOrNegative == true)
+        {
+            if (Input.GetAxis(aNameOfAxis) > 0.9f)
+            {
+                if (aReferenceToInput == false)
+                {
+                    m_Method();
+                    aReferenceToInput = true;
+                }
+            }
+        }
+
+        if (aPositiveOrNegative == false)
+        {
+            if (Input.GetAxis(aNameOfAxis) < -0.9f)
+            {
+                if (aReferenceToInput == false)
+                {
+                    m_Method();
+                    aReferenceToInput = true;
+                }
+            }
+        }
+
+
     }
 }
