@@ -158,6 +158,7 @@
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\Shaders\Shader_WeaponTest.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
