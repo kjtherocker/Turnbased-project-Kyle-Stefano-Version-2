@@ -82,7 +82,7 @@ public class Script_GridFormations : MonoBehaviour
     public void StartCameraEditor()
     {
         m_EditorCamera.Convert1DArrayto2D(m_ListToConvert,m_GridDimensions);
-        m_EditorCamera.m_NodeTheCameraIsOn = Script_GameManager.Instance.m_EditorCamera.m_GridPathArray[1, 1];
+        m_EditorCamera.m_NodeTheCameraIsOn = m_EditorCamera.m_GridPathArray[1, 1];
         m_EditorCamera.m_EditingHasStarted = true;
 
     }

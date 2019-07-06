@@ -242,8 +242,8 @@ public class Script_CombatNode : MonoBehaviour
 
     public void DestroyNodeReplacement()
     {
-        DestroyImmediate(m_NodeReplacement.gameObject);
-        m_CurrentWalkablePlaneBeingUsed = m_WalkablePlane;
+       // DestroyImmediate(m_NodeReplacement.gameObject);
+       // m_CurrentWalkablePlaneBeingUsed = m_WalkablePlane;
     }
 
     public void DestroyProp()
