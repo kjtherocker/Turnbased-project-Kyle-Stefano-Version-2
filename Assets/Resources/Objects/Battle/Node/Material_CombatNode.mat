@@ -47,12 +47,24 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 2800000, guid: ffc118c767cdb81429661f2e47bb61a4, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Ramp:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SecondTex:
+        m_Texture: {fileID: 2800000, guid: 07111cf72a21fda4996e9bcd2a8cd137, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _WindDistortionMap:
@@ -70,14 +82,18 @@ Material:
     - _BumpScale: 1
     - _Cutoff: 0.187
     - _DetailNormalMapScale: -0.12
+    - _DisAmount: 0.963
+    - _DisLineWidth: 1.89
     - _DstBlend: 0
     - _GlossMapScale: 1
     - _Glossiness: 0
     - _GlossyReflections: 1
     - _Metallic: 0.124
     - _Mode: 0
+    - _NScale: 5.94
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _Radius: 10
     - _RimAmount: 0.448
     - _RimThreshold: 0.1
     - _SmoothnessTextureChannel: 0
@@ -91,8 +107,15 @@ Material:
     m_Colors:
     - _AmbientColor: {r: 0.4, g: 0.4, b: 0.4, a: 1}
     - _BottomColor: {r: 0.084905654, g: 0.33962262, b: 0.08561582, a: 1}
-    - _Color: {r: 0.6636738, g: 1, b: 0.5801887, a: 1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Color2: {r: 1, g: 1, b: 1, a: 1}
+    - _DisLineColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FOVColor: {r: 1, g: 1, b: 1, a: 1}
+    - _PositionA: {r: 0, g: 0, b: 0, a: 0}
+    - _PositionB: {r: 0, g: 0, b: 0, a: 0}
+    - _PositionC: {r: 0, g: 0, b: 0, a: 0}
+    - _PositionD: {r: 0, g: 0, b: 0, a: 0}
     - _RimColor: {r: 1, g: 1, b: 1, a: 1}
     - _SpecularColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
     - _TopColor: {r: 0.08599452, g: 0.9245283, b: 0, a: 1}

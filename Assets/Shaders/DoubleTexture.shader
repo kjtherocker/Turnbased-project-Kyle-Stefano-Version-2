@@ -41,7 +41,6 @@ inline half4 LightingToonRamp (SurfaceOutput s, half3 lightDir, half atten)
 
 
  float3 _Position; // from script
- float3 _Position2;
 
 sampler2D _MainTex, _SecondTex;
 float4 _Color, _Color2;
@@ -85,9 +84,8 @@ void surf (Input IN, inout SurfaceOutput o) {
 	float3 primaryTex = (step(sphereNoise - _DisLineWidth,_DisAmount) * c.rgb);
 	float3 secondaryTex = (step(_DisAmount, sphereNoise) * c2.rgb);
 	float3 resultTex = primaryTex + secondaryTex + DissolveLine;
-    
+    o.Albedo = resultTex;
 
-	o.Albedo = resultTex;
 	o.Emission = DissolveLine;
 	o.Alpha = c.a;
    
