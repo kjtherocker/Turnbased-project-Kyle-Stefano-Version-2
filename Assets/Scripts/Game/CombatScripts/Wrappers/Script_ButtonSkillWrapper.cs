@@ -3,15 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+
+[ExecuteInEditMode]
 public class Script_ButtonSkillWrapper : MonoBehaviour
 {
+
+    public enum ElementalIcons
+    {
+        Fire,
+        Ice,
+        Light,
+        Shadow,
+        Wind,
+        Earth,
+        Lightning,
+        Null
+
+    }
+
+
     public Script_Creatures m_ButtonTurnHolder;
+
     private List<Script_Creatures> m_ListReference;
+    public List<Material> m_ElementIconsList;
+
+    public ElementalIcons m_ElementalIconType;
+
     public Script_Skills m_ButtonSkill;
     public UiSkillBoard m_SkillBoard;
     public Button m_Button;
     public TextMeshProUGUI m_ButtonText;
     public TextMeshProUGUI m_CostToUseText;
+    public Image m_ElementalIconImage;
+
+
     int m_SkillNumber;
     Color m_Color_TransparentWhite;
     Color m_Color_White;
@@ -26,6 +51,7 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
+        SetElementalIcon(m_ElementalIconType);
 
         if (m_SkillBoard != null)
         {
@@ -42,6 +68,14 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
             }
         }
     }
+
+
+    public void SetElementalIcon (ElementalIcons aSkills, string sourceName = "Global")
+    {
+        m_ElementalIconImage.material = m_ElementIconsList[(int)aSkills];
+    }
+
+
 
     public void SetupButton(Script_Creatures a_TurnHolder, Script_Skills a_Skill, int a_Skillnumber, UiSkillBoard aSkillBoard)
     {

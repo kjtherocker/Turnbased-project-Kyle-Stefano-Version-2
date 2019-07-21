@@ -36,7 +36,7 @@ public class Script_MainCharacter : Script_Creatures {
 
         Model = (GameObject)Resources.Load("Objects/Battle/PartyModels/Wretched Doll/Prefab/3D_Doll", typeof(GameObject));
         
-        m_Texture = (Material)Resources.Load("Materials/Portrait/Material_Knight", typeof(Material));
+        m_Texture = (Material)Resources.Load("Objects/Portrait/Material_Knight", typeof(Material));
 
 
 
