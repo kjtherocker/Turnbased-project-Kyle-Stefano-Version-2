@@ -729,3 +729,7 @@ C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bi
 C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\Unity.Postprocessing.Editor.pdb
 C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\Unity.Postprocessing.Runtime.pdb
 C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\nunit.framework.xml
+C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\Boo.Lang.dll
+C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\UnityEditor.UI.dll
+C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\PathCreator.pdb
+C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2\Temp\bin\Debug\PathCreatorEditor.pdb

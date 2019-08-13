@@ -11,7 +11,7 @@ public class Script_Sleep : Script_Skills
     {
 
         //m_ElementalType = ElementalType.Water;
-        m_SkillType = SkillType.Aliment;
+        m_SkillType = SkillType.Defence;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillAilment = SkillAilment.Sleep;

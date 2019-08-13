@@ -28,6 +28,7 @@ public class DialogueManager : MonoBehaviour
 
     public DialogueTrigger m_DialogueTrigger;
 
+
     
     public TextMeshProUGUI m_DisplayText;
     public Text m_DisplayName;
@@ -36,6 +37,7 @@ public class DialogueManager : MonoBehaviour
     public RawImage m_ChatBox;
     public RawImage m_Portrait;
 
+    public Script_OverworldCamera m_OverworldCamera;
 
     public int AnimatedTextiterator;
     public string CurrentText;
@@ -47,7 +49,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         m_DialogueList = new List<Dialogue>();
-        m_DialogueCanvas.gameObject.SetActive(false);
+        //m_DialogueCanvas.gameObject.SetActive(false);
         TextScroll = false;
     }
 
@@ -56,8 +58,10 @@ public class DialogueManager : MonoBehaviour
 
         if (Constants.Constants.TurnDialogueOff == false)
         {
-            
+
             //m_Sentances.Clear();
+
+            m_OverworldCamera.gameObject.SetActive(false); 
             m_DialogueList = aDialogue;
             m_DialogueCanvas.gameObject.SetActive(true);
 
@@ -83,11 +87,11 @@ public class DialogueManager : MonoBehaviour
 
         if (m_DialogueList[0].m_ChatBoxType == ChatBoxType.White)
         {
-            m_DisplayText.color = Color.white;
+          //  m_DisplayText.color = Color.white;
         }
 
 
-        SetPortrait(m_DialogueList[0].m_PortraitType);
+       // SetPortrait(m_DialogueList[0].m_PortraitType);
         SetFont(m_DialogueList[0].m_FontTypes);
 
 
@@ -389,6 +393,8 @@ public class DialogueManager : MonoBehaviour
         {
             m_DialogueTrigger.DialogueIsDone = true;
         }
+        Destroy(m_DialogueTrigger.gameObject);
+        m_OverworldCamera.gameObject.SetActive(true);
     }
 
 

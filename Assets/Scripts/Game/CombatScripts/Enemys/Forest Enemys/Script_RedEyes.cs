@@ -27,17 +27,11 @@ public class Script_RedEyes : Script_Creatures
         m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
 
         m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain));
-        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.LightRay));
-        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.FireBall));
-        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.ShadowBlast));
-        m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Invigorate));
   
 
         Model = (GameObject)Resources.Load("Prefabs/Battle/Enemy/Forest/Bosses/Prefab_RedEyes", typeof(GameObject));
 
         m_Texture = (Material)Resources.Load("Materials/Portrait/Material_RedEyes", typeof(Material));
-
-        m_Domain = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.RedEyesEncroach);
 
         charactertype = Charactertype.Enemy;
         elementalStrength = ElementalStrength.Fire;

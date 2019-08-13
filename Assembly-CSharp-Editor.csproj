@@ -62,7 +62,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\NotResources\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\Editor\PathSceneToolEditor.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/kylej/Documents/GitHub/Turnbased-project-Kyle-Stefano-Version-2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
@@ -674,6 +674,14 @@
     <ProjectReference Include="Assembly-CSharp.csproj">
       <Project>{6DB61288-423C-8538-FC8B-5D687BA384F4}</Project>
       <Name>Assembly-CSharp</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{C1A62F22-F962-0E4B-32AF-4DEE8D72C805}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{C6FCB5F0-BBB3-19B4-6AC9-E71A5399343A}</Project>
+      <Name>PathCreatorEditor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

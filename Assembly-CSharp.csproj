@@ -62,6 +62,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\PathCreator\Examples\Scripts\GeneratePathExample.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathFollower.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathPlacer.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathSceneTool.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\PathSpawner.cs" />
+    <Compile Include="Assets\PathCreator\Examples\Scripts\RoadMeshCreator.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\DialogueManager.cs" />
     <Compile Include="Assets\Scripts\DialogScripts\DialogueTrigger.cs" />
@@ -96,8 +102,6 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BloodSkills\Script_BloodRelief.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\BuffSkills\Script_Invigorate.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\DebuffSkills\Script_Restrict.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_RedEyesEncroach.cs" />
-    <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ExtraSkills\Script_SkillPassTurn.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\HealSkills\Script_HolyWater.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\ResurrectSkills\Script_PhoenixSpirit.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Skills\Script_SkillList.cs" />
@@ -124,6 +128,7 @@
     <Compile Include="Assets\Scripts\MenuScripts\Script_MainMenu.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_Options.cs" />
     <Compile Include="Assets\Scripts\MenuScripts\Script_PartyMenu.cs" />
+    <Compile Include="Assets\Scripts\ScreenshotController.cs" />
     <Compile Include="Assets\Scripts\Script_DestroyParticleSystems.cs" />
     <Compile Include="Assets\Scripts\Script_InputManager.cs" />
     <Compile Include="Assets\Scripts\Services\Singleton.cs" />
@@ -746,6 +751,16 @@
     <Reference Include="System.Xml.Serialization">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.1.2f1/Editor/Data/NetStandard/compat/2.0.0/shims/netfx/System.Xml.Serialization.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="PathCreator.csproj">
+      <Project>{C1A62F22-F962-0E4B-32AF-4DEE8D72C805}</Project>
+      <Name>PathCreator</Name>
+    </ProjectReference>
+    <ProjectReference Include="PathCreatorEditor.csproj">
+      <Project>{C6FCB5F0-BBB3-19B4-6AC9-E71A5399343A}</Project>
+      <Name>PathCreatorEditor</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

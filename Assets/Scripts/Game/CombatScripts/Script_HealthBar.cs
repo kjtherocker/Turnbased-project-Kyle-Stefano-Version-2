@@ -6,10 +6,10 @@ using TMPro;
 
 public class Script_HealthBar : MonoBehaviour
 {
-    public Image Image_Healthbar;
+    public RawImage Image_Healthbar;
     public TextMeshProUGUI Text_HealthRatio;
 
-    public Image Image_Manahbar;
+    public RawImage Image_Manahbar;
     public TextMeshProUGUI Text_ManaRatio;
 
     public TextMeshProUGUI Text_Strength;

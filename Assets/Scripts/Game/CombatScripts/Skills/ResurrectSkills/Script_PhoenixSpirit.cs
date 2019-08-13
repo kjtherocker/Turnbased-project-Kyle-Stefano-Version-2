@@ -12,7 +12,7 @@ public class Script_PhoenixSpirit : Script_Skills
     {
 
         m_ElementalType = ElementalType.Light;
-        m_SkillType = SkillType.Resurrect;
+        m_SkillType = SkillType.Heal;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 0;

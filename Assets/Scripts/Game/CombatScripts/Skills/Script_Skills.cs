@@ -13,27 +13,22 @@ public class Script_Skills
 
     public enum ElementalType
     {
-        Null,
         Fire,
-        Water,
-        Wind,
-        Lighting,
-        Shadow,
+        Ice,
         Light,
-        Blood
+        Shadow,
+        Wind,
+        Earth,
+        Lightning,
+        Null
     }
 
     public enum SkillType
     {
         Attack,
         Heal,
-        Buff,
-        Debuff,
-        Extra,
-        Resurrect,
-        Aliment,
-        Blood
-
+        Defence,
+        Domain,
 
     }
     public enum DamageType
@@ -60,29 +55,41 @@ public class Script_Skills
 
     }
 
-    protected ElementalType m_ElementalType;
-    protected SkillType m_SkillType;
-    protected SkillFormation m_SkillFormation;
-    protected DamageType m_Damagetype;
-    protected SkillAilment m_SkillAilment;
+    [SerializeField]
+    public ElementalType m_ElementalType;
+    [SerializeField]
+    public SkillType m_SkillType;
+    [SerializeField]
+    public SkillFormation m_SkillFormation;
+    [SerializeField]
+    public DamageType m_Damagetype;
+    [SerializeField]
+    public SkillAilment m_SkillAilment;
 
-    protected string SkillName;
-    protected string SkillDescription;
+    [SerializeField]
+    public string SkillName;
+    [SerializeField]
+    public string SkillDescription;
 
-    protected ParticleSystem m_SkillParticleEffect;
+    [SerializeField]
+    public ParticleSystem m_SkillParticleEffect;
 
-    protected int m_CostToUse;
+    [SerializeField]
+    public int m_CostToUse;
 
-    protected int m_Damage;
+    [SerializeField]
+    public int m_Damage;
 
+    [SerializeField]
     public string m_AnimationName;
 
     public virtual void Start()
     {
-        
     }
+    public virtual void Update()
+    {
 
-  
+    }
     public ParticleSystem GetSkillParticleEffect()
     {
         return m_SkillParticleEffect;

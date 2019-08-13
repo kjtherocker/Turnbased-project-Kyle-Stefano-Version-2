@@ -97,6 +97,8 @@ public class Script_Node : MonoBehaviour {
 
     public void StartDialogue()
     {
+        m_DialogueTrigger = Instantiate<DialogueTrigger>(m_DialogueTrigger);
+
         m_DialogueTrigger.TriggerDialogue();
     }
 }

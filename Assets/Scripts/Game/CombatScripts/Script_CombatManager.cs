@@ -88,13 +88,13 @@ public class Script_CombatManager : MonoBehaviour
                 m_Gridformation.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(16, 4), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
             
           //  AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(3, 6), TurnOrderAlly);
 
-           //   AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(15, 2), TurnOrderAlly);
-           //                                                                     
-           //  AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(15, 3), TurnOrderAlly);
+           //    AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(15, 2), TurnOrderAlly);
+           //                                                                      
+           //   AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(15, 3), TurnOrderAlly);
 
 
             //Setting up the Enemy

@@ -24,7 +24,7 @@ public class UiSkillBoard : UiScreen
         //{
         //    m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
         //}
-        m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_ButtonText.color = Color.red;
+       // m_CurrentSkillMenuButtonsMenu[m_SkillBoardPointerPosition].m_NameOfSkill.color = Color.red;
 
         if (m_SkillBoardPointerPosition < 0)
         {
@@ -86,8 +86,8 @@ public class UiSkillBoard : UiScreen
         for (int i = 0; i < m_SkillBoardCreature.m_Skills.Count; i++)
         {
             m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
-            m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(200 + i * 325, 200 , 0);
-            m_CurrentSkillMenuButtonsMenu[i].SetupButton(m_SkillBoardCreature, m_SkillBoardCreature.m_Skills[i], i, this);
+            m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.position = new Vector3(200 + i * 175, 200 , 0);
+            m_CurrentSkillMenuButtonsMenu[i].SetupButton(m_SkillBoardCreature, m_SkillBoardCreature.m_Skills[i], this);
 
 
             m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.SetParent(this.transform, false);

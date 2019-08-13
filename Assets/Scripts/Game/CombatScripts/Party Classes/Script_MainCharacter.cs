@@ -32,8 +32,6 @@ public class Script_MainCharacter : Script_Creatures {
         m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.PheonixSpirit));
         m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.icerain));
 
-        m_BloodArts.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.BloodRelief));
-
         Model = (GameObject)Resources.Load("Objects/Battle/PartyModels/Wretched Doll/Prefab/3D_Doll", typeof(GameObject));
         
         m_Texture = (Material)Resources.Load("Objects/Portrait/Material_Knight", typeof(Material));

@@ -10,20 +10,20 @@ public class Script_HolyWater : Script_Skills
     public override void Start()
     {
 
-        m_ElementalType = ElementalType.Water;
+        m_ElementalType = ElementalType.Ice;
         m_SkillType = SkillType.Heal;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 300;
         m_CostToUse = 60;
-        SkillName = "HolyWater";
+        SkillName = "Holy Water";
         SkillDescription = "Heals the whole party a small amount";
+
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
-
     }
 
     public override int UseSkill(int BonusDamage)

@@ -19,7 +19,7 @@ public class Script_FireBall : Script_Skills
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/FireWave/ParticleEffect_FireWave", typeof(ParticleSystem));
         m_CostToUse = 40;
         m_Damage = 10;
-        SkillName = "FireBall";
+        SkillName = "Fire Ball";
         SkillDescription = "FireBall that will hit the whole enemy team";
     }
 

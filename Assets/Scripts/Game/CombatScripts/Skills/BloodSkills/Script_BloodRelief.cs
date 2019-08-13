@@ -11,8 +11,8 @@ public class Script_BloodRelief : Script_Skills
     public override void Start()
     {
 
-        m_ElementalType = ElementalType.Blood;
-        m_SkillType = SkillType.Blood;
+        m_ElementalType = ElementalType.Shadow;
+        m_SkillType = SkillType.Defence;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/DarkWave/ParticleEffect_DarkWave", typeof(ParticleSystem));

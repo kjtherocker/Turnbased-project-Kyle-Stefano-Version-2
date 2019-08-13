@@ -11,8 +11,8 @@ public class Script_Invigorate : Script_Skills
     public override void Start()
     {
 
-        m_ElementalType = ElementalType.Water;
-        m_SkillType = SkillType.Buff;
+        m_ElementalType = ElementalType.Ice;
+        m_SkillType = SkillType.Heal;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 3;

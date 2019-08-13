@@ -12,7 +12,7 @@ public class Script_Restrict : Script_Skills
     {
 
         m_ElementalType = ElementalType.Shadow;
-        m_SkillType = SkillType.Debuff;
+        m_SkillType = SkillType.Defence;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_Damage = 3;

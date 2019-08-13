@@ -11,14 +11,14 @@ public class Script_IceRain : Script_Skills
     public override void Start()
     {
 
-        m_ElementalType = ElementalType.Water;
+        m_ElementalType = ElementalType.Ice;
         m_SkillType = SkillType.Attack;
         m_SkillFormation = SkillFormation.SingleNode;
         m_Damagetype = DamageType.Magic;
         m_CostToUse = 40;
         m_Damage = 5;
         m_SkillParticleEffect = (ParticleSystem)Resources.Load("ParticleSystems/Waves/IceWave/ParticleEffect_IceWave", typeof(ParticleSystem));
-        SkillName = "IceRain";
+        SkillName = "Ice Rain";
         SkillDescription = "IceRain that will hit the whole enemy team";
     }
 

@@ -16,6 +16,9 @@ public class Script_OverWorldPlayer : MonoBehaviour {
     public Script_PartyManager PartyManager;
     public Script_PartyMenu m_PartyMenu;
 
+    //TODO make dialogue a Dialogue manager thing
+    public DialogueManager m_DialogueManager;
+
     public Material m_GridMaterial;
 
     public float Player_Speed = 5;
@@ -40,29 +43,28 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetKeyDown("escape"))
-        {
-            IsPartyMenuOn = !IsPartyMenuOn;
-        }
         if (Input.GetKeyDown(KeyCode.F1))
         {
             Application.Quit();
         }
-        if (IsPartyMenuOn == false)
+
+        Player_Speed_Delta = Player_Speed * Time.deltaTime;
+
+        if (transform.position == Node_MovingTo.transform.position)
         {
-            Player_Speed_Delta = Player_Speed * Time.deltaTime;
+            Player_Movment = false;
+            Node_PlayerIsOn = Node_MovingTo;
+            m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", false);
+        }
 
-            //GameManager.UiManager.PopScreen();
+        switch (Node_PlayerIsOn.Enum_NodeType)
+        {
+            case Script_Node.NodeTypes.BasicNode:
 
-            if (transform.position == Node_MovingTo.transform.position)
-            {
-                Player_Movment = false;
-                Node_PlayerIsOn = Node_MovingTo;
-                m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", false);
-            }
+                break;
 
-            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EncounterNode)
-            {
+            case Script_Node.NodeTypes.EncounterNode:
+
                 if (Node_PlayerIsOn.m_GridFormation != null)
                 {
                     Script_GameManager.Instance.CombatManager.m_GridFormation = Node_PlayerIsOn.m_GridFormation;
@@ -72,50 +74,42 @@ public class Script_OverWorldPlayer : MonoBehaviour {
 
                 Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
 
-            }
 
-            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.EndNode)
-            {
+                break;
+
+            case Script_Node.NodeTypes.EndNode:
 
                 m_EncounterManager.SetEncounter(Script_EncounterManager.EncounterTypes.BossForestEncounter);
                 GameManager.SwitchToBattle();
 
-
                 Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
-            }
 
-            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.DialogueNode)
-            {
+                break;
+
+            case Script_Node.NodeTypes.DialogueNode:
+                m_DialogueManager.gameObject.SetActive(true);
                 Node_PlayerIsOn.StartDialogue();
                 Node_PlayerIsOn.SetNodeType(Script_Node.NodeTypes.BasicNode);
-            }
 
-            if (Node_PlayerIsOn.Enum_NodeType == Script_Node.NodeTypes.ShopNode)
-            {
+                break;
+
+            case Script_Node.NodeTypes.ShopNode:
+
                 SceneManager.LoadScene(1);
-            }
-
-
-            if (Player_Movment == true)
-            {
-                m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", true);
-                OverworldMovement();
-            }
-
-            if (Player_Movment == false)
-            {
-                
-                PlayerMovement();
-            }
+                break;
         }
-        else
+
+        if (Player_Movment == true)
         {
-            GameManager.UiManager.PushScreen(UiManager.Screen.PartyMenu);
-            if (Input.GetKeyDown("space"))
-            {
-                
-            }
+            m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", true);
+            OverworldMovement();
         }
+
+        if (Player_Movment == false)
+        {
+            PlayerMovement();
+        }
+        
     }
 
     public void OverworldMovement()

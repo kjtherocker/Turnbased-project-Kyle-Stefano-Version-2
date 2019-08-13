@@ -8,36 +8,27 @@ using TMPro;
 public class Script_ButtonSkillWrapper : MonoBehaviour
 {
 
-    public enum ElementalIcons
-    {
-        Fire,
-        Ice,
-        Light,
-        Shadow,
-        Wind,
-        Earth,
-        Lightning,
-        Null
-
-    }
-
 
     public Script_Creatures m_ButtonTurnHolder;
 
     private List<Script_Creatures> m_ListReference;
     public List<Material> m_ElementIconsList;
+    public List<Material> m_CardDesigns;
 
-    public ElementalIcons m_ElementalIconType;
+    public Script_Skills.ElementalType m_ElementalIconType;
+    public Script_Skills.SkillType m_SkillType;
 
     public Script_Skills m_ButtonSkill;
     public UiSkillBoard m_SkillBoard;
     public Button m_Button;
-    public TextMeshProUGUI m_ButtonText;
     public TextMeshProUGUI m_CostToUseText;
-    public Image m_ElementalIconImage;
+    public TextMeshProUGUI m_Text_NameOfSkill;
+    public RawImage m_Image_CardDesign;
+    public Image m_Image_ElementalIcon;
+
+    public string m_NameOfSkill;
 
 
-    int m_SkillNumber;
     Color m_Color_TransparentWhite;
     Color m_Color_White;
 
@@ -51,39 +42,50 @@ public class Script_ButtonSkillWrapper : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
     {
-        SetElementalIcon(m_ElementalIconType);
-
+       // SetElementalIcon(m_ElementalIconType);
+       // SetCardDesign(m_SkillType);
         if (m_SkillBoard != null)
         {
-            m_ButtonText.text = m_ButtonSkill.GetSkillName();
-            m_CostToUseText.text = m_ButtonSkill.GetCostToUse().ToString();
+            //  m_ButtonText.text = m_ButtonSkill.GetSkillName();
+            //  m_CostToUseText.text = m_ButtonSkill.GetCostToUse().ToString();
 
-            if (m_ButtonTurnHolder.CurrentMana <= m_ButtonSkill.GetCostToUse())
-            {
-                m_ButtonText.color = m_Color_TransparentWhite;
-            }
-            else if (m_ButtonTurnHolder.CurrentMana >= m_ButtonSkill.GetCostToUse())
-            {
-                m_ButtonText.color = m_Color_White;
-            }
+          //if (m_ButtonTurnHolder != null)
+          //{
+          //    if (m_ButtonTurnHolder.CurrentMana <= m_ButtonSkill.GetCostToUse())
+          //    {
+          //        m_Text_NameOfSkill.color = m_Color_TransparentWhite;
+          //    }
+          //    else if (m_ButtonTurnHolder.CurrentMana >= m_ButtonSkill.GetCostToUse())
+          //    {
+          //        m_Text_NameOfSkill.color = m_Color_White;
+          //    }
+          //}
         }
     }
 
 
-    public void SetElementalIcon (ElementalIcons aSkills, string sourceName = "Global")
+    public void SetElementalIcon (Script_Skills.ElementalType aSkills, string sourceName = "Global")
     {
-        m_ElementalIconImage.material = m_ElementIconsList[(int)aSkills];
+        m_Image_ElementalIcon.material = m_ElementIconsList[(int)aSkills];
+    }
+
+    public void SetCardDesign(Script_Skills.SkillType aSkills, string sourceName = "Global")
+    {
+        m_Image_CardDesign.material = m_CardDesigns[(int)aSkills];
     }
 
 
 
-    public void SetupButton(Script_Creatures a_TurnHolder, Script_Skills a_Skill, int a_Skillnumber, UiSkillBoard aSkillBoard)
+    public void SetupButton(Script_Creatures a_TurnHolder, Script_Skills a_Skill, UiSkillBoard aSkillBoard)
     {
         m_ButtonTurnHolder = a_TurnHolder;
         m_ButtonSkill = a_Skill;
-        m_SkillNumber = a_Skillnumber;
+        m_SkillType = a_Skill.GetSkillType();
+        SetCardDesign(m_SkillType);
         m_SkillBoard = aSkillBoard;
-        
+        SetElementalIcon(a_Skill.GetElementalType());
+        m_Text_NameOfSkill.text = a_Skill.SkillName;
+        m_CostToUseText.text = a_Skill.m_CostToUse.ToString();
     }
 
     public void SetAsNotInteractable()

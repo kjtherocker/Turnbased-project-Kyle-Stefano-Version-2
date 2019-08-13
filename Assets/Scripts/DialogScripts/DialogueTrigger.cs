@@ -31,6 +31,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public bool UseStartObjectFulltime;
 
+    public GameObject m_CutsceneArea;
 
     public TriggerType m_TriggerType;
 
@@ -42,9 +43,8 @@ public class DialogueTrigger : MonoBehaviour
     public void Start()
     {
         DialogueHasHappend = false;
-        m_DialogueManager = FindObjectOfType<DialogueManager>();
+       
 
-        
 
     }
 
@@ -54,28 +54,6 @@ public class DialogueTrigger : MonoBehaviour
         if (DialogueIsDone == true && DialogueHasHappend == true)
         {
            
-              
-
-                if (UseStartObjectFulltime == false)
-                {
-                   if (EndObject != null)
-                   {
-                       EndObjectInGame = Instantiate<GameObject>(EndObject, SpawnPoint_End.gameObject.transform);
-                       if (EndObjectInGame.GetComponent<Animator>() != null)
-                       {
-                           EndObjectInGame.GetComponent<Animator>().SetTrigger("End");
-                       }
-                   }
-                }
-                else
-                {
-                    
-                    if (StartObjectInGame.GetComponent<Animator>() != null)
-                    {
-                        StartObjectInGame.GetComponent<Animator>().SetTrigger("End");
-                    }
-
-                }
                 DialogueIsDone = false;
             
         }
@@ -126,6 +104,8 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        gameObject.SetActive(true);
+        m_DialogueManager = FindObjectOfType<DialogueManager>();
         m_DialogueManager.m_DialogueTrigger = this;
         m_DialogueManager.StartDialogue(m_Dialogue);
         DialogueHasHappend = true;
