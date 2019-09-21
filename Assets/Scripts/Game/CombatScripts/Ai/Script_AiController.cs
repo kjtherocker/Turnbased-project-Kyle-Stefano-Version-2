@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Script_AiController : MonoBehaviour
@@ -11,11 +12,15 @@ public class Script_AiController : MonoBehaviour
     public Vector2Int m_Position;
     public Vector2Int m_InitalPosition;
 
-
+    public Pathfinder _Pathfinder;
     public Script_CombatNode Node_MovingTo;
     public Script_CombatNode Node_ObjectIsOn;
     public Animator m_CreaturesAnimator;
     public Script_Creatures m_Creature;
+
+    Dictionary<Script_CombatNode, List<Script_CombatNode>> cachedPaths = null;
+
+    private HashSet<Script_CombatNode> _pathsInRange;
 
     public Vector3 CreatureOffset;
 
@@ -33,7 +38,6 @@ public class Script_AiController : MonoBehaviour
         //m_Goal = new Vector2Int(9, 2);
         //m_Position = new Vector2Int(4, 4);
         CreatureOffset = new Vector3(0, Constants.Constants.m_HeightOffTheGrid, 0);
-        m_Movement = 4;
         m_Jump = 2;
         m_HasMovedForThisTurn = false;
         m_MovementHasStarted = false;
@@ -48,7 +52,7 @@ public class Script_AiController : MonoBehaviour
         m_GridPathArray = m_Grid.m_GridPathArray;
 
 
-
+        _Pathfinder = new Pathfinder();
 
     }
 
@@ -73,13 +77,78 @@ public class Script_AiController : MonoBehaviour
 
     }
 
-    public virtual IEnumerator SetGoalPosition(Vector2Int m_Goal)
+    public void SetGoal(Vector2Int m_Goal)
     {
-        m_Grid.SetGoal(m_Goal);
-        m_Grid.RemoveWalkableArea();
+      m_Grid.m_GridPathToGoal.Clear();
+      m_Grid.RemoveWalkableArea();
+      m_Grid.m_GridPathArray[m_Goal.x, m_Goal.y].m_IsGoal = true;
+
+        
+    }
+
+    public void FindAllPaths()
+    {
+        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, Node_ObjectIsOn);
+
+
+        foreach (Script_CombatNode node in _pathsInRange)
+        {
+            node.CreateWalkableArea();
+        }
+    }
+
+    public void DeselectAllPaths()
+    {
+        if (_pathsInRange != null)
+        {
+
+            foreach (Script_CombatNode node in _pathsInRange)
+            {
+                node.m_Heuristic = 0;
+                node.RemoveWalkableArea();
+            }
+        }
+    }
+
+    public HashSet<Script_CombatNode> GetAvailableDestinations(List<Script_CombatNode> cells, Script_CombatNode NodeHeuristicIsBasedOff)
+    {
+        cachedPaths = new Dictionary<Script_CombatNode, List<Script_CombatNode>>();
+
+        var paths = cachePaths(cells, NodeHeuristicIsBasedOff);
+        foreach (var key in paths.Keys)
+        {
+            var path = paths[key];
+            
+            var pathCost = path.Sum(c => c.m_MovementCost);
+            key.m_Heuristic = pathCost;
+            if (pathCost <= m_Movement)
+            {
+                cachedPaths.Add(key, path);
+            }
+        }
+        return new HashSet<Script_CombatNode>(cachedPaths.Keys);
+    }
+
+
+    public virtual void SetGoalPosition(Vector2Int m_Goal)
+    {
+        SetGoal(m_Goal);
         m_Grid.m_Movement = m_Movement;
-        yield return new WaitForSeconds(0.3f);
-        m_Grid.GetTheLowestH(m_Position, this);
+
+        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, m_Grid.m_GridPathArray[m_Goal.x, m_Goal.y]);
+
+
+        foreach (Script_CombatNode node in _pathsInRange)
+        {
+            node.m_IsWalkable = true;
+        }
+
+
+        List<Script_CombatNode> TempList = m_Grid.GetTheLowestH(Node_ObjectIsOn.m_PositionInGrid);
+
+
+        StartCoroutine(GetToGoal(TempList));
+
     }
 
     public virtual IEnumerator GetToGoal(List<Script_CombatNode> aListOfNodes)
@@ -126,7 +195,7 @@ public class Script_AiController : MonoBehaviour
         m_CreaturesAnimator.SetBool("b_IsWalking", false);
 
         //The walk has been finished
-        m_HasMovedForThisTurn = true;
+       //m_HasMovedForThisTurn = true;
 
         m_MovementHasStarted = false;
         //Changing the position from where the Creature was before
@@ -139,8 +208,8 @@ public class Script_AiController : MonoBehaviour
 
         Node_ObjectIsOn.m_CreatureOnGridPoint = m_Creature;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
-        
 
+        m_Grid.RemoveWalkableArea();
 
         for (int i = aListOfNodes.Count; i < 0; i--)
         {
@@ -148,6 +217,65 @@ public class Script_AiController : MonoBehaviour
         }
 
         
+    }
+
+    private Dictionary<Script_CombatNode, List<Script_CombatNode>> cachePaths(List<Script_CombatNode> cells, Script_CombatNode aNodeHeuristicIsBasedOn)
+    {
+        var edges = GetGraphEdges(cells);
+        var paths = _Pathfinder.findAllPaths(edges, aNodeHeuristicIsBasedOn);
+        return paths;
+    }
+
+    public virtual bool CheckIfNodeIsClearAndReturnNodeIndex(Script_CombatNode aNode)
+    {
+        // if the node is out of bounds, return -1 (an invalid tile index)
+
+        if (aNode == null)
+        {
+            Debug.Log("YOU BROKE " + aNode.m_PositionInGrid.ToString());
+        }
+
+        Script_CombatNode nodeIndex = aNode;
+
+        // if the node is already closed, return -1 (an invalid tile index)
+        if (nodeIndex.m_HeuristicCalculated == true)
+        {
+            return false;
+        }
+        // if the node can't be walked on, return -1 (an invalid tile index)
+        if (nodeIndex.m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
+        {
+            return false;
+        }
+
+
+        if (nodeIndex.m_NodeHeight > 0)
+        {
+            return false;
+        }
+        // return a valid tile index
+        return true;
+    }
+
+    protected virtual Dictionary<Script_CombatNode, Dictionary<Script_CombatNode, int>> GetGraphEdges(List<Script_CombatNode> NodeList)
+    {
+        Dictionary<Script_CombatNode, Dictionary<Script_CombatNode, int>> ret = new Dictionary<Script_CombatNode, Dictionary<Script_CombatNode, int>>();
+
+        foreach (Script_CombatNode Node in NodeList)
+        {
+            if (CheckIfNodeIsClearAndReturnNodeIndex(Node) == true|| Node.Equals(Node_ObjectIsOn))
+            {
+                ret[Node] = new Dictionary<Script_CombatNode, int>();
+                foreach (Script_CombatNode neighbour in Node.GetNeighbours(NodeList))
+                {
+                    if (CheckIfNodeIsClearAndReturnNodeIndex(neighbour) == true)
+                    {
+                        ret[Node][neighbour] = neighbour.m_MovementCost;
+                    }
+                }
+            }
+        }
+        return ret;
     }
 
     public virtual void ReturnToInitalPosition()

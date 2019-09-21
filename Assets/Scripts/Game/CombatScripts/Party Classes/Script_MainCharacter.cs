@@ -25,6 +25,8 @@ public class Script_MainCharacter : Script_Creatures {
 
         SetCreature();
 
+        m_CreatureMovement = 8;
+
         m_Attack = Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.Attack);
 
         m_Skills.Add(Script_GameManager.Instance.SkillList.SetSkills(Script_SkillList.Skills.HolyWater));

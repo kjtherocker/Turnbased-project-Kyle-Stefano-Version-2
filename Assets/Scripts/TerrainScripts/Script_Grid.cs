@@ -11,6 +11,7 @@ public class Script_Grid : MonoBehaviour
 
     public GameObject m_PrefabNode;
     public Script_CombatNode[,] m_GridPathArray;
+    public List<Script_CombatNode> m_GridPathList;
     public Script_CombatNode[] m_Test;
     public List<Script_CombatNode> m_OpenNodeList;
     public Material m_SelectedMaterial;
@@ -93,12 +94,14 @@ public class Script_Grid : MonoBehaviour
         {
 
            m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y] = aNodeGroup[i];
-            m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y].m_Grid = this;
+           m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y].m_Grid = this;
+            //m_GridPathArray[aNodeGroup[i].m_PositionInGrid.x, aNodeGroup[i].m_PositionInGrid.y].SetPropState();
 
 
 
 
         }
+        m_GridPathList = aNodeGroup;
     }
 
     public void CreateGrid(Vector2Int grid)
@@ -121,7 +124,7 @@ public class Script_Grid : MonoBehaviour
 
             }
         }
-        SetHeuristicToZero();
+
     }
 
     public Script_CombatNode GetNode(Vector2Int grid)
@@ -137,24 +140,6 @@ public class Script_Grid : MonoBehaviour
         
     }
 
-    public void SetGoal(Vector2Int grid)
-    {
-        SetHeuristicToZero();
-        m_GridPathToGoal.Clear();
-        RemoveWalkableArea();
-
-        m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
-
-
-
-        m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
-        m_GridPathArray[grid.x, grid.y].m_IsGoal = true;
-
-
-
-        m_GridPathArray[grid.x, grid.y].AddNeighboursToOpenListGoal(false);
-    }
-
     public void SetHeuristicToZero()
     {
         for (int x = 0; x < m_GridDimensions.x; x++)
@@ -162,10 +147,6 @@ public class Script_Grid : MonoBehaviour
             for (int y = 0; y < m_GridDimensions.y; y++)
             {
                 m_GridPathArray[x, y].m_Heuristic = 0;
-                m_GridPathArray[x, y].m_HeuristicCalculated = false;
-                m_GridPathArray[x, y].m_IsGoal = false;
-                m_GridPathArray[x, y].m_OpenListHasFinished = false;
-                m_GridPathArray[x, y].m_NodeYouCameFrom = null;
             }
         }
     }
@@ -194,142 +175,60 @@ public class Script_Grid : MonoBehaviour
         }
     }
 
-    public void SetWalkingHeuristic(Vector2Int grid)
+    protected static readonly Vector2Int[] _directions =
     {
-        SetHeuristicToZero();
-        m_GridPathToGoal.Clear();
-        
+        new Vector2Int(1, 0), new Vector2Int(-1, 0), new Vector2Int(0, 1), new Vector2Int(0, -1)
+    };
 
-        m_GridPathArray[grid.x, grid.y].m_HeuristicCalculated = true;
-
-
-
-        m_GridPathArray[grid.x, grid.y].m_Heuristic = 0;
-
-
-
-        m_GridPathArray[grid.x, grid.y].AddNeighboursToOpenListGoal(true);
-        m_WalkingHasStarted = true;
-    }
-
-
-
-  
-
-    public void GetTheLowestH(Vector2Int grid, Script_AiController aiController)
+    public Script_CombatNode CheckNeighborsForLowestNumber(Vector2Int grid)
     {
-        
         float TempHeuristic = 100;
         Script_CombatNode TempNode = null;
 
 
-            //Checking which heuristic is the lowest
-
-
-            if (grid.y + 1 < m_GridDimensions.y)
+        foreach (Vector2Int direction in _directions)
+        {
+            if ((grid.x + direction.x) < m_GridDimensions.x &&  (grid.y + direction.y)  < m_GridDimensions.y 
+                && grid.x + direction.x > 0 && (grid.y + direction.y) > 0)
             {
-                if (m_GridPathArray[grid.x, grid.y + 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+                Script_CombatNode neighbour = m_GridPathArray[grid.x + direction.x, grid.y + direction.y];
+                if (neighbour == null) continue;
+
+                if (neighbour.m_IsWalkable == false) continue;
+
+
+                if (neighbour.m_Heuristic < TempHeuristic)
                 {
-                    if (m_GridPathArray[grid.x, grid.y + 1].m_Heuristic == 0 && m_GridPathArray[grid.x, grid.y + 1].m_HeuristicCalculated == false)
-                    {
-                    }
-                    else
-                    {
-                        TempHeuristic = m_GridPathArray[grid.x, grid.y + 1].m_Heuristic;
-                        TempNode = m_GridPathArray[grid.x, grid.y + 1];
-                    }
+                    TempHeuristic = neighbour.m_Heuristic;
+                    TempNode = neighbour;
                 }
             }
-
-
-            if (grid.y - 1 > -1)
-            {
-                if (m_GridPathArray[grid.x, grid.y - 1].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                {
-                    if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic < TempHeuristic)
-                    {
-                        if (m_GridPathArray[grid.x, grid.y - 1].m_Heuristic == 0 && m_GridPathArray[grid.x, grid.y - 1].m_HeuristicCalculated == false)
-                        {
-                        
-                        }
-                        else
-                        {
-                            TempHeuristic = m_GridPathArray[grid.x, grid.y - 1].m_Heuristic;
-                            TempNode = m_GridPathArray[grid.x, grid.y - 1];
-                        }
-                    }
-                }
-            }
-            if (grid.x + 1 < m_GridDimensions.x)
-            {
-                 if (m_GridPathArray[grid.x + 1, grid.y].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                 {
-                     if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic < TempHeuristic && m_GridPathArray[grid.x + 1, grid.y].m_Heuristic != -1)
-                     {
-                           if (m_GridPathArray[grid.x + 1, grid.y].m_Heuristic == 0 && m_GridPathArray[grid.x +1, grid.y ].m_HeuristicCalculated == false)
-                           {
-                           
-                           }
-                           else
-                           {
-                               TempHeuristic = m_GridPathArray[grid.x + 1, grid.y].m_Heuristic;
-                               TempNode = m_GridPathArray[grid.x + 1, grid.y];
-                           }
-                     }
-                 }
-            }
-
-            if (grid.x - 1 > -1)
-            {
-                 if (m_GridPathArray[grid.x - 1, grid.y ].m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
-                 {
-                     if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic < TempHeuristic && m_GridPathArray[grid.x - 1, grid.y ].m_Heuristic != -1)
-                     {
-                           if (m_GridPathArray[grid.x - 1, grid.y].m_Heuristic == 0 && m_GridPathArray[grid.x - 1, grid.y].m_HeuristicCalculated == false)
-                           {
-                           
-                           }
-                           else
-                           {
-                               TempHeuristic = m_GridPathArray[grid.x - 1, grid.y].m_Heuristic;
-                               TempNode = m_GridPathArray[grid.x - 1, grid.y];
-                           }
-                     }
-                 }
-            }
-
-
-
-        
-            
-        m_GridPathToGoal.Add(TempNode);
-        m_GotPathNodes = true;
-                
-            
-        
-        
-        if (m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_IsGoal == true)
-        {
-            aiController.m_GridPath = m_GridPathToGoal;
-            StartCoroutine(aiController.GetToGoal(aiController.m_GridPath));
-            return;
         }
-        else
-        {
-            if (m_Movement >= 1)
-            {
-                m_Movement--;
-                m_GotPathNodes = false;
-                GetTheLowestH(m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_PositionInGrid, aiController);
 
-            }
-            else
+        return TempNode;
+    }
+
+
+
+    public List<Script_CombatNode> GetTheLowestH(Vector2Int grid)
+    {
+       Debug.Log( m_GridPathList[0].m_Heuristic);
+
+        m_GridPathToGoal.Add(CheckNeighborsForLowestNumber(grid));
+
+        for (int i = m_Movement; i > 0; i-- )
+         {
+            if (m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_IsGoal == true)
             {
-                aiController.m_GridPath = m_GridPathToGoal;
-                StartCoroutine(aiController.GetToGoal(aiController.m_GridPath));
+                break;
             }
+            
+            m_GridPathToGoal.Add(CheckNeighborsForLowestNumber(m_GridPathToGoal[m_GridPathToGoal.Count - 1].m_PositionInGrid));
         }
-        
+      
+       m_GotPathNodes = true;
+        return m_GridPathToGoal;
+
     }
 
     public List<Script_CombatNode> GetGridPathToGoal()

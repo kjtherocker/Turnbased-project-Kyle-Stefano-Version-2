@@ -23,71 +23,15 @@ public class UiScreenCommandBoard : UiScreen
 	// Update is called once per frame
 	void Update ()
     {
-       
-
-        if (m_CommandBoardPointerPosition == 0)
-        {
-            m_MovementText.color = Color.red;
-            m_Attack.color = Color.white;
-            m_Skill.color = Color.white;
-
-        }
-        if (m_CommandBoardPointerPosition == 1)
-        {
-            m_MovementText.color = Color.white;
-            m_Attack.color = Color.red;
-            m_Skill.color = Color.white;
-        }
-        if (m_CommandBoardPointerPosition == 2)
-        {
-            m_MovementText.color = Color.white;
-            m_Attack.color = Color.white;
-            m_Skill.color = Color.red;
-        }
-        if (m_CommandBoardPointerPosition == 3)
-        {
-
-        }
-        if (m_CommandBoardPointerPosition == 4)
-        {
-
-        }
-
-        
-
 
         if (m_InputActive == true)
         {
-            if (Input.GetKeyDown("a") || Input.GetButtonDown("Ps4_Circle"))
-            {
-                Script_GameManager.Instance.m_UiManager.PopScreen();
-            }
+       //     if (Input.GetKeyDown("a") || Input.GetButtonDown("Ps4_Circle"))
+       //     {
+       //         Script_GameManager.Instance.m_UiManager.PopScreen();
+       //     }
 
-            if (Input.GetKeyDown("a")  || Input.GetButtonDown("Ps4_Cross"))
-            {
-                if (m_CommandBoardPointerPosition == 0)
-                {
-                    PlayerMovement();
-                }
-                if (m_CommandBoardPointerPosition == 1)
-                {
-                    Script_GameManager.Instance.UiManager.PopScreen();
-                    Script_GameManager.Instance.BattleCamera.SetAttackPhase(m_CommandboardCreature.m_Attack);
-                }
-                if (m_CommandBoardPointerPosition == 2)
-                {
-                    SpawnSkillBoard();
-                }
-                if (m_CommandBoardPointerPosition == 3)
-                {
 
-                }
-                if (m_CommandBoardPointerPosition == 4)
-                {
-
-                }
-
-            }
 
             if (Constants.Constants.m_XboxController == true)
             {
@@ -98,16 +42,28 @@ public class UiScreenCommandBoard : UiScreen
             }
             if (Constants.Constants.m_PlaystationController == true)
             {
-                if(Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                ( "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.True)
+
+
+                if (Input.GetButtonDown("Ps4_Cross"))
                 {
-                    MoveCommandBoardPositionUp();
+                    MoveCommandBoardPositionUp(0);
                 }
-                if (Script_GameManager.Instance.m_InputManager.SetPlaystationAxis
-                ("Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY) == Script_InputManager.InputManagerStates.False)
+
+                if (Input.GetButtonDown("Ps4_Circle"))
                 {
-                    MoveCommandBoardPositionDown();
+                    MoveCommandBoardPositionUp(1);
                 }
+
+                if (Input.GetButtonDown("Ps4_Square"))
+                {
+                    MoveCommandBoardPositionUp(2);
+                }
+
+                if (Input.GetButtonDown("Ps4_Triangle"))
+                {
+                    MoveCommandBoardPositionUp(3);
+                }
+
             }
         }
 
@@ -164,7 +120,8 @@ public class UiScreenCommandBoard : UiScreen
     {
         if (m_CommandboardCreature.m_CreatureAi.m_HasMovedForThisTurn == false)
         {
-            Script_GameManager.Instance.m_Grid.SetWalkingHeuristic(m_CommandboardCreature.m_CreatureAi.m_Position);
+            m_CommandboardCreature.m_CreatureAi.FindAllPaths();
+            Script_GameManager.Instance.BattleCamera.m_MovementHasBeenCalculated = true;
             Script_GameManager.Instance.UiManager.PopScreen();
         }
     }
@@ -180,13 +137,29 @@ public class UiScreenCommandBoard : UiScreen
         ScreenTemp.SpawnSkills(m_CommandboardCreature);
     }
 
-    public void MoveCommandBoardPositionUp()
+    public void MoveCommandBoardPositionUp(int a_PointerPosition)
     {
-        m_CommandBoardPointerPosition++;
+        m_CommandBoardPointerPosition = a_PointerPosition;
+
+        if (m_CommandBoardPointerPosition == 0)
+        {
+            PlayerMovement();
+        }
+        if (m_CommandBoardPointerPosition == 1)
+        {
+
+            Script_GameManager.Instance.UiManager.PopScreen();
+            Script_GameManager.Instance.BattleCamera.SetAttackPhase(m_CommandboardCreature.m_Attack);
+        }
+        if (m_CommandBoardPointerPosition == 2)
+        {
+            SpawnSkillBoard();
+        }
+        if (m_CommandBoardPointerPosition == 3)
+        {
+
+        }
     }
 
-    public void MoveCommandBoardPositionDown()
-    {
-        m_CommandBoardPointerPosition--;
-    }
+
 }

@@ -5272,21 +5272,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248290061363}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248290061363}
-  m_AttackingPlane: {fileID: 6014416248677692122}
-  m_Cube: {fileID: 6014416248751402558}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247391898019}
-  m_InitalNode: {fileID: 6014416248484931791}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -5294,8 +5294,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247082853320
 GameObject:
@@ -5520,21 +5520,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248630294086}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248630294086}
-  m_AttackingPlane: {fileID: 6014416247629525053}
-  m_Cube: {fileID: 6014416247125908466}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247925630074}
-  m_InitalNode: {fileID: 6014416248368721839}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -5542,8 +5542,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247085711423
 GameObject:
@@ -5691,21 +5691,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248984108808}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248984108808}
-  m_AttackingPlane: {fileID: 6014416248628784809}
-  m_Cube: {fileID: 6014416248143089602}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247561232557}
-  m_InitalNode: {fileID: 6014416247752562737}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -5713,8 +5713,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247085993371
 GameObject:
@@ -7364,21 +7364,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248148545769}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248148545769}
-  m_AttackingPlane: {fileID: 6014416247852235324}
-  m_Cube: {fileID: 6014416248124297507}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247430608136}
-  m_InitalNode: {fileID: 6014416248837651152}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -7386,8 +7386,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247126864540
 GameObject:
@@ -8492,18 +8492,18 @@ MonoBehaviour:
   m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247806809387}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247806809387}
-  m_AttackingPlane: {fileID: 6014416247186428410}
-  m_Cube: {fileID: 6014416248147054145}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247262308182}
-  m_InitalNode: {fileID: 6014416248698712846}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -8511,8 +8511,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247186087413
 GameObject:
@@ -9686,21 +9686,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249073100807}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249073100807}
-  m_AttackingPlane: {fileID: 6014416247385631678}
-  m_Cube: {fileID: 6014416247082853320}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247586019527}
-  m_InitalNode: {fileID: 6014416247555757938}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -9708,8 +9708,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247215891637
 GameObject:
@@ -9780,21 +9780,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249004338501}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249004338501}
-  m_AttackingPlane: {fileID: 6014416247763401352}
-  m_Cube: {fileID: 6014416247838951337}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248393635586}
-  m_InitalNode: {fileID: 6014416247253960915}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -9802,8 +9802,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247217263525
 GameObject:
@@ -10729,21 +10729,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247513688675}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247513688675}
-  m_AttackingPlane: {fileID: 6014416247267247910}
-  m_Cube: {fileID: 6014416248030877538}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248584906529}
-  m_InitalNode: {fileID: 6014416248754012975}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -10751,8 +10751,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247245754660
 GameObject:
@@ -11274,21 +11274,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248413855841}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248413855841}
-  m_AttackingPlane: {fileID: 6014416247923180685}
-  m_Cube: {fileID: 6014416247128657432}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247647646594}
-  m_InitalNode: {fileID: 6014416248377499831}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -11296,8 +11296,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247260720531
 GameObject:
@@ -11799,21 +11799,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248342747262}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248342747262}
-  m_AttackingPlane: {fileID: 6014416247527140091}
-  m_Cube: {fileID: 6014416248541954344}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248119856632}
-  m_InitalNode: {fileID: 6014416247429887684}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -11821,8 +11821,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247274344792
 GameObject:
@@ -13244,21 +13244,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248904658499}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248904658499}
-  m_AttackingPlane: {fileID: 6014416248734202367}
-  m_Cube: {fileID: 6014416247767257054}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248693628759}
-  m_InitalNode: {fileID: 6014416248612657575}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -13266,8 +13266,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247330410177
 GameObject:
@@ -14455,21 +14455,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248000017439}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248000017439}
-  m_AttackingPlane: {fileID: 6014416247596699134}
-  m_Cube: {fileID: 6014416248535605367}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248920596036}
-  m_InitalNode: {fileID: 6014416248261243666}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -14477,8 +14477,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247372591546
 GameObject:
@@ -15175,21 +15175,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248063639859}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248063639859}
-  m_AttackingPlane: {fileID: 6014416248831269304}
-  m_Cube: {fileID: 6014416248046359054}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249128475858}
-  m_InitalNode: {fileID: 6014416247426907191}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -15197,8 +15197,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247388399251
 GameObject:
@@ -15638,21 +15638,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247763411819}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247763411819}
-  m_AttackingPlane: {fileID: 6014416248750181367}
-  m_Cube: {fileID: 6014416247274344792}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247603486182}
-  m_InitalNode: {fileID: 6014416248491243921}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -15660,8 +15660,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247408239866
 GameObject:
@@ -17359,21 +17359,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248610788393}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248610788393}
-  m_AttackingPlane: {fileID: 6014416247300392002}
-  m_Cube: {fileID: 6014416249077403261}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248130894765}
-  m_InitalNode: {fileID: 6014416248089794677}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -17381,8 +17381,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247458599470
 GameObject:
@@ -17544,21 +17544,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248809821530}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248809821530}
-  m_AttackingPlane: {fileID: 6014416248374512980}
-  m_Cube: {fileID: 6014416248770300044}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247499280867}
-  m_InitalNode: {fileID: 6014416248561673780}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -17566,8 +17566,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247460458666
 GameObject:
@@ -17672,21 +17672,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247672378846}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247672378846}
-  m_AttackingPlane: {fileID: 6014416247906551280}
-  m_Cube: {fileID: 6014416247377035616}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248398505592}
-  m_InitalNode: {fileID: 6014416248147002149}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -17694,8 +17694,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247465659838
 GameObject:
@@ -17937,21 +17937,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248125120559}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248125120559}
-  m_AttackingPlane: {fileID: 6014416248929155541}
-  m_Cube: {fileID: 6014416248330510381}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247458599458}
-  m_InitalNode: {fileID: 6014416248024074759}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -17959,8 +17959,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247471224509
 GameObject:
@@ -19809,21 +19809,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248843163914}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248843163914}
-  m_AttackingPlane: {fileID: 6014416247557667268}
-  m_Cube: {fileID: 6014416249081428794}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248302093292}
-  m_InitalNode: {fileID: 6014416247203202965}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -19831,8 +19831,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247527140091
 GameObject:
@@ -20211,21 +20211,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248980068080}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248980068080}
-  m_AttackingPlane: {fileID: 6014416248433431583}
-  m_Cube: {fileID: 6014416248898831019}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247625155924}
-  m_InitalNode: {fileID: 6014416247318371499}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -20233,8 +20233,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247557667268
 GameObject:
@@ -20962,21 +20962,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247205653487}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247205653487}
-  m_AttackingPlane: {fileID: 6014416247229063118}
-  m_Cube: {fileID: 6014416247918708046}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249133668685}
-  m_InitalNode: {fileID: 6014416247519602974}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -20984,8 +20984,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247587417628
 GameObject:
@@ -21285,21 +21285,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248062588051}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248062588051}
-  m_AttackingPlane: {fileID: 6014416247418339940}
-  m_Cube: {fileID: 6014416247277961004}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248979809883}
-  m_InitalNode: {fileID: 6014416247860845130}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -21307,8 +21307,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247593224749
 GameObject:
@@ -22384,21 +22384,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248213438450}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248213438450}
-  m_AttackingPlane: {fileID: 6014416248255528226}
-  m_Cube: {fileID: 6014416248770872503}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248110345071}
-  m_InitalNode: {fileID: 6014416248221279477}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -22406,8 +22406,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247618523496
 GameObject:
@@ -22905,21 +22905,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248360463266}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248360463266}
-  m_AttackingPlane: {fileID: 6014416247223138076}
-  m_Cube: {fileID: 6014416247628351834}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247362402998}
-  m_InitalNode: {fileID: 6014416248511492135}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -22927,8 +22927,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247626893046
 GameObject:
@@ -23367,21 +23367,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247690313659}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247690313659}
-  m_AttackingPlane: {fileID: 6014416247507685726}
-  m_Cube: {fileID: 6014416248631790273}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248604822937}
-  m_InitalNode: {fileID: 6014416247460458666}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -23389,8 +23389,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247641301726
 GameObject:
@@ -24726,21 +24726,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249087497302}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249087497302}
-  m_AttackingPlane: {fileID: 6014416248160946270}
-  m_Cube: {fileID: 6014416248081539110}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247484928138}
-  m_InitalNode: {fileID: 6014416247272187555}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -24748,8 +24748,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247682178776
 GameObject:
@@ -25539,21 +25539,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247276005472}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247276005472}
-  m_AttackingPlane: {fileID: 6014416247612998482}
-  m_Cube: {fileID: 6014416247452490199}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248398816704}
-  m_InitalNode: {fileID: 6014416247813727892}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -25561,8 +25561,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247702619136
 GameObject:
@@ -25754,21 +25754,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247353086860}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247353086860}
-  m_AttackingPlane: {fileID: 6014416248495711296}
-  m_Cube: {fileID: 6014416248974259779}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247595881941}
-  m_InitalNode: {fileID: 6014416248323353608}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -25776,8 +25776,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247707054340
 GameObject:
@@ -25848,21 +25848,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248210459153}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248210459153}
-  m_AttackingPlane: {fileID: 6014416247598130093}
-  m_Cube: {fileID: 6014416248988070595}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248925810958}
-  m_InitalNode: {fileID: 6014416248246887003}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -25870,8 +25870,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247707328375
 GameObject:
@@ -25942,21 +25942,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248190158348}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248190158348}
-  m_AttackingPlane: {fileID: 6014416248433205839}
-  m_Cube: {fileID: 6014416247204069025}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248727174418}
-  m_InitalNode: {fileID: 6014416248612504083}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -25964,8 +25964,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247708059196
 GameObject:
@@ -26177,21 +26177,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247422912427}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247422912427}
-  m_AttackingPlane: {fileID: 6014416248049602228}
-  m_Cube: {fileID: 6014416248931926911}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247655769779}
-  m_InitalNode: {fileID: 6014416249128944171}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -26199,8 +26199,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247719886424
 GameObject:
@@ -26271,21 +26271,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247947623584}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247947623584}
-  m_AttackingPlane: {fileID: 6014416247893653504}
-  m_Cube: {fileID: 6014416247116724125}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248112507481}
-  m_InitalNode: {fileID: 6014416247929453642}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -26293,8 +26293,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247720130192
 GameObject:
@@ -27805,21 +27805,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248011125446}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248011125446}
-  m_AttackingPlane: {fileID: 6014416248492551989}
-  m_Cube: {fileID: 6014416248706878929}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247492028706}
-  m_InitalNode: {fileID: 6014416248895722915}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -27827,8 +27827,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247755743701
 GameObject:
@@ -27899,21 +27899,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247042093223}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247042093223}
-  m_AttackingPlane: {fileID: 6014416248158637088}
-  m_Cube: {fileID: 6014416247607866563}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247316856285}
-  m_InitalNode: {fileID: 6014416248012795316}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -27921,8 +27921,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247759466879
 GameObject:
@@ -28053,21 +28053,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248917382427}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248917382427}
-  m_AttackingPlane: {fileID: 6014416248618046484}
-  m_Cube: {fileID: 6014416248355780834}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249129226159}
-  m_InitalNode: {fileID: 6014416248349489585}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -28075,8 +28075,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247761739498
 GameObject:
@@ -29703,21 +29703,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249032592157}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249032592157}
-  m_AttackingPlane: {fileID: 6014416248587839923}
-  m_Cube: {fileID: 6014416247171314009}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248110083068}
-  m_InitalNode: {fileID: 6014416247873927361}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -29725,8 +29725,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247813588493
 GameObject:
@@ -30013,21 +30013,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247662276579}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247662276579}
-  m_AttackingPlane: {fileID: 6014416247749452246}
-  m_Cube: {fileID: 6014416247299768070}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247731421964}
-  m_InitalNode: {fileID: 6014416249065390348}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -30035,8 +30035,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247822127431
 GameObject:
@@ -30715,21 +30715,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247910941726}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247910941726}
-  m_AttackingPlane: {fileID: 6014416248429103893}
-  m_Cube: {fileID: 6014416248348205733}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249081980190}
-  m_InitalNode: {fileID: 6014416248939593551}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -30737,8 +30737,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247843347823
 GameObject:
@@ -31671,21 +31671,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248919977172}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248919977172}
-  m_AttackingPlane: {fileID: 6014416247358384847}
-  m_Cube: {fileID: 6014416247467763102}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247340066473}
-  m_InitalNode: {fileID: 6014416247142837274}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -31693,8 +31693,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247890512179
 GameObject:
@@ -32615,21 +32615,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247100396027}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247100396027}
-  m_AttackingPlane: {fileID: 6014416248117277495}
-  m_Cube: {fileID: 6014416247979541663}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247090146357}
-  m_InitalNode: {fileID: 6014416247915860361}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -32637,8 +32637,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247910941726
 GameObject:
@@ -33454,21 +33454,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248169729849}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248169729849}
-  m_AttackingPlane: {fileID: 6014416247726428521}
-  m_Cube: {fileID: 6014416248699627103}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247654867452}
-  m_InitalNode: {fileID: 6014416248403617736}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -33476,8 +33476,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247947262770
 GameObject:
@@ -33946,21 +33946,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247056361241}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247056361241}
-  m_AttackingPlane: {fileID: 6014416248909731615}
-  m_Cube: {fileID: 6014416247205321218}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249175736982}
-  m_InitalNode: {fileID: 6014416248305212686}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -33968,8 +33968,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416247960585037
 GameObject:
@@ -35122,21 +35122,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248500467696}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248500467696}
-  m_AttackingPlane: {fileID: 6014416248718539158}
-  m_Cube: {fileID: 6014416247155284681}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248232547869}
-  m_InitalNode: {fileID: 6014416247493779906}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -35144,8 +35144,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248010863293
 GameObject:
@@ -35638,21 +35638,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248854101150}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248854101150}
-  m_AttackingPlane: {fileID: 6014416247624719015}
-  m_Cube: {fileID: 6014416248493909481}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248254479500}
-  m_InitalNode: {fileID: 6014416248168801150}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -35660,8 +35660,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248030565565
 GameObject:
@@ -35903,21 +35903,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248356968248}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248356968248}
-  m_AttackingPlane: {fileID: 6014416247813588493}
-  m_Cube: {fileID: 6014416247090267286}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248466722844}
-  m_InitalNode: {fileID: 6014416247952145892}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -35925,8 +35925,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248043635005
 GameObject:
@@ -35997,21 +35997,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248874251089}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248874251089}
-  m_AttackingPlane: {fileID: 6014416248815362706}
-  m_Cube: {fileID: 6014416248509143915}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248347244538}
-  m_InitalNode: {fileID: 6014416248000742091}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -36019,8 +36019,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248046359054
 GameObject:
@@ -36382,21 +36382,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247524238651}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247524238651}
-  m_AttackingPlane: {fileID: 6014416247962564688}
-  m_Cube: {fileID: 6014416248916388340}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249124866107}
-  m_InitalNode: {fileID: 6014416247252884675}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -36404,8 +36404,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248057883933
 GameObject:
@@ -37468,21 +37468,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247410642708}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247410642708}
-  m_AttackingPlane: {fileID: 6014416248073323998}
-  m_Cube: {fileID: 6014416248594762818}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247702763995}
-  m_InitalNode: {fileID: 6014416247519845116}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -37490,8 +37490,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248080970086
 GameObject:
@@ -37703,21 +37703,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247372591546}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247372591546}
-  m_AttackingPlane: {fileID: 6014416247618523496}
-  m_Cube: {fileID: 6014416248262928297}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248427734670}
-  m_InitalNode: {fileID: 6014416247470433997}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -37725,8 +37725,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248095169979
 GameObject:
@@ -37827,21 +37827,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248525937429}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248525937429}
-  m_AttackingPlane: {fileID: 6014416247118462631}
-  m_Cube: {fileID: 6014416247111019706}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248908408036}
-  m_InitalNode: {fileID: 6014416247093041044}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -37849,8 +37849,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248101680339
 GameObject:
@@ -37951,21 +37951,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248136146142}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248136146142}
-  m_AttackingPlane: {fileID: 6014416247091557700}
-  m_Cube: {fileID: 6014416247210301339}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248269427936}
-  m_InitalNode: {fileID: 6014416248377509887}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -37973,8 +37973,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248103672041
 GameObject:
@@ -39163,21 +39163,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248605202961}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248605202961}
-  m_AttackingPlane: {fileID: 6014416248077976989}
-  m_Cube: {fileID: 6014416247824611919}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247838890671}
-  m_InitalNode: {fileID: 6014416248487750786}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -39185,8 +39185,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248132955488
 GameObject:
@@ -40704,21 +40704,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248827218584}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248827218584}
-  m_AttackingPlane: {fileID: 6014416247732426098}
-  m_Cube: {fileID: 6014416248975751015}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248394493016}
-  m_InitalNode: {fileID: 6014416247566983502}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -40726,8 +40726,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248173393069
 GameObject:
@@ -41146,21 +41146,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248709965214}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248709965214}
-  m_AttackingPlane: {fileID: 6014416248478730427}
-  m_Cube: {fileID: 6014416247084435449}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247838444600}
-  m_InitalNode: {fileID: 6014416248171089051}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -41168,8 +41168,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248190158348
 GameObject:
@@ -42201,6 +42201,7 @@ MonoBehaviour:
     m_GameObjectToAppearInCutscene: {fileID: 0}
     DestroyGameObjectOnEndOfDialogue: 0
     m_PortraitType: 0
+    m_ChatBoxName: 
     m_ChatBoxType: 0
     m_FontTypes: 0
     m_Name: RED EYES
@@ -42210,6 +42211,7 @@ MonoBehaviour:
     m_GameObjectToAppearInCutscene: {fileID: 0}
     DestroyGameObjectOnEndOfDialogue: 0
     m_PortraitType: 0
+    m_ChatBoxName: 
     m_ChatBoxType: 0
     m_FontTypes: 0
     m_Name: RED EYES
@@ -42220,22 +42222,23 @@ MonoBehaviour:
     m_GameObjectToAppearInCutscene: {fileID: 0}
     DestroyGameObjectOnEndOfDialogue: 0
     m_PortraitType: 0
+    m_ChatBoxName: 
     m_ChatBoxType: 0
     m_FontTypes: 0
     m_Name: RED EYES
     m_Sentances: 'I am the spear of barbed death that rebels against fate! May their
       souls be incinerated by my scarlet wish.  '
+  m_CharactersInCutscene:
+  - m_CharacterModel: {fileID: 0}
+    m_CharacterName: Doll
+    m_SpawnPosition: {fileID: 0}
+    m_SpawnOnStart: 0
   m_DialogueManager: {fileID: 0}
   DialogueHasHappend: 0
-  SpawnPoint_Start: {fileID: 0}
-  SpawnPoint_End: {fileID: 0}
-  StartObject: {fileID: 0}
-  EndObject: {fileID: 0}
-  EndObjectInGame: {fileID: 0}
-  StartObjectInGame: {fileID: 0}
   DeleteStartAfterStart: 0
   DeleteEndOnEnd: 0
   UseStartObjectFulltime: 0
+  m_JsonFile: {fileID: 0}
   m_CutsceneArea: {fileID: 0}
   m_TriggerType: 0
   DialogueIsDone: 0
@@ -42493,21 +42496,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247088051341}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247088051341}
-  m_AttackingPlane: {fileID: 6014416247909491605}
-  m_Cube: {fileID: 6014416248757957702}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247372681820}
-  m_InitalNode: {fileID: 6014416248578079911}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -42515,8 +42518,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248226352967
 GameObject:
@@ -43753,21 +43756,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247398279825}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247398279825}
-  m_AttackingPlane: {fileID: 6014416247504694916}
-  m_Cube: {fileID: 6014416248805251363}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248755348234}
-  m_InitalNode: {fileID: 6014416248686957782}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -43775,8 +43778,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248268594632
 GameObject:
@@ -45629,21 +45632,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248632641141}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248632641141}
-  m_AttackingPlane: {fileID: 6014416247115093840}
-  m_Cube: {fileID: 6014416248541590329}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248589715632}
-  m_InitalNode: {fileID: 6014416248851635837}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -45651,8 +45654,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248325051906
 GameObject:
@@ -45845,21 +45848,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247799091455}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247799091455}
-  m_AttackingPlane: {fileID: 6014416248286376109}
-  m_Cube: {fileID: 6014416247885819784}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249049155842}
-  m_InitalNode: {fileID: 6014416248795509199}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -45867,8 +45870,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248330398241
 GameObject:
@@ -46080,21 +46083,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247730922518}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247730922518}
-  m_AttackingPlane: {fileID: 6014416248609742138}
-  m_Cube: {fileID: 6014416248724279650}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248973818292}
-  m_InitalNode: {fileID: 6014416248477061120}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -46102,8 +46105,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248335943149
 GameObject:
@@ -46710,21 +46713,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 1, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247625247095}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247625247095}
-  m_AttackingPlane: {fileID: 6014416247384689284}
-  m_Cube: {fileID: 6014416247589485626}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248169155137}
-  m_InitalNode: {fileID: 6014416248955280204}
-  m_NodesInitalVector3Coordinates: {x: 1.9999952, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -46732,8 +46735,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248352836480
 GameObject:
@@ -52446,21 +52449,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248264342058}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248264342058}
-  m_AttackingPlane: {fileID: 6014416247761739498}
-  m_Cube: {fileID: 6014416248744145429}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249021716607}
-  m_InitalNode: {fileID: 6014416248038994961}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -52468,8 +52471,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248384199658
 GameObject:
@@ -52752,21 +52755,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248055001583}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248055001583}
-  m_AttackingPlane: {fileID: 6014416249086254299}
-  m_Cube: {fileID: 6014416247688946026}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248132955492}
-  m_InitalNode: {fileID: 6014416247416712435}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -52774,8 +52777,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248392112797
 GameObject:
@@ -53638,21 +53641,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248375197377}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248375197377}
-  m_AttackingPlane: {fileID: 6014416249009327190}
-  m_Cube: {fileID: 6014416248195691153}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248019526605}
-  m_InitalNode: {fileID: 6014416249000931437}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -53660,8 +53663,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248418991812
 GameObject:
@@ -54663,21 +54666,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248665019939}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248665019939}
-  m_AttackingPlane: {fileID: 6014416248834339426}
-  m_Cube: {fileID: 6014416248556471424}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247064166108}
-  m_InitalNode: {fileID: 6014416248330398241}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -54685,8 +54688,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248441388431
 GameObject:
@@ -54973,21 +54976,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247190699494}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247190699494}
-  m_AttackingPlane: {fileID: 6014416247936509395}
-  m_Cube: {fileID: 6014416248870520537}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248224499009}
-  m_InitalNode: {fileID: 6014416247898019599}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -54995,8 +54998,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248453699375
 GameObject:
@@ -55189,21 +55192,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248738313004}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248738313004}
-  m_AttackingPlane: {fileID: 6014416247408239866}
-  m_Cube: {fileID: 6014416248188594866}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247304772718}
-  m_InitalNode: {fileID: 6014416249127749735}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -55211,8 +55214,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248459932283
 GameObject:
@@ -55769,21 +55772,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247781067770}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247781067770}
-  m_AttackingPlane: {fileID: 6014416248750169517}
-  m_Cube: {fileID: 6014416248298625372}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247766897944}
-  m_InitalNode: {fileID: 6014416247484743817}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -55791,8 +55794,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248475837124
 GameObject:
@@ -56457,21 +56460,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247064292682}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247064292682}
-  m_AttackingPlane: {fileID: 6014416248582371655}
-  m_Cube: {fileID: 6014416248971279374}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248275951671}
-  m_InitalNode: {fileID: 6014416247126864540}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -56479,8 +56482,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248492551989
 GameObject:
@@ -56812,21 +56815,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248940929054}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248940929054}
-  m_AttackingPlane: {fileID: 6014416247980153959}
-  m_Cube: {fileID: 6014416248435400763}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247520776890}
-  m_InitalNode: {fileID: 6014416248854023443}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -56834,8 +56837,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248499208404
 GameObject:
@@ -56966,21 +56969,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247882291034}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247882291034}
-  m_AttackingPlane: {fileID: 6014416248217321760}
-  m_Cube: {fileID: 6014416247299533058}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248934208927}
-  m_InitalNode: {fileID: 6014416248934757738}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -56988,8 +56991,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248500467696
 GameObject:
@@ -57389,21 +57392,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 0}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248735214632}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248735214632}
-  m_AttackingPlane: {fileID: 6014416248817473475}
-  m_Cube: {fileID: 6014416249007319064}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247904959685}
-  m_InitalNode: {fileID: 6014416247049847887}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 0.0000071525574}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -57411,8 +57414,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248516076989
 GameObject:
@@ -58046,21 +58049,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248139036616}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248139036616}
-  m_AttackingPlane: {fileID: 6014416248680162191}
-  m_Cube: {fileID: 6014416247493808773}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247049435882}
-  m_InitalNode: {fileID: 6014416248507956087}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -58068,8 +58071,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248538526630
 GameObject:
@@ -58911,21 +58914,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248113213766}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248113213766}
-  m_AttackingPlane: {fileID: 6014416248561016724}
-  m_Cube: {fileID: 6014416247260720531}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248204902539}
-  m_InitalNode: {fileID: 6014416247075338749}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -58933,8 +58936,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248582371655
 GameObject:
@@ -59248,21 +59251,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248610523771}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248610523771}
-  m_AttackingPlane: {fileID: 6014416248418991812}
-  m_Cube: {fileID: 6014416248910751988}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248163387556}
-  m_InitalNode: {fileID: 6014416248302523700}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -59270,8 +59273,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248587839923
 GameObject:
@@ -59788,21 +59791,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 5, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249052786997}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249052786997}
-  m_AttackingPlane: {fileID: 6014416248688246521}
-  m_Cube: {fileID: 6014416248637894655}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247652790013}
-  m_InitalNode: {fileID: 6014416247366823791}
-  m_NodesInitalVector3Coordinates: {x: 9.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -59810,8 +59813,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248603872170
 GameObject:
@@ -61834,21 +61837,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247439986930}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247439986930}
-  m_AttackingPlane: {fileID: 6014416248895642179}
-  m_Cube: {fileID: 6014416247626893046}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248179707013}
-  m_InitalNode: {fileID: 6014416249070127567}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -61856,8 +61859,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248647331895
 GameObject:
@@ -62236,21 +62239,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248072984558}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248072984558}
-  m_AttackingPlane: {fileID: 6014416248596911247}
-  m_Cube: {fileID: 6014416247300244222}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248437345941}
-  m_InitalNode: {fileID: 6014416248803414813}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -62258,8 +62261,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248662379855
 GameObject:
@@ -62792,21 +62795,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248937634088}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248937634088}
-  m_AttackingPlane: {fileID: 6014416248268594632}
-  m_Cube: {fileID: 6014416248516076989}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247838069848}
-  m_InitalNode: {fileID: 6014416249060094113}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -62814,8 +62817,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248688126711
 GameObject:
@@ -62886,21 +62889,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247925416014}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247925416014}
-  m_AttackingPlane: {fileID: 6014416248465030059}
-  m_Cube: {fileID: 6014416249125229200}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248747912830}
-  m_InitalNode: {fileID: 6014416247364033049}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -62908,8 +62911,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248688246521
 GameObject:
@@ -63854,21 +63857,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247733779595}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247733779595}
-  m_AttackingPlane: {fileID: 6014416248888132583}
-  m_Cube: {fileID: 6014416247593224749}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247652406262}
-  m_InitalNode: {fileID: 6014416248647331895}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -63876,8 +63879,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248717435975
 GameObject:
@@ -64925,21 +64928,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247452721414}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247452721414}
-  m_AttackingPlane: {fileID: 6014416247885465782}
-  m_Cube: {fileID: 6014416249137862471}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247830687944}
-  m_InitalNode: {fileID: 6014416247927552980}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -64947,8 +64950,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248746208595
 GameObject:
@@ -67132,21 +67135,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247230037877}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247230037877}
-  m_AttackingPlane: {fileID: 6014416248302572514}
-  m_Cube: {fileID: 6014416247087989892}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247902664945}
-  m_InitalNode: {fileID: 6014416247149956777}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -67154,8 +67157,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248809821530
 GameObject:
@@ -67562,21 +67565,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247085993371}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247085993371}
-  m_AttackingPlane: {fileID: 6014416248537347433}
-  m_Cube: {fileID: 6014416248839045778}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248776595643}
-  m_InitalNode: {fileID: 6014416249148447419}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -67584,8 +67587,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248821050916
 GameObject:
@@ -67856,21 +67859,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248633972578}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248633972578}
-  m_AttackingPlane: {fileID: 6014416247383360849}
-  m_Cube: {fileID: 6014416247581073812}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247214014230}
-  m_InitalNode: {fileID: 6014416247890512179}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -67878,8 +67881,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248829156964
 GameObject:
@@ -68615,21 +68618,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 7, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248277664665}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248277664665}
-  m_AttackingPlane: {fileID: 6014416247692288164}
-  m_Cube: {fileID: 6014416247523341549}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247746761460}
-  m_InitalNode: {fileID: 6014416248164724945}
-  m_NodesInitalVector3Coordinates: {x: 13.999995, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -68637,8 +68640,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248849387304
 GameObject:
@@ -69404,21 +69407,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248441388431}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248441388431}
-  m_AttackingPlane: {fileID: 6014416248481781239}
-  m_Cube: {fileID: 6014416248067331812}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247076199113}
-  m_InitalNode: {fileID: 6014416247687976984}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -69426,8 +69429,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248876798577
 GameObject:
@@ -69650,21 +69653,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248365898590}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248365898590}
-  m_AttackingPlane: {fileID: 6014416247354792994}
-  m_Cube: {fileID: 6014416248001208380}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416249162580774}
-  m_InitalNode: {fileID: 6014416248113345286}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -69672,8 +69675,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248885877084
 GameObject:
@@ -69744,21 +69747,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 3, y: 9}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247223870555}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247223870555}
-  m_AttackingPlane: {fileID: 6014416248492194185}
-  m_Cube: {fileID: 6014416248710600896}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247641301714}
-  m_InitalNode: {fileID: 6014416247716438315}
-  m_NodesInitalVector3Coordinates: {x: 5.999995, y: 0.49997568, z: 18.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -69766,8 +69769,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248886853108
 GameObject:
@@ -71841,21 +71844,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248849387304}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248849387304}
-  m_AttackingPlane: {fileID: 6014416247696005361}
-  m_Cube: {fileID: 6014416248026538046}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247052625891}
-  m_InitalNode: {fileID: 6014416249049763597}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -71863,8 +71866,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248934700610
 GameObject:
@@ -72553,21 +72556,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247211516136}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247211516136}
-  m_AttackingPlane: {fileID: 6014416249023709280}
-  m_Cube: {fileID: 6014416247941973658}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247098152484}
-  m_InitalNode: {fileID: 6014416248026540122}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -72575,8 +72578,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248965918496
 GameObject:
@@ -73153,21 +73156,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249124751711}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249124751711}
-  m_AttackingPlane: {fileID: 6014416248901931233}
-  m_Cube: {fileID: 6014416248634353648}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247596170362}
-  m_InitalNode: {fileID: 6014416248444663967}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -73175,8 +73178,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416248979809863
 GameObject:
@@ -74718,21 +74721,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 0, y: 4}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247237423612}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247237423612}
-  m_AttackingPlane: {fileID: 6014416247389756515}
-  m_Cube: {fileID: 6014416247274944247}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247310314214}
-  m_InitalNode: {fileID: 6014416248130699042}
-  m_NodesInitalVector3Coordinates: {x: -0.0000047683716, y: 0.49997568, z: 8.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -74740,8 +74743,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249021716603
 GameObject:
@@ -75025,21 +75028,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 4, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248075806489}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248075806489}
-  m_AttackingPlane: {fileID: 6014416248628475046}
-  m_Cube: {fileID: 6014416247169864831}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248774343398}
-  m_InitalNode: {fileID: 6014416248838579354}
-  m_NodesInitalVector3Coordinates: {x: 7.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -75047,8 +75050,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249026073607
 GameObject:
@@ -75966,21 +75969,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 2}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248647948775}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248647948775}
-  m_AttackingPlane: {fileID: 6014416247630304548}
-  m_Cube: {fileID: 6014416247745349230}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247217263545}
-  m_InitalNode: {fileID: 6014416248295882537}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 4.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -75988,8 +75991,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249065390348
 GameObject:
@@ -76981,21 +76984,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 7}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416249018979586}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416249018979586}
-  m_AttackingPlane: {fileID: 6014416247986403983}
-  m_Cube: {fileID: 6014416247673112552}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248459932287}
-  m_InitalNode: {fileID: 6014416247388399251}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 14.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -77003,8 +77006,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249096078334
 GameObject:
@@ -77227,21 +77230,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 8, y: 5}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248387136032}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248387136032}
-  m_AttackingPlane: {fileID: 6014416247092776904}
-  m_Cube: {fileID: 6014416247253618722}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248904194748}
-  m_InitalNode: {fileID: 6014416248597732173}
-  m_NodesInitalVector3Coordinates: {x: 15.999995, y: 0.49997568, z: 10.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -77249,8 +77252,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249116023255
 GameObject:
@@ -77351,21 +77354,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 8}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248207507635}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248207507635}
-  m_AttackingPlane: {fileID: 6014416248990916597}
-  m_Cube: {fileID: 6014416248925055016}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247781163099}
-  m_InitalNode: {fileID: 6014416249119893046}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 16.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -77373,8 +77376,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249116396214
 GameObject:
@@ -77445,21 +77448,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 9, y: 1}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247450222889}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247450222889}
-  m_AttackingPlane: {fileID: 6014416248226352967}
-  m_Cube: {fileID: 6014416247085711423}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416247063745529}
-  m_InitalNode: {fileID: 6014416247974409799}
-  m_NodesInitalVector3Coordinates: {x: 17.999996, y: 0.49997568, z: 2.0000072}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -77467,8 +77470,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249117131001
 GameObject:
@@ -77953,21 +77956,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 2, y: 3}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416248741772521}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416248741772521}
-  m_AttackingPlane: {fileID: 6014416248483720529}
-  m_Cube: {fileID: 6014416247428012541}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248073228220}
-  m_InitalNode: {fileID: 6014416247326642456}
-  m_NodesInitalVector3Coordinates: {x: 3.9999952, y: 0.49997568, z: 6.000007}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -77975,8 +77978,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249127143946
 GameObject:
@@ -78709,21 +78712,21 @@ MonoBehaviour:
   m_IsSelector: 0
   m_IsWalkable: 0
   m_OpenListHasFinished: 0
-  m_PositionInGrid: {x: 6, y: 6}
+  m_PositionInGrid: {x: 0, y: 0}
   m_NodeYouCameFrom: {fileID: 0}
   m_CreatureOnGridPoint: {fileID: 0}
-  m_WalkablePlane: {fileID: 6014416247732942078}
-  m_CurrentWalkablePlaneBeingUsed: {fileID: 6014416247732942078}
-  m_AttackingPlane: {fileID: 6014416248157992616}
-  m_Cube: {fileID: 6014416247192085604}
+  m_WalkablePlane: {fileID: 0}
+  m_CurrentWalkablePlaneBeingUsed: {fileID: 0}
+  m_AttackingPlane: {fileID: 0}
+  m_Cube: {fileID: 0}
   m_Prop: {fileID: 0}
   m_PropList: {fileID: 0}
-  m_Selector: {fileID: 2100000, guid: 3b485e642d0e1cb41be1f11ec05a8996, type: 2}
-  m_Walkable: {fileID: 2100000, guid: 2f4d7f7322c128543ab2e1426337a6e1, type: 2}
-  m_Goal: {fileID: 2100000, guid: 8db31784623197544ba26e085ba05721, type: 2}
-  m_Renderer: {fileID: 6014416248920645872}
-  m_InitalNode: {fileID: 6014416248973769975}
-  m_NodesInitalVector3Coordinates: {x: 11.999995, y: 0.49997568, z: 12.000008}
+  m_Selector: {fileID: 0}
+  m_Walkable: {fileID: 0}
+  m_Goal: {fileID: 0}
+  m_Renderer: {fileID: 0}
+  m_InitalNode: {fileID: 0}
+  m_NodesInitalVector3Coordinates: {x: 0, y: 0, z: 0}
   m_Grid: {fileID: 0}
   m_OpenList: []
   m_CombatsNodeType: 0
@@ -78731,8 +78734,8 @@ MonoBehaviour:
   m_NodeReplacementOnNode: 0
   m_NodeHeightOffset: 0
   m_NodeReplacement: {fileID: 0}
-  m_Movement: 4
-  m_NodeRotation: 4
+  m_MovementCost: 1
+  m_NodeRotation: 0
   m_NodeHeight: 0
 --- !u!1 &6014416249143224176
 GameObject:
@@ -79446,7 +79449,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6042406505900770014}
   m_Enabled: 1
-  m_Avatar: {fileID: 9000000, guid: cbe6e12effd2b1141ba4aa82ce9942cf, type: 3}
+  m_Avatar: {fileID: 9000000, guid: d445ea9ec82c23949859d154dee934d7, type: 3}
   m_Controller: {fileID: 9100000, guid: f09dc0f6744f1cd4ebcf56138568d475, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
@@ -80062,106 +80065,106 @@ MonoBehaviour:
   m_PrefabNode: {fileID: 1239355093901072, guid: fe660e566e314254b88c9c45e5e5a342,
     type: 3}
   m_ListToConvert:
-  - {fileID: 6014416247185678917}
-  - {fileID: 6014416248043634994}
-  - {fileID: 6014416248418729298}
-  - {fileID: 6014416248934295843}
-  - {fileID: 6014416249021493315}
-  - {fileID: 6014416247470627624}
-  - {fileID: 6014416247464122497}
-  - {fileID: 6014416247909537491}
-  - {fileID: 6014416248324898842}
-  - {fileID: 6014416248006805607}
-  - {fileID: 6014416248132722781}
-  - {fileID: 6014416247888425664}
-  - {fileID: 6014416248224500728}
-  - {fileID: 6014416248042273963}
-  - {fileID: 6014416247404274944}
-  - {fileID: 6014416247680573043}
-  - {fileID: 6014416247617536046}
-  - {fileID: 6014416248350131044}
-  - {fileID: 6014416248092956574}
-  - {fileID: 6014416248079859492}
-  - {fileID: 6014416247755136720}
-  - {fileID: 6014416247215891594}
-  - {fileID: 6014416248388979889}
-  - {fileID: 6014416249126419412}
-  - {fileID: 6014416248965083179}
-  - {fileID: 6014416248103313143}
-  - {fileID: 6014416247839802042}
-  - {fileID: 6014416248500147132}
-  - {fileID: 6014416249116170767}
-  - {fileID: 6014416247587417558}
-  - {fileID: 6014416248329710288}
-  - {fileID: 6014416247257936119}
-  - {fileID: 6014416248383043297}
-  - {fileID: 6014416248715592365}
-  - {fileID: 6014416247082654038}
-  - {fileID: 6014416248882815248}
-  - {fileID: 6014416247388301500}
-  - {fileID: 6014416248587070034}
-  - {fileID: 6014416247370033638}
-  - {fileID: 6014416248885877085}
-  - {fileID: 6014416247707328372}
-  - {fileID: 6014416247944299893}
-  - {fileID: 6014416247126770222}
-  - {fileID: 6014416247755743530}
-  - {fileID: 6014416248828592332}
-  - {fileID: 6014416247811478568}
-  - {fileID: 6014416247085983334}
-  - {fileID: 6014416249024583151}
-  - {fileID: 6014416248745906459}
-  - {fileID: 6014416248056740662}
-  - {fileID: 6014416248455207748}
-  - {fileID: 6014416247704311912}
-  - {fileID: 6014416247327695156}
-  - {fileID: 6014416248579834363}
-  - {fileID: 6014416248440378820}
-  - {fileID: 6014416247242405136}
-  - {fileID: 6014416248029776435}
-  - {fileID: 6014416248096428893}
-  - {fileID: 6014416248601418424}
-  - {fileID: 6014416247707054341}
-  - {fileID: 6014416248472927970}
-  - {fileID: 6014416248452976659}
-  - {fileID: 6014416247625981067}
-  - {fileID: 6014416247592441753}
-  - {fileID: 6014416248189157689}
-  - {fileID: 6014416248688126708}
-  - {fileID: 6014416249142902467}
-  - {fileID: 6014416248659359270}
-  - {fileID: 6014416247214235070}
-  - {fileID: 6014416247458451037}
-  - {fileID: 6014416247717454308}
-  - {fileID: 6014416248808586487}
-  - {fileID: 6014416248497579043}
-  - {fileID: 6014416247816763757}
-  - {fileID: 6014416248843709707}
-  - {fileID: 6014416248686970712}
-  - {fileID: 6014416247641003408}
-  - {fileID: 6014416247085065578}
-  - {fileID: 6014416248335613398}
-  - {fileID: 6014416247960202873}
-  - {fileID: 6014416248513413021}
-  - {fileID: 6014416248538097589}
-  - {fileID: 6014416249063322386}
-  - {fileID: 6014416247459133697}
-  - {fileID: 6014416248267508626}
-  - {fileID: 6014416249105716407}
-  - {fileID: 6014416247719886425}
-  - {fileID: 6014416249093343201}
-  - {fileID: 6014416247525745364}
-  - {fileID: 6014416248875444598}
-  - {fileID: 6014416248173323559}
-  - {fileID: 6014416249116396215}
-  - {fileID: 6014416248639689098}
-  - {fileID: 6014416247761625217}
-  - {fileID: 6014416247272823370}
-  - {fileID: 6014416247700346743}
-  - {fileID: 6014416248975929780}
-  - {fileID: 6014416247557368135}
-  - {fileID: 6014416248819601970}
-  - {fileID: 6014416248492244110}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   m_SelectedMaterial: {fileID: 0}
   m_Grid: {fileID: 0}
   PlayerX: 0

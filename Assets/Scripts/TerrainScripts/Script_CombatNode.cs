@@ -1,10 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 [ExecuteInEditMode]
-[System.Serializable]
-public class Script_CombatNode : MonoBehaviour
+
+public class Script_CombatNode : Cell
 {
     public enum CombatNodeTypes
     {
@@ -13,7 +14,7 @@ public class Script_CombatNode : MonoBehaviour
         Wall,
         Empty
     }
-    public float m_Heuristic;
+    public int m_Heuristic;
 
 
     public bool m_IsGoal;
@@ -27,6 +28,8 @@ public class Script_CombatNode : MonoBehaviour
     public Script_CombatNode m_NodeYouCameFrom;
 
     public Script_Creatures m_CreatureOnGridPoint;
+
+    List<Script_CombatNode> neighbours = null;
 
     public GameObject m_WalkablePlane;
     public GameObject m_CurrentWalkablePlaneBeingUsed;
@@ -52,6 +55,7 @@ public class Script_CombatNode : MonoBehaviour
     public Script_CombatNode[,] m_GridPathArray;
     public List<Script_CombatNode> m_OpenList;
 
+
     public CombatNodeTypes m_CombatsNodeType;
 
     public Script_PropList.Props m_PropOnNode;
@@ -67,7 +71,7 @@ public class Script_CombatNode : MonoBehaviour
     public Script_NodeReplacement m_NodeReplacement;
 
 
-    public int m_Movement;
+    public int m_MovementCost;
 
     public int m_NodeRotation;
     public int m_NodeHeight;
@@ -77,7 +81,7 @@ public class Script_CombatNode : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        m_Movement = 4;
+        m_MovementCost = 1;
         //m_HeuristicCalculated = false;
 
 
@@ -96,33 +100,24 @@ public class Script_CombatNode : MonoBehaviour
         {
             m_GridPathArray = m_Grid.m_GridPathArray;
         }
-       // m_PropList = Script_GameManager.Instance.m_PropList;
+        m_PropList = Script_GameManager.Instance.m_PropList;
 
         m_PropOnNodeTemp = m_PropOnNode;
 
         m_NodesInitalVector3Coordinates = gameObject.transform.position;
+        SetPropState();
     }
 
     private void OnEnable()
     {
-
-       // m_Grid = Script_GameManager.Instance.m_Grid;
-        
-        
         m_PropOnNodeTemp = m_PropOnNode;
     }
 
-    // Update is called once per frame
-    void Update()
+    public void SetPropState()
     {
-    #if (UNITY_EDITOR)
         if (m_CombatsNodeType == CombatNodeTypes.Empty)
         {
             m_Cube.gameObject.SetActive(false);
-        }
-        if (m_IsWalkable == true)
-        {
-            m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
         }
 
         if (m_CreatureOnGridPoint == null || m_Prop == null)
@@ -162,18 +157,6 @@ public class Script_CombatNode : MonoBehaviour
                 DestroyNodeReplacement();
             }
         }
-
-
-         
-        if (m_NodeYouCameFrom != null)
-        {
-            if (m_NodeYouCameFrom.m_OpenListHasFinished == true && m_OpenListHasFinished == false)
-            {
-                LoopthroughOpenList();
-            }
-        }
-
-
 
         if (m_NodeRotation <= 0)
         {
@@ -233,12 +216,10 @@ public class Script_CombatNode : MonoBehaviour
 
         if (m_NodeHeight == 1)
         {
-           // gameObject.transform.position = gameObject.transform.position + new Vector3(0, 2, 0);
+            // gameObject.transform.position = gameObject.transform.position + new Vector3(0, 2, 0);
         }
-
-#endif
-
     }
+
 
     public void DestroyNodeReplacement()
     {
@@ -248,7 +229,7 @@ public class Script_CombatNode : MonoBehaviour
 
     public void DestroyProp()
     {
-       
+
         DestroyImmediate(m_Prop);
         m_CombatsNodeType = CombatNodeTypes.Normal;
         
@@ -293,137 +274,57 @@ public class Script_CombatNode : MonoBehaviour
 
     public void CreateWalkableArea()
     {
-        if (m_Heuristic <= m_Movement && m_Heuristic != 0 && m_Heuristic != -1)
-        {
-            m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
-            m_CurrentWalkablePlaneBeingUsed.GetComponent<Renderer>().material = m_Walkable;
-            m_IsWalkable = true;
-        }
+
+         m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(true);
+         m_IsWalkable = true;
+        
     }
 
     public void RemoveWalkableArea()
     {
         m_CurrentWalkablePlaneBeingUsed.gameObject.SetActive(false);
         m_IsWalkable = false;
-
+        m_Heuristic = 0;
     }
 
-
-    public Script_CombatNode CheckIfNodeIsClearAndReturnNodeIndex(Vector2Int aGrid)
+    
+    protected static readonly Vector2[] _directions =
     {
-        // if the node is out of bounds, return -1 (an invalid tile index)
-        if (aGrid.x < 0 || aGrid.x >= m_Grid.m_GridDimensions.x ||
-            aGrid.y < 0 || aGrid.y >= m_Grid.m_GridDimensions.y)
-            return null;
+        new Vector2(1, 0), new Vector2(-1, 0), new Vector2(0, 1), new Vector2(0, -1)
+    };
 
-        m_GridPathArray = m_Grid.m_GridPathArray;
-
-        Script_CombatNode nodeIndex = m_GridPathArray[aGrid.x, aGrid.y];
-
-        // if the node is already closed, return -1 (an invalid tile index)
-        if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated == true)
-        {
-            return null;
-        }
-        // if the node can't be walked on, return -1 (an invalid tile index)
-        if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
-        {
-            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
-            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_Heuristic = -1;
-            return null;
-        }
-
-
-        if (m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_NodeHeight > 0)
-        {
-            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_HeuristicCalculated = true;
-            m_Grid.m_GridPathArray[aGrid.x, aGrid.y].m_Heuristic = -1;
-            return null;
-        }
-        // return a valid tile index
-        return nodeIndex;
+    public int GetDistance(Script_CombatNode other)
+    {
+        return (int)(Mathf.Abs(m_PositionInGrid.x - other.m_PositionInGrid.x) + Mathf.Abs(m_PositionInGrid.y - other.m_PositionInGrid.y));
     }
+    
+    //Distance is given using Manhattan Norm.
 
-    public void AddNeighboursToOpenList()
+
+    public override List<Script_CombatNode> GetNeighbours(List<Script_CombatNode> cells)
     {
-
-        // create an array of the four neighbour tiles
-        Script_CombatNode[] nodestoads = new Script_CombatNode[4];
-        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
-        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
-        nodestoads[2] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x + 1, m_PositionInGrid.y));
-        nodestoads[3] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x - 1, m_PositionInGrid.y));
-
-        // loop through the array
-        for (int i = 0; i < 4; i++)
+        if (neighbours == null)
         {
-            Script_CombatNode NodeToAdd;
-            NodeToAdd = nodestoads[i];
-
-            // check if the node to add has a valid node index
-            if (NodeToAdd != null)
+            neighbours = new List<Script_CombatNode>(4);
+            foreach (var direction in _directions)
             {
-                
-                NodeToAdd.m_Heuristic = m_Heuristic + 1;
-                NodeToAdd.m_HeuristicCalculated = true;
-                NodeToAdd.m_NodeYouCameFrom = this;
-                m_OpenList.Add(NodeToAdd);
+                var neighbour = cells.Find(c => c.m_PositionInGrid == m_PositionInGrid + direction);
+                if (neighbour == null) continue;
 
+                neighbours.Add(neighbour);
             }
         }
 
+        return neighbours;
     }
 
-
-    public void AddNeighboursToOpenListGoal(bool IsGoal)
-    {
-
-        // create an array of the four neighbour tiles
-        Script_CombatNode[] nodestoads = new Script_CombatNode[4];
-        nodestoads[0] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x + 1, m_PositionInGrid.y));
-        nodestoads[1] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x - 1, m_PositionInGrid.y));
-        nodestoads[2] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y - 1));
-        nodestoads[3] = CheckIfNodeIsClearAndReturnNodeIndex(new Vector2Int(m_PositionInGrid.x, m_PositionInGrid.y + 1));
-        
-
-        // loop through the array
-        for (int i = 0; i < 4; i++)
-        {
-            Script_CombatNode NodeToAdd;
-            NodeToAdd = nodestoads[i];
-
-            // check if the node to add has a valid node index
-            if (NodeToAdd != null)
-            {
-
-                NodeToAdd.m_Heuristic = m_Heuristic + 1;
-                NodeToAdd.m_HeuristicCalculated = true;
-                NodeToAdd.m_NodeYouCameFrom = this;
-                m_OpenList.Add(NodeToAdd);
-
-            }
-        }
-        if (IsGoal == true)
-        {
-            m_Grid.SetWalkableArea();
-        }
-
-        LoopthroughOpenList();
-    }
+    //
+    // public bool Equals(Script_CombatNode other)
+    // {
+    //     return (m_PositionInGrid.x == other.m_PositionInGrid.x && m_PositionInGrid.y == other.m_PositionInGrid.y);
+    // }
 
 
-
-    public void LoopthroughOpenList()
-    {
-        for (int i = m_OpenList.Count - 1; i >= 0; i--)
-        {
-
-            m_OpenList[i].AddNeighboursToOpenList();
-            m_OpenList.RemoveAt(i);
-        }
-        m_OpenListHasFinished = true;
-       
-    }
 
 }
 

@@ -48,14 +48,6 @@ public class Script_OverWorldPlayer : MonoBehaviour {
             Application.Quit();
         }
 
-        Player_Speed_Delta = Player_Speed * Time.deltaTime;
-
-        if (transform.position == Node_MovingTo.transform.position)
-        {
-            Player_Movment = false;
-            Node_PlayerIsOn = Node_MovingTo;
-            m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", false);
-        }
 
         switch (Node_PlayerIsOn.Enum_NodeType)
         {
@@ -99,22 +91,35 @@ public class Script_OverWorldPlayer : MonoBehaviour {
                 break;
         }
 
-        if (Player_Movment == true)
-        {
-            m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", true);
-            OverworldMovement();
-        }
-
         if (Player_Movment == false)
         {
             PlayerMovement();
         }
+
+        if (Node_MovingTo != Node_PlayerIsOn)
+        {
+            StartCoroutine(OverworldMovement());
+        }
         
     }
 
-    public void OverworldMovement()
+    public IEnumerator OverworldMovement()
     {
+        Player_Speed_Delta = Player_Speed * Time.deltaTime;
+        Player_Movment = true;
+        
+
+        m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", true);
+
         transform.position = Vector3.MoveTowards(transform.position, Node_MovingTo.transform.position, Player_Speed_Delta);
+
+        if (transform.position == Node_MovingTo.transform.position)
+        {
+            Player_Movment = false;
+            Node_PlayerIsOn = Node_MovingTo;
+            m_OverworldPlayerModel.GetComponent<Animator>().SetBool("b_IsWalking", false);
+            yield break;
+        }
     }
 
     public void PlayerMovement()
@@ -215,72 +220,6 @@ public class Script_OverWorldPlayer : MonoBehaviour {
             Player_Movment = true;
             Node_MovingTo = Node_PlayerIsOn.GetComponent<Script_Node>().NodeRight;
         }
-    }
-
-    public void CreateMesh(int size)
-    {
-        List<Vector3> verts = new List<Vector3>(); // Index used in tri list
-        List<int> tris = new List<int>(); // Every 3 ints represents a triangle
-        List<Vector2> uvs = new List<Vector2>(); // Vertex in 0-1 UV space
-        for (int i = 0; i < size; i++)
-        {
-            for (int j = 0; j < size; j++)
-            {
-                verts.Add(new Vector3(i, 0, j));
-                uvs.Add(new Vector2((float)i / size, (float)j / size));
-                if (i == 0 || j == 0) continue; // First bottom and left skipped
-                tris.Add(size * i + j); //Top right
-                tris.Add(size * i + (j - 1)); //Bottom right
-                tris.Add(size * (i - 1) + (j - 1)); //Bottom left - First triangle
-                tris.Add(size * (i - 1) + (j - 1)); //Bottom left 
-                tris.Add(size * (i - 1) + j); //Top left
-                tris.Add(size * i + j); //Top right - Second triangle
-            }
-        }
-        Mesh mesh = new Mesh();
-        mesh.vertices = verts.ToArray();
-        mesh.uv = uvs.ToArray();
-        mesh.triangles = tris.ToArray();
-        mesh.RecalculateNormals();
-
-        GameObject grid = new GameObject("Grid");
-        meshObjectList.Add(grid);
-        grid.AddComponent<MeshFilter>();
-        grid.AddComponent<MeshRenderer>();
-        grid.GetComponent<MeshFilter>().mesh = mesh;
-        // Load a material named "GridMat" from a folder named "Resources"
-
-        grid.gameObject.transform.position = new Vector3(-78, -9.0f, 31.2f);
-        grid.GetComponent<Renderer>().material = m_GridMaterial;
-    }
-
-
-    public List<GameObject> meshObjectList;
-
-    public void CombineMeshes()
-    {
-
-        // combine meshes
-        CombineInstance[] combine = new CombineInstance[meshObjectList.Count];
-        int i = 0;
-        while (i < meshObjectList.Count)
-        {
-            MeshFilter meshFilter = meshObjectList[i].gameObject.GetComponent<MeshFilter>();
-            combine[i].mesh = meshFilter.sharedMesh;
-            combine[i].transform = meshFilter.transform.localToWorldMatrix;
-            i++;
-        }
-
-        Mesh combinedMesh = new Mesh();
-
-        combinedMesh.CombineMeshes(combine);
-
-        GameObject grid = new GameObject("Grid");
-        grid.AddComponent<MeshFilter>();
-        grid.AddComponent<MeshRenderer>();
-        grid.GetComponent<MeshFilter>().mesh = combinedMesh;
-
-        grid.GetComponent<Renderer>().material = m_GridMaterial;
     }
 
 }

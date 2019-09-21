@@ -131,6 +131,8 @@ public class Script_CombatCameraController : MonoBehaviour
                 {
                     DPadGridControls();
                 }
+             
+
 
                 PlayerUiSelection();
 
@@ -138,15 +140,15 @@ public class Script_CombatCameraController : MonoBehaviour
 
             case CameraState.PlayerMovement:
                 //isPlayersDoneMoving();
-                if (m_Grid.m_GridPathArray != null)
-                {
-                    m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
-
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(
-                        m_Creature.ModelInGame.transform.position.x + 13.5f,
-                        m_Creature.ModelInGame.transform.position.y + 13.9f,
-                        m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 2);
-                }
+               if (m_Grid.m_GridPathArray != null)
+               {
+                   m_NodeTheCameraIsOn = m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y];
+               
+                   transform.position = Vector3.Lerp(transform.position, new Vector3(
+                       m_Creature.ModelInGame.transform.position.x + 13.5f,
+                       m_Creature.ModelInGame.transform.position.y + 13.9f,
+                       m_Creature.ModelInGame.transform.position.z - 13.5f), Time.deltaTime * 2);
+               }
 
 
                 break;
@@ -448,10 +450,10 @@ public class Script_CombatCameraController : MonoBehaviour
 
     public void PlayerWalk()
     {
-        if (m_NodeTheCameraIsOn.m_IsWalkable == true && m_NodeTheCameraIsOn.m_CombatsNodeType == Script_CombatNode.CombatNodeTypes.Normal)
+        if (m_NodeTheCameraIsOn.m_IsWalkable == true )
         {
 
-            StartCoroutine(m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid));
+           m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
             m_Grid.m_GridPathArray[m_Creature.m_CreatureAi.m_InitalPosition.x, m_Creature.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint = null;
             m_CommandBoardExists = false;
             m_MovementHasBeenCalculated = false;

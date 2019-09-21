@@ -1,0 +1,39 @@
+{
+"Items":
+[
+{
+    "m_Name":"Garcher",
+    "m_Sentances": " I am the bone of my sword",
+	"m_ChatBoxName": "Black"
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": " Steel is my body and fire is my blood ",
+	"m_ChatBoxName": "Black"
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": "I have created over a thousand blades"
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": "Unknown to Death,"
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": " Nor known to Life."
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": "Have withstood pain to create many weapons "
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": " Yet, those hands will never hold anything "
+},
+{
+    "m_Name":"Garcher",
+    "m_Sentances": " So as I pray, Unlimited Blade Works."
+}
+]
+}

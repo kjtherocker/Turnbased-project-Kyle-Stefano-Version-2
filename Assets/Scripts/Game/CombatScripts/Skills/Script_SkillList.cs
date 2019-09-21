@@ -79,12 +79,7 @@ public class Script_SkillList : MonoBehaviour
        // Debug.Log(m_SkillTypes[(int)Skills.HolyWater].GetSkillType().ToString());
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        m_SkillTypes[10].Update();
 
-    }
 
     public Script_Skills SetSkills( Skills aSkills, string sourceName = "Global")
     {

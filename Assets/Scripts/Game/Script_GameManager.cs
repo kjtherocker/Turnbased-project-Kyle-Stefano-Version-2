@@ -57,34 +57,24 @@ public class Script_GameManager : Singleton<Script_GameManager>
         m_EncounterManager = GameObject.Find("EncounterManager").GetComponent<Script_EncounterManager>();
         m_NodeFormation = GameObject.Find("NodeFormations").GetComponent<Script_NodeFormations>();
         //m_BattleCamera = GameObject.Find("BattleCamera").GetComponent<Script_CombatCameraController>();
+        Physics.autoSimulation = false;
 
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (m_GameStates == GameStates.Overworld)
-        {
-            
-           Overworld_Objects.SetActive(true);
-           Combat_Objects.SetActive(false);
-        }
-        if (m_GameStates == GameStates.Combat)
-        {
-            m_CombatManager.CombatStart();
-            Overworld_Objects.SetActive(false);
-            Combat_Objects.SetActive(true);
-        }
 
-    }
 
     public void SwitchToOverworld()
     {
         m_GameStates = GameStates.Overworld;
+        Overworld_Objects.SetActive(true);
+        Combat_Objects.SetActive(false);
     }
 
     public void SwitchToBattle()
     {
         m_GameStates = GameStates.Combat;
+        m_CombatManager.CombatStart();
+        Overworld_Objects.SetActive(false);
+        Combat_Objects.SetActive(true);
     }
 }

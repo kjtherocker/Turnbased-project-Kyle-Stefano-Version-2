@@ -77,6 +77,8 @@ public class Script_Creatures : MonoBehaviour
     public int Dexterity;
     public int Speed;
 
+    public int m_CreatureMovement = 4;
+
     public int AmountOfTurns;
 
     public int BuffandDebuff;
@@ -100,7 +102,7 @@ public class Script_Creatures : MonoBehaviour
 
     bool m_IsAlive;
 
-  
+
     // Update is called once per frame
     public void SetCreature()
     {

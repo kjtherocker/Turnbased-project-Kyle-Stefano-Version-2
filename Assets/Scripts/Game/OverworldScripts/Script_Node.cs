@@ -37,54 +37,6 @@ public class Script_Node : MonoBehaviour {
         RoadsAreSpawned = false;
     }
 	
-	// Update is called once per frame
-	void Update ()
-    {
-        switch (Enum_NodeType)
-        {
-            case NodeTypes.BasicNode:
-
-                break;
-
-            case NodeTypes.DialogueNode:
-
-                break;
-
-            case NodeTypes.EncounterNode:
-
-                break;
-
-            case NodeTypes.ShopNode:
-
-                break;
-
-            case NodeTypes.EndNode:
-
-                break;
-        }
-
-        if (RoadsAreSpawned != true)
-        {
-            SpawnRoads();
-        }
-
-    }
-
-    public void SpawnRoads()
-    {
-        if (Enum_NodeType == NodeTypes.EncounterNode)
-        {
-            m_SpawnedObject = Instantiate<GameObject>(m_EnemyPlaneReference,gameObject.transform);
-            RoadsAreSpawned = true;
-        }
-        if (Enum_NodeType == NodeTypes.EndNode)
-        {
-            m_SpawnedObject = Instantiate<GameObject>(m_EnemyPlaneReference, gameObject.transform);
-            RoadsAreSpawned = true;
-        }
-
-    }
-
     public void SetNodeType(NodeTypes nodetype)
     {
         if (m_SpawnedObject != null)

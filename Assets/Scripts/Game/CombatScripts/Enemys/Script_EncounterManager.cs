@@ -28,10 +28,10 @@ public class Script_EncounterManager : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        //  EnemySlot1 = gameObject.AddComponent<Script_Slime>();
-        //  EnemySlot2 = gameObject.AddComponent<Script_Slime>();
-        //  EnemySlot3 = gameObject.AddComponent<Script_Slime>();
-        //  EnemySlot4 = gameObject.AddComponent<Script_Slime>();
+        EnemySlot1 = gameObject.AddComponent<Script_RedKnightPhase4>();
+        EnemySlot2 = gameObject.AddComponent<Script_RedKnightPhase1>();
+        EnemySlot3 = gameObject.AddComponent<Script_RedKnightPhase2>();
+        EnemySlot4 = gameObject.AddComponent<Script_RedKnightPhase3>();
         //SetEncounter(EncounterTypes.ForestEncounter);
     }
 	
@@ -103,10 +103,10 @@ public class Script_EncounterManager : MonoBehaviour {
 
     public void ForestEncounter1()
     {
-        EnemySlot1 = gameObject.AddComponent<Script_RedKnightPhase4>();
-        EnemySlot2 = gameObject.AddComponent<Script_RedKnightPhase1>();
-        EnemySlot3 = gameObject.AddComponent<Script_RedKnightPhase2>();
-        EnemySlot4 = gameObject.AddComponent<Script_RedKnightPhase3>();
+     //  EnemySlot1 = gameObject.AddComponent<Script_RedKnightPhase4>();
+     //  EnemySlot2 = gameObject.AddComponent<Script_RedKnightPhase1>();
+     //  EnemySlot3 = gameObject.AddComponent<Script_RedKnightPhase2>();
+     //  EnemySlot4 = gameObject.AddComponent<Script_RedKnightPhase3>();
 
     }
 }

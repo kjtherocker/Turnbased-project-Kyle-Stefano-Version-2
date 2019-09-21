@@ -90,19 +90,15 @@ public class Script_CombatManager : MonoBehaviour
 
             AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
             
-          //  AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(3, 6), TurnOrderAlly);
-
-           //    AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(15, 2), TurnOrderAlly);
-           //                                                                      
-           //   AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(15, 3), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(3, 6), TurnOrderAlly);
+            
+            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(15, 2), TurnOrderAlly);
+                                                                                 
+            AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(15, 3), TurnOrderAlly);
 
 
             //Setting up the Enemy
-
-            AddCreatureToCombat(EncounterManager.EnemySlot1, new Vector2Int(15, 2), TurnOrderEnemy);
-             AddCreatureToCombat(EncounterManager.EnemySlot2, new Vector2Int(16, 2), TurnOrderEnemy);
-             AddCreatureToCombat(EncounterManager.EnemySlot3, new Vector2Int(15, 3), TurnOrderEnemy);
-          //  AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(9, 13), TurnOrderEnemy);
+            AddCreatureToCombat(EncounterManager.EnemySlot4, new Vector2Int(9, 13), TurnOrderEnemy);
 
 
 
@@ -132,20 +128,33 @@ public class Script_CombatManager : MonoBehaviour
 
     public void AddCreatureToCombat(Script_Creatures aCreature, Vector2Int aPosition, List<Script_Creatures> aList)
     {
+        if (aCreature == null)
+        {
+            Debug.Log("Creature does not exist Position" + aPosition.ToString());
+            return;
+
+        }
+
         aList.Add(aCreature);
 
-        aList[aList.Count - 1].ModelInGame = Instantiate<GameObject>(aList[aList.Count - 1].Model);
-        aList[aList.Count - 1].ModelInGame.transform.position = m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position + CreatureOffset;
-        aList[aList.Count - 1].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 180, 0.0f);
-        aList[aList.Count - 1].m_CreatureAi = aList[aList.Count - 1].ModelInGame.GetComponent<Script_AiController>();
-        aList[aList.Count - 1].m_CreatureAi.m_Position =
+        int TopElement = aList.Count - 1;
+
+
+        aList[TopElement].ModelInGame = Instantiate<GameObject>(aList[TopElement].Model);
+        aList[TopElement].ModelInGame.transform.position = m_Grid.m_GridPathArray[aPosition.x, aPosition.y].gameObject.transform.position + CreatureOffset;
+        aList[TopElement].ModelInGame.transform.rotation = Quaternion.Euler(0.0f, 180, 0.0f);
+        aList[TopElement].m_CreatureAi = aList[aList.Count - 1].ModelInGame.GetComponent<Script_AiController>();
+        aList[TopElement].m_CreatureAi.m_Position =
             m_Grid.m_GridPathArray[aPosition.x, aPosition.y].m_PositionInGrid;
 
-        aList[aList.Count - 1].m_CreatureAi.m_Grid = m_Grid;
+        aList[TopElement].m_CreatureAi.m_Grid = m_Grid;
 
-        aList[aList.Count - 1].m_CreatureAi.m_Creature = aList[aList.Count - 1];
+        aList[TopElement].m_CreatureAi.m_Movement = aCreature.m_CreatureMovement;
 
-        m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CreatureOnGridPoint = aList[aList.Count - 1];
+        aList[TopElement].m_CreatureAi.m_Creature = aList[aList.Count - 1];
+
+
+        m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CreatureOnGridPoint = aList[TopElement];
         m_Grid.m_GridPathArray[aPosition.x, aPosition.y].GetComponent<Script_CombatNode>().m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
 
 
@@ -294,7 +303,7 @@ public class Script_CombatManager : MonoBehaviour
         }
 
         Script_EnemyAiController EnemyTemp = TurnOrderEnemy[m_EnemyAiCurrentlyInList].m_CreatureAi as Script_EnemyAiController;
-        EnemyTemp.EnemyWalkToTarget();
+       // EnemyTemp.EnemyWalkToTarget();
 
         m_EnemyAiCurrentlyInList++;
         
