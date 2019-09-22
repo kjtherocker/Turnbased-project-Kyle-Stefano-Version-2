@@ -18,9 +18,9 @@ public class Script_AiController : MonoBehaviour
     public Animator m_CreaturesAnimator;
     public Script_Creatures m_Creature;
 
-    Dictionary<Script_CombatNode, List<Script_CombatNode>> cachedPaths = null;
+    public Dictionary<Script_CombatNode, List<Script_CombatNode>> cachedPaths = null;
 
-    private HashSet<Script_CombatNode> _pathsInRange;
+    protected HashSet<Script_CombatNode> _pathsInRange;
 
     public Vector3 CreatureOffset;
 
@@ -79,16 +79,18 @@ public class Script_AiController : MonoBehaviour
 
     public void SetGoal(Vector2Int m_Goal)
     {
+      m_Grid.SetHeuristicToZero();
       m_Grid.m_GridPathToGoal.Clear();
       m_Grid.RemoveWalkableArea();
       m_Grid.m_GridPathArray[m_Goal.x, m_Goal.y].m_IsGoal = true;
+      
 
-        
+
     }
 
     public void FindAllPaths()
     {
-        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, Node_ObjectIsOn);
+        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, Node_ObjectIsOn,m_Movement);
 
 
         foreach (Script_CombatNode node in _pathsInRange)
@@ -110,7 +112,7 @@ public class Script_AiController : MonoBehaviour
         }
     }
 
-    public HashSet<Script_CombatNode> GetAvailableDestinations(List<Script_CombatNode> cells, Script_CombatNode NodeHeuristicIsBasedOff)
+    public HashSet<Script_CombatNode> GetAvailableDestinations(List<Script_CombatNode> cells, Script_CombatNode NodeHeuristicIsBasedOff, int Range)
     {
         cachedPaths = new Dictionary<Script_CombatNode, List<Script_CombatNode>>();
 
@@ -121,7 +123,7 @@ public class Script_AiController : MonoBehaviour
             
             var pathCost = path.Sum(c => c.m_MovementCost);
             key.m_Heuristic = pathCost;
-            if (pathCost <= m_Movement)
+            if (pathCost <= Range)
             {
                 cachedPaths.Add(key, path);
             }
@@ -130,12 +132,12 @@ public class Script_AiController : MonoBehaviour
     }
 
 
-    public virtual void SetGoalPosition(Vector2Int m_Goal)
+    public virtual IEnumerator SetGoalPosition(Vector2Int m_Goal)
     {
         SetGoal(m_Goal);
         m_Grid.m_Movement = m_Movement;
 
-        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, m_Grid.m_GridPathArray[m_Goal.x, m_Goal.y]);
+        _pathsInRange = GetAvailableDestinations(m_Grid.m_GridPathList, m_Grid.m_GridPathArray[m_Goal.x, m_Goal.y],100);
 
 
         foreach (Script_CombatNode node in _pathsInRange)
@@ -143,6 +145,7 @@ public class Script_AiController : MonoBehaviour
             node.m_IsWalkable = true;
         }
 
+        yield return new WaitForSeconds(.1f);
 
         List<Script_CombatNode> TempList = m_Grid.GetTheLowestH(Node_ObjectIsOn.m_PositionInGrid);
 
@@ -154,7 +157,7 @@ public class Script_AiController : MonoBehaviour
     public virtual IEnumerator GetToGoal(List<Script_CombatNode> aListOfNodes)
     {
         m_MovementHasStarted = true;
-        m_Grid.RemoveWalkableArea();
+        //m_Grid.RemoveWalkableArea();
         m_CreaturesAnimator.SetBool("b_IsWalking", true);
         Script_GameManager.Instance.m_BattleCamera.m_cameraState = Script_CombatCameraController.CameraState.PlayerMovement;
         Node_ObjectIsOn.m_CreatureOnGridPoint = null;
@@ -209,7 +212,7 @@ public class Script_AiController : MonoBehaviour
         Node_ObjectIsOn.m_CreatureOnGridPoint = m_Creature;
         Node_ObjectIsOn.m_CombatsNodeType = Script_CombatNode.CombatNodeTypes.Covered;
 
-        m_Grid.RemoveWalkableArea();
+       // m_Grid.RemoveWalkableArea();
 
         for (int i = aListOfNodes.Count; i < 0; i--)
         {
@@ -219,7 +222,7 @@ public class Script_AiController : MonoBehaviour
         
     }
 
-    private Dictionary<Script_CombatNode, List<Script_CombatNode>> cachePaths(List<Script_CombatNode> cells, Script_CombatNode aNodeHeuristicIsBasedOn)
+    public virtual Dictionary<Script_CombatNode, List<Script_CombatNode>> cachePaths(List<Script_CombatNode> cells, Script_CombatNode aNodeHeuristicIsBasedOn)
     {
         var edges = GetGraphEdges(cells);
         var paths = _Pathfinder.findAllPaths(edges, aNodeHeuristicIsBasedOn);
@@ -244,6 +247,11 @@ public class Script_AiController : MonoBehaviour
         }
         // if the node can't be walked on, return -1 (an invalid tile index)
         if (nodeIndex.m_CombatsNodeType != Script_CombatNode.CombatNodeTypes.Normal)
+        {
+            return false;
+        }
+
+        if (nodeIndex.m_PositionInGrid == m_Position)
         {
             return false;
         }

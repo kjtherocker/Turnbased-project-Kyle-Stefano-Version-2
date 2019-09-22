@@ -79,6 +79,7 @@
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\Script_AiController.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Ai\Script_AiFlying.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Chant\ChantController.cs" />
+    <Compile Include="Assets\Scripts\Game\CombatScripts\Domain\DomainCreator.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Script_RedEyes.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase1.cs" />
     <Compile Include="Assets\Scripts\Game\CombatScripts\Enemys\Forest Enemys\Slimes\Script_RedKnightPhase2.cs" />

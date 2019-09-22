@@ -88,13 +88,13 @@ public class Script_CombatManager : MonoBehaviour
                 m_Gridformation.GetComponent<Script_GridFormations>().m_GridDimensions);
             
 
-            AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
+          //  AddCreatureToCombat(PartyManager.m_CurrentParty[0], new Vector2Int(3, 2), TurnOrderAlly);
             
-            AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(3, 6), TurnOrderAlly);
+          //  AddCreatureToCombat(PartyManager.m_CurrentParty[1], new Vector2Int(3, 6), TurnOrderAlly);
             
-            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(15, 2), TurnOrderAlly);
+            AddCreatureToCombat(PartyManager.m_CurrentParty[2], new Vector2Int(12, 4), TurnOrderAlly);
                                                                                  
-            AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(15, 3), TurnOrderAlly);
+            //AddCreatureToCombat(PartyManager.m_CurrentParty[3], new Vector2Int(11, 4), TurnOrderAlly);
 
 
             //Setting up the Enemy
@@ -279,11 +279,10 @@ public class Script_CombatManager : MonoBehaviour
 
         foreach (Script_Creatures creature in CurrentTurnOrderSide)
         {
-            creature.m_CreatureAi.m_HasMovedForThisTurn = false;
-            creature.m_CreatureAi.m_HasAttackedForThisTurn = false;
+
             Script_EnemyAiController EnemyTemp = creature.m_CreatureAi as Script_EnemyAiController;
 
-            EnemyTemp.m_AiFinished = false;
+            EnemyTemp.EnemyMovement();
 
             
         }

@@ -50,20 +50,6 @@ public class Script_Grid : MonoBehaviour
     {
         CreateGrid(m_GridDimensions);
     }
-	
-	// Update is called once per frame
-	void Update ()
-    {
-        if (m_WalkingHasStarted == true)
-        {
-            if (IsAllNodesHeuristicCalculated())
-            {
-                SetWalkableArea();
-                m_WalkingHasStarted = false;
-            }
-        }
-
-    }
 
     private bool IsAllNodesHeuristicCalculated()
     {
@@ -147,6 +133,7 @@ public class Script_Grid : MonoBehaviour
             for (int y = 0; y < m_GridDimensions.y; y++)
             {
                 m_GridPathArray[x, y].m_Heuristic = 0;
+                m_GridPathArray[x, y].m_IsGoal = false;
             }
         }
     }
@@ -192,10 +179,15 @@ public class Script_Grid : MonoBehaviour
                 && grid.x + direction.x > 0 && (grid.y + direction.y) > 0)
             {
                 Script_CombatNode neighbour = m_GridPathArray[grid.x + direction.x, grid.y + direction.y];
-                if (neighbour == null) continue;
+                if (neighbour == null)
+                {
+                    continue;
+                }
 
-                if (neighbour.m_IsWalkable == false) continue;
-
+                if (neighbour.m_IsWalkable == false)
+                {
+                    continue;
+                }
 
                 if (neighbour.m_Heuristic < TempHeuristic)
                 {
@@ -207,6 +199,8 @@ public class Script_Grid : MonoBehaviour
 
         return TempNode;
     }
+
+  
 
 
 
@@ -231,10 +225,6 @@ public class Script_Grid : MonoBehaviour
 
     }
 
-    public List<Script_CombatNode> GetGridPathToGoal()
-    {
-        return m_GridPathToGoal;
-    }
 
     public void SetAttackingTile(Vector2Int grid)
     {

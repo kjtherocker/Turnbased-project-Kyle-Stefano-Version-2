@@ -15,7 +15,7 @@ public class Script_CombatNode : Cell
         Empty
     }
     public int m_Heuristic;
-
+    public Vector2Int m_PositionInGrid;
 
     public bool m_IsGoal;
     public bool m_HeuristicCalculated;
@@ -23,7 +23,7 @@ public class Script_CombatNode : Cell
     public bool m_IsWalkable;
     public bool m_OpenListHasFinished;
 
-    public Vector2Int m_PositionInGrid;
+    
 
     public Script_CombatNode m_NodeYouCameFrom;
 

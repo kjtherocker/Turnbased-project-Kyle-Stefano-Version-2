@@ -91,6 +91,7 @@ public class Script_CombatCameraController : MonoBehaviour
             m_NodeType.text = "Type " + m_NodeTheCameraIsOn.m_CombatsNodeType.ToString();
             m_NodeProp.text = "Prop " + m_NodeTheCameraIsOn.m_PropOnNode.ToString();
             m_NodeHeuristic.text = "Heuristic " + m_NodeTheCameraIsOn.m_Heuristic.ToString();
+            m_NodeHeuristic.text = "IsWalkable " + m_NodeTheCameraIsOn.m_IsWalkable.ToString();
         }
 
 
@@ -211,7 +212,7 @@ public class Script_CombatCameraController : MonoBehaviour
                 else if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.charactertype == Script_Creatures.Charactertype.Enemy)
                 {
                     m_EnemyStatus.gameObject.SetActive(true);
-                    m_EnemyStatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
+
                 }
 
             }
@@ -453,7 +454,7 @@ public class Script_CombatCameraController : MonoBehaviour
         if (m_NodeTheCameraIsOn.m_IsWalkable == true )
         {
 
-           m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid);
+           StartCoroutine(m_Creature.m_CreatureAi.SetGoalPosition(m_Grid.m_GridPathArray[m_CameraPositionInGrid.x, m_CameraPositionInGrid.y].m_PositionInGrid));
             m_Grid.m_GridPathArray[m_Creature.m_CreatureAi.m_InitalPosition.x, m_Creature.m_CreatureAi.m_InitalPosition.y].m_CreatureOnGridPoint = null;
             m_CommandBoardExists = false;
             m_MovementHasBeenCalculated = false;
