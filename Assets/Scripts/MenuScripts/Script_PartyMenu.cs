@@ -43,26 +43,19 @@ public class Script_PartyMenu : UiScreen
             m_Healthbars[i].gameObject.transform.localPosition = new Vector3(-200, -80 + i * 80, 0);
             m_Healthbars[i].Partymember = m_PartyManager.m_CurrentParty[i];
         }
+
+        m_Healthbars[0].SetCharacter(m_PartyManager.m_CurrentParty[0]);
+        m_Healthbars[1].SetCharacter(m_PartyManager.m_CurrentParty[1]);
+        m_Healthbars[2].SetCharacter(m_PartyManager.m_CurrentParty[2]);
+        m_Healthbars[3].SetCharacter(m_PartyManager.m_CurrentParty[3]);
+
         m_SkillStatus.m_Skill = m_PartyManager.m_CurrentParty[0].m_Skills[skill];
     }
 
     // Update is called once per frame
     void Update()
     {
-        
-        m_Healthbars[0].Partymember = m_PartyManager.m_CurrentParty[0];
-        m_Healthbars[1].Partymember = m_PartyManager.m_CurrentParty[1];
-        m_Healthbars[2].Partymember = m_PartyManager.m_CurrentParty[2];
-        m_Healthbars[3].Partymember = m_PartyManager.m_CurrentParty[3];
-
-
-        if (Input.GetKeyDown("w"))
-        {
-            skill++;
-        }
-
-        
-
+       
         if (Input.GetKeyDown("escape"))
         {
             m_MenuState = MenuState.Default;

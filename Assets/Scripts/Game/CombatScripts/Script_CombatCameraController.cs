@@ -207,7 +207,10 @@ public class Script_CombatCameraController : MonoBehaviour
                 {
                     m_StatusSheet.gameObject.SetActive(true);
                     m_PartyStatus.gameObject.SetActive(true);
-                    m_StatusSheet.Partymember = m_NodeTheCameraIsOn.m_CreatureOnGridPoint;
+                    if (m_StatusSheet.Partymember != m_NodeTheCameraIsOn.m_CreatureOnGridPoint)
+                    {
+                        m_StatusSheet.SetCharacter(m_NodeTheCameraIsOn.m_CreatureOnGridPoint);
+                    }
                 }
                 else if (m_NodeTheCameraIsOn.m_CreatureOnGridPoint.charactertype == Script_Creatures.Charactertype.Enemy)
                 {

@@ -151,6 +151,7 @@
     <Compile Include="Assets\Scripts\Ui\UiSkillBoard.cs" />
     <Compile Include="Assets\Shared\Scripts\BounceTransform.cs" />
     <Compile Include="Assets\Shared\Scripts\RotateTransform.cs" />
+    <Compile Include="Assets\ToonMetal\Script\turnaroundscript.cs" />
     <Compile Include="Assets\WorldSpaceDissolve\Scripts\ShaderPosition.cs" />
     <None Include="Assets\Shaders\Disappear.shader" />
     <None Include="Assets\Shaders\TestSquareCutout.shader" />
@@ -167,6 +168,8 @@
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Shaders\Outlined-Silhouette Only.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\ToonMetal\Shader\ToonMetalMask.shader" />
+    <None Include="Assets\ToonMetal\Shader\ToonMetal.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\NotResources\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />

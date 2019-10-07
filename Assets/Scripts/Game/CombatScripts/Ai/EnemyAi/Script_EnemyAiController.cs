@@ -112,10 +112,42 @@ public class Script_EnemyAiController : Script_AiController
 
         if (m_AllysInRange.Count > 0)
         {
-            Script_CombatNode NodeNeightboringAlly = Script_GameManager.Instance.m_Grid.CheckNeighborsForLowestNumber(m_AllysInRange[0].m_CreatureAi.m_Position);
+
+            Script_Creatures CharacterInRange = CharacterToFollowAndAttack(m_AllysInRange);
+
+            Script_CombatNode NodeNeightboringAlly = 
+                Script_GameManager.Instance.m_Grid.CheckNeighborsForLowestNumber(CharacterInRange.m_CreatureAi.m_Position);
+
             StartCoroutine(SetGoalPosition(NodeNeightboringAlly.m_PositionInGrid));
+
         }
 
+    }
+
+    public Script_Creatures CharacterToFollowAndAttack(List<Script_Creatures> aCharacterList)
+    {
+
+        for (int i = 0; i < aCharacterList.Count; i++)
+        {
+            for (int j = 0; j < aCharacterList.Count; j++)
+            {
+                if (aCharacterList[j].CurrentHealth < aCharacterList[j + 1].CurrentHealth)
+                {
+                    Script_Creatures tempA = aCharacterList[j];
+                    Script_Creatures tempB = aCharacterList[j + 1];
+                    swap(ref tempA, ref tempB);
+                }
+            }
+        }
+
+        return aCharacterList[0];
+    }
+
+    void swap(ref Script_Creatures xp, ref Script_Creatures yp)
+    {
+        Script_Creatures temp = xp;
+        xp = yp;
+        yp = temp;
     }
 
 }

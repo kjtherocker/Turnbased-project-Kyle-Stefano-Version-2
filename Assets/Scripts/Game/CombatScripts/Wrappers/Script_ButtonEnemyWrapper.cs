@@ -32,7 +32,7 @@ public class Script_ButtonEnemyWrapper : MonoBehaviour
         m_ButtonTurnHolder = a_ButtonHolder;
         m_CombatManagerRefrence = a_CombatManager;
         m_EnemyNumber = a_Enemynumber;
-        m_Healthbar.Partymember = a_ButtonHolder;
+        m_Healthbar.SetCharacter( a_ButtonHolder);
     }
 
     public void ButtonClick()

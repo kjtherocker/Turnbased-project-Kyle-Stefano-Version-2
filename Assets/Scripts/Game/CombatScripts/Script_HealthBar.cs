@@ -22,6 +22,8 @@ public class Script_HealthBar : MonoBehaviour
     public Image Image_Portrait;
     public Script_Creatures Partymember;
 
+    public Camera m_PortraitCamera;
+
     public int m_CurrentHealth = 150;
     private int m_MaxHealth = 150;
 
@@ -36,51 +38,64 @@ public class Script_HealthBar : MonoBehaviour
         m_IsSelected = false;
     }
 
-    private void Update()
+    public void SetCharacter(Script_Creatures Character)
     {
         if (Partymember != null)
         {
-            m_CurrentHealth = Partymember.CurrentHealth;
-            m_MaxHealth = Partymember.MaxHealth;
+            Partymember.gameObject.layer = 0;
 
-            m_CurrentMana = Partymember.CurrentMana;
-            m_MaxMana = Partymember.MaxMana;
-
-            Image_Portrait.material = Partymember.m_Texture;
-
-
-            Text_Strength.text = Partymember.Strength.ToString();
-            Text_Magic.text = Partymember.Magic.ToString();
-            Text_Dexterity.text = Partymember.Dexterity.ToString();
-            Text_Speed.text = Partymember.Speed.ToString();
-
-
-            if (Text_Buff != null)
-            {
-                Text_Buff.text = Partymember.BuffandDebuff.ToString();
-
-                if (Partymember.BuffandDebuff == 0)
-                {
-                    Text_Buff.gameObject.SetActive(false);
-                }
-                else
-                {
-                    Text_Buff.gameObject.SetActive(true);
-                }
-            }
-
-            if (Text_Name != null)
-            {
-                Text_Name.text = Partymember.Name;
-            }
         }
-        else
+
+        Partymember = Character;
+
+        m_CurrentHealth = Partymember.CurrentHealth;
+        m_MaxHealth = Partymember.MaxHealth;
+
+        m_CurrentMana = Partymember.CurrentMana;
+        m_MaxMana = Partymember.MaxMana;
+
+        
+
+
+        Text_Strength.text = Partymember.Strength.ToString();
+        Text_Magic.text = Partymember.Magic.ToString();
+        Text_Dexterity.text = Partymember.Dexterity.ToString();
+        Text_Speed.text = Partymember.Speed.ToString();
+
+        if (Partymember.charactertype == Script_Creatures.Charactertype.Ally)
         {
-
+            Partymember.ModelInGame.gameObject.layer = 10;
+            m_PortraitCamera.cullingMask |= 1 << LayerMask.NameToLayer("Ally");
+        }
+        else if (Partymember.charactertype == Script_Creatures.Charactertype.Enemy)
+        {
+            Partymember.ModelInGame.gameObject.layer = 11;
+            m_PortraitCamera.cullingMask |= 1 << LayerMask.NameToLayer("Enemy");
         }
 
+        
 
+        if (Text_Name != null)
+        {
+            Text_Name.text = Partymember.Name;
+        }
+    }
+
+    private void Update()
+    {
         UpdateHealthbar();
+
+        if (Partymember != null)
+        {
+            m_PortraitCamera.gameObject.transform.position = new Vector3(Partymember.ModelInGame.transform.position.x,
+            Partymember.ModelInGame.transform.position.y + 1.7f, Partymember.ModelInGame.transform.position.z) +
+             Partymember.ModelInGame.transform.forward;
+            m_PortraitCamera.gameObject.transform.rotation = Partymember.ModelInGame.transform.rotation;
+
+            Quaternion Rotation = Partymember.ModelInGame.transform.rotation;
+
+            m_PortraitCamera.transform.eulerAngles = new Vector3(Rotation.eulerAngles.x, Rotation.eulerAngles.y + 180, Rotation.eulerAngles.z);
+        }
     }
     // Update is called once per frame
     void UpdateHealthbar()

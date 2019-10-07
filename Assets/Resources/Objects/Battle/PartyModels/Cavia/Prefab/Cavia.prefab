@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 600717981327399853}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5120171675566311781}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -70,7 +70,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8557606623329758960}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLLegCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3587476679153668645}
   - component: {fileID: 6054819376439042332}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: thigh_guards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9162876549661335375}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 7208132147970058437}
   - component: {fileID: 7528210588128356657}
   - component: {fileID: 1458657240041414381}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dial_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2791908654619554320}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -345,7 +345,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4471381654338336235}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineNeck1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -378,7 +378,7 @@ GameObject:
   - component: {fileID: 1829935547995105595}
   - component: {fileID: 372959340464496238}
   - component: {fileID: 8972477202198130060}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -455,7 +455,7 @@ GameObject:
   - component: {fileID: 7076771881487394351}
   - component: {fileID: 921760162810915696}
   - component: {fileID: 5200813712847841505}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dial_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -534,7 +534,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6327024811927286262}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -566,7 +566,7 @@ GameObject:
   - component: {fileID: 2998042728752875314}
   - component: {fileID: 7928663793018285402}
   - component: {fileID: 7902811125529293172}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scapular
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -642,7 +642,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2066448924812616545}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -672,7 +672,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8649056129492507460}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -702,7 +702,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7070092236706500333}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmForearm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -733,7 +733,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2325454905036550313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLLegThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -766,7 +766,7 @@ GameObject:
   - component: {fileID: 3828602635711750623}
   - component: {fileID: 8917305422480284862}
   - component: {fileID: 8346595329743942228}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lever_004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -842,7 +842,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 285991715872660313}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -875,7 +875,7 @@ GameObject:
   - component: {fileID: 7969138340429452371}
   - component: {fileID: 9139615879601241925}
   - component: {fileID: 6796898223445789563}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -950,7 +950,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2791192767529615336}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRLegCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -981,7 +981,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1906135987725537513}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineNeck2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1012,7 +1012,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2117850637171841031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1042,7 +1042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 753990241535635991}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1073,7 +1073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3249749379913428381}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarinePelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1106,7 +1106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2247072934975689052}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRLegThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1139,7 +1139,7 @@ GameObject:
   - component: {fileID: 3797000282602686860}
   - component: {fileID: 4782469554792956063}
   - component: {fileID: 4334607701477471347}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lever_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1215,7 +1215,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5639499369162523989}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1246,7 +1246,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4100821895896758635}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1277,7 +1277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4422587617460858597}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1308,7 +1308,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6305990771257971903}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1341,7 +1341,7 @@ GameObject:
   - component: {fileID: 7346837686491669242}
   - component: {fileID: 73578116040965772}
   - component: {fileID: 6220114034352683983}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1416,7 +1416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5019951768614092134}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineSpine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1449,7 +1449,7 @@ GameObject:
   - component: {fileID: 4978732681200283236}
   - component: {fileID: 6414158150082532771}
   - component: {fileID: 3067268329621334036}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dial_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1525,7 +1525,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2749461307051305323}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRLegToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1555,7 +1555,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5032298197186553915}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1586,7 +1586,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3733429275964861703}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmForearm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1617,7 +1617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5713791032805625907}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1650,7 +1650,7 @@ GameObject:
   - component: {fileID: 4490987120111113964}
   - component: {fileID: 8919676744823756998}
   - component: {fileID: 5037897267166737885}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Box001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1725,7 +1725,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8422605303094461987}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1756,7 +1756,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3916460102001490828}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineSpine3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1789,7 +1789,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2364623743474497460}
   - component: {fileID: 7261492701258279961}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bra_thing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1894,7 +1894,7 @@ GameObject:
   - component: {fileID: 8373651066551425149}
   - component: {fileID: 1927308120125273351}
   - component: {fileID: 6572282562453916664}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cavia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1984,7 +1984,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6560808082087285153}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2015,7 +2015,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2607444131247685033}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2045,7 +2045,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6146582297433689476}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2080,7 +2080,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6489398521750206770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineHead
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2112,7 +2112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1404733925211607067}
   - component: {fileID: 2308047993573540291}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sleeve_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2227,7 +2227,7 @@ GameObject:
   - component: {fileID: 8289076141506045964}
   - component: {fileID: 8725238300055240789}
   - component: {fileID: 8748227795386311594}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2303,7 +2303,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3758940635822865912}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2334,7 +2334,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2211152068059683923}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2365,7 +2365,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8711697438451563462}
   - component: {fileID: 9046407170657279468}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: straps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,7 +2472,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7565583137053041679}
   - component: {fileID: 5753952106517635104}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: cavia_body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2609,7 +2609,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3448741520592483977}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit42
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2640,7 +2640,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 789045562293734537}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2663,6 +2663,7 @@ Transform:
   - {fileID: 6560808082087285153}
   - {fileID: 753990241535635991}
   - {fileID: 2791908654619554320}
+  - {fileID: 4238713574351461983}
   m_Father: {fileID: 3762964751423475405}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2675,7 +2676,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6686999927484218967}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2708,7 +2709,7 @@ GameObject:
   - component: {fileID: 8368123351948147294}
   - component: {fileID: 6241283609034859438}
   - component: {fileID: 7834654342229322037}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: gauntlets_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2785,7 +2786,7 @@ GameObject:
   - component: {fileID: 8644803670121196252}
   - component: {fileID: 8596927529433402336}
   - component: {fileID: 7706917436250633546}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lever_003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2863,7 +2864,7 @@ GameObject:
   - component: {fileID: 4076911589893066183}
   - component: {fileID: 8908444949962835015}
   - component: {fileID: 5221340179111085770}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: lever_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2939,7 +2940,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1868679545905306458}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLLegPlatform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2969,7 +2970,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7101632759316824473}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3001,7 +3002,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5018985740333144967}
   - component: {fileID: 3852103636444850613}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: pants/boots
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3103,7 +3104,7 @@ GameObject:
   - component: {fileID: 2944322854145731505}
   - component: {fileID: 3689115871700657836}
   - component: {fileID: 3236623691880449821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: dial_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3179,7 +3180,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2700348998829354177}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmForearm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3211,7 +3212,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8783693280976517861}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3242,7 +3243,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8934169905499208596}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRibcage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3278,7 +3279,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5994925858591577871}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRForearm2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3312,7 +3313,7 @@ GameObject:
   - component: {fileID: 5701149609783284325}
   - component: {fileID: 3513415708459389741}
   - component: {fileID: 3295059950877152918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: scapular001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3388,7 +3389,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8018549913812822969}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3418,7 +3419,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3026732832215858339}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLLegToe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3448,7 +3449,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3034579855416612489}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3479,7 +3480,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 897441712870536161}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineSpine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3511,7 +3512,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5566207814699465422}
   - component: {fileID: 283763941996007214}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: skirt_thing
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3618,7 +3619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480855239430166302}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3652,7 +3653,7 @@ GameObject:
   - component: {fileID: 3725703462426479537}
   - component: {fileID: 256770104074326130}
   - component: {fileID: 7201423828995242876}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3729,7 +3730,7 @@ GameObject:
   - component: {fileID: 1345556645794312686}
   - component: {fileID: 3232498812596045323}
   - component: {fileID: 8908723973965945533}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3806,7 +3807,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3271993249374566749}
   - component: {fileID: 1907575219224996249}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: thot_choker
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3909,7 +3910,7 @@ GameObject:
   - component: {fileID: 5926137793771393289}
   - component: {fileID: 8157624065817938140}
   - component: {fileID: 178699927122584454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3984,7 +3985,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 606336816168622942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4015,7 +4016,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6174135246038412042}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRForearm1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4047,7 +4048,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 556042063430946130}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4078,7 +4079,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8123691458291187174}
   - component: {fileID: 3910539645906547387}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: shin_guards
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4178,7 +4179,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2285584330455637358}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLLegAnkle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4211,7 +4212,7 @@ GameObject:
   - component: {fileID: 2974162616761967956}
   - component: {fileID: 3268550192734910489}
   - component: {fileID: 2644124071516095119}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: gauntlet_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4286,7 +4287,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 230512931455547568}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4317,7 +4318,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7306846175851496674}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4347,7 +4348,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1338145784318974821}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit43
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4379,7 +4380,7 @@ GameObject:
   - component: {fileID: 6341271390489769352}
   - component: {fileID: 860523223502763789}
   - component: {fileID: 1490745927599015539}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: weeb_hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4457,7 +4458,7 @@ GameObject:
   - component: {fileID: 7943740755390575194}
   - component: {fileID: 4090770338187003586}
   - component: {fileID: 4079725643587828760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bracer_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4532,7 +4533,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1249023664322927905}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4564,7 +4565,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3231934202891408980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineLArmDigit41
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4597,7 +4598,7 @@ GameObject:
   - component: {fileID: 6174539755631932787}
   - component: {fileID: 842806063130384974}
   - component: {fileID: 5999456237678827465}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: bracer_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4673,7 +4674,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8922630642424000224}
   - component: {fileID: 8386528439302428415}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: blouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4782,7 +4783,7 @@ GameObject:
   - component: {fileID: 5891584726922576193}
   - component: {fileID: 2692410584107617077}
   - component: {fileID: 2155292387568044845}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: primary_006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4857,7 +4858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3762964751423475405}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRForearm3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4890,7 +4891,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3791635254289311081}
   - component: {fileID: 3143688935053058382}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: sleeve_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5002,7 +5003,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8749589129418157497}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: MarineRDigit12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5024,3 +5025,88 @@ Transform:
   m_Father: {fileID: 5032298197186553915}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &9198702600583771461
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 789045562293734537}
+    m_Modifications:
+    - target: {fileID: -927199367670048503, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_Name
+      value: weapon_cavia (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304915789273051380, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.136
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.061
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.034
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.08038973
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6433945
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7569997
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.080824174
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -99.215
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -173.652
+      objectReference: {fileID: 0}
+    - target: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 6.7859955
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ca85c1fa96215e045a1462af4d9352ce, type: 3}
+--- !u!4 &4238713574351461983 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -4216859302048453862, guid: ca85c1fa96215e045a1462af4d9352ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 9198702600583771461}
+  m_PrefabAsset: {fileID: 0}
