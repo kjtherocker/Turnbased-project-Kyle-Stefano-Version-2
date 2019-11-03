@@ -6,21 +6,21 @@ using System;
 
 public class Pathfinder : IPathfinding
 {
-    public Dictionary<Script_CombatNode, List<Script_CombatNode>> findAllPaths(Dictionary<Script_CombatNode, Dictionary<Script_CombatNode, int>> edges, Script_CombatNode originNode)
+    public Dictionary<CombatNode, List<CombatNode>> findAllPaths(Dictionary<CombatNode, Dictionary<CombatNode, int>> edges, CombatNode originNode)
     {
-        IPriorityQueue<Script_CombatNode> frontier = new HeapPriorityQueue<Script_CombatNode>();
+        IPriorityQueue<CombatNode> frontier = new HeapPriorityQueue<CombatNode>();
         frontier.Enqueue(originNode, 0);
 
-        Dictionary<Script_CombatNode, Script_CombatNode> cameFrom = new Dictionary<Script_CombatNode, Script_CombatNode>();
-        cameFrom.Add(originNode, default(Script_CombatNode));
-        Dictionary<Script_CombatNode, int> costSoFar = new Dictionary<Script_CombatNode, int>();
+        Dictionary<CombatNode, CombatNode> cameFrom = new Dictionary<CombatNode, CombatNode>();
+        cameFrom.Add(originNode, default(CombatNode));
+        Dictionary<CombatNode, int> costSoFar = new Dictionary<CombatNode, int>();
         costSoFar.Add(originNode, 0);
 
         while (frontier.Count != 0)
         {
             var current = frontier.Dequeue();
-            List<Script_CombatNode>neighbours = GetNeigbours(edges, current);
-            foreach (Script_CombatNode neighbour in neighbours)
+            List<CombatNode>neighbours = GetNeigbours(edges, current);
+            foreach (CombatNode neighbour in neighbours)
             {
                 int newCost = costSoFar[current] + edges[current][neighbour];
                 if (!costSoFar.ContainsKey(neighbour) || newCost < costSoFar[neighbour])
@@ -32,10 +32,10 @@ public class Pathfinder : IPathfinding
             }
         }
 
-        Dictionary<Script_CombatNode, List<Script_CombatNode>> paths = new Dictionary<Script_CombatNode, List<Script_CombatNode>>();
-        foreach (Script_CombatNode destination in cameFrom.Keys)
+        Dictionary<CombatNode, List<CombatNode>> paths = new Dictionary<CombatNode, List<CombatNode>>();
+        foreach (CombatNode destination in cameFrom.Keys)
         {
-            List<Script_CombatNode> path = new List<Script_CombatNode>();
+            List<CombatNode> path = new List<CombatNode>();
             var current = destination;
             while (!current.Equals(originNode))
             {

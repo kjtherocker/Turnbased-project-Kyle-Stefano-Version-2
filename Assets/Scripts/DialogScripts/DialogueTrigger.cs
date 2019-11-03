@@ -7,7 +7,7 @@ using UnityEngine;
 [System.Serializable]
 public class CharacterInCutsceneReferences
 {
-    public Script_Creatures m_CharacterModel;
+    public Creatures m_CharacterModel;
     public string m_CharacterName;
     public GameObject m_SpawnPosition;
     public bool m_SpawnOnStart;

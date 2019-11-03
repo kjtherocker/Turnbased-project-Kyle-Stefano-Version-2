@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kylej\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kylej\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_Turnbased-project-Kyle-Stefano-Version-2.1636778669.00" t="ExcludeRecursive" />
+    <e p="C:\Users\kylej\Documents\GitHub\Turnbased-project-Kyle-Stefano-Version-2" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="AutoSave" t="Include">
+          <e p="ReadMe.txt" t="Include" />
+        </e>
+        <e p="NotResources" t="Include">
+          <e p="TextMesh Pro" t="Include">
+            <e p="Resources" t="Include">
+              <e p="LineBreaking Following Characters.txt" t="Include" />
+              <e p="LineBreaking Leading Characters.txt" t="Include" />
+              <e p="Shaders" t="Include">
+                <e p="TMP_Bitmap-Mobile.shader" t="Include" />
+                <e p="TMP_Bitmap.shader" t="Include" />
+                <e p="TMP_SDF Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Masking.shader" t="Include" />
+                <e p="TMP_SDF-Mobile Overlay.shader" t="Include" />
+                <e p="TMP_SDF-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface-Mobile.shader" t="Include" />
+                <e p="TMP_SDF-Surface.shader" t="Include" />
+                <e p="TMP_SDF.shader" t="Include" />
+                <e p="TMP_Sprite.shader" t="Include" />
+                <e p="TMPro.cginc" t="Include" />
+                <e p="TMPro_Properties.cginc" t="Include" />
+                <e p="TMPro_Surface.cginc" t="Include" />
+              </e>
+            </e>
+          </e>
+        </e>
+        <e p="PathCreator" t="Include">
+          <e p="Core" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Helper" t="Include">
+                <e p="MouseUtility.cs" t="Include" />
+                <e p="PathHandle.cs" t="Include" />
+                <e p="ScreenSpacePolyLine.cs" t="Include" />
+              </e>
+              <e p="PathEditor.cs" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="Objects" t="Include">
+                <e p="BezierPath.cs" t="Include" />
+                <e p="EndOfPathInstruction.cs" t="Include" />
+                <e p="GlobalDisplaySettings.cs" t="Include" />
+                <e p="MinMax3D.cs" t="Include" />
+                <e p="PathCreator.cs" t="Include" />
+                <e p="PathCreatorData.cs" t="Include" />
+                <e p="PathSpace.cs" t="Include" />
+                <e p="VertexPath.cs" t="Include" />
+              </e>
+              <e p="Utility" t="Include">
+                <e p="CubicBezierUtility.cs" t="Include" />
+                <e p="MathUtility.cs" t="Include" />
+                <e p="VertexPathUtility.cs" t="Include" />
+              </e>
+            </e>
+          </e>
+          <e p="Examples" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="Editor" t="Include">
+                <e p="PathSceneToolEditor.cs" t="Include" />
+              </e>
+              <e p="GeneratePathExample.cs" t="Include" />
+              <e p="PathFollower.cs" t="Include" />
+              <e p="PathPlacer.cs" t="Include" />
+              <e p="PathSceneTool.cs" t="Include" />
+              <e p="PathSpawner.cs" t="Include" />
+              <e p="RoadMeshCreator.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Scripts" t="Include">
+          <e p="DestroyParticleSystems.cs" t="Include" />
+          <e p="DialogScripts" t="Include">
+            <e p="Dialogue.cs" t="Include" />
+            <e p="DialogueManager.cs" t="Include" />
+            <e p="DialogueTrigger.cs" t="Include" />
+          </e>
+          <e p="FPSDisplay.cs" t="Include" />
+          <e p="Game" t="Include">
+            <e p="CombatScripts" t="Include">
+              <e p="Ai" t="Include">
+                <e p="AiController.cs" t="Include" />
+                <e p="AiFlying.cs" t="Include" />
+                <e p="Core" t="Include">
+                  <e p="GraphNode.cs" t="Include" />
+                  <e p="Pathfinder.cs" t="Include" />
+                </e>
+                <e p="EnemyAi" t="Include">
+                  <e p="EnemyAiController.cs" t="Include" />
+                </e>
+              </e>
+              <e p="Chant" t="Include">
+                <e p="ChantController.cs" t="Include" />
+              </e>
+              <e p="CombatCameraController.cs" t="Include" />
+              <e p="CombatManager.cs" t="Include" />
+              <e p="Creatures.cs" t="Include" />
+              <e p="Domain" t="Include">
+                <e p="DomainCreator.cs" t="Include" />
+              </e>
+              <e p="Enemys" t="Include">
+                <e p="EncounterManager.cs" t="Include" />
+                <e p="Forest Enemys" t="Include">
+                  <e p="RedEyes.cs" t="Include" />
+                  <e p="RedKnight" t="Include">
+                    <e p="RedKnightPhase1.cs" t="Include" />
+                    <e p="RedKnightPhase2.cs" t="Include" />
+                    <e p="RedKnightPhase3.cs" t="Include" />
+                    <e p="RedKnightPhase4.cs" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="HealthBar.cs" t="Include" />
+              <e p="Party Classes" t="Include">
+                <e p="Cavia.cs" t="Include" />
+                <e p="Fide.cs" t="Include" />
+                <e p="Sigma.cs" t="Include" />
+                <e p="Vella.cs" t="Include" />
+              </e>
+              <e p="PartyManager.cs" t="Include" />
+              <e p="Skills" t="Include">
+                <e p="AilmentSkills" t="Include">
+                  <e p="Poison.cs" t="Include" />
+                  <e p="Rage.cs" t="Include" />
+                  <e p="Sleep.cs" t="Include" />
+                </e>
+                <e p="AttackSkills" t="Include">
+                  <e p="Attack.cs" t="Include" />
+                  <e p="FireBall.cs" t="Include" />
+                  <e p="IceRain.cs" t="Include" />
+                  <e p="LightRay.cs" t="Include" />
+                  <e p="ShadowBlast.cs" t="Include" />
+                </e>
+                <e p="BloodSkills" t="Include">
+                  <e p="BloodRelief.cs" t="Include" />
+                </e>
+                <e p="BuffSkills" t="Include">
+                  <e p="Invigorate.cs" t="Include" />
+                </e>
+                <e p="DebuffSkills" t="Include">
+                  <e p="Restrict.cs" t="Include" />
+                </e>
+                <e p="HealSkills" t="Include">
+                  <e p="HolyWater.cs" t="Include" />
+                </e>
+                <e p="ResurrectSkills" t="Include">
+                  <e p="PhoenixSpirit.cs" t="Include" />
+                </e>
+                <e p="SkillList.cs" t="Include" />
+                <e p="Skills.cs" t="Include" />
+                <e p="SkillStatus.cs" t="Include" />
+              </e>
+              <e p="Text" t="Include">
+                <e p="FloatingUiElements.cs" t="Include" />
+                <e p="FloatingUiElementsController.cs" t="Include" />
+              </e>
+              <e p="Wrappers" t="Include">
+                <e p="TurnIndicatorWrapper.cs" t="Include" />
+              </e>
+            </e>
+            <e p="GameManager.cs" t="Include" />
+            <e p="JsonHelper.cs" t="Include" />
+            <e p="MapEditor" t="Include">
+              <e p="CameraEditor.cs" t="Include" />
+              <e p="EditorCamera.cs" t="Include" />
+              <e p="GridEditor.cs" t="Include" />
+              <e p="GridFormations.cs" t="Include" />
+              <e p="PropList.cs" t="Include" />
+            </e>
+            <e p="OverworldScripts" t="Include">
+              <e p="Node.cs" t="Include" />
+              <e p="OverworldCamera.cs" t="Include" />
+              <e p="OverWorldPlayer.cs" t="Include" />
+            </e>
+            <e p="Props" t="Include">
+              <e p="NodeReplacement.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Global" t="Include">
+            <e p="Constants.cs" t="Include" />
+          </e>
+          <e p="Input" t="Include">
+            <e p="InputManager.cs" t="Include" />
+            <e p="PlayerInput.cs" t="Include" />
+          </e>
+          <e p="MenuScripts" t="Include">
+            <e p="MainMenu.cs" t="Include" />
+            <e p="Options.cs" t="Include" />
+            <e p="PartyMenu.cs" t="Include" />
+          </e>
+          <e p="ScreenshotController.cs" t="Include" />
+          <e p="Services" t="Include">
+            <e p="Singleton.cs" t="Include" />
+          </e>
+          <e p="TerrainScripts" t="Include">
+            <e p="Cell.cs" t="Include" />
+            <e p="CombatNode.cs" t="Include" />
+            <e p="DomainSphere.cs" t="Include" />
+            <e p="GrassController.cs" t="Include" />
+            <e p="Grid.cs" t="Include" />
+            <e p="NodeFormations.cs" t="Include" />
+            <e p="WaterController.cs" t="Include" />
+          </e>
+          <e p="Ui" t="Include">
+            <e p="ButtonSkillWrapper.cs" t="Include" />
+            <e p="EndOfCombatMenu.cs" t="Include" />
+            <e p="UiManager.cs" t="Include" />
+            <e p="UiScreen.cs" t="Include" />
+            <e p="UiScreenCommandBoard.cs" t="Include" />
+            <e p="UiScreenEndCombatMenu.cs" t="Include" />
+            <e p="UiSkillBoard.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Shaders" t="Include">
+          <e p="CutoutRotationsShader.shader" t="Include" />
+          <e p="Disappear.shader" t="Include" />
+          <e p="DontBackwardsCull.shader" t="Include" />
+          <e p="DoubleTexture.shader" t="Include" />
+          <e p="NewSurfaceShader 1.shader" t="Include" />
+          <e p="NewSurfaceShader.shader" t="Include" />
+          <e p="OdellWaterShader.shader" t="Include" />
+          <e p="Outlined-Silhouette Only.shader" t="Include" />
+          <e p="Shader_WeaponTest.shader" t="Include" />
+          <e p="TestCellShading.shader" t="Include" />
+          <e p="TestSquareCutout.shader" t="Include" />
+          <e p="UnlitTransparentShader.shader" t="Include" />
+        </e>
+        <e p="Shared" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="BounceTransform.cs" t="Include" />
+            <e p="RotateTransform.cs" t="Include" />
+          </e>
+        </e>
+        <e p="ToonMetal" t="Include">
+          <e p="Script" t="Include">
+            <e p="turnaroundscript.cs" t="Include" />
+          </e>
+          <e p="Shader" t="Include">
+            <e p="ToonMetal.shader" t="Include" />
+            <e p="ToonMetalMask.shader" t="Include" />
+          </e>
+        </e>
+        <e p="WorldSpaceDissolve" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="ShaderPosition.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Appear.shader" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="PathCreator.csproj" t="IncludeRecursive" />
+      <e p="PathCreatorEditor.csproj" t="IncludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="Turnbased-project-Kyle-Stefano-Version-2.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>

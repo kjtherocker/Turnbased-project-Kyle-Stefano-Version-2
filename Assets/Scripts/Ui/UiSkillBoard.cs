@@ -6,9 +6,9 @@ using TMPro;
 public class UiSkillBoard : UiScreen
 {
 
-    public Script_Creatures m_SkillBoardCreature;
-    public Script_ButtonSkillWrapper m_ButtonReference;
-    public List<Script_ButtonSkillWrapper> m_CurrentSkillMenuButtonsMenu;
+    public Creatures m_SkillBoardCreature;
+    public ButtonSkillWrapper m_ButtonReference;
+    public List<ButtonSkillWrapper> m_CurrentSkillMenuButtonsMenu;
 
     public TextMeshProUGUI m_DescriptionText;
     public int m_SkillBoardPointerPosition;
@@ -30,44 +30,44 @@ public class UiSkillBoard : UiScreen
 
         if (m_InputActive == true)
         {
-
-            if (Constants.Constants.m_XboxController == true)
-            {
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionUp, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveCommandBoardPositionDown, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
-                Script_GameManager.Instance.m_InputManager.SetXboxButton
-                    (SetSkill, "Xbox_A", ref Script_GameManager.Instance.m_InputManager.m_AButton);
-
-                if (Input.GetButton("Xbox_B"))
-                {
-                    Script_GameManager.Instance.UiManager.PopScreen();
-                }
-            }
-            if (Constants.Constants.m_PlaystationController == true)
-            {
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                (MoveCommandBoardPositionUp, "Ps4_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-                Script_GameManager.Instance.m_InputManager.SetXboxAxis
-                    (MoveCommandBoardPositionDown, "Ps4_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-
-                Script_GameManager.Instance.m_InputManager.SetXboxButton
-                    (SetSkill, "Ps4_Cross", ref Script_GameManager.Instance.m_InputManager.m_AButton);
-
-                if (Input.GetButton("Ps4_Circle"))
-                {
-                    Script_GameManager.Instance.UiManager.PopScreen();
-                }
-            }
+         //
+         // if (Constants.Constants.m_XboxController == true)
+         // {
+         //     GameManager.Instance.m_InputManager.SetXboxAxis
+         //     (MoveCommandBoardPositionUp, "Xbox_DPadX", false, ref GameManager.Instance.m_InputManager.m_DPadY);
+         //     GameManager.Instance.m_InputManager.SetXboxAxis
+         //         (MoveCommandBoardPositionDown, "Xbox_DPadX", true, ref GameManager.Instance.m_InputManager.m_DPadY);
+         //
+         //     GameManager.Instance.m_InputManager.SetXboxButton
+         //         (SetSkill, "Xbox_A", ref GameManager.Instance.m_InputManager.m_AButton);
+         //
+         //     if (Input.GetButton("Xbox_B"))
+         //     {
+         //         GameManager.Instance.UiManager.PopScreen();
+         //     }
+         // }
+         // if (Constants.Constants.m_PlaystationController == true)
+         // {
+         //     GameManager.Instance.m_InputManager.SetXboxAxis
+         //     (MoveCommandBoardPositionUp, "Ps4_DPadX", false, ref GameManager.Instance.m_InputManager.m_DPadY);
+         //     GameManager.Instance.m_InputManager.SetXboxAxis
+         //         (MoveCommandBoardPositionDown, "Ps4_DPadX", true, ref GameManager.Instance.m_InputManager.m_DPadY);
+         //
+         //     GameManager.Instance.m_InputManager.SetXboxButton
+         //         (SetSkill, "Ps4_Cross", ref GameManager.Instance.m_InputManager.m_AButton);
+         //
+         //     if (Input.GetButton("Ps4_Circle"))
+         //     {
+         //         GameManager.Instance.UiManager.PopScreen();
+         //     }
+         // }
         }
     }
 
     public void SetSkill()
     {
-        Script_GameManager.Instance.BattleCamera.SetAttackPhase(m_SkillBoardCreature.m_Skills[m_SkillBoardPointerPosition]);
-        Script_GameManager.Instance.UiManager.PopAllInvisivble();
+        GameManager.Instance.BattleCamera.SetAttackPhase(m_SkillBoardCreature.m_Skills[m_SkillBoardPointerPosition]);
+        GameManager.Instance.UiManager.PopAllInvisivble();
     }
 
     public override void OnPop()
@@ -76,7 +76,7 @@ public class UiSkillBoard : UiScreen
 
     }
 
-    public void SpawnSkills(Script_Creatures aCreatures)
+    public void SpawnSkills(Creatures aCreatures)
     {
         if (m_CurrentSkillMenuButtonsMenu.Count > 0)
         {
@@ -92,7 +92,7 @@ public class UiSkillBoard : UiScreen
 
         for (int i = 0; i < m_SkillBoardCreature.m_Skills.Count; i++)
         {
-            m_CurrentSkillMenuButtonsMenu.Add(Instantiate<Script_ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
+            m_CurrentSkillMenuButtonsMenu.Add(Instantiate<ButtonSkillWrapper>(m_ButtonReference, gameObject.transform));
             m_CurrentSkillMenuButtonsMenu[i].SetupButton(m_SkillBoardCreature, m_SkillBoardCreature.m_Skills[i], this);
             m_CurrentSkillMenuButtonsMenu[i].gameObject.transform.SetParent(this.transform, false);
 
@@ -103,11 +103,11 @@ public class UiSkillBoard : UiScreen
         AnimatedCardMovementToCenter(m_CurrentSkillMenuButtonsMenu[0]);
     }
 
-    public void AnimatedCardMovementToCenter(Script_ButtonSkillWrapper a_SkillWrapper)
+    public void AnimatedCardMovementToCenter(ButtonSkillWrapper a_SkillWrapper)
     {
         //a_SkillWrapper.transform.position = 
 
-        m_DescriptionText.text = a_SkillWrapper.m_ButtonSkill.SkillDescription;
+       // m_DescriptionText.text = a_SkillWrapper.m_ButtonSkill.SkillDescription;
     }
 
     public void MoveCommandBoardPositionUp()

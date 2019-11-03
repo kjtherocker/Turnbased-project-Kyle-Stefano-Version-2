@@ -6,10 +6,10 @@ public abstract class Cell : MonoBehaviour, IGraphNode
 {
     public int GetDistance(IGraphNode other)
     {
-        return GetDistance(other as Script_CombatNode);
+        return GetDistance(other as CombatNode);
     }
 
-    public abstract List<Script_CombatNode> GetNeighbours(List<Script_CombatNode> cells);
+    public abstract List<CombatNode> GetNeighbours(List<CombatNode> cells);
 
 
 }

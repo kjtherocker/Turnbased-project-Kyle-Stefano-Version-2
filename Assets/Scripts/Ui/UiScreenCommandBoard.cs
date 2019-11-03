@@ -6,7 +6,7 @@ using TMPro;
 public class UiScreenCommandBoard : UiScreen
 {
     public Animator m_CommandBoardAnimator;
-    public Script_Creatures m_CommandboardCreature;
+    public Creatures m_CommandboardCreature;
     public Button m_MovementButton;
     public TextMeshProUGUI m_MovementText;
     public TextMeshProUGUI m_Attack;
@@ -28,17 +28,17 @@ public class UiScreenCommandBoard : UiScreen
         {
        //     if (Input.GetKeyDown("a") || Input.GetButtonDown("Ps4_Circle"))
        //     {
-       //         Script_GameManager.Instance.m_UiManager.PopScreen();
+       //         GameManager.Instance.m_UiManager.PopScreen();
        //     }
 
 
 
             if (Constants.Constants.m_XboxController == true)
             {
-             //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
-             //   (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
-             //   Script_GameManager.Instance.m_InputManager.SetXboxAxis
-             //       (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref Script_GameManager.Instance.m_InputManager.m_DPadY);
+             //   GameManager.Instance.m_InputManager.SetXboxAxis
+             //   (MoveCommandBoardPositionUp, "Xbox_DPadX", true, ref GameManager.Instance.m_InputManager.m_DPadY);
+             //   GameManager.Instance.m_InputManager.SetXboxAxis
+             //       (MoveCommandBoardPositionDown, "Xbox_DPadX", false, ref GameManager.Instance.m_InputManager.m_DPadY);
             }
             if (Constants.Constants.m_PlaystationController == true)
             {
@@ -101,7 +101,7 @@ public class UiScreenCommandBoard : UiScreen
 
     }
 
-    public void SetCreatureReference(Script_Creatures aCreature)
+    public void SetCreatureReference(Creatures aCreature)
     {
         m_CommandboardCreature = aCreature;
 
@@ -121,18 +121,18 @@ public class UiScreenCommandBoard : UiScreen
         if (m_CommandboardCreature.m_CreatureAi.m_HasMovedForThisTurn == false)
         {
             m_CommandboardCreature.m_CreatureAi.FindAllPaths();
-            Script_GameManager.Instance.BattleCamera.m_MovementHasBeenCalculated = true;
-            Script_GameManager.Instance.UiManager.PopScreen();
+            GameManager.Instance.BattleCamera.m_MovementHasBeenCalculated = true;
+            GameManager.Instance.UiManager.PopScreen();
         }
     }
 
 
     public void SpawnSkillBoard()
     {
-        Script_GameManager.Instance.UiManager.PushScreen(UiManager.Screen.SkillBoard);
+        GameManager.Instance.UiManager.PushScreen(UiManager.Screen.SkillBoard);
 
         UiSkillBoard ScreenTemp =
-            Script_GameManager.Instance.UiManager.GetScreen(UiManager.Screen.SkillBoard) as UiSkillBoard;
+            GameManager.Instance.UiManager.GetScreen(UiManager.Screen.SkillBoard) as UiSkillBoard;
 
         ScreenTemp.SpawnSkills(m_CommandboardCreature);
     }
@@ -148,8 +148,8 @@ public class UiScreenCommandBoard : UiScreen
         if (m_CommandBoardPointerPosition == 1)
         {
 
-            Script_GameManager.Instance.UiManager.PopScreen();
-            Script_GameManager.Instance.BattleCamera.SetAttackPhase(m_CommandboardCreature.m_Attack);
+            GameManager.Instance.UiManager.PopScreen();
+            GameManager.Instance.BattleCamera.SetAttackPhase(m_CommandboardCreature.m_Attack);
         }
         if (m_CommandBoardPointerPosition == 2)
         {

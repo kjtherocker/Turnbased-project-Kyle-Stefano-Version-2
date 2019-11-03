@@ -38,7 +38,7 @@ public class DialogueManager : MonoBehaviour
     public RawImage m_ChatBox;
     public RawImage m_Portrait;
 
-    public Script_OverworldCamera m_OverworldCamera;
+    public OverworldCamera m_OverworldCamera;
 
     public int AnimatedTextiterator;
     public string CurrentText;

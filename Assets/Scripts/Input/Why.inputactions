@@ -1,0 +1,33 @@
+{
+    "name": "Why",
+    "maps": [
+        {
+            "name": "Player",
+            "id": "8664681d-4c76-4e84-a9c7-952ce9060aa9",
+            "actions": [
+                {
+                    "name": "Move",
+                    "type": "Button",
+                    "id": "f3d11860-2948-48a4-9ca7-9919a75cf491",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "Press"
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "3ca8fc2a-e2b9-4320-9ab0-da01cd1154e5",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
